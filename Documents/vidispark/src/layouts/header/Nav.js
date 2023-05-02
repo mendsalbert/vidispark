@@ -14,7 +14,7 @@ const Nav = () => {
           <li className="menu-item">
             {" "}
             <Link href="/03-explore-v2">
-              <a className="menu-link">Home</a>
+              <a className="menu-link">Explore</a>
             </Link>{" "}
           </li>
 
