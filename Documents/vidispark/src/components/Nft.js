@@ -63,26 +63,6 @@ const Nft = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="featured-item-post-content">
-          <div className="featured-item-pricebox">
-            <div className="price-caption">Current BID</div>
-            <div className="price">{data.price} ETH</div>
-          </div>
-          <div className="social-share-box">
-            <div className="social-caption">Share</div>
-            <div className="share-icons">
-              <svg className="crumina-icon">
-                <use xlinkHref="#facebook-icon" />
-              </svg>{" "}
-              <svg className="crumina-icon">
-                <use xlinkHref="#twitter-icon" />
-              </svg>{" "}
-              <svg className="crumina-icon">
-                <use xlinkHref="#instagram-icon" />
-              </svg>{" "}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
