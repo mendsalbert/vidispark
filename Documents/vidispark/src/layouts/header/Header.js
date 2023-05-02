@@ -53,14 +53,6 @@ const Header = () => {
             >
               Create
             </a>
-            {/* <div className="collection-title">
-              <Link href="/08-profile-page">
-                <a>
-                  My Collection
-                  <span className="count colored">12</span>
-                </a>
-              </Link>
-            </div> */}
           </div>
           {/*/HEADER BUTTON*/}
           {/*HEADER ICONS*/}
