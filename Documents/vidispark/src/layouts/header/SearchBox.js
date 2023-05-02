@@ -27,7 +27,7 @@ const SearchBox = () => {
               <use xlinkHref="#arrow-down-icon" />
             </svg>
           </button>
-          <ul className="search-dropdown">
+          {/* <ul className="search-dropdown">
             <li
               data-param="all"
               onClick={() => {
@@ -64,7 +64,7 @@ const SearchBox = () => {
             >
               Auctions
             </li>
-          </ul>
+          </ul> */}
           <input
             type="text"
             className="search-input"
