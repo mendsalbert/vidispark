@@ -10,7 +10,7 @@ const Nft = ({ data }) => {
             <svg className="crumina-icon">
               <use xlinkHref="#heart-icon" />
             </svg>{" "}
-            <span className="count">{data.react}</span>
+            {/* <span className="count">{data.react}</span> */}
           </div>
           <div className="featured-item-image">
             {" "}
