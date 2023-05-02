@@ -37,28 +37,31 @@ const Nft = ({ data }) => {
               </Link>{" "}
             </div>
             <div className="tw-flex tw-flex-row tw-items-center tw-justify-between tw-w-full">
-              <span className="avatar box-26">
-                {" "}
-                <Link href="/08-profile-page">
-                  <a>
-                    <picture>
-                      <source type="image/avif" srcSet={data.author.image} />
-                      <img
-                        src={data.author.image}
-                        alt="avatar"
-                        loading="lazy"
-                        width={100}
-                        height={100}
-                      />
-                    </picture>
-                  </a>
-                </Link>{" "}
-                <span className="verified">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#check-icon" />
-                  </svg>{" "}
+              <span>
+                <span className="avatar box-26">
+                  {" "}
+                  <Link href="/08-profile-page">
+                    <a>
+                      <picture>
+                        <source type="image/avif" srcSet={data.author.image} />
+                        <img
+                          src={data.author.image}
+                          alt="avatar"
+                          loading="lazy"
+                          width={100}
+                          height={100}
+                        />
+                      </picture>
+                    </a>
+                  </Link>{" "}
+                  <span className="verified">
+                    <svg className="crumina-icon">
+                      <use xlinkHref="#check-icon" />
+                    </svg>{" "}
+                  </span>
                 </span>
               </span>
+
               <span>@{data.author.name}</span>
               <span>239K Views</span>
             </div>
