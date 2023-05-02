@@ -73,14 +73,14 @@ const ProfileDropdown = () => {
       </div>
       {/*/user-avatar*/}
       {/*close-icon*/}
-      <div
+      {/* <div
         className={`closing-icon ${toggle ? "show" : ""}`}
         onClick={() => setToggle(!toggle)}
       >
         <svg className="crumina-icon close-icon">
           <use xlinkHref="#cross-icon" />
         </svg>
-      </div>
+      </div> */}
       {/*/close-icon*/}
       <div
         id="profile-dropdown"
