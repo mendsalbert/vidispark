@@ -44,7 +44,6 @@ const Layouts = ({ children, getData, getCreator, getCollector, getBlogs }) => {
         <Header />
         <Nav />
         {children}
-        <BeforFooter />
         <Footer />
       </div>
     </Fragment>
