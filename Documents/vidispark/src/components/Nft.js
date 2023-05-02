@@ -36,7 +36,7 @@ const Nft = ({ data }) => {
                 <a>{data.name}</a>
               </Link>{" "}
             </div>
-            <div className="item-meta">
+            <div className="item-meta tw-flex tw-flex-row tw-items-center">
               <span className="avatar box-26">
                 {" "}
                 <Link href="/08-profile-page">
