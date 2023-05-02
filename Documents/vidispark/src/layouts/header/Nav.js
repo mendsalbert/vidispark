@@ -11,6 +11,12 @@ const Nav = () => {
               <a className="menu-link">Home</a>
             </Link>{" "}
           </li>
+          <li className="menu-item">
+            {" "}
+            <Link href="/03-explore-v2">
+              <a className="menu-link">Home</a>
+            </Link>{" "}
+          </li>
           <li className="menu-item menu-item-has-children">
             <a className="menu-link" href="#">
               Explore{" "}
