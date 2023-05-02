@@ -121,7 +121,7 @@ const ProfileDropdown = () => {
             <li className="account">
               {" "}
               <Link href="/29-account-settings">
-                <a>
+                <a className="tw-flex tw-items-center ">
                   <svg className="crumina-icon">
                     <use xlinkHref="#settings-icon" />
                   </svg>
