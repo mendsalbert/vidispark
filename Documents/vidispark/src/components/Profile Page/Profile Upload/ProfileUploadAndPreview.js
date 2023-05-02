@@ -19,6 +19,7 @@ const ProfileUploadAndPreview = () => {
         <div className="artwork-preview">
           <div className="label">File Preview </div>
           <div className="preview-box" />
+          GO LIVE
         </div>
       </div>
     </div>
