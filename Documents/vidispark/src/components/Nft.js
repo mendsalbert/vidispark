@@ -1,6 +1,5 @@
 import Link from "next/link";
 import CountDown from "./CountDown";
-import { IconEye } from "@tabler/icons";
 
 const Nft = ({ data }) => {
   return (
