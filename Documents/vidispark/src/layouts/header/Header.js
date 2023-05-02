@@ -20,9 +20,9 @@ const Header = () => {
           <div className="logo ">
             <Link href="/">
               <a className="logo-link">
-                <div className="logo-img">
+                {/* <div className="logo-img">
                   <img src="svg/cryptoki-logo.svg" alt="logo" />
-                </div>
+                </div> */}
                 <div className="logo-text">Vidispark</div>
               </a>
             </Link>
