@@ -1,6 +1,6 @@
 import Link from "next/link";
 import CountDown from "./CountDown";
-import { EyeIcon } from "@heroicons/react/24/solid";
+import { EyeIcon } from "@heroicons/react/24/outline";
 
 const Nft = ({ data }) => {
   return (
