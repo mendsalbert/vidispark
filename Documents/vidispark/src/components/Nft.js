@@ -57,9 +57,8 @@ const Nft = ({ data }) => {
                 </span>
                 <span>@{data.author.name}</span>
               </span>
-              <span>
+              <span className="tw-flex tw-flex-row tw-items-center ">
                 <i>239K</i>
-
                 <EyeIcon />
               </span>
             </div>
