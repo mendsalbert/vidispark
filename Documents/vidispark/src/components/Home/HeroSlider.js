@@ -98,6 +98,7 @@ const HeroSlider = () => {
                 muted={true}
                 playsInline={true}
                 loop
+                className="tw-rounded-2xl"
               />
             </picture>
             <div className="dark-overlay" />
