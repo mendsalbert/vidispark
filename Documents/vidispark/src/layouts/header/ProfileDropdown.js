@@ -91,11 +91,11 @@ const ProfileDropdown = () => {
                 height={100}
                 width={100}
               /> */}
-              <span className="verified">
+              {/* <span className="verified">
                 <svg className="crumina-icon">
                   <use xlinkHref="#check-icon" />
                 </svg>
-              </span>
+              </span> */}
             </div>
             {/*/user-avatar*/}
             <div className="profile-link">
