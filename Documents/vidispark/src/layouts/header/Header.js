@@ -44,7 +44,8 @@ const Header = () => {
               />
             </svg>
           </button>
-
+          {/*/OPEN SEARCH ON  MOBILE*/}
+          {/*HEADER BUTTON*/}
           <div className="collection-box">
             <a
               className="btn btn-normal btn-dark create-collection"
@@ -52,10 +53,31 @@ const Header = () => {
             >
               Create
             </a>
+            {/* <div className="collection-title">
+              <Link href="/08-profile-page">
+                <a>
+                  My Collection
+                  <span className="count colored">12</span>
+                </a>
+              </Link>
+            </div> */}
           </div>
-
+          {/*/HEADER BUTTON*/}
+          {/*HEADER ICONS*/}
           <div className="user-activity-buttons">
+            <div className="favourites-button-cont">
+              <button
+                className="favourites-button cryptoki-notif-bttn"
+                data-target=""
+              >
+                <svg className="crumina-icon">
+                  <use xlinkHref="#heart-icon" />
+                </svg>
+              </button>
+            </div>
             <NotificationsButton />
+            {/*/notification dropdown*/}
+            {/*/NOTIFICATION BUTTON*/}
           </div>
           {/*/HEADER ICONS*/}
           <ProfileDropdown />
