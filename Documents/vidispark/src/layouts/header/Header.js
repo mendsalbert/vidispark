@@ -23,7 +23,7 @@ const Header = () => {
                 <div className="logo-img">
                   <img src="svg/cryptoki-logo.svg" alt="logo" />
                 </div>
-                <div className="logo-text">Cryptoki</div>
+                <div className="logo-text">Vidispark</div>
               </a>
             </Link>
           </div>
