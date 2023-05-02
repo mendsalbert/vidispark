@@ -17,6 +17,11 @@ const ProfileUploadAndPreview = () => {
           </div>
         </div>
 
+        <div className="artwork-preview">
+          <div className="label">File Preview </div>
+          <div className="preview-box" />
+        </div>
+
         <div className="artwork-upload">
           <div className="label">Go Live</div>
           <div className="upload-box">
@@ -29,10 +34,6 @@ const ProfileUploadAndPreview = () => {
               </span>
             </button>
           </div>
-        </div>
-        <div className="artwork-preview">
-          <div className="label">File Preview </div>
-          <div className="preview-box" />
         </div>
       </div>
     </div>
