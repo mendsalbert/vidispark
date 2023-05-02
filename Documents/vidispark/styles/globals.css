@@ -1,4 +1,4 @@
-/* @import "../public/css/fonts.css";
+@import "../public/css/fonts.css";
 @import "../public/css/normalize.css";
 @import "../public/css/main.css";
 @import "../public/css/swiper-bundle.css";
@@ -60,7 +60,7 @@ a {
 }
 .content-table td:first-child {
   min-width: 210px;
-} */
+}
 
 @tailwind base;
 @tailwind components;
