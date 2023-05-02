@@ -56,8 +56,6 @@ const Header = () => {
 
           <div className="user-activity-buttons">
             <NotificationsButton />
-            {/*/notification dropdown*/}
-            {/*/NOTIFICATION BUTTON*/}
           </div>
           {/*/HEADER ICONS*/}
           <ProfileDropdown />
