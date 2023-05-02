@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CountDown from "./CountDown";
+import { EyeIcon } from "@heroicons/react/24/solid";
 
 const Nft = ({ data }) => {
   return (
@@ -56,7 +57,9 @@ const Nft = ({ data }) => {
                 </span>
                 <span>@{data.author.name}</span>
               </span>
-              <span>239K views</span>
+              <span>
+                239K views <EyeIcon />
+              </span>
             </div>
           </div>
         </div>
