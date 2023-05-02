@@ -110,7 +110,7 @@ const ProfileDropdown = () => {
             <li className="profile">
               {" "}
               <Link href="/23-profile-info">
-                <a>
+                <a className="tw-flex ">
                   <svg className="crumina-icon">
                     <use xlinkHref="#user-icon" />
                   </svg>
