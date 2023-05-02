@@ -21,9 +21,7 @@ const ProfileUploadAndPreview = () => {
           <div className="label">Go Live</div>
           <div className="upload-box">
             <div className="upload-notice"> Start a live stream</div>
-            <button className="btn btn-normal btn-dark browse-btn">
-              Browse File
-            </button>
+            <button className="bg-red-500">Browse File</button>
           </div>
         </div>
         <div className="artwork-preview">
