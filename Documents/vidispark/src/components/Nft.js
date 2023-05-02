@@ -63,9 +63,8 @@ const Nft = ({ data }) => {
                 </span>
                 <span>@{data.author.name}</span>
               </span>
-              <span>
-                239K <IconEye />
-              </span>
+              <span>239K</span>
+              <IconEye />
             </div>
           </div>
         </div>
