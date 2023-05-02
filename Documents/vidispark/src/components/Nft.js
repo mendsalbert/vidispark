@@ -29,7 +29,7 @@ const Nft = ({ data }) => {
             </Link>{" "}
           </div>
           <div className="featured-item-info">
-            {data.time && <CountDown endDateTime={data.time} />}
+            {/* {data.time && <CountDown endDateTime={data.time} />} */}
             <div className="title">
               {" "}
               <Link href="/05-product-page">
