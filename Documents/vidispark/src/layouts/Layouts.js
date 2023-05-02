@@ -12,7 +12,6 @@ import BeforFooter from "./footer/BeforFooter";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Nav from "./header/Nav";
-import React from "react";
 
 const Layouts = ({ children, getData, getCreator, getCollector, getBlogs }) => {
   useEffect(() => {
