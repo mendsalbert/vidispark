@@ -20,10 +20,7 @@ const ProfileUploadAndPreview = () => {
         <div className="artwork-upload">
           <div className="label">Go Live</div>
           <div className="upload-box">
-            <svg className="crumina-icon">
-              <use xlinkHref="#upload-icon" />
-            </svg>
-            <div className="upload-notice"> Max 120MB, PNG, JPEG, MP3, MP4</div>
+            <div className="upload-notice"> Start a live stream</div>
             <button className="btn btn-normal btn-dark browse-btn">
               Browse File
             </button>
