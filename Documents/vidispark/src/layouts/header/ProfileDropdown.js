@@ -39,7 +39,7 @@ const ProfileDropdown = () => {
     >
       {/*user-meta*/}
       <div className="user-meta" onClick={() => setToggle(!toggle)}>
-        <div className="user_name">Dexter Stark</div>
+        {/* <div className="user_name">Dexter Stark</div> */}
         <div className="user_score">
           <span>
             <svg className="crumina-icon">
