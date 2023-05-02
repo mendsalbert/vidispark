@@ -65,11 +65,6 @@ const Header = () => {
           {/*/HEADER BUTTON*/}
           {/*HEADER ICONS*/}
           <div className="user-activity-buttons">
-            {/*CART BUTTON*/}
-            <CartButton />
-            {/*/cart dropdown*/}
-            {/*/CART BUTTON*/}
-            {/*NOTIFICATION BUTTON*/}
             <div className="favourites-button-cont">
               <button
                 className="favourites-button cryptoki-notif-bttn"
