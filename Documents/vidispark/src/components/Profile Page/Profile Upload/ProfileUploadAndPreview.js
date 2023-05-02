@@ -22,7 +22,11 @@ const ProfileUploadAndPreview = () => {
           <div className="upload-box">
             <div className="upload-notice"> Start a live stream</div>
             <button className="tw-bg-red-600 tw-rounded-full tw-px-3 tw-py-2">
-              Go Live
+              <span>Go Live</span>
+              <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+              </span>
             </button>
           </div>
         </div>
