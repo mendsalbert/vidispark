@@ -51,7 +51,7 @@ const ProfileDropdown = () => {
       </div>
       {/*/user-meta*/}
       {/*user-avatar*/}
-      {/* <div
+      <div
         className={`avatar box-42 ${toggle ? "hide" : ""}`}
         onClick={() => setToggle(!toggle)}
       >
@@ -70,7 +70,7 @@ const ProfileDropdown = () => {
             <use xlinkHref="#check-icon" />
           </svg>
         </span>
-      </div> */}
+      </div>
       {/*/user-avatar*/}
       {/*close-icon*/}
       <div
