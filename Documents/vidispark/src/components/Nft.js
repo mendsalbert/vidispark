@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CountDown from "./CountDown";
+import { IconEye } from "@tabler/icons";
 
 const Nft = ({ data }) => {
   return (
@@ -62,7 +63,9 @@ const Nft = ({ data }) => {
                 </span>
                 <span>@{data.author.name}</span>
               </span>
-              <span>239K Views</span>
+              <span>
+                239K <IconEye />>
+              </span>
             </div>
           </div>
         </div>
