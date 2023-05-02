@@ -114,7 +114,7 @@ const ProfileDropdown = () => {
                   <svg className="crumina-icon">
                     <use xlinkHref="#user-icon" />
                   </svg>
-                  Profile Info
+                  <span>Profile Info</span>
                 </a>
               </Link>{" "}
             </li>
