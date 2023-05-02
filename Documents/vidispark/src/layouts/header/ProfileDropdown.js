@@ -81,7 +81,7 @@ const ProfileDropdown = () => {
       >
         <div className="profile-dropdown-header profile-cover-image" />
         <div className="profile-dropdown-body">
-          <div className="profile-heading">
+          <div className="profile-heading tw-flex">
             {/*user-avatar*/}
             <div className="profile-avatar avatar box-26">
               <img
