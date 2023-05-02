@@ -12,12 +12,12 @@ const SearchBox = () => {
           className="main-search"
           onSubmit={(e) => e.preventDefault()}
         >
-          {/* <input
+          <input
             className="main-search-params"
             type="hidden"
             name="params"
             defaultValue="all"
-          /> */}
+          />
           {/* <button
             className={`search-params ${activeToggle ? "active" : ""}`}
             onClick={() => setActiveToggle(!activeToggle)}
