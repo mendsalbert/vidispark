@@ -188,7 +188,7 @@ const ProfileDropdown = () => {
         <div className="profile-dropdown-footer">
           {/*dark-mode-toggle*/}
           <div className="mode-toggle">
-            <div className="mode-title">
+            <div className="mode-title tw-flex tw-items-center">
               <span>
                 <svg className="crumina-icon">
                   <use xlinkHref="#moon-icon" />
