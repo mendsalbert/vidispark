@@ -44,8 +44,7 @@ const Header = () => {
               />
             </svg>
           </button>
-          {/*/OPEN SEARCH ON  MOBILE*/}
-          {/*HEADER BUTTON*/}
+
           <div className="collection-box">
             <a
               className="btn btn-normal btn-dark create-collection"
