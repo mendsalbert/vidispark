@@ -41,11 +41,11 @@ const ProfileDropdown = () => {
       <div className="user-meta" onClick={() => setToggle(!toggle)}>
         <div className="user_name">Dexter Stark</div>
         <div className="user_score">
-          <span>
+          {/* <span>
             <svg className="crumina-icon">
               <use xlinkHref="#circle-icon" />
             </svg>
-          </span>
+          </span> */}
           291.36 ETH
         </div>
       </div>
