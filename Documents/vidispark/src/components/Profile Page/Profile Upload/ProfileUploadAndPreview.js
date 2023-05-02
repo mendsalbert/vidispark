@@ -18,7 +18,7 @@ const ProfileUploadAndPreview = () => {
         </div>
 
         <div className="artwork-upload">
-          <div className="label">Upload File</div>
+          <div className="label">Go Live</div>
           <div className="upload-box">
             <svg className="crumina-icon">
               <use xlinkHref="#upload-icon" />
