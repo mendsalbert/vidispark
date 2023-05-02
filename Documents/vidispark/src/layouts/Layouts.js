@@ -8,7 +8,6 @@ import { getCollector } from "../redux/action/collectors";
 import { getCreator } from "../redux/action/creator";
 import { getData } from "../redux/action/data";
 import { niceSelect, notificationList, svgLoadder } from "../utils";
-import BeforFooter from "./footer/BeforFooter";
 import Footer from "./footer/Footer";
 import Header from "./header/Header";
 import Nav from "./header/Nav";
