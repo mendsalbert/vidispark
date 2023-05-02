@@ -17,36 +17,7 @@ const Nav = () => {
               <a className="menu-link">Home</a>
             </Link>{" "}
           </li>
-          <li className="menu-item menu-item-has-children">
-            <a className="menu-link" href="#">
-              Explore{" "}
-              <span className="indicator">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#arrow-down-icon" />
-                </svg>
-              </span>
-            </a>
-            <ul className="submenu">
-              <li className="menu-item">
-                {" "}
-                <Link href="/02-explore">
-                  <a className="menu-link">Explore</a>
-                </Link>{" "}
-              </li>
-              <li className="menu-item">
-                {" "}
-                <Link href="/03-explore-v2">
-                  <a className="menu-link">Explore v2</a>
-                </Link>{" "}
-              </li>
-              <li className="menu-item">
-                {" "}
-                <Link href="/04-item-versions">
-                  <a className="menu-link">Item versions</a>
-                </Link>{" "}
-              </li>
-            </ul>
-          </li>
+
           <li className="menu-item">
             {" "}
             <Link href="/10-creators">
