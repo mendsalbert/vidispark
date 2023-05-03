@@ -106,7 +106,7 @@ function VideoUploader() {
       </div>
       {/* {videoUrl && ( */}
       <iframe
-        src="https://player.thetavideoapi.com/video/video_iyg27i75r6dyvhcax495mtxqed"
+        src={`https://player.thetavideoapi.com/video/${videoUrl}`}
         border="0"
         width="100%"
         height="100%"
