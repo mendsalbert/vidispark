@@ -87,7 +87,7 @@ function VideoUploader() {
         data?.body?.videos?.[0]?.sub_state === "none"
       ) {
         finished = true;
-        setVideoUrl(data.body.videos[0].playback_uri);
+        setVideoUrl(data.body.videos[0].id);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
       }
@@ -104,7 +104,14 @@ function VideoUploader() {
           </progress>
         )}
       </div>
-      {videoUrl && <video controls src={videoUrl} />}
+      {videoUrl && (
+        <video
+          controls
+          src={
+            'https://media.thetavideoapi.com/"video_iexf1hfxxbntrz5f4grc0tartc"/master.m3u8'
+          }
+        />
+      )}
     </div>
   );
 }
