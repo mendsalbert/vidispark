@@ -55,17 +55,6 @@ function VideoUploader() {
     const { presigned_url } = uploadResponseJson.body.uploads[0];
     setUploadUrl(presigned_url);
 
-    // Create new XMLHttpRequest
-    const xhr = new XMLHttpRequest();
-    xhr.upload.addEventListener("progress", (event) => {
-      console.log(event.loaded, event.total);
-      setUploadProgress((event.loaded / event.total) * 100);
-    });
-
-    // Send PUT request to presigned URL
-    xhr.open("PUT", presigned_url);
-    xhr.send(file);
-
     const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
       method: "POST",
       headers: {
