@@ -123,6 +123,8 @@ function VideoUploader() {
   const [uploadUrl, setUploadUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
   const [streamUrl, setStreamUrl] = useState("");
+  const [mediaStream, setMediaStream] = useState(null);
+  const [videoElement, setVideoElement] = useState(null);
 
   // create a new live stream
   const createStream = async () => {
@@ -148,6 +150,42 @@ function VideoUploader() {
       setStreamUrl(streamUrl);
     } catch (error) {
       console.error("Failed to create live stream", error);
+    }
+  };
+
+  // start the live stream with the user's web cam
+  const startWebCamStream = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: true,
+      });
+      setMediaStream(stream);
+
+      const formData = new FormData();
+      formData.append("file", stream);
+      const headers = { "Content-Type": "multipart/form-data" };
+      const response = await axios.post(uploadUrl, formData, { headers });
+
+      const videoResponse = await axios.post(
+        "https://api.thetavideoapi.com/video",
+        {
+          source_upload_id: response.data.uploads[0].id,
+          playback_policy: "public",
+          nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
+        },
+        {
+          headers: {
+            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(videoResponse.data);
+      setVideoUrl(videoResponse.data.body.videos[0].player_uri);
+    } catch (error) {
+      console.error("Failed to start web cam stream", error);
     }
   };
 
@@ -180,51 +218,14 @@ function VideoUploader() {
 
     while (!finished) {
       const { data } = await axios.get(
-        `https://api.thetavideoapi.com/video/${videoResponseJson.body.videos[0].id}`,
-        {
-          headers: {
-            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          },
-        }
-      );
-      console.log("data", data);
-      if (
-        data?.body?.videos?.[0]?.state === "success" &&
-        data?.body?.videos?.[0]?.sub_state === "none"
-      ) {
-        finished = true;
-        setVideoUrl(data.body.videos[0].player_uri);
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
+        `https://api.thetavideoapi.com/video/${videoResponseJson.body.videos[0].id}`, { headers: { "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7", "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5", }, } ); console.log("data", data); if ( data?.body?.videos?.[0]?.state === "success" && data?.body?.videos?.[0]?.sub_state === "none" ) { finished = true; setVideoUrl(data.body.videos[0].player_uri); } else { await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again } } };
       }
+      const handleVideoRef = (ref) => { if (ref) { setVideoElement(ref); ref.srcObject = mediaStream; ref.play(); } };
+        
+     return ( <div> <button onClick={startWebCamStream}>Start Live Stream</button> {streamUrl && ( <div> <div>Live stream URL: {streamUrl}</div> <iframe src={streamUrl} width="640" height="360" frameborder="0" scrolling="no" allowfullscreen ></iframe> </div> )} {videoUrl && ( <div> <div>Uploaded video URL: {videoUrl}</div> <video controls src={videoUrl} /> </div> )} {mediaStream && ( <video ref={handleVideoRef} width="640" height="360" muted /> )} </div> );
+    
     }
-  };
-
-  return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      {streamUrl && (
-        <div>
-          <div>Live stream URL: {streamUrl}</div>
-          <iframe
-            src={streamUrl}
-            width="640"
-            height="360"
-            frameborder="0"
-            scrolling="no"
-            allowfullscreen
-          ></iframe>
-        </div>
-      )}
-      {videoUrl && (
-        <div>
-          <div>Uploaded video URL: {videoUrl}</div>
-          <video controls src={videoUrl} />
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default VideoUploader;
+        
+        export default VideoUploader;
+        
+        
