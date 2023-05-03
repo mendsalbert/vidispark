@@ -37,7 +37,7 @@ import React, { useState } from "react";
 import axios from "axios";
 function VideoUploader() {
   const [uploadUrl, setUploadUrl] = useState("");
-  const [videoUrl, setVideoUrl] = useState("");
+  const [videoUrl, setVideoUrl] = useState("video_u2stwz9f2euf5hnndshk6xhqx2");
   const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleFileChange = async (event) => {
