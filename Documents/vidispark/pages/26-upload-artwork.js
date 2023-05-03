@@ -74,8 +74,8 @@ function VideoUploader() {
     const videoResponseJson = await videoResponse.json();
     let finished = false;
     while (!finished) {
-      const videoStatusResponse = await fetch(
-        `https://api.thetavideoapi.com/video/${videoResponseJson.id}`,
+      const { data } = await axios.get(
+        `https://api.thetavideoapi.com/video/${videoId}`,
         {
           headers: {
             "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
@@ -83,15 +83,14 @@ function VideoUploader() {
           },
         }
       );
-      const videoStatusResponseJson = await videoStatusResponse.json();
       if (
-        videoStatusResponseJson.body.videos[0].state === "success" &&
-        videoStatusResponseJson.body.videos[0].sub_state === "none"
+        data?.body?.videos?.[0]?.state === "success" &&
+        data?.body?.videos?.[0]?.sub_state === "none"
       ) {
         finished = true;
-        setVideoUrl(videoStatusResponseJson.body.videos[0].playback_uri);
+        setVideoUrl(data.body.videos[0].playback_uri);
       } else {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
       }
     }
   };
