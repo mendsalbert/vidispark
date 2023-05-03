@@ -104,14 +104,14 @@ function VideoUploader() {
           </progress>
         )}
       </div>
-      {videoUrl && (
-        <video
-          controls
-          src={
-            "https://media.thetavideoapi.com/video_iexf1hfxxbntrz5f4grc0tartc/master.m3u8"
-          }
-        />
-      )}
+      {/* {videoUrl && ( */}
+      <video
+        controls
+        src={
+          "https://media.thetavideoapi.com/video_iexf1hfxxbntrz5f4grc0tartc/master.m3u8"
+        }
+      />
+      {/* )} */}
     </div>
   );
 }
