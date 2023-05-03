@@ -99,3 +99,5 @@ function VideoUploader() {
     </div>
   );
 }
+
+export default VideoUploader;
