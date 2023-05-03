@@ -85,6 +85,7 @@ function VideoUploader() {
           },
         }
       );
+      console.log("data", data);
       if (
         data?.body?.videos?.[0]?.state === "success" &&
         data?.body?.videos?.[0]?.sub_state === "none"
