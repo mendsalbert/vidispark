@@ -34,52 +34,71 @@
 // export default UploadArtWork;
 
 import React, { useState } from "react";
-import axios from "axios";
 
 const UploadVideo = () => {
   const [presignedUrl, setPresignedUrl] = useState(null);
   const [videoUrl, setVideoUrl] = useState(null);
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleUpload = async (event) => {
     event.preventDefault();
-    const response = await axios.post(
-      "https://api.thetavideoapi.com/upload",
-      {},
-      {
-        headers: {
-          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-        },
-      }
-    );
-    setPresignedUrl(response.data.body.uploads[0].presigned_url);
-  };
-
-  const handleFileChange = async (event) => {
-    event.preventDefault();
-    const file = event.target.files[0];
-    const response = await axios.put(presignedUrl, file, {
-      headers: {
-        "Content-Type": "application/octet-stream",
-      },
-    });
-    const sourceUploadId = response.request.path.split("/")[3];
-    const response2 = await axios.post(
-      "https://api.thetavideoapi.com/video",
-      {
-        source_upload_id: sourceUploadId,
-        playback_policy: "public",
-      },
-      {
+    try {
+      const response = await fetch("https://api.thetavideoapi.com/upload", {
+        method: "POST",
         headers: {
           "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
           "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({}),
+      });
+      const data = await response.json();
+      setPresignedUrl(data.body.uploads[0].presigned_url);
+    } catch (error) {
+      console.error("Failed to get pre-signed URL:", error);
+    }
+  };
+
+  const handleFileChange = async (event) => {
+    event.preventDefault();
+    const file = event.target.files[0];
+    try {
+      const response = await fetch(presignedUrl, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/octet-stream",
+        },
+        body: file,
+      });
+      if (!response.ok) {
+        throw new Error(`Failed to upload file: ${response.status}`);
       }
-    );
-    const playbackUri = response2.data.body.videos[0].playback_uri;
-    setVideoUrl(playbackUri);
+      const sourceUploadId = response.url.split("/")[3];
+      const response2 = await fetch("https://api.thetavideoapi.com/video", {
+        method: "POST",
+        headers: {
+          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          source_upload_id: sourceUploadId,
+          playback_policy: "public",
+        }),
+      });
+      const data2 = await response2.json();
+      const playbackUri = data2.body.videos[0].playback_uri;
+      setVideoUrl(playbackUri);
+    } catch (error) {
+      console.error("Failed to upload and transcode video:", error);
+    }
+  };
+
+  const handleUploadProgress = (event) => {
+    if (event.lengthComputable) {
+      const progress = Math.round((event.loaded / event.total) * 100);
+      setUploadProgress(progress);
+    }
   };
 
   return (
@@ -89,6 +108,7 @@ const UploadVideo = () => {
         <>
           <p>Upload video file:</p>
           <input type="file" onChange={handleFileChange}></input>
+          {uploadProgress > 0 && <progress value={uploadProgress} max="100" />}
           {videoUrl && (
             <>
               <p>View your video:</p>
