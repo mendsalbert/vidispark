@@ -34,7 +34,6 @@
 // export default UploadArtWork;
 
 import React, { useState } from "react";
-// import axios from "axios";
 import axios from "axios";
 
 function VideoUploader() {
@@ -97,7 +96,6 @@ function VideoUploader() {
       <input type="file" onChange={handleFileChange} />
       <p>file upload</p>
       {videoUrl && <video controls src={videoUrl} />}
-      {uploadUrl}
     </div>
   );
 }
