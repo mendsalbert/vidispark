@@ -32,86 +32,70 @@
 //   );
 // };
 // export default UploadArtWork;
+
 import React, { useState } from "react";
 import axios from "axios";
 
-const UploadVideo = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [playbackURI, setPlaybackURI] = useState(null);
+function VideoUploader() {
+  const [uploadUrl, setUploadUrl] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
 
-  const handleFileSelect = (e) => {
-    setSelectedFile(e.target.files[0]);
-    setPlaybackURI(null);
-  };
-
-  const handleUpload = async () => {
-    const presignedRes = await axios.post(
-      "https://api.thetavideoapi.com/upload",
-      {
-        headers: {
-          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-        },
-      }
-    );
-    const { id, presigned_url } = presignedRes.data.body.uploads[0];
-
-    const uploadRes = await axios.put(presigned_url, selectedFile, {
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    const response = await axios.post("https://api.thetavideoapi.com/upload", {
       headers: {
-        "Content-Type": "application/octet-stream",
-        onUploadProgress: (e) => {
-          setUploadProgress(Math.round((100 * e.loaded) / e.total));
-        },
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
       },
     });
-
-    const transcodeRes = await axios.post(
+    const { presigned_url } = response.data.body.uploads[0];
+    setUploadUrl(presigned_url);
+    await axios.put(presigned_url, file, {
+      headers: { "Content-Type": "application/octet-stream" },
+    });
+    const { id: videoId } = await axios.post(
       "https://api.thetavideoapi.com/video",
       {
-        source_upload_id: id,
+        source_upload_id: response.data.body.uploads[0].id,
         playback_policy: "public",
-        nft_collection: "YOUR_NFT_COLLECTION_ADDRESS",
+        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
       },
       {
         headers: {
           "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
           "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+
           "Content-Type": "application/json",
         },
       }
     );
-
-    let videoRes;
-    do {
-      videoRes = await axios.get(transcodeRes.data.body.videos[0].id, {
-        headers: {
-          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-        },
-      });
-      setUploadProgress(
-        Math.round(
-          100 *
-            (videoRes.data.body.videos[0].progress || 0) *
-            (videoRes.data.body.videos[0].sub_state === "done" ? 0 : 1)
-        )
+    let finished = false;
+    while (!finished) {
+      const { data } = await axios.get(
+        `https://api.thetavideoapi.com/video/${videoId}`,
+        {
+          headers: {
+            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+          },
+        }
       );
-      if (videoRes.data.body.videos[0].state === "success") {
-        setPlaybackURI(videoRes.data.body.videos[0].playback_uri);
+      if (
+        data.body.videos[0].state === "success" &&
+        data.body.videos[0].sub_state === "none"
+      ) {
+        finished = true;
+        setVideoUrl(data.body.videos[0].playback_uri);
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
       }
-      await new Promise((resolve) => setTimeout(resolve, 5000));
-    } while (videoRes.data.body.videos[0].state !== "success");
+    }
   };
 
   return (
     <div>
-      <input type="file" onChange={handleFileSelect} accept="video/*" />
-      <button onClick={handleUpload}>Upload</button>
-      {uploadProgress > 0 && <div>Progress: {uploadProgress}%</div>}
-      {playbackURI && <div>Playback URI: {playbackURI}</div>}
+      <input type="file" onChange={handleFileChange} />
+      {videoUrl && <video controls src={videoUrl} />}
     </div>
   );
-};
-
-export default UploadVideo;
+}
