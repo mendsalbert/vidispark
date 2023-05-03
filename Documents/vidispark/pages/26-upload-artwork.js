@@ -94,6 +94,7 @@ function VideoUploader() {
   return (
     <div>
       <input type="file" onChange={handleFileChange} />
+      <p>file upload</p>
       {videoUrl && <video controls src={videoUrl} />}
     </div>
   );
