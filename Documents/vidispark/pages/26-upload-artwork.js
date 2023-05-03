@@ -91,7 +91,7 @@ function VideoUploader() {
         data?.body?.videos?.[0]?.sub_state === "none"
       ) {
         finished = true;
-        setVideoUrl(data.body.videos[0].playback_uri);
+        setVideoUrl(data.body.videos[0].player_uri);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
       }
