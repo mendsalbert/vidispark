@@ -88,6 +88,7 @@ function VideoUploader() {
       ) {
         finished = true;
         setVideoUrl(data.body.videos[0].id);
+        console.log("video url ", data.body.videos[0].id);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
       }
