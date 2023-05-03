@@ -102,13 +102,13 @@ function VideoUploader() {
     <div>
       <input type="file" onChange={handleFileChange} />
       {videoUrl && <video controls src={videoUrl} />}
-      <iframe
+      {/* <iframe
         src="https://player.thetavideoapi.com/video/video_5v9q854twpr893bz4nktx22xkh"
         border="0"
         width="100%"
         height="100%"
         allowfullscreen
-      />
+      /> */}
     </div>
   );
 }
