@@ -45,8 +45,10 @@ function VideoUploader() {
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
+
     try {
       setUploadStatus("Uploading file...");
+
       const uploadResponse = await fetch(
         "https://api.thetavideoapi.com/upload",
         {
@@ -59,20 +61,27 @@ function VideoUploader() {
           body: JSON.stringify({}),
         }
       );
+
       const uploadResponseJson = await uploadResponse.json();
       const { presigned_url } = uploadResponseJson.body.uploads[0];
       setUploadUrl(presigned_url);
 
-      let uploadedBytes = 0;
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("Content-Type", file.type);
+
+      setUploadProgress(0);
+      setUploadStatus("Uploading file...");
       const uploadRequest = await fetch(presigned_url, {
         method: "PUT",
-        body: file,
+        body: formData,
         headers: {
-          "Content-Length": file.size,
-          "Content-Type": file.type,
+          "Content-Type": "multipart/form-data",
+        },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / progressEvent.total
+          );
+          setUploadProgress(percentCompleted);
         },
       });
 
@@ -97,10 +106,11 @@ function VideoUploader() {
             }),
           }
         );
+
         const videoResponseJson = await videoResponse.json();
         setVideoUrl(videoResponseJson?.body?.videos[0]?.id);
-        let finished = false;
 
+        let finished = false;
         while (!finished) {
           const { data } = await axios.get(
             `https://api.thetavideoapi.com/video/${videoResponseJson?.body?.videos[0]?.id}`,
