@@ -116,7 +116,7 @@ function VideoUploader() {
         allowfullscreen
       /> */}
       <iframe
-        src="https://player.thetavideoapi.com/video/video_2skygheugj2dva56igv83zmpe8"
+        src="https://player.thetavideoapi.com/video/video_8s5wjq513zhxphw3xfmzajvvve"
         border="0"
         width="100%"
         height="100%"
