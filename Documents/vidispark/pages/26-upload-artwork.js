@@ -109,7 +109,7 @@ function VideoUploader() {
       </div>
       {/* {videoUrl && ( */}
       <iframe
-        src={`https://player.thetavideoapi.com/video/${videoUrl}/master.m3u8
+        src={`https://player.thetavideoapi.com/video/video_u2stwz9f2euf5hnndshk6xhqx2
         `}
         border="0"
         width="100%"
