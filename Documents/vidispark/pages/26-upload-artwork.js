@@ -34,10 +34,11 @@
 // export default UploadArtWork;
 
 import React, { useState } from "react";
-import axios from "axios";
+
 function VideoUploader() {
   const [uploadUrl, setUploadUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
+  const [uploadProgress, setUploadProgress] = useState(0);
 
   const handleFileChange = async (event) => {
     const file = event.target.files[0];
@@ -53,11 +54,18 @@ function VideoUploader() {
     const uploadResponseJson = await uploadResponse.json();
     const { presigned_url } = uploadResponseJson.body.uploads[0];
     setUploadUrl(presigned_url);
-    await fetch(presigned_url, {
-      method: "PUT",
-      headers: { "Content-Type": "application/octet-stream" },
-      body: file,
+
+    // Create new XMLHttpRequest
+    const xhr = new XMLHttpRequest();
+    xhr.upload.addEventListener("progress", (event) => {
+      console.log(event.loaded, event.total);
+      setUploadProgress((event.loaded / event.total) * 100);
     });
+
+    // Send PUT request to presigned URL
+    xhr.open("PUT", presigned_url);
+    xhr.send(file);
+
     const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
       method: "POST",
       headers: {
@@ -100,6 +108,13 @@ function VideoUploader() {
   return (
     <div>
       <input type="file" onChange={handleFileChange} />
+      <div>
+        {uploadProgress > 0 && (
+          <progress value={uploadProgress} max="100">
+            {uploadProgress}%
+          </progress>
+        )}
+      </div>
       {videoUrl && <video controls src={videoUrl} />}
     </div>
   );
