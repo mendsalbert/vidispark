@@ -76,7 +76,7 @@ function VideoUploader() {
 
     while (!finished) {
       const { data } = await axios.get(
-        `https://api.thetavideoapi.com/video/${videoResponseJson.body.videos[0].id}`,
+        `https://api.thetavideoapi.com/video/${videoResponseJson?.body?.videos[0]?.id}`,
         {
           headers: {
             "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
