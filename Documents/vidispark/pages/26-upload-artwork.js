@@ -87,7 +87,7 @@ const UploadVideo = () => {
         }),
       });
       const data2 = await response2.json();
-      const playbackUri = data2.body.videos[0].playback_uri;
+      const playbackUri = data2?.body?.videos[0]?.playback_uri;
       setVideoUrl(playbackUri);
     } catch (error) {
       console.error("Failed to upload and transcode video:", error);
