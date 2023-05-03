@@ -72,27 +72,29 @@ function VideoUploader() {
       }),
     });
     const videoResponseJson = await videoResponse.json();
-    let finished = false;
-    while (!finished) {
-      const { data } = await axios.get(
-        `https://api.thetavideoapi.com/video/${videoId}`,
-        {
-          headers: {
-            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          },
-        }
-      );
-      if (
-        data?.body?.videos?.[0]?.state === "success" &&
-        data?.body?.videos?.[0]?.sub_state === "none"
-      ) {
-        finished = true;
-        setVideoUrl(data.body.videos[0].playback_uri);
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
-      }
-    }
+    console.log(videoResponseJson);
+    // let finished = false;
+
+    // while (!finished) {
+    //   const { data } = await axios.get(
+    //     `https://api.thetavideoapi.com/video/${videoId}`,
+    //     {
+    //       headers: {
+    //         "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+    //         "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+    //       },
+    //     }
+    //   );
+    //   if (
+    //     data?.body?.videos?.[0]?.state === "success" &&
+    //     data?.body?.videos?.[0]?.sub_state === "none"
+    //   ) {
+    //     finished = true;
+    //     setVideoUrl(data.body.videos[0].playback_uri);
+    //   } else {
+    //     await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
+    //   }
+    // }
   };
 
   return (
