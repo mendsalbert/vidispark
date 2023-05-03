@@ -117,14 +117,11 @@
 // export default VideoUploader;
 
 import React, { useState } from "react";
+import Webcam from "react-webcam";
 import axios from "axios";
 
 function VideoUploader() {
-  const [uploadUrl, setUploadUrl] = useState("");
-  const [videoUrl, setVideoUrl] = useState("");
   const [streamUrl, setStreamUrl] = useState("");
-  const [mediaStream, setMediaStream] = useState(null);
-  const [videoElement, setVideoElement] = useState(null);
 
   // create a new live stream
   const createStream = async () => {
@@ -153,79 +150,86 @@ function VideoUploader() {
     }
   };
 
-  // start the live stream with the user's web cam
-  const startWebCamStream = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: true,
-        video: true,
-      });
-      setMediaStream(stream);
+  // start streaming with the webcam
+  const startStreaming = async () => {
+    await createStream(); // create a new live stream before streaming with the webcam
 
-      const formData = new FormData();
-      formData.append("file", stream);
-      const headers = { "Content-Type": "multipart/form-data" };
-      const response = await axios.post(uploadUrl, formData, { headers });
+    const mediaDevices = navigator.mediaDevices || navigator.webkitMediaDevices;
+    const stream = await mediaDevices.getUserMedia({
+      audio: true,
+      video: true,
+    });
 
-      const videoResponse = await axios.post(
-        "https://api.thetavideoapi.com/video",
-        {
-          source_upload_id: response.data.uploads[0].id,
-          playback_policy: "public",
-          nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
-        },
-        {
-          headers: {
-            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-            "Content-Type": "application/json",
-          },
-        }
+    const videoElement = document.createElement("video");
+    videoElement.setAttribute("playsinline", "");
+    videoElement.srcObject = stream;
+
+    const attachMediaStream = (element, stream) => {
+      if ("srcObject" in element) {
+        element.srcObject = stream;
+      } else {
+        element.src = window.URL.createObjectURL(stream);
+      }
+    };
+
+    const attachMediaPromise = new Promise((resolve) => {
+      videoElement.onloadedmetadata = () => {
+        attachMediaStream(videoElement, stream);
+        resolve();
+      };
+    });
+
+    await attachMediaPromise;
+
+    const canvasElement = document.createElement("canvas");
+    canvasElement.width = 640;
+    canvasElement.height = 360;
+
+    const fps = 30;
+    const intervalMillis = 1000 / fps;
+
+    const captureFrame = () => {
+      const context = canvasElement.getContext("2d");
+      context.drawImage(
+        videoElement,
+        0,
+        0,
+        canvasElement.width,
+        canvasElement.height
       );
-      console.log(videoResponse.data);
-      setVideoUrl(videoResponse.data.body.videos[0].player_uri);
-    } catch (error) {
-      console.error("Failed to start web cam stream", error);
-    }
+      const dataUrl = canvasElement.toDataURL("image/jpeg", 0.9);
+      axios.post(`${streamUrl}/publish`, dataUrl, {
+        headers: {
+          "Content-Type": "image/jpeg",
+        },
+      });
+      setTimeout(captureFrame, intervalMillis);
+    };
+
+    captureFrame();
   };
 
-  // handle the file upload
-  const handleFileChange = async (event) => {
-    await createStream(); // create a new live stream before uploading the video
+  return (
+    <div>
+      {!streamUrl && (
+        <button onClick={startStreaming}>Start streaming with webcam</button>
+      )}
+      {streamUrl && (
+        <div>
+          <div>Live stream URL: {streamUrl}</div>
+          <Webcam audio={true} />
+          <iframe
+            src={streamUrl}
+            width="640"
+            height="360"
+            frameborder="0"
+            scrolling="no"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
+    </div>
+  );
+}
 
-    const file = event.target.files[0];
-    const uploadResponse = await fetch(uploadUrl, {
-      method: "PUT",
-      headers: { "Content-Type": "application/octet-stream" },
-      body: file,
-    });
-    const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-      },
-      body: JSON.stringify({
-        source_upload_id: uploadResponse.body.uploads[0].id,
-        playback_policy: "public",
-        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
-      }),
-    });
-    const videoResponseJson = await videoResponse.json();
-    console.log(videoResponseJson.body.videos);
-    let finished = false;
-
-    while (!finished) {
-      const { data } = await axios.get(
-        `https://api.thetavideoapi.com/video/${videoResponseJson.body.videos[0].id}`, { headers: { "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7", "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5", }, } ); console.log("data", data); if ( data?.body?.videos?.[0]?.state === "success" && data?.body?.videos?.[0]?.sub_state === "none" ) { finished = true; setVideoUrl(data.body.videos[0].player_uri); } else { await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again } } };
-      }
-      const handleVideoRef = (ref) => { if (ref) { setVideoElement(ref); ref.srcObject = mediaStream; ref.play(); } };
-        
-     return ( <div> <button onClick={startWebCamStream}>Start Live Stream</button> {streamUrl && ( <div> <div>Live stream URL: {streamUrl}</div> <iframe src={streamUrl} width="640" height="360" frameborder="0" scrolling="no" allowfullscreen ></iframe> </div> )} {videoUrl && ( <div> <div>Uploaded video URL: {videoUrl}</div> <video controls src={videoUrl} /> </div> )} {mediaStream && ( <video ref={handleVideoRef} width="640" height="360" muted /> )} </div> );
-    
-    }
-        
-        export default VideoUploader;
-        
-        
+export default VideoUploader;
