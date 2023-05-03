@@ -64,7 +64,6 @@ function VideoUploader() {
         headers: {
           "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
           "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-
           "Content-Type": "application/json",
         },
       }
