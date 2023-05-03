@@ -72,7 +72,7 @@ function VideoUploader() {
       }),
     });
     const videoResponseJson = await videoResponse.json();
-    console.log(videoResponseJson);
+    console.log(videoResponseJson.body.video[0].id);
     let finished = false;
 
     while (!finished) {
