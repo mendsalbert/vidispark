@@ -35,97 +35,72 @@
 
 import React, { useState } from "react";
 import axios from "axios";
-function VideoUploader() {
-  const [uploadUrl, setUploadUrl] = useState("");
-  const [videoUrl, setVideoUrl] = useState("video_u2stwz9f2euf5hnndshk6xhqx2");
-  const [uploadProgress, setUploadProgress] = useState(0);
+
+const UploadVideo = () => {
+  const [presignedUrl, setPresignedUrl] = useState(null);
+  const [videoUrl, setVideoUrl] = useState(null);
+
+  const handleUpload = async (event) => {
+    event.preventDefault();
+    const response = await axios.post(
+      "https://api.thetavideoapi.com/upload",
+      {},
+      {
+        headers: {
+          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+        },
+      }
+    );
+    setPresignedUrl(response.data.body.uploads[0].presigned_url);
+  };
 
   const handleFileChange = async (event) => {
+    event.preventDefault();
     const file = event.target.files[0];
-    const uploadResponse = await fetch("https://api.thetavideoapi.com/upload", {
-      method: "POST",
+    const response = await axios.put(presignedUrl, file, {
       headers: {
-        "Content-Type": "application/json",
-        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+        "Content-Type": "application/octet-stream",
       },
-      body: JSON.stringify({}),
     });
-    const uploadResponseJson = await uploadResponse.json();
-    const { presigned_url } = uploadResponseJson.body.uploads[0];
-    setUploadUrl(presigned_url);
-
-    const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-      },
-      body: JSON.stringify({
-        source_upload_id: uploadResponseJson.body.uploads[0].id,
+    const sourceUploadId = response.request.path.split("/")[3];
+    const response2 = await axios.post(
+      "https://api.thetavideoapi.com/video",
+      {
+        source_upload_id: sourceUploadId,
         playback_policy: "public",
-        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
-      }),
-    });
-    const videoResponseJson = await videoResponse.json();
-    console.log(videoResponseJson?.body?.videos);
-    setVideoUrl(videoResponseJson?.body?.videos[0].id);
-    console.log("video url ", videoResponseJson?.body?.videos[0]?.id);
-    let finished = false;
-
-    while (!finished) {
-      const { data } = await axios.get(
-        `https://api.thetavideoapi.com/video/${videoResponseJson?.body?.videos[0]?.id}`,
-        {
-          headers: {
-            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          },
-        }
-      );
-      if (
-        data?.body?.videos?.[0]?.state === "success" &&
-        data?.body?.videos?.[0]?.sub_state === "none"
-      ) {
-        finished = true;
-        setVideoUrl(data.body.videos[0].id);
-        console.log("video url ", data.body.videos[0].id);
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
+      },
+      {
+        headers: {
+          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+          "Content-Type": "application/json",
+        },
       }
-    }
+    );
+    const playbackUri = response2.data.body.videos[0].playback_uri;
+    setVideoUrl(playbackUri);
   };
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <div>
-        {uploadProgress > 0 && (
-          <progress value={uploadProgress} max="100">
-            {uploadProgress}%
-          </progress>
-        )}
-      </div>
-      {/* {videoUrl && ( */}
-      {/* <iframe
-        src={`https://player.thetavideoapi.com/video/video_u2stwz9f2euf5hnndshk6xhqx2`}
-        border="0"
-        width="100%"
-        height="100%"
-        allowfullscreen
-      /> */}
-      <iframe
-        src="https://player.thetavideoapi.com/video/video_8s5wjq513zhxphw3xfmzajvvve"
-        border="0"
-        width="100%"
-        height="100%"
-        allowfullscreen
-      />
-
-      {/* )} */}
-    </div>
+    <>
+      {!presignedUrl && <button onClick={handleUpload}>Upload video</button>}
+      {presignedUrl && (
+        <>
+          <p>Upload video file:</p>
+          <input type="file" onChange={handleFileChange}></input>
+          {videoUrl && (
+            <>
+              <p>View your video:</p>
+              <a href={videoUrl} target="_blank" rel="noreferrer">
+                {videoUrl}
+              </a>
+            </>
+          )}
+        </>
+      )}
+    </>
   );
-}
+};
 
-export default VideoUploader;
+export default UploadVideo;
