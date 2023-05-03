@@ -34,93 +34,75 @@
 // export default UploadArtWork;
 
 import React, { useState } from "react";
-
-const UploadVideo = () => {
-  const [presignedUrl, setPresignedUrl] = useState(null);
-  const [videoUrl, setVideoUrl] = useState(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
-
-  const handleUpload = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await fetch("https://api.thetavideoapi.com/upload", {
-        method: "POST",
-        headers: {
-          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({}),
-      });
-      const data = await response.json();
-      setPresignedUrl(data.body.uploads[0].presigned_url);
-    } catch (error) {
-      console.error("Failed to get pre-signed URL:", error);
-    }
-  };
+import axios from "axios";
+function VideoUploader() {
+  const [uploadUrl, setUploadUrl] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
 
   const handleFileChange = async (event) => {
-    event.preventDefault();
     const file = event.target.files[0];
-    try {
-      const response = await fetch(presignedUrl, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/octet-stream",
-        },
-        body: file,
-      });
-      if (!response.ok) {
-        throw new Error(`Failed to upload file: ${response.status}`);
-      }
-      const sourceUploadId = response.url.split("/")[3];
-      const response2 = await fetch("https://api.thetavideoapi.com/video", {
-        method: "POST",
-        headers: {
-          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          source_upload_id: sourceUploadId,
-          playback_policy: "public",
-        }),
-      });
-      const data2 = await response2.json();
-      const playbackUri = data2?.body?.videos[0]?.playback_uri;
-      setVideoUrl(playbackUri);
-    } catch (error) {
-      console.error("Failed to upload and transcode video:", error);
-    }
-  };
+    const uploadResponse = await fetch("https://api.thetavideoapi.com/upload", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+      },
+      body: JSON.stringify({}),
+    });
+    const uploadResponseJson = await uploadResponse.json();
+    const { presigned_url } = uploadResponseJson.body.uploads[0];
+    setUploadUrl(presigned_url);
+    await fetch(presigned_url, {
+      method: "PUT",
+      headers: { "Content-Type": "application/octet-stream" },
+      body: file,
+    });
+    const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+      },
+      body: JSON.stringify({
+        source_upload_id: uploadResponseJson.body.uploads[0].id,
+        playback_policy: "public",
+        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
+      }),
+    });
+    const videoResponseJson = await videoResponse.json();
+    console.log(videoResponseJson.body.videos);
+    let finished = false;
 
-  const handleUploadProgress = (event) => {
-    if (event.lengthComputable) {
-      const progress = Math.round((event.loaded / event.total) * 100);
-      setUploadProgress(progress);
+    while (!finished) {
+      const { data } = await axios.get(
+        `https://api.thetavideoapi.com/video/${videoResponseJson.body.videos[0].id}`,
+        {
+          headers: {
+            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+          },
+        }
+      );
+      if (
+        data?.body?.videos?.[0]?.state === "success" &&
+        data?.body?.videos?.[0]?.sub_state === "none"
+      ) {
+        finished = true;
+        setVideoUrl(data.body.videos[0].playback_uri);
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
+      }
     }
   };
 
   return (
-    <>
-      {!presignedUrl && <button onClick={handleUpload}>Upload video</button>}
-      {presignedUrl && (
-        <>
-          <p>Upload video file:</p>
-          <input type="file" onChange={handleFileChange}></input>
-          {uploadProgress > 0 && <progress value={uploadProgress} max="100" />}
-          {videoUrl && (
-            <>
-              <p>View your video:</p>
-              <a href={videoUrl} target="_blank" rel="noreferrer">
-                {videoUrl}
-              </a>
-            </>
-          )}
-        </>
-      )}
-    </>
+    <div>
+      <input type="file" onChange={handleFileChange} />
+      {videoUrl && <video controls src={videoUrl} />}
+    </div>
   );
-};
+}
 
-export default UploadVideo;
+export default VideoUploader;
