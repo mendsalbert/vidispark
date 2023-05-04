@@ -12,7 +12,10 @@ const UploadArtWork = () => {
   console.log(signer);
   console.log(db);
   return (
+
+
     <>
+    <but
       {/* <div>
         {isConnected ? (
           <div>
