@@ -118,24 +118,16 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 
-function VideoUploader() {
+function ThetaLiveStreaming() {
   const [streamUrl, setStreamUrl] = useState("");
   const [isStreaming, setIsStreaming] = useState(false);
   const videoRef = useRef(null);
   const streamRef = useRef(null);
 
-  // start the live stream
-  const startStreaming = async () => {
-    const stream = await navigator.mediaDevices.getUserMedia({
-      audio: true,
-      video: true,
-    });
-    streamRef.current = stream;
-    videoRef.current.srcObject = stream;
-    videoRef.current.play();
-
+  const startStream = async () => {
+    setIsStreaming(true);
     const streamData = new FormData();
-    streamData.append("name", "My New Livestream");
+    streamData.append("name", "My Live Stream");
     streamData.append("resolutions", [
       "160p",
       "240p",
@@ -158,34 +150,69 @@ function VideoUploader() {
       }
     );
 
-    const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
-    setStreamUrl(streamUrl);
-    setIsStreaming(true);
+    const streamKey = response.data.body.stream_key;
+    const streamServer = response.data.body.stream_server;
+
+    setStreamUrl(`${streamServer}/${streamKey}`);
+
+    const stream = await navigator.mediaDevices.getUserMedia({
+      audio: true,
+      video: true,
+    });
+
+    streamRef.current = stream;
+    videoRef.current.srcObject = stream;
+    videoRef.current.play();
+
+    const publishStreamUrl = `rtmp://ingestor.thetavideoapi.com/app/${streamKey}`;
+
+    const ws = new WebSocket("ws://ingestor.thetavideoapi.com/app");
+
+    ws.addEventListener("open", () => {
+      console.log("Connection established");
+      ws.send(`{"command":"publish","streamName":"${streamKey}"}`);
+    });
+
+    ws.addEventListener("message", (event) => {
+      console.log(`[message] Data received from server: ${event.data}`);
+      const message = JSON.parse(event.data);
+      if (message.status == "publishing") {
+        console.log("Stream is publishing");
+      }
+    });
+
+    const wsHeartbeatInterval = setInterval(() => {
+      ws.send('{"command":"ping"}');
+    }, 5000);
+
+    window.addEventListener("beforeunload", () => {
+      clearInterval(wsHeartbeatInterval);
+      ws.close();
+      streamRef.current.getTracks().forEach((track) => track.stop());
+    });
   };
 
-  // stop the live stream
-  const stopStreaming = async () => {
-    streamRef.current.getTracks().forEach((track) => track.stop());
+  const stopStream = () => {
     setIsStreaming(false);
+    streamRef.current.getTracks().forEach((track) => track.stop());
   };
 
   return (
     <div>
-      {!isStreaming && (
-        <button onClick={startStreaming}>Start Live Stream</button>
-      )}
-      {isStreaming && <button onClick={stopStreaming}>Stop Live Stream</button>}
+      {!isStreaming && <button onClick={startStream}>Start Live Stream</button>}
+      {isStreaming && <button onClick={stopStream}>Stop Live Stream</button>}
       {streamUrl && (
         <div>
-          <div>Live stream URL: {streamUrl}</div>
-          <video width="640" height="360" controls>
-            <source src={streamUrl} type="application/x-mpegURL" />
-          </video>
+          <div>
+            <a href={streamUrl} target="_blank">
+              Playback Live Stream
+            </a>
+          </div>
+          <video ref={videoRef} width="640" height="480" controls></video>
         </div>
       )}
-      <video ref={videoRef} width="640" height="360" />
     </div>
   );
 }
 
-export default VideoUploader;
+export default ThetaLiveStreaming;
