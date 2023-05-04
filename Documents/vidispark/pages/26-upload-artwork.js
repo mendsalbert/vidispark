@@ -5,6 +5,12 @@ import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Uplo
 import Layouts from "../src/layouts/Layouts";
 import { useSigner } from "wagmi";
 import { Database } from "@tableland/sdk";
+import WeaveDB from "weavedb-client";
+
+const db = new WeaveDB({
+  contractTxId: 0x6d8ee381e727bd18eda7b3661621a123058ce17d,
+  rpc: "http://xxx.yyy.zzz.aaa:8080", // gRPC node URL
+});
 
 const UploadArtWork = () => {
   const signer = useSigner();
