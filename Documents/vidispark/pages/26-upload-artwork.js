@@ -3,7 +3,6 @@ import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/Prof
 import ProfilePurchase from "../src/components/Profile Page/Profile Upload/ProfilePurchase";
 import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
 import Layouts from "../src/layouts/Layouts";
-import { useAccount, useSigner } from "wagmi";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 const UploadArtWork = () => {
