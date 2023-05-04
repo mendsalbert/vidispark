@@ -143,6 +143,7 @@ function VideoUploader() {
         }
       );
 
+      console.log(response);
       const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
       setStreamUrl(streamUrl);
     } catch (error) {
