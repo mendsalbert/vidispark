@@ -158,7 +158,7 @@ function VideoUploader() {
     );
 
     console.log(response);
-    const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
+    const streamUrl = `${response.data.body.backup_stream_server}/${response.data.body.backup_stream_key}`;
     console.log("Live stream URL:", streamUrl);
   };
 
