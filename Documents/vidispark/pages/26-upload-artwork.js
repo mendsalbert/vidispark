@@ -7,9 +7,9 @@ import { useSigner } from "wagmi";
 import { Database } from "@tableland/sdk";
 
 const UploadArtWork = () => {
-  const { data: signer } = useSigner();
+  const signer = useSigner();
   const db = new Database({ signer });
-  console.log(data);
+  console.log(signer);
   console.log(db);
   return (
     <>
