@@ -120,87 +120,61 @@ import axios from "axios";
 
 function VideoUploader() {
   const [streamUrl, setStreamUrl] = useState("");
-  const [isRecording, setIsRecording] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
   const videoRef = useRef(null);
-  const mediaRecorderRef = useRef(null);
+  const streamRef = useRef(null);
 
-  // start recording the video stream
-  const startRecording = async () => {
+  // start the live stream
+  const startStreaming = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: true,
       video: true,
     });
+    streamRef.current = stream;
     videoRef.current.srcObject = stream;
     videoRef.current.play();
-    mediaRecorderRef.current = new MediaRecorder(stream, {
-      mimeType: "video/webm",
-    });
-    mediaRecorderRef.current.start();
-    setIsRecording(true);
-  };
 
-  // stop recording and upload the video to Theta Video API for live streaming
-  const stopRecording = async () => {
-    mediaRecorderRef.current.stop();
-    setIsRecording(false);
-    const videoBlob = new Blob(mediaRecorderRef.current.chunks, {
-      type: "video/webm",
-    });
-    const videoUrl = URL.createObjectURL(videoBlob);
-    const uploadUrl = await createUploadUrl();
-    const uploadResponse = await fetch(uploadUrl, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "video/webm",
-        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-      },
-      body: videoBlob,
-    });
-    const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-      },
-      body: JSON.stringify({
-        source_upload_id: uploadResponse.body.uploads[0].id,
-        playback_policy: "public",
-        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
-      }),
-    });
-    const videoResponseJson = await videoResponse.json();
-    const streamUrl = `${videoResponseJson.body.videos[0].hls_uri}.m3u8`;
-    setStreamUrl(streamUrl);
-  };
+    const streamData = new FormData();
+    streamData.append("name", "My New Livestream");
+    streamData.append("resolutions", [
+      "160p",
+      "240p",
+      "360p",
+      "720p",
+      "source",
+    ]);
+    streamData.append("source_resolution", "720p");
+    streamData.append("fps", "60");
 
-  // create a new upload URL for the video
-  const createUploadUrl = async () => {
     const response = await axios.post(
-      "https://api.thetavideoapi.com/upload",
-      {
-        size: 100000, // replace with actual video size
-      },
+      "https://api.thetavideoapi.com/stream",
+      streamData,
       {
         headers: {
           "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
           "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
         },
       }
     );
-    return response.data.body.uploads[0].url;
+
+    const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
+    setStreamUrl(streamUrl);
+    setIsStreaming(true);
+  };
+
+  // stop the live stream
+  const stopStreaming = async () => {
+    streamRef.current.getTracks().forEach((track) => track.stop());
+    setIsStreaming(false);
   };
 
   return (
     <div>
-      <button disabled={isRecording} onClick={startRecording}>
-        Start Recording
-      </button>
-      <button disabled={!isRecording} onClick={stopRecording}>
-        Stop Recording and Publish Live Stream
-      </button>
+      {!isStreaming && (
+        <button onClick={startStreaming}>Start Live Stream</button>
+      )}
+      {isStreaming && <button onClick={stopStreaming}>Stop Live Stream</button>}
       {streamUrl && (
         <div>
           <div>Live stream URL: {streamUrl}</div>
