@@ -117,13 +117,12 @@
 // export default VideoUploader;
 
 import React, { useState } from "react";
-import Webcam from "react-webcam";
 import axios from "axios";
 
-function VideoUploader() {
+const VideoUploader = () => {
   const [streamUrl, setStreamUrl] = useState("");
+  const [live, setLive] = useState(false);
 
-  // create a new live stream
   const createStream = async () => {
     try {
       const response = await axios.post(
@@ -143,7 +142,6 @@ function VideoUploader() {
         }
       );
 
-      console.log(response);
       const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
       setStreamUrl(streamUrl);
     } catch (error) {
@@ -151,86 +149,46 @@ function VideoUploader() {
     }
   };
 
-  // start streaming with the webcam
   const startStreaming = async () => {
-    await createStream(); // create a new live stream before streaming with the webcam
-
-    const mediaDevices = navigator.mediaDevices || navigator.webkitMediaDevices;
-    const stream = await mediaDevices.getUserMedia({
+    await createStream();
+    const constraints = {
       audio: true,
       video: true,
-    });
-
-    const videoElement = document.createElement("video");
-    videoElement.setAttribute("playsinline", "");
-    videoElement.srcObject = stream;
-
-    const attachMediaStream = (element, stream) => {
-      if ("srcObject" in element) {
-        element.srcObject = stream;
-      } else {
-        element.src = window.URL.createObjectURL(stream);
-      }
     };
 
-    const attachMediaPromise = new Promise((resolve) => {
-      videoElement.onloadedmetadata = () => {
-        attachMediaStream(videoElement, stream);
-        resolve();
-      };
-    });
-
-    await attachMediaPromise;
-
-    const canvasElement = document.createElement("canvas");
-    canvasElement.width = 640;
-    canvasElement.height = 360;
-
-    const fps = 30;
-    const intervalMillis = 1000 / fps;
-
-    const captureFrame = () => {
-      const context = canvasElement.getContext("2d");
-      context.drawImage(
-        videoElement,
-        0,
-        0,
-        canvasElement.width,
-        canvasElement.height
-      );
-      const dataUrl = canvasElement.toDataURL("image/jpeg", 0.9);
-      axios.post(`${streamUrl}/publish`, dataUrl, {
-        headers: {
-          "Content-Type": "image/jpeg",
-        },
-      });
-      setTimeout(captureFrame, intervalMillis);
-    };
-
-    captureFrame();
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      const videoElement = document.getElementById("video-player");
+      videoElement.srcObject = stream;
+      setLive(true);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
     <div>
-      {!streamUrl && (
-        <button onClick={startStreaming}>Start streaming with webcam</button>
-      )}
-      {streamUrl && (
+      {live ? (
         <div>
           <div>Live stream URL: {streamUrl}</div>
-          <Webcam audio={true} />
           <iframe
             src={streamUrl}
             width="640"
             height="360"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            allowfullscreen
+            allowFullScreen
+            title="Live Stream"
           ></iframe>
+          <button onClick={() => setLive(false)}>Stop Live Stream</button>
+        </div>
+      ) : (
+        <div>
+          <button onClick={() => startStreaming()}>Start Live Stream</button>
         </div>
       )}
     </div>
   );
-}
+};
 
 export default VideoUploader;
