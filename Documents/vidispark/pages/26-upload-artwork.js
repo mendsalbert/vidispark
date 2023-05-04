@@ -12,6 +12,7 @@ const db = new WeaveDB({
   rpc: "http://xxx.yyy.zzz.aaa:8080", // gRPC node URL
 });
 
+console.log(db);
 const UploadArtWork = () => {
   const signer = useSigner();
   const db = new Database({ signer });
