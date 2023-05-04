@@ -44,16 +44,7 @@ const Nav = () => {
               <a className="menu-link">Spotlight</a>
             </Link>{" "}
           </li>
-          <li className="menu-item">
-            <ConnectButton
-              className="mx-8"
-              accountStatus={"full"}
-              showBalance={{
-                smallScreen: true,
-                largeScreen: true,
-              }}
-            />
-          </li>
+
           <li className="menu-item menu-item-has-children">
             <a className="menu-link" href="#">
               Product
