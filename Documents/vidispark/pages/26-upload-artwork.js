@@ -3,18 +3,17 @@ import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/Prof
 import ProfilePurchase from "../src/components/Profile Page/Profile Upload/ProfilePurchase";
 import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
 import Layouts from "../src/layouts/Layouts";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
+import { useSigner } from "wagmi";
+import { Database } from "@tableland/sdk";
+
 const UploadArtWork = () => {
-  const signer = useSigner();
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  });
-  const { disconnect } = useDisconnect();
+  const { data: signer } = useSigner();
+  const db = new Database({ signer });
+
+  console.log(db);
   return (
     <>
-      <div>
+      {/* <div>
         {isConnected ? (
           <div>
             Connected to {address}
@@ -23,7 +22,7 @@ const UploadArtWork = () => {
         ) : (
           <button onClick={() => connect()}>Connect Wallet</button>
         )}
-      </div>
+      </div> */}
     </>
     // <Layouts>
     //   <div className="primary-content-area container content-padding grid-left-sidebar">
