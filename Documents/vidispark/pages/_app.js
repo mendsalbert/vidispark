@@ -5,6 +5,8 @@ import store from "../src/redux/store";
 import { countdown } from "../src/utils";
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
+import merge from "lodash.merge";
+
 import {
   getDefaultWallets,
   RainbowKitProvider,
