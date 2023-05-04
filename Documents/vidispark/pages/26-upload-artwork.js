@@ -11,11 +11,23 @@ const UploadArtWork = () => {
   const db = new Database({ signer });
   console.log(signer);
   console.log(db);
+
+  const onInsertDummyData = async () => {
+    const info = await db
+      .prepare("INSERT INTO users (name, age) VALUES (?1, ?2)")
+      .bind("John", 42)
+      .run();
+    console.log(info);
+  };
   return (
-
-
     <>
-    <but
+      <button
+        onClick={() => {
+          onInsertDummyData();
+        }}
+      >
+        Insert dummy data
+      </button>
       {/* <div>
         {isConnected ? (
           <div>
