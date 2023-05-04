@@ -118,12 +118,14 @@
 
 import React, { useRef } from "react";
 import axios from "axios";
+import RecordRTC from "recordrtc";
 
 function VideoUploader() {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
+  const recorderRef = useRef(null);
+  const streamUrlRef = useRef(null);
 
-  // start the live stream
   const startStream = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: true,
@@ -133,93 +135,90 @@ function VideoUploader() {
     videoRef.current.srcObject = stream;
     videoRef.current.play();
 
-    // create a new livestream
-    const streamResponse = await axios.post(
+    const data = new FormData();
+    data.append("name", "My New Livestream");
+    data.append("resolutions", ["160p", "240p", "360p", "720p", "source"]);
+    data.append("source_resolution", "720p");
+    data.append("fps", "60");
+
+    const response = await axios.post(
       "https://api.thetavideoapi.com/stream",
-      {
-        name: "My New Livestream",
-        resolutions: ["160p", "240p", "360p", "720p", "source"],
-        source_resolution: "720p",
-        fps: 30,
-      },
+      data,
       {
         headers: {
           "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
           "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
         },
       }
     );
-    console.log(streamResponse);
-    // get the RTMP URL
-    const streamUrl =
-      streamResponse.data.body.backup_stream_server +
-      "/" +
-      streamResponse.data.body.backup_stream_key;
+
+    const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
     console.log("Live stream URL:", streamUrl);
+    streamUrlRef.current = streamUrl;
 
-    // create a media source
-    const mediaSource = new MediaSource();
-    videoRef.current.src = URL.createObjectURL(mediaSource);
+    const recorder = RecordRTC(stream, {
+      type: "video",
+      mimeType: "video/webm",
+      bitsPerSecond: 2500000,
+    });
+    recorderRef.current = recorder;
+    recorder.startRecording();
+    recorder.stream = stream;
+    recorder.streamer = new MediaStreamRecorder(stream, {
+      mimeType: "video/webm",
+    });
+    recorder.streamer.ondataavailable = function (blob) {
+      const formData = new FormData();
+      formData.append("video", blob, "video.webm");
+      formData.append("playback_policy", "public");
 
-    // on media source open, add a new source buffer and set the source buffer update end callback
-    mediaSource.addEventListener("sourceopen", async () => {
-      const sourceBuffer = mediaSource.addSourceBuffer(
-        'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
-      );
-
-      // handle the source buffer update end
-      sourceBuffer.addEventListener("updateend", async () => {
-        if (!videoRef.current.ended) {
-          try {
-            // check the buffer length and update the source buffer if it's less than 60 seconds
-            if (
-              sourceBuffer.buffered.length &&
-              sourceBuffer.buffered.end(0) - videoRef.current.currentTime < 60
-            ) {
-              console.log(
-                `Buffer length: ${
-                  sourceBuffer.buffered.end(0) - videoRef.current.currentTime
-                }`
-              );
-              const { data } = await axios.get(
-                `${streamUrl}.mp4?=time=${
-                  sourceBuffer.buffered.end(0) - 1
-                }&t=${Date.now()}`,
-                {
-                  responseType: "arraybuffer",
-                }
-              );
-
-              if (data.byteLength > 0) {
-                const buffer = new Uint8Array(data);
-                sourceBuffer.appendBuffer(buffer);
-              } else {
-                console.log("No data received from the server");
-              }
-            }
-          } catch (error) {
-            console.error("Error fetching stream data:", error);
-          }
-        }
-      });
-
-      // request the initial data segment and append it to the source buffer
-      try {
-        const { data } = await axios.get(`${streamUrl}.mp4?t=${Date.now()}`, {
-          responseType: "arraybuffer",
+      axios
+        .post(streamUrl, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+          console.log(response.data.body.status);
+        })
+        .catch((error) => {
+          console.error(error);
         });
-        sourceBuffer.appendBuffer(data);
-      } catch (error) {
-        console.error("Error fetching stream data:", error);
-      }
+    };
+    recorder.streamer.start(1000 * 10); // every 10 seconds
+  };
+
+  const stopStream = async () => {
+    recorderRef.current.stopRecording(function () {
+      const blob = this.getBlob();
+      const formData = new FormData();
+      formData.append("video", blob, "video.webm");
+      formData.append("playback_policy", "public");
+
+      axios
+        .post(streamUrlRef.current, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((response) => {
+          console.log(response.data.body.status);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
+    streamRef.current.getTracks().forEach((track) => {
+      track.stop();
     });
   };
 
   return (
     <div>
       <button onClick={startStream}>Start Live Stream</button>
-      <video ref={videoRef} width="640" height="360" controls></video>
+      <button onClick={stopStream}>Stop Live Stream</button>
+      <video ref={videoRef} width="640" height="360" />
     </div>
   );
 }
