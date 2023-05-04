@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { useAccount } from "wagmi";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 const Nav = () => {
   return (
     <nav className="border-bottom sticky-header">
@@ -42,6 +44,14 @@ const Nav = () => {
               <a className="menu-link">Spotlight</a>
             </Link>{" "}
           </li>
+          <ConnectButton
+            className="mx-8"
+            accountStatus={"full"}
+            showBalance={{
+              smallScreen: true,
+              largeScreen: true,
+            }}
+          />
           <li className="menu-item menu-item-has-children">
             <a className="menu-link" href="#">
               Product
