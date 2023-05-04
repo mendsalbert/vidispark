@@ -13,8 +13,6 @@ const UploadArtWork = () => {
   console.log(db);
   const tableName = "healthbot_80001_1";
 
-  const { results } = await db.prepare(`SELECT * FROM ${tableName};`).all();
-console.log(results);
   const onInsertDummyData = async () => {
     const info = await db.prepare(
       "INSERT INTO users (name, age) VALUES (?1, ?2)"
