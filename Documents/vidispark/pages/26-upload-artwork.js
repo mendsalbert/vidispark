@@ -116,81 +116,57 @@
 
 // export default VideoUploader;
 
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import axios from "axios";
 
-const VideoUploader = () => {
-  const [streamUrl, setStreamUrl] = useState("");
-  const [live, setLive] = useState(false);
+function VideoUploader() {
+  const videoRef = useRef(null);
+  const streamRef = useRef(null);
 
-  const createStream = async () => {
-    try {
-      const response = await axios.post(
-        "https://api.thetavideoapi.com/stream",
-        {
-          name: "My New Livestream",
-          resolutions: ["160p", "240p", "360p", "720p", "source"],
-          source_resolution: "720p",
-          fps: 60,
-        },
-        {
-          headers: {
-            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      console.log(response);
-
-      const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
-      setStreamUrl(streamUrl);
-    } catch (error) {
-      console.error("Failed to create live stream", error);
-    }
-  };
-
-  const startStreaming = async () => {
-    await createStream();
-    const constraints = {
+  // start the live stream
+  const startStream = async () => {
+    const stream = await navigator.mediaDevices.getUserMedia({
       audio: true,
       video: true,
-    };
+    });
+    streamRef.current = stream;
+    videoRef.current.srcObject = stream;
+    videoRef.current.play();
 
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia(constraints);
-      const videoElement = document.getElementById("video-player");
-      videoElement.srcObject = stream;
-      setLive(true);
-    } catch (err) {
-      console.error(err);
-    }
+    const streamData = new FormData();
+    streamData.append("name", "My New Livestream");
+    streamData.append("resolutions", [
+      "160p",
+      "240p",
+      "360p",
+      "720p",
+      "source",
+    ]);
+    streamData.append("source_resolution", "720p");
+    streamData.append("fps", "60");
+
+    const response = await axios.post(
+      "https://api.thetavideoapi.com/stream",
+      streamData,
+      {
+        headers: {
+          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
+    console.log("Live stream URL:", streamUrl);
   };
 
   return (
     <div>
-      {live ? (
-        <div>
-          <div>Live stream URL: {streamUrl}</div>
-          <iframe
-            src={streamUrl}
-            width="640"
-            height="360"
-            frameBorder="0"
-            scrolling="no"
-            allowFullScreen
-            title="Live Stream"
-          ></iframe>
-          <button onClick={() => setLive(false)}>Stop Live Stream</button>
-        </div>
-      ) : (
-        <div>
-          <button onClick={() => startStreaming()}>Start Live Stream</button>
-        </div>
-      )}
+      <button onClick={startStream}>Start Live Stream</button>
+      <video ref={videoRef} width="640" height="360" />
     </div>
   );
-};
+}
 
 export default VideoUploader;
