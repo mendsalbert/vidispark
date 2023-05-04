@@ -6,6 +6,8 @@ import MobileSearchTrigger from "./MobileSearchTrigger";
 import NotificationsButton from "./NotificationsButton";
 import ProfileDropdown from "./ProfileDropdown";
 import SearchBox from "./SearchBox";
+import { useAccount } from "wagmi";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
 
@@ -54,6 +56,14 @@ const Header = () => {
               Create
             </a>
           </div>
+          <ConnectButton
+            className="mx-8"
+            accountStatus={"full"}
+            showBalance={{
+              smallScreen: true,
+              largeScreen: true,
+            }}
+          />
           {/*/HEADER BUTTON*/}
           {/*HEADER ICONS*/}
           <div className="user-activity-buttons">
