@@ -917,6 +917,25 @@
     "@stablelib/random" "^1.0.2"
     "@stablelib/wipe" "^1.0.1"
 
+"@tableland/evm@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@tableland/evm/-/evm-4.2.2.tgz#c042fe7d174de69796942bc6625c2ff0636d3ef6"
+  integrity sha512-itcUWvnZ4CDujVXlP9SKM49Tfo1mawynf0PooceA76JqGMFKaO1f5LArD7Xss0YOvRMtRpQbELbfNdznIk+FGw==
+
+"@tableland/sdk@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@tableland/sdk/-/sdk-4.2.2.tgz#6a37ff80a94d32be9e75abd0258dbb9caa6e95ee"
+  integrity sha512-LYqXMtyU0YGizrVlPJmYXgIf+DhV+U1epdVat0zZYksNvO8NRJxx40k7R5ZqMVkB0dhgYdB1ybbsLBD8lLWjXA==
+  dependencies:
+    "@tableland/evm" "^4.2.2"
+    "@tableland/sqlparser" "^1.0.6-pre.5"
+    ethers "^5.7.2"
+
+"@tableland/sqlparser@^1.0.6-pre.5":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@tableland/sqlparser/-/sqlparser-1.0.6.tgz#8c89d4694c06eca3cacae9fcdfdc7e1090f84a68"
+  integrity sha512-fSoR4hslQqcvkjU0JvRG70fWEVOsbJc8177LqaHC2r2DDC2328Kho/t+aeG5qho4gvSuZckDcKEgeCugD1m5Mg==
+
 "@tabler/icons@^2.17.0":
   version "2.17.0"
   resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-2.17.0.tgz#3b5ac3d41576894d3e18cd8014ba8ce33f3634be"

@@ -3,32 +3,52 @@ import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/Prof
 import ProfilePurchase from "../src/components/Profile Page/Profile Upload/ProfilePurchase";
 import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
 import Layouts from "../src/layouts/Layouts";
-
+import { useAccount, useSigner } from "wagmi";
+import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 const UploadArtWork = () => {
+  const signer = useSigner();
+  const { address, isConnected } = useAccount();
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+  const { disconnect } = useDisconnect();
   return (
-    <Layouts>
-      <div className="primary-content-area container content-padding grid-left-sidebar">
-        {/* / Profile Info Sidebar */}
-        <ProfileInfoSidebar />
-        {/* / Profile Info Sidebar */}
-        <div className="main-content-area">
-          <div className="page-title">
-            <h2>
-              <span className="gradient-text">Upload</span> Artwork
-            </h2>
+    <>
+      <div>
+        {isConnected ? (
+          <div>
+            Connected to {address}
+            <button onClick={() => disconnect()}>Disconnect</button>
           </div>
-          <div className="user-db-content-area">
-            {/* / Profile Upload & Preview */}
-            <ProfileUploadAndPreview />
-            {/* / Profile Upload & Preview */}
-
-            {/* / Profile Purchase */}
-            <ProfilePurchase />
-            {/* / Profile Purchase */}
-          </div>
-        </div>
+        ) : (
+          <button onClick={() => connect()}>Connect Wallet</button>
+        )}
       </div>
-    </Layouts>
+    </>
+    // <Layouts>
+    //   <div className="primary-content-area container content-padding grid-left-sidebar">
+    //     {/* / Profile Info Sidebar */}
+    //     <ProfileInfoSidebar />
+    //     {/* / Profile Info Sidebar */}
+    //     <div className="main-content-area">
+    //       <div className="page-title">
+    //         <h2>
+    //           <span className="gradient-text">Upload</span> Artwork
+    //         </h2>
+    //       </div>
+    //       <div className="user-db-content-area">
+    //         {/* / Profile Upload & Preview */}
+    //         <ProfileUploadAndPreview />
+    //         {/* / Profile Upload & Preview */}
+
+    //         {/* / Profile Purchase */}
+    //         <ProfilePurchase />
+    //         {/* / Profile Purchase */}
+    //       </div>
+    //     </div>
+    //   </div>
+    // </Layouts>
   );
 };
 export default UploadArtWork;
