@@ -13,10 +13,9 @@ const UploadArtWork = () => {
   console.log(db);
 
   const onInsertDummyData = async () => {
-    const info = await db
-      .prepare("INSERT INTO users (name, age) VALUES (?1, ?2)")
-      .bind("John", 42)
-      .run();
+    const info = await db.prepare(
+      "INSERT INTO users (name, age) VALUES (?1, ?2)"
+    );
     console.log(info);
   };
   return (
