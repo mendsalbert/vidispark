@@ -153,9 +153,9 @@ function VideoUploader() {
     console.log(streamResponse);
     // get the RTMP URL
     const streamUrl =
-      streamResponse.data.body.stream_server +
+      streamResponse.data.body.backup_stream_server +
       "/" +
-      streamResponse.data.body.stream_key;
+      streamResponse.data.body.backup_stream_key;
     console.log("Live stream URL:", streamUrl);
 
     // create a media source
