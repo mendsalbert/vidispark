@@ -9,7 +9,7 @@ import { Database } from "@tableland/sdk";
 const UploadArtWork = () => {
   const { data: signer } = useSigner();
   const db = new Database({ signer });
-
+  console.log(data);
   console.log(db);
   return (
     <>
