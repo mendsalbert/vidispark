@@ -11,6 +11,7 @@ const UploadArtWork = () => {
   const db = new Database({ signer });
   console.log(signer);
   console.log(db);
+
   const tableName = "healthbot_80001_1";
 
   const onInsertDummyData = async () => {
