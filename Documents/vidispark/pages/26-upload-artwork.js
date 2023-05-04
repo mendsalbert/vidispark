@@ -115,109 +115,100 @@
 // }
 
 // export default VideoUploader;
-
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
-import RecordRTC from "recordrtc";
 
 function VideoUploader() {
+  const [streamUrl, setStreamUrl] = useState("");
+  const [isRecording, setIsRecording] = useState(false);
   const videoRef = useRef(null);
-  const streamRef = useRef(null);
-  const recorderRef = useRef(null);
-  const streamUrlRef = useRef(null);
+  const mediaRecorderRef = useRef(null);
 
-  const startStream = async () => {
+  // start recording the video stream
+  const startRecording = async () => {
     const stream = await navigator.mediaDevices.getUserMedia({
       audio: true,
       video: true,
     });
-    streamRef.current = stream;
     videoRef.current.srcObject = stream;
     videoRef.current.play();
+    mediaRecorderRef.current = new MediaRecorder(stream, {
+      mimeType: "video/webm",
+    });
+    mediaRecorderRef.current.start();
+    setIsRecording(true);
+  };
 
-    const data = new FormData();
-    data.append("name", "My New Livestream");
-    data.append("resolutions", ["160p", "240p", "360p", "720p", "source"]);
-    data.append("source_resolution", "720p");
-    data.append("fps", "60");
+  // stop recording and upload the video to Theta Video API for live streaming
+  const stopRecording = async () => {
+    mediaRecorderRef.current.stop();
+    setIsRecording(false);
+    const videoBlob = new Blob(mediaRecorderRef.current.chunks, {
+      type: "video/webm",
+    });
+    const videoUrl = URL.createObjectURL(videoBlob);
+    const uploadUrl = await createUploadUrl();
+    const uploadResponse = await fetch(uploadUrl, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "video/webm",
+        "x-tva-sa-id": "YOUR_THETA_API_ID",
+        "x-tva-sa-secret": "YOUR_THETA_API_SECRET",
+      },
+      body: videoBlob,
+    });
+    const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-tva-sa-id": "YOUR_THETA_API_ID",
+        "x-tva-sa-secret": "YOUR_THETA_API_SECRET",
+      },
+      body: JSON.stringify({
+        source_upload_id: uploadResponse.body.uploads[0].id,
+        playback_policy: "public",
+        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
+      }),
+    });
+    const videoResponseJson = await videoResponse.json();
+    const streamUrl = `${videoResponseJson.body.videos[0].hls_uri}.m3u8`;
+    setStreamUrl(streamUrl);
+  };
 
+  // create a new upload URL for the video
+  const createUploadUrl = async () => {
     const response = await axios.post(
-      "https://api.thetavideoapi.com/stream",
-      data,
+      "https://api.thetavideoapi.com/upload",
+      {
+        size: 100000, // replace with actual video size
+      },
       {
         headers: {
-          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
-          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          "Content-Type": "multipart/form-data",
+          "x-tva-sa-id": "YOUR_THETA_API_ID",
+          "x-tva-sa-secret": "YOUR_THETA_API_SECRET",
+          "Content-Type": "application/json",
         },
       }
     );
-
-    const streamUrl = `${response.data.body.stream_server}/${response.data.body.stream_key}`;
-    console.log("Live stream URL:", streamUrl);
-    streamUrlRef.current = streamUrl;
-
-    const recorder = RecordRTC(stream, {
-      type: "video",
-      mimeType: "video/webm",
-      bitsPerSecond: 2500000,
-    });
-    recorderRef.current = recorder;
-    recorder.startRecording();
-    recorder.stream = stream;
-    recorder.streamer = new MediaStreamRecorder(stream, {
-      mimeType: "video/webm",
-    });
-    recorder.streamer.ondataavailable = function (blob) {
-      const formData = new FormData();
-      formData.append("video", blob, "video.webm");
-      formData.append("playback_policy", "public");
-
-      axios
-        .post(streamUrl, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((response) => {
-          console.log(response.data.body.status);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-    recorder.streamer.start(1000 * 10); // every 10 seconds
-  };
-
-  const stopStream = async () => {
-    recorderRef.current.stopRecording(function () {
-      const blob = this.getBlob();
-      const formData = new FormData();
-      formData.append("video", blob, "video.webm");
-      formData.append("playback_policy", "public");
-
-      axios
-        .post(streamUrlRef.current, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
-        .then((response) => {
-          console.log(response.data.body.status);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    });
-    streamRef.current.getTracks().forEach((track) => {
-      track.stop();
-    });
+    return response.data.body.uploads[0].url;
   };
 
   return (
     <div>
-      <button onClick={startStream}>Start Live Stream</button>
-      <button onClick={stopStream}>Stop Live Stream</button>
+      <button disabled={isRecording} onClick={startRecording}>
+        Start Recording
+      </button>
+      <button disabled={!isRecording} onClick={stopRecording}>
+        Stop Recording and Publish Live Stream
+      </button>
+      {streamUrl && (
+        <div>
+          <div>Live stream URL: {streamUrl}</div>
+          <video width="640" height="360" controls>
+            <source src={streamUrl} type="application/x-mpegURL" />
+          </video>
+        </div>
+      )}
       <video ref={videoRef} width="640" height="360" />
     </div>
   );
