@@ -19,14 +19,28 @@ const UploadArtWork = () => {
     );
     console.log(info);
   };
+
+  const getDummyData = async () => {
+    const { results } = await db.prepare(`SELECT * FROM ${tableName};`).all();
+    console.log(results);
+  };
   return (
     <>
       <button
+        className="tw-bg-blue-800 tw-text-white "
         onClick={() => {
           onInsertDummyData();
         }}
       >
         Insert dummy data
+      </button>
+
+      <button
+        onClick={() => {
+          getDummyData();
+        }}
+      >
+        Get dummy Data
       </button>
       {/* <div>
         {isConnected ? (
