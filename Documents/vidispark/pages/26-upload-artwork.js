@@ -150,7 +150,7 @@ function VideoUploader() {
         },
       }
     );
-
+    console.log(streamResponse);
     // get the RTMP URL
     const streamUrl =
       streamResponse.data.body.stream_server +
