@@ -133,39 +133,93 @@ function VideoUploader() {
     videoRef.current.srcObject = stream;
     videoRef.current.play();
 
-    const streamData = new FormData();
-    streamData.append("name", "My New Livestream");
-    streamData.append("resolutions", [
-      "160p",
-      "240p",
-      "360p",
-      "720p",
-      "source",
-    ]);
-    streamData.append("source_resolution", "720p");
-    streamData.append("fps", "60");
-
-    const response = await axios.post(
+    // create a new livestream
+    const streamResponse = await axios.post(
       "https://api.thetavideoapi.com/stream",
-      streamData,
+      {
+        name: "My New Livestream",
+        resolutions: ["160p", "240p", "360p", "720p", "source"],
+        source_resolution: "720p",
+        fps: 30,
+      },
       {
         headers: {
           "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
           "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
-          "Content-Type": "multipart/form-data",
+          "Content-Type": "application/json",
         },
       }
     );
 
-    console.log(response);
-    const streamUrl = `${response.data.body.backup_stream_server}/${response.data.body.backup_stream_key}`;
+    // get the RTMP URL
+    const streamUrl =
+      streamResponse.data.body.stream_server +
+      "/" +
+      streamResponse.data.body.stream_key;
     console.log("Live stream URL:", streamUrl);
+
+    // create a media source
+    const mediaSource = new MediaSource();
+    videoRef.current.src = URL.createObjectURL(mediaSource);
+
+    // on media source open, add a new source buffer and set the source buffer update end callback
+    mediaSource.addEventListener("sourceopen", async () => {
+      const sourceBuffer = mediaSource.addSourceBuffer(
+        'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'
+      );
+
+      // handle the source buffer update end
+      sourceBuffer.addEventListener("updateend", async () => {
+        if (!videoRef.current.ended) {
+          try {
+            // check the buffer length and update the source buffer if it's less than 60 seconds
+            if (
+              sourceBuffer.buffered.length &&
+              sourceBuffer.buffered.end(0) - videoRef.current.currentTime < 60
+            ) {
+              console.log(
+                `Buffer length: ${
+                  sourceBuffer.buffered.end(0) - videoRef.current.currentTime
+                }`
+              );
+              const { data } = await axios.get(
+                `${streamUrl}.mp4?=time=${
+                  sourceBuffer.buffered.end(0) - 1
+                }&t=${Date.now()}`,
+                {
+                  responseType: "arraybuffer",
+                }
+              );
+
+              if (data.byteLength > 0) {
+                const buffer = new Uint8Array(data);
+                sourceBuffer.appendBuffer(buffer);
+              } else {
+                console.log("No data received from the server");
+              }
+            }
+          } catch (error) {
+            console.error("Error fetching stream data:", error);
+          }
+        }
+      });
+
+      // request the initial data segment and append it to the source buffer
+      try {
+        const { data } = await axios.get(`${streamUrl}.mp4?t=${Date.now()}`, {
+          responseType: "arraybuffer",
+        });
+        sourceBuffer.appendBuffer(data);
+      } catch (error) {
+        console.error("Error fetching stream data:", error);
+      }
+    });
   };
 
   return (
     <div>
       <button onClick={startStream}>Start Live Stream</button>
-      <video ref={videoRef} width="640" height="360" />
+      <video ref={videoRef} width="640" height="360" controls></video>
     </div>
   );
 }
