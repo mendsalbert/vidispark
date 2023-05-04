@@ -152,8 +152,8 @@ function VideoUploader() {
       method: "PUT",
       headers: {
         "Content-Type": "video/webm",
-        "x-tva-sa-id": "YOUR_THETA_API_ID",
-        "x-tva-sa-secret": "YOUR_THETA_API_SECRET",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
       },
       body: videoBlob,
     });
@@ -161,8 +161,8 @@ function VideoUploader() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-tva-sa-id": "YOUR_THETA_API_ID",
-        "x-tva-sa-secret": "YOUR_THETA_API_SECRET",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
       },
       body: JSON.stringify({
         source_upload_id: uploadResponse.body.uploads[0].id,
@@ -184,8 +184,8 @@ function VideoUploader() {
       },
       {
         headers: {
-          "x-tva-sa-id": "YOUR_THETA_API_ID",
-          "x-tva-sa-secret": "YOUR_THETA_API_SECRET",
+          "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+          "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
           "Content-Type": "application/json",
         },
       }
