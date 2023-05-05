@@ -232,10 +232,12 @@ import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
+import { useState } from "react";
 
-let db;
+const { Box, Flex, Input } = require("tailwindcss/stubs/defaultConfig.stub");
 const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
 
+let db;
 export default function App() {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -247,7 +249,7 @@ export default function App() {
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
     db = new SDK({
-      contractTxId,
+      contractTxId
     });
     await db.initializeWithoutWallet();
     setInitDB(true);
@@ -267,10 +269,10 @@ export default function App() {
     );
   };
 
-  const addTask = async (task) => {
+  const addTask = async (newTask) => {
     await db.add(
       {
-        task,
+        task: newTask,
         date: db.ts(),
         user_address: db.signer(),
         done: false,
@@ -281,10 +283,10 @@ export default function App() {
     await getTasks();
   };
 
-  const completeTask = async (id) => {
+  const completeTask = async id => {
     await db.update(
       {
-        done: true,
+        done: true
       },
       "tasks",
       id,
@@ -293,7 +295,7 @@ export default function App() {
     await getTasks();
   };
 
-  const deleteTask = async (id) => {
+  const deleteTask = async id => {
     await db.delete("tasks", id, user);
     await getTasks();
   };
@@ -374,135 +376,53 @@ export default function App() {
   }, [tab, initDB]);
 
   const NavBar = () => (
-    <div className="flexp-3 fixed w-full top-0 left-0">
-      {" "}
-      <div className="flex-1" />{" "}
-      <div className="flex bg-black text-white py-2 px-6 rounded-md cursor-pointer hover:opacity-75">
-        {" "}
-        {!isNil(user) ? (
-          <div onClick={() => logout()}>{user.wallet.slice(0, 7)}</div>
-        ) : (
-          <div onClick={() => login()}>Connect Wallet</div>
-        )}{" "}
-      </div>{" "}
-    </div>
-  );
+    <Flex p={3} position="fixed" w="100%" sx={{ top: 0, left: 0 }}>
+      <Box flex={1} />
+      <Flex
+        bg="#111"
+        color="white"
+        py={2}
+        px={6}
+        sx={{
+          borderRadius: "5px",
+          cursor: "pointer",
+          ":hover": { opacity: 0.75 }, }} > {!isNil(user) ? ( <Box onClick={() => logout()}>{user.wallet.slice(0, 7)}</Box> ) : ( <Box onClick={() => login()}>Connect Wallet</Box> )} </Flex> </Flex> );
 
-  const Tabs = () => (
-    <div className="flex justify-center mb-4">
-      {" "}
-      {map((v) => (
-        <div
-          className={`mx-2 cursor-pointer ${
-            tab === v ? "text-red-500 underline" : ""
-          }`}
-          onClick={() => setTab(v)}
-        >
-          {" "}
-          {v}{" "}
-        </div>
-      ))(tabs)}{" "}
-    </div>
-  );
-
-  const Tasks = () =>
-    map((v) => (
-      <div className="flex border-gray-300 border-1 rounded-md p-3 my-1">
-        {" "}
-        <div
-          className="w-10 text-center cursor-pointer hover:opacity-75"
-          style={{ lineHeight: "28px" }}
-        >
-          {" "}
-          {v.data.done ? (
-            "✅"
-          ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : (
-            <div onClick={() => completeTask(v.id)}>⬜</div>
-          )}{" "}
-        </div>{" "}
-        <div className="px-3 flex-1" style={{ marginLeft: "10px" }}>
-          {" "}
-          {v.data.task}{" "}
-        </div>{" "}
-        <div
-          className="w-32 text-center"
-          style={{
-            marginLeft: "10px",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-        >
-          {" "}
-          {v.data.user_address.slice(0, 7)}{" "}
-        </div>{" "}
-        <div
-          className="w-10 text-center cursor-pointer hover:opacity-75"
-          style={{ marginLeft: "10px" }}
-        >
-          {" "}
-          {v.data.user_address === user?.wallet.toLowerCase() ? (
-            <div onClick={() => deleteTask(v.id)}>❌</div>
-          ) : null}{" "}
-        </div>{" "}
-      </div>
-    ))(tasks);
-
-  const NewTask = () => {
-    const [newTask, setNewTask] = useState("");
-
-    const handleAddBtnClick = async () => {
-      if (!/^\s*$/.test(newTask)) {
-        await addTask(newTask);
-        setNewTask("");
-      }
-    };
-
-    return (
-      <div className="flex mb-4">
-        <input
-          placeholder="Enter New Task"
-          className="border-2 border-gray-300 p-2 rounded-l-md w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-        />
-        <div
-          className="bg-black text-white py-2 px-6 rounded-r-md cursor-pointer hover:opacity-75"
-          onClick={handleAddBtnClick}
-        >
-          add
-        </div>
-      </div>
-    );
-  };
-
-  const Transactions = () => {
-    return (
-      <div className="flex justify-center p-4">
-        {" "}
-        <a
-          className="underline"
-          target="_blank"
-          href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`}
-        >
-          {" "}
-          view transactions{" "}
-        </a>{" "}
-      </div>
-    );
-  };
-
-  return (
-    <div>
-      {" "}
-      <NavBar />{" "}
-      <div className="mt-60px flex justify-center p-3">
-        {" "}
-        <div className="w-full max-w-600px">
-          {" "}
-          <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "}
-        </div>{" "}
-      </div>{" "}
-      <Transactions />{" "}
-    </div>
-  );
-}
+          const Tabs = () => ( <Flex justify="center" style={{ display: "flex" }} mb={4}> {map((v) => ( <Box mx={2} onClick={() => setTab(v)} className={`${tab === v ? "text-red-500 underline" : ""} cursor-pointer`} > {v} </Box> ))(tabs)} </Flex> );
+          
+          const Tasks = () => map((v) => ( <Flex className="border border-gray-300 rounded-md p-3 my-1" key={v.id}> <Box w="30px" textAlign="center" className={`${v.data.done ? "" : "cursor-pointer hover:opacity-75"} `} > {v.data.done ? "✅" : v.data.user_address !== user?.wallet.toLowerCase() ? null : ( <Box onClick={() => completeTask(v.id)}>⬜</Box> )} </Box> <Box px={3} flex={1} style={{ marginLeft: "10px" }}> {v.data.task} </Box> <Box w="100px" textAlign="center" style={{ marginLeft: "10px" }}> {v.data.user_address.slice(0, 7)} </Box> <Box w="50px" textAlign="center" className={${v.data.user_address === user?.wallet.toLowerCase() ? "cursor-pointer hover:opacity-75" : ""}} > {v.data.user_address === user?.wallet.toLowerCase() ? ( <Box style={{ marginLeft: "10px" }} onClick={() => deleteTask(v.id)} > ❌ </Box> ) : null} </Box> </Flex> ))(tasks);
+          
+          const NewTask = () => { const [newTask, setNewTask] = useState("");
+          
+          const handleAddBtnClick = async () => {
+            if (!/^\s*$/.test(newTask)) {
+              await addTask(newTask);
+              setNewTask("");
+            }
+          };
+          
+          return (
+            <Flex mb={4}>
+              <Input
+                placeholder="Enter New Task"
+                value={newTask}
+                onChange={(e) => setNewTask(e.target.value)}
+                className="w-full p-2 rounded-l-md"
+              />
+              <Flex
+                bg="#111"
+                color="white"
+                py={2}
+                px={6}
+                className="rounded-r-md cursor-pointer hover:opacity-75"
+                onClick={handleAddBtnClick}
+              >
+                add
+              </Flex>
+            </Flex>
+          );
+          };
+          
+          const Transactions = () => { return ( <Flex justify="center" p={4}> <Box as="a" target="_blank" href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`} className="text-blue-500 underline" > view transactions </Box> </Flex> ); };
+          
+          return ( <> <NavBar /> <Flex mt="60px" justify="center" p={3}> <Box className="w-full max-w-2xl"> <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks /> </Box> </Flex> <Transactions /> </> ); }
