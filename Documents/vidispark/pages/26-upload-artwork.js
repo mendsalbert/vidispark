@@ -232,7 +232,6 @@ import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
-import { Box, Flex, Input, ChakraProvider } from "@chakra-ui/react";
 
 let db;
 const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
@@ -375,79 +374,77 @@ export default function App() {
   }, [tab, initDB]);
 
   const NavBar = () => (
-    <Flex p={3} position="fixed" w="100%" sx={{ top: 0, left: 0 }}>
-      <Box flex={1} />
-      <Flex
-        bg="#111"
-        color="white"
-        py={2}
-        px={6}
-        sx={{
-          borderRadius: "5px",
-          cursor: "pointer",
-          ":hover": { opacity: 0.75 },
-        }}
-      >
+    <div className="flexp-3 fixed w-full top-0 left-0">
+      {" "}
+      <div className="flex-1" />{" "}
+      <div className="flex bg-black text-white py-2 px-6 rounded-md cursor-pointer hover:opacity-75">
+        {" "}
         {!isNil(user) ? (
-          <Box onClick={() => logout()}>{user.wallet.slice(0, 7)}</Box>
+          <div onClick={() => logout()}>{user.wallet.slice(0, 7)}</div>
         ) : (
-          <Box onClick={() => login()}>Connect Wallet</Box>
-        )}
-      </Flex>
-    </Flex>
+          <div onClick={() => login()}>Connect Wallet</div>
+        )}{" "}
+      </div>{" "}
+    </div>
   );
 
   const Tabs = () => (
-    <Flex justify="center" style={{ display: "flex" }} mb={4}>
+    <div className="flex justify-center mb-4">
+      {" "}
       {map((v) => (
-        <Box
-          mx={2}
+        <div
+          className={`mx-2 cursor-pointer ${
+            tab === v ? "text-red-500 underline" : ""
+          }`}
           onClick={() => setTab(v)}
-          color={tab === v ? "red" : ""}
-          textDecoration={tab === v ? "underline" : ""}
-          sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
         >
-          {v}
-        </Box>
-      ))(tabs)}
-    </Flex>
+          {" "}
+          {v}{" "}
+        </div>
+      ))(tabs)}{" "}
+    </div>
   );
 
   const Tasks = () =>
     map((v) => (
-      <Flex sx={{ border: "1px solid #ddd", borderRadius: "5px" }} p={3} my={1}>
-        <Box
-          w="30px"
-          textAlign="center"
-          sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
+      <div className="flex border-gray-300 border-1 rounded-md p-3 my-1">
+        {" "}
+        <div
+          className="w-10 text-center cursor-pointer hover:opacity-75"
+          style={{ lineHeight: "28px" }}
         >
+          {" "}
           {v.data.done ? (
             "✅"
           ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : (
-            <Box onClick={() => completeTask(v.id)}>⬜</Box>
-          )}
-        </Box>
-        <Box px={3} flex={1} style={{ marginLeft: "10px" }}>
-          {v.data.task}
-        </Box>
-        <Box w="100px" textAlign="center" style={{ marginLeft: "10px" }}>
-          {v.data.user_address.slice(0, 7)}
-        </Box>
-        <Box
-          w="50px"
-          textAlign="center"
-          sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
+            <div onClick={() => completeTask(v.id)}>⬜</div>
+          )}{" "}
+        </div>{" "}
+        <div className="px-3 flex-1" style={{ marginLeft: "10px" }}>
+          {" "}
+          {v.data.task}{" "}
+        </div>{" "}
+        <div
+          className="w-32 text-center"
+          style={{
+            marginLeft: "10px",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
         >
+          {" "}
+          {v.data.user_address.slice(0, 7)}{" "}
+        </div>{" "}
+        <div
+          className="w-10 text-center cursor-pointer hover:opacity-75"
+          style={{ marginLeft: "10px" }}
+        >
+          {" "}
           {v.data.user_address === user?.wallet.toLowerCase() ? (
-            <Box
-              style={{ marginLeft: "10px" }}
-              onClick={() => deleteTask(v.id)}
-            >
-              ❌
-            </Box>
-          ) : null}
-        </Box>
-      </Flex>
+            <div onClick={() => deleteTask(v.id)}>❌</div>
+          ) : null}{" "}
+        </div>{" "}
+      </div>
     ))(tasks);
 
   const NewTask = () => {
@@ -461,57 +458,51 @@ export default function App() {
     };
 
     return (
-      <Flex mb={4}>
-        <Input
+      <div className="flex mb-4">
+        <input
           placeholder="Enter New Task"
+          className="border-2 border-gray-300 p-2 rounded-l-md w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-1/4"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
-          sx={{ borderRadius: "5px 0 0 5px" }}
         />
-        <Flex
-          bg="#111"
-          color="white"
-          py={2}
-          px={6}
-          sx={{
-            borderRadius: "0 5px 5px 0",
-            cursor: "pointer",
-            ":hover": { opacity: 0.75 },
-          }}
+        <div
+          className="bg-black text-white py-2 px-6 rounded-r-md cursor-pointer hover:opacity-75"
           onClick={handleAddBtnClick}
         >
           add
-        </Flex>
-      </Flex>
+        </div>
+      </div>
     );
   };
 
   const Transactions = () => {
     return (
-      <Flex justify="center" p={4}>
-        <Box
-          as="a"
+      <div className="flex justify-center p-4">
+        {" "}
+        <a
+          className="underline"
           target="_blank"
           href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`}
-          sx={{ textDecoration: "underline" }}
         >
-          view transactions
-        </Box>
-      </Flex>
+          {" "}
+          view transactions{" "}
+        </a>{" "}
+      </div>
     );
   };
 
   return (
-    <ChakraProvider>
-      <NavBar />
-      <Flex mt="60px" justify="center" p={3}>
-        <Box w="100%" maxW="600px">
-          <Tabs />
-          {!isNil(user) ? <NewTask /> : null}
-          <Tasks />
-        </Box>
-      </Flex>
-      <Transactions />
-    </ChakraProvider>
+    <div>
+      {" "}
+      <NavBar />{" "}
+      <div className="mt-60px flex justify-center p-3">
+        {" "}
+        <div className="w-full max-w-600px">
+          {" "}
+          <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "}
+        </div>{" "}
+      </div>{" "}
+      <Transactions />{" "}
+    </div>
   );
 }
