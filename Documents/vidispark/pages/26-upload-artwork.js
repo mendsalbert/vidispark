@@ -229,7 +229,8 @@
 import { useRef, useState, useEffect } from "react";
 import lf from "localforage";
 import { isNil, map } from "ramda";
-import SDK from "weavedb-sdk";
+// import SDK from "weavedb-sdk";
+import SDK from "";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 import { Box, Flex, Input, ChakraProvider } from "@chakra-ui/react";
