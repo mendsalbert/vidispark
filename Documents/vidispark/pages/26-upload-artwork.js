@@ -377,51 +377,141 @@ export default function App() {
     <div className="fixed w-full top-0 left-0 py-3 px-4 flex justify-end bg-white shadow">
       <div className="flex-1"></div>
       <div
-  className="px-6 py-2 bg-black text-white cursor-pointer rounded-md hover:opacity-75"
-  style={{ borderRadius: "5px" }}
-  onClick={() => (isNil(user) ? login() : logout())}
->
-  {!isNil(user) ? (
-    <span>{user.wallet.slice(0, 7)}</span>
-  ) : (
-    <span>Connect Wallet</span>
-  )}
-</div>
-</div>)
+        className="px-6 py-2 bg-black text-white cursor-pointer rounded-md hover:opacity-75"
+        style={{ borderRadius: "5px" }}
+        onClick={() => (isNil(user) ? login() : logout())}
+      >
+        {!isNil(user) ? (
+          <span>{user.wallet.slice(0, 7)}</span>
+        ) : (
+          <span>Connect Wallet</span>
+        )}
+      </div>
+    </div>
+  );
 
-        const Tabs = () => ( <div className="mb-4 flex justify-center"> {map((v) => ( <div key={v} className={`mx-2 cursor-pointer ${ tab === v && "text-red-500 underline" }`} onClick={() => setTab(v)} > {v} </div> ))(tabs)} </div> );
-        
-        const Tasks = () => map((v) => ( <div key={v.id} className="flex my-1 p-3 border border-gray-300 rounded-md" style={{ borderRadius: "5px" }} > <div className="w-30px text-center cursor-pointer hover:opacity-75" style={{ cursor: "pointer" }} > {v.data.done ? ( "✅" ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : ( <span onClick={() => completeTask(v.id)}>⬜</span> )} </div> <div className="px-3 flex-1 ml-10" style={{ marginLeft: "10px" }} > {v.data.task} </div> <div className="w-100px text-center ml-10"> {v.data.user_address.slice(0, 7)} </div> <div className="w-50px text-center cursor-pointer hover:opacity-75" style={{ cursor: "pointer" }} > {v.data.user_address === user?.wallet.toLowerCase() ? ( <span style={{ marginLeft: "10px" }} onClick={() => deleteTask(v.id)} > ❌ </span> ) : null} </div> </div> ))(tasks);
-        
-        const NewTask = () => { const [newTask, setNewTask] = useState("");
-        
-        const handleAddBtnClick = async () => {
-          if (!/^\s*$/.test(newTask)) {
-            await addTask(newTask);
-            setNewTask("");
-          }
-        };
-        
-        return (
-          <div className="mb-4 flex">
-            <input
-              type="text"
-              placeholder="Enter New Task"
-              className="rounded-l-md border border-gray-400 py-2 px-4 outline-none focus:border-blue-500 flex-1"
-              value={newTask}
-              onChange={(e) => setNewTask(e.target.value)}
-            />
-            <div
-              className="px-6 py-2 bg-black text-white cursor-pointer rounded-r-md hover:opacity-75"
-              style={{ borderRadius: "5px" }}
-              onClick={handleAddBtnClick}
+  const Tabs = () => (
+    <div className="mb-4 flex justify-center">
+      {" "}
+      {map((v) => (
+        <div
+          key={v}
+          className={`mx-2 cursor-pointer ${
+            tab === v && "text-red-500 underline"
+          }`}
+          onClick={() => setTab(v)}
+        >
+          {" "}
+          {v}{" "}
+        </div>
+      ))(tabs)}{" "}
+    </div>
+  );
+
+  const Tasks = () =>
+    map((v) => (
+      <div
+        key={v.id}
+        className="flex my-1 p-3 border border-gray-300 rounded-md"
+        style={{ borderRadius: "5px" }}
+      >
+        {" "}
+        <div
+          className="w-30px text-center cursor-pointer hover:opacity-75"
+          style={{ cursor: "pointer" }}
+        >
+          {" "}
+          {v.data.done ? (
+            "✅"
+          ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : (
+            <span onClick={() => completeTask(v.id)}>⬜</span>
+          )}{" "}
+        </div>{" "}
+        <div className="px-3 flex-1 ml-10" style={{ marginLeft: "10px" }}>
+          {" "}
+          {v.data.task}{" "}
+        </div>{" "}
+        <div className="w-100px text-center ml-10">
+          {" "}
+          {v.data.user_address.slice(0, 7)}{" "}
+        </div>{" "}
+        <div
+          className="w-50px text-center cursor-pointer hover:opacity-75"
+          style={{ cursor: "pointer" }}
+        >
+          {" "}
+          {v.data.user_address === user?.wallet.toLowerCase() ? (
+            <span
+              style={{ marginLeft: "10px" }}
+              onClick={() => deleteTask(v.id)}
             >
-              add
-            </div>
-          </div>
-        );
-        };
-        
-        const Transactions = () => { return ( <div className="py-4 flex justify-center"> <a href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`} target="_blank" rel="noreferrer" className="underline" > view transactions </a> </div> ); };
-        
-        return ( <div> <NavBar /> <div className="mt-60px flex justify-center p-3"> <div className="w-full max-w-600px"> <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks /> </div> </div> <Transactions /> </div> ); 
+              {" "}
+              ❌{" "}
+            </span>
+          ) : null}{" "}
+        </div>{" "}
+      </div>
+    ))(tasks);
+
+  const NewTask = () => {
+    const [newTask, setNewTask] = useState("");
+
+    const handleAddBtnClick = async () => {
+      if (!/^\s*$/.test(newTask)) {
+        await addTask(newTask);
+        setNewTask("");
+      }
+    };
+
+    return (
+      <div className="mb-4 flex">
+        <input
+          type="text"
+          placeholder="Enter New Task"
+          className="rounded-l-md border border-gray-400 py-2 px-4 outline-none focus:border-blue-500 flex-1"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+        />
+        <div
+          className="px-6 py-2 bg-black text-white cursor-pointer rounded-r-md hover:opacity-75"
+          style={{ borderRadius: "5px" }}
+          onClick={handleAddBtnClick}
+        >
+          add
+        </div>
+      </div>
+    );
+  };
+
+  const Transactions = () => {
+    return (
+      <div className="py-4 flex justify-center">
+        {" "}
+        <a
+          href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`}
+          target="_blank"
+          rel="noreferrer"
+          className="underline"
+        >
+          {" "}
+          view transactions{" "}
+        </a>{" "}
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      {" "}
+      <NavBar />{" "}
+      <div className="mt-60px flex justify-center p-3">
+        {" "}
+        <div className="w-full max-w-600px">
+          {" "}
+          <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "}
+        </div>{" "}
+      </div>{" "}
+      <Transactions />{" "}
+    </div>
+  );
+}
