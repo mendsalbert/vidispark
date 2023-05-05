@@ -387,7 +387,7 @@ export default function App() {
     <span>Connect Wallet</span>
   )}
 </div>
-</div>
+</div>)
 
         const Tabs = () => ( <div className="mb-4 flex justify-center"> {map((v) => ( <div key={v} className={`mx-2 cursor-pointer ${ tab === v && "text-red-500 underline" }`} onClick={() => setTab(v)} > {v} </div> ))(tabs)} </div> );
         
