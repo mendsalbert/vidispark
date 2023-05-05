@@ -232,12 +232,10 @@ import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
-import { useState } from "react";
-
-const { Box, Flex, Input } = require("tailwindcss/stubs/defaultConfig.stub");
-const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
 
 let db;
+const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
+
 export default function App() {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -269,10 +267,10 @@ export default function App() {
     );
   };
 
-  const addTask = async (newTask) => {
+  const addTask = async (task) => {
     await db.add(
       {
-        task: newTask,
+        task,
         date: db.ts(),
         user_address: db.signer(),
         done: false,
@@ -376,155 +374,54 @@ export default function App() {
   }, [tab, initDB]);
 
   const NavBar = () => (
-    <Flex p={3} position="fixed" w="100%" sx={{ top: 0, left: 0 }}>
-      <Box flex={1} />
-      <Flex
-        bg="#111"
-        color="white"
-        py={2}
-        px={6}
-        sx={{
-          borderRadius: "5px",
-          cursor: "pointer",
-          ":hover": { opacity: 0.75 },
-        }}
-      >
-        {" "}
-        {!isNil(user) ? (
-          <Box onClick={() => logout()}>{user.wallet.slice(0, 7)}</Box>
-        ) : (
-          <Box onClick={() => login()}>Connect Wallet</Box>
-        )}{" "}
-      </Flex>{" "}
-    </Flex>
-  );
+    <div className="fixed w-full top-0 left-0 py-3 px-4 flex justify-end bg-white shadow">
+      <div className="flex-1"></div>
+      <div
+  className="px-6 py-2 bg-black text-white cursor-pointer rounded-md hover:opacity-75"
+  style={{ borderRadius: "5px" }}
+  onClick={() => (isNil(user) ? login() : logout())}
+>
+  {!isNil(user) ? (
+    <span>{user.wallet.slice(0, 7)}</span>
+  ) : (
+    <span>Connect Wallet</span>
+  )}
+</div>
+</div>
 
-  const Tabs = () => (
-    <Flex justify="center" style={{ display: "flex" }} mb={4}>
-      {" "}
-      {map((v) => (
-        <Box
-          mx={2}
-          onClick={() => setTab(v)}
-          className={`${
-            tab === v ? "text-red-500 underline" : ""
-          } cursor-pointer`}
-        >
-          {" "}
-          {v}{" "}
-        </Box>
-      ))(tabs)}{" "}
-    </Flex>
-  );
-
-  const Tasks = () =>
-    map((v) => (
-      <Flex className="border border-gray-300 rounded-md p-3 my-1" key={v.id}>
-        {" "}
-        <Box
-          w="30px"
-          textAlign="center"
-          className={`${v.data.done ? "" : "cursor-pointer hover:opacity-75"} `}
-        >
-          {" "}
-          {v.data.done ? (
-            "✅"
-          ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : (
-            <Box onClick={() => completeTask(v.id)}>⬜</Box>
-          )}{" "}
-        </Box>{" "}
-        <Box px={3} flex={1} style={{ marginLeft: "10px" }}>
-          {" "}
-          {v.data.task}{" "}
-        </Box>{" "}
-        <Box w="100px" textAlign="center" style={{ marginLeft: "10px" }}>
-          {" "}
-          {v.data.user_address.slice(0, 7)}{" "}
-        </Box>{" "}
-        <Box
-          w="50px"
-          textAlign="center"
-          className={`${
-            v.data.user_address === user?.wallet.toLowerCase()
-              ? "cursor-pointer hover:opacity-75"
-              : ""
-          }`}
-        >
-          {" "}
-          {v.data.user_address === user?.wallet.toLowerCase() ? (
-            <Box
-              style={{ marginLeft: "10px" }}
-              onClick={() => deleteTask(v.id)}
+        const Tabs = () => ( <div className="mb-4 flex justify-center"> {map((v) => ( <div key={v} className={`mx-2 cursor-pointer ${ tab === v && "text-red-500 underline" }`} onClick={() => setTab(v)} > {v} </div> ))(tabs)} </div> );
+        
+        const Tasks = () => map((v) => ( <div key={v.id} className="flex my-1 p-3 border border-gray-300 rounded-md" style={{ borderRadius: "5px" }} > <div className="w-30px text-center cursor-pointer hover:opacity-75" style={{ cursor: "pointer" }} > {v.data.done ? ( "✅" ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : ( <span onClick={() => completeTask(v.id)}>⬜</span> )} </div> <div className="px-3 flex-1 ml-10" style={{ marginLeft: "10px" }} > {v.data.task} </div> <div className="w-100px text-center ml-10"> {v.data.user_address.slice(0, 7)} </div> <div className="w-50px text-center cursor-pointer hover:opacity-75" style={{ cursor: "pointer" }} > {v.data.user_address === user?.wallet.toLowerCase() ? ( <span style={{ marginLeft: "10px" }} onClick={() => deleteTask(v.id)} > ❌ </span> ) : null} </div> </div> ))(tasks);
+        
+        const NewTask = () => { const [newTask, setNewTask] = useState("");
+        
+        const handleAddBtnClick = async () => {
+          if (!/^\s*$/.test(newTask)) {
+            await addTask(newTask);
+            setNewTask("");
+          }
+        };
+        
+        return (
+          <div className="mb-4 flex">
+            <input
+              type="text"
+              placeholder="Enter New Task"
+              className="rounded-l-md border border-gray-400 py-2 px-4 outline-none focus:border-blue-500 flex-1"
+              value={newTask}
+              onChange={(e) => setNewTask(e.target.value)}
+            />
+            <div
+              className="px-6 py-2 bg-black text-white cursor-pointer rounded-r-md hover:opacity-75"
+              style={{ borderRadius: "5px" }}
+              onClick={handleAddBtnClick}
             >
-              {" "}
-              ❌{" "}
-            </Box>
-          ) : null}{" "}
-        </Box>{" "}
-      </Flex>
-    ))(tasks);
-
-  const NewTask = () => {
-    const [newTask, setNewTask] = useState("");
-
-    const handleAddBtnClick = async () => {
-      if (!/^\s*$/.test(newTask)) {
-        await addTask(newTask);
-        setNewTask("");
-      }
-    };
-
-    return (
-      <Flex mb={4}>
-        <Input
-          placeholder="Enter New Task"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-          className="w-full p-2 rounded-l-md"
-        />
-        <Flex
-          bg="#111"
-          color="white"
-          py={2}
-          px={6}
-          className="rounded-r-md cursor-pointer hover:opacity-75"
-          onClick={handleAddBtnClick}
-        >
-          add
-        </Flex>
-      </Flex>
-    );
-  };
-
-  const Transactions = () => {
-    return (
-      <Flex justify="center" p={4}>
-        {" "}
-        <Box
-          as="a"
-          target="_blank"
-          href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`}
-          className="text-blue-500 underline"
-        >
-          {" "}
-          view transactions{" "}
-        </Box>{" "}
-      </Flex>
-    );
-  };
-
-  return (
-    <>
-      {" "}
-      <NavBar />{" "}
-      <Flex mt="60px" justify="center" p={3}>
-        {" "}
-        <Box className="w-full max-w-2xl">
-          {" "}
-          <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "}
-        </Box>{" "}
-      </Flex>{" "}
-      <Transactions />{" "}
-    </>
-  );
-}
+              add
+            </div>
+          </div>
+        );
+        };
+        
+        const Transactions = () => { return ( <div className="py-4 flex justify-center"> <a href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`} target="_blank" rel="noreferrer" className="underline" > view transactions </a> </div> ); };
+        
+        return ( <div> <NavBar /> <div className="mt-60px flex justify-center p-3"> <div className="w-full max-w-600px"> <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks /> </div> </div> <Transactions /> </div> ); 
