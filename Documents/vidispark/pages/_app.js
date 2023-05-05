@@ -6,16 +6,6 @@ import { countdown } from "../src/utils";
 import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import merge from "lodash.merge";
-import { ChakraBaseProvider, extendBaseTheme } from "@chakra-ui/react";
-import chakraTheme from "@chakra-ui/theme";
-
-const { Button } = chakraTheme.components;
-
-const theme = extendBaseTheme({
-  components: {
-    Button,
-  },
-});
 
 import {
   getDefaultWallets,
@@ -92,13 +82,12 @@ function MyApp({ Component, pageProps }) {
 
         <title>NFT</title>
       </Head>
-      <ChakraBaseProvider theme={theme}>
-        <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains} theme={myTheme}>
-            <Component {...pageProps} />
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </ChakraBaseProvider>
+
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider chains={chains} theme={myTheme}>
+          <Component {...pageProps} />
+        </RainbowKitProvider>
+      </WagmiConfig>
     </Provider>
   );
 }
