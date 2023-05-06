@@ -58,6 +58,7 @@ const wagmiClient = createClient({
   provider,
 });
 
+console.log(provider);
 const myTheme = merge(midnightTheme(), {
   colors: {
     accentColor: "#18181b",
