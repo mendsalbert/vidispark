@@ -59,7 +59,6 @@ const wagmiClient = createClient({
   provider,
 });
 
-console.log(provider.);
 const myTheme = merge(midnightTheme(), {
   colors: {
     accentColor: "#18181b",
@@ -72,9 +71,8 @@ function MyApp({ Component, pageProps }) {
     countdown();
   }, []);
 
-
-    const { address, isConnected } = useAccount();
-console.log(address);
+  const { address, isConnected } = useAccount();
+  console.log(address);
   return (
     <Provider store={store}>
       <Head>
