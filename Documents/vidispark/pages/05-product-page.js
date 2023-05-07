@@ -24,9 +24,13 @@ const Product05 = () => {
               <use xlinkHref="#maximize-icon" />
             </svg>
           </a>
-          <div className="product-img">
-            {/* <img src="img/content/product-img/product-2.jpg" alt="" /> */}
-          </div>
+          <ReactPlayer
+            url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8"
+            controls
+            width="100%"
+            height="auto"
+            className="rounded-md shadow-lg"
+          />
         </div>
         <div className="product-info">
           <div className="product-info-wrapper">
