@@ -49,7 +49,7 @@ const Product06 = () => {
         </div>
 
         {/* / Products V2 Related Items */}
-        {/* <ProductV2RelatedItems /> */}
+        <ProductV2RelatedItems />
       </div>
     </Layouts>
   );
