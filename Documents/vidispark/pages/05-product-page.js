@@ -13,7 +13,8 @@ const Product05 = () => {
 
   return (
     <Layouts>
-      <div className="product-page product-version-1">
+      {/* <div className="product-page product-version-1"> */}
+      <div className="">
         <div className="product-media">
           <a
             className="expand-icon"
