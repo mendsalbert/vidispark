@@ -253,6 +253,7 @@ export default function App() {
     await db.initializeWithoutWallet();
     setInitDB(true);
   };
+  console.log(db);
 
   const getTasks = async () => {
     setTasks(await db.cget("tasks", ["date", "desc"]));
