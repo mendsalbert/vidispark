@@ -229,29 +229,26 @@
 import { useRef, useState, useEffect } from "react";
 import lf from "localforage";
 import { isNil, map } from "ramda";
-import WeaveDB from "weavedb-sdk";
+import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
 let db;
-const contractTxId = "TfVL0dsDYckN1cl0-kGJcKI5WUEPtLjTVbc6Md67R-0";
+const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
 
 export default function App() {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
+
   const [initDB, setInitDB] = useState(false);
   let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
 
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
-    // db = new WeaveDB({
-    //   contractTxId,
-    // });
-    // await db?.initializeWithoutWallet();
-    const db = new WeaveDB({
-      contractTxId: contractTxId,
+    db = new SDK({
+      contractTxId,
     });
     await db.initializeWithoutWallet();
     setInitDB(true);
