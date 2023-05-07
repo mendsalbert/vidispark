@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CountDown from "./CountDown";
 import { EyeIcon } from "@heroicons/react/24/outline";
+import ReactPlayer from "react-player";
 
 const Nft = ({ data }) => {
   return (
@@ -21,6 +22,13 @@ const Nft = ({ data }) => {
                 </picture>
               </a>
             </Link> */}
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=oUFJJNQGwhk"
+              controls
+              width="100%"
+              height="auto"
+              className="rounded-md shadow-lg"
+            />
           </div>
           <div className="featured-item-info">
             {/* {data.time && <CountDown endDateTime={data.time} />} */}
