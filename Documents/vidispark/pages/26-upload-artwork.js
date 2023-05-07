@@ -514,7 +514,7 @@ export default function App() {
           <NewTask />
         </div>{" "}
       </div>{" "}
-      <Transactions />{" "}
+      {/* <Transactions />{" "} */}
     </div>
   );
 }
