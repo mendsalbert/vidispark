@@ -4,6 +4,7 @@ import ProductRelatedItems from "../src/components/Product/ProductV1/ProductRela
 import ProductTabs from "../src/components/Product/ProductV1/ProductTabs";
 import Layouts from "../src/layouts/Layouts";
 import { countdown } from "../src/utils";
+import ReactPlayer from "react-player";
 
 const Product05 = () => {
   useEffect(() => {
@@ -24,7 +25,7 @@ const Product05 = () => {
             </svg>
           </a>
           <div className="product-img">
-            <img src="img/content/product-img/product-2.jpg" alt="" />
+            {/* <img src="img/content/product-img/product-2.jpg" alt="" /> */}
           </div>
         </div>
         <div className="product-info">
