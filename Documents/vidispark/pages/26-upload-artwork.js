@@ -233,10 +233,9 @@ import WeaveDB from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
+let db;
 const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
-let db = new WeaveDB({});
 
-console.log(db);
 export default function App() {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -251,7 +250,7 @@ export default function App() {
     //   contractTxId,
     // });
     // await db?.initializeWithoutWallet();
-    const db = await new WeaveDB({
+    const db = new WeaveDB({
       contractTxId: contractTxId,
       rpc: "https://erpc.apothem.network", // gRPC node URL
     });
@@ -366,7 +365,7 @@ export default function App() {
 
   useEffect(() => {
     checkUser();
-    // setupWeaveDB();
+    setupWeaveDB();
   }, []);
 
   useEffect(() => {
