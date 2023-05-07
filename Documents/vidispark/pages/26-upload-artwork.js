@@ -234,9 +234,7 @@ import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
 const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
-let db = new WeaveDB({
-  contractTxId: contractTxId,
-});
+let db = new WeaveDB({});
 
 console.log(db);
 export default function App() {
