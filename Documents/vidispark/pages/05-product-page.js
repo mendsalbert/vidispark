@@ -40,8 +40,6 @@ const Product05 = () => {
             {/* / Products Tabs */}
             <ProductTabs />
             {/*  RELATED ITEMS */}
-            <ProductRelatedItems />
-            {/*  RELATED ITEMS */}
           </div>
         </div>
       </div>
