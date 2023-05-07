@@ -236,7 +236,6 @@ import { ethers } from "ethers";
 const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
 let db = new WeaveDB({
   contractTxId: contractTxId,
-  rpc: "https://erpc.apothem.network", // gRPC node URL
 });
 
 console.log(db);
