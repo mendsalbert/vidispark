@@ -246,13 +246,9 @@ export default function App() {
 
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
-    // db = new WeaveDB({
-    //   contractTxId,
-    // });
-    // await db?.initializeWithoutWallet();
+
     const db = new WeaveDB({
       contractTxId: contractTxId,
-      // rpc: "https://erpc.apothem.network", // gRPC node URL
     });
     await db.initializeWithoutWallet();
     setInitDB(true);
