@@ -233,7 +233,10 @@ import WeaveDB from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
-let db;
+let db = new WeaveDB({
+  contractTxId: contractTxId,
+  rpc: "https://erpc.apothem.network", // gRPC node URL
+});
 const contractTxId = "CRE4-5cQNsfGOyfW54qI--yEzXwbI3h0A-gu9GbF-JI";
 
 export default function App() {
