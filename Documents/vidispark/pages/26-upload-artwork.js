@@ -254,7 +254,7 @@ export default function App() {
       contractTxId: contractTxId,
       rpc: "https://erpc.apothem.network", // gRPC node URL
     });
-    await db?.initializeWithoutWallet();
+    await db.initializeWithoutWallet();
     setInitDB(true);
   };
 
