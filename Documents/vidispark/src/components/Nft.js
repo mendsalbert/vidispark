@@ -8,8 +8,7 @@ const Nft = ({ data }) => {
       <div className="featured-item-wrapper">
         <div className="featured-item-content">
           <div className="featured-item-image">
-            {" "}
-            <Link href="/05-product-page">
+            {/* <Link href="/05-product-page">
               <a>
                 <picture>
                   <source type="image/avif" srcSet={data.image} />
@@ -21,7 +20,7 @@ const Nft = ({ data }) => {
                   />
                 </picture>
               </a>
-            </Link>{" "}
+            </Link> */}
           </div>
           <div className="featured-item-info">
             {/* {data.time && <CountDown endDateTime={data.time} />} */}
