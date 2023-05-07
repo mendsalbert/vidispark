@@ -44,7 +44,7 @@ const Product06 = () => {
             {/* / Products V2 Info */}
             <ProductV2Info />
             {/* / Products V2 Tabs */}
-            <ProductV2Tabs />
+            {/* <ProductV2Tabs /> */}
           </div>
         </div>
 
