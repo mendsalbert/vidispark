@@ -239,6 +239,7 @@ let db = new WeaveDB({
   rpc: "https://erpc.apothem.network", // gRPC node URL
 });
 
+console.log(db);
 export default function App() {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
