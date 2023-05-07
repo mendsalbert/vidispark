@@ -26,7 +26,7 @@ const Nft = ({ data }) => {
               url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8"
               controls
               width="100%"
-              height="500"
+              height="200"
               className="rounded-md shadow-lg"
             />
           </div>
