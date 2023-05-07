@@ -233,10 +233,10 @@ import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
-let db;
-const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
-
 export default function App() {
+  let db;
+  const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
+
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
