@@ -250,7 +250,7 @@ export default function App() {
     //   contractTxId,
     // });
     // await db?.initializeWithoutWallet();
-    const db = new WeaveDB({
+    const db = await new WeaveDB({
       contractTxId: contractTxId,
       rpc: "https://erpc.apothem.network", // gRPC node URL
     });
@@ -365,7 +365,7 @@ export default function App() {
 
   useEffect(() => {
     checkUser();
-    // setupWeaveDB();
+    setupWeaveDB();
   }, []);
 
   useEffect(() => {
