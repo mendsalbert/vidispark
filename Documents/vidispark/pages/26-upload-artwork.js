@@ -229,7 +229,7 @@
 import { useRef, useState, useEffect } from "react";
 import lf from "localforage";
 import { isNil, map } from "ramda";
-import SDK from "weavedb-sdk";
+import WeaveDB from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
@@ -246,10 +246,10 @@ export default function App() {
 
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
-    db = new SDK({
+    db = new WeaveDB({
       contractTxId,
     });
-    await db.initializeWithoutWallet();
+    await db?.initializeWithoutWallet();
     setInitDB(true);
   };
 
