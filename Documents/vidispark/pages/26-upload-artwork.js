@@ -229,7 +229,7 @@
 import { useRef, useState, useEffect } from "react";
 import lf from "localforage";
 import { isNil, map } from "ramda";
-import WeaveDB from "weavedb-sdk";
+import WeaveDB from "weavedb-client";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
