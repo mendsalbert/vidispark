@@ -255,8 +255,7 @@ export default function App() {
 
     const db = new WeaveDB({
       wallet: `2J0dqD4MvOStHY6aEGEYJ7Z-CggOO9g1mCLeQk1GgeA
-      YSReuO6vzkBWd4Tdfe8HE0YLXj4tJokfatsORv7iZ94
-      `,
+      YSReuO6vzkBWd4Tdfe8HE0YLXj4tJokfatsORv7iZ94`,
       contractTxId: contractTxId,
     });
 
