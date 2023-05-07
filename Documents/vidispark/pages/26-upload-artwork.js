@@ -245,7 +245,7 @@ export default function App() {
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
 
   const setupWeaveDB = async () => {
-    window.Buffer = Buffer;
+    // window.Buffer = Buffer;
 
     const db = new WeaveDB({
       contractTxId: contractTxId,
