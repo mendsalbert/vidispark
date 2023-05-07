@@ -3185,7 +3185,7 @@ arweave@1.11.6:
     bignumber.js "^9.0.2"
     util "^0.12.4"
 
-arweave@1.13.7, arweave@^1.10.13, arweave@^1.11.4:
+arweave@1.13.7, arweave@^1.10.13, arweave@^1.11.4, arweave@^1.11.8:
   version "1.13.7"
   resolved "https://registry.yarnpkg.com/arweave/-/arweave-1.13.7.tgz#cda8534c833baec372a7052c61f53b4e39a886d7"
   integrity sha512-Hv+x2bSI6UyBHpuVbUDMMpMje1ETfpJWj52kKfz44O0IqDRi/LukOkkDUptup1p6OT6KP1/DdpnUnsNHoskFeA==
@@ -5069,6 +5069,11 @@ globby@^13.0.0:
     merge2 "^1.4.1"
     slash "^4.0.0"
 
+google-protobuf@^3.21.0:
+  version "3.21.2"
+  resolved "https://registry.yarnpkg.com/google-protobuf/-/google-protobuf-3.21.2.tgz#4580a2bea8bbb291ee579d1fefb14d6fa3070ea4"
+  integrity sha512-3MSOYFO5U9mPGikIYCzK0SaThypfGgS6bHqrUGXG3DPHCrb+txNqeEcns1W0lkGfk0rCyNXm7xB9rMxnCiZOoA==
+
 gopd@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/gopd/-/gopd-1.0.1.tgz#29ff76de69dac7489b7c0918a5788e56477c332c"
@@ -5085,6 +5090,11 @@ growl@1.10.5:
   version "1.10.5"
   resolved "https://registry.yarnpkg.com/growl/-/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
   integrity sha512-qBr4OuELkhPenW6goKVXiv47US3clb3/IbuWF9KNKEijAy9oeHxU9IgzjvJhHkUzhaj7rOUD7+YGWqUjLp5oSA==
+
+grpc-web@^1.3.1:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/grpc-web/-/grpc-web-1.4.2.tgz#86995f76471ce6b2119106ec26f909b7b69e7d43"
+  integrity sha512-gUxWq42l5ldaRplcKb4Pw5O4XBONWZgz3vxIIXnfIeJj8Jc3wYiq2O4c9xzx/NGbbPEej4rhI62C9eTENwLGNw==
 
 has-bigints@^1.0.1, has-bigints@^1.0.2:
   version "1.0.2"
@@ -7885,6 +7895,20 @@ warp-wasm-metering@1.0.1:
     leb128 "^0.0.4"
     warp-wasm-json-toolkit "1.0.2"
 
+weavedb-base@^0.26.10:
+  version "0.26.10"
+  resolved "https://registry.yarnpkg.com/weavedb-base/-/weavedb-base-0.26.10.tgz#299ce971fbd6e371a8355efe85aeb3f1b57e8e4a"
+  integrity sha512-mcBIcyEaUp/3UI8au6nJpfuFW/lerJCEk2eCCNA2kgVmdBqDIANGsfdqtFElNcow58LafxHnyzjQ0aVrBK96RQ==
+  dependencies:
+    "@metamask/eth-sig-util" "^4.0.1"
+    "@metamask/legacy-web3" "^2.0.0"
+    "@simplewebauthn/server" "^7.2.0"
+    eth-crypto "^2.3.0"
+    ethereumjs-util "^7.1.5"
+    ethers "5.7.2"
+    pako "^2.1.0"
+    ramda "^0.28.0"
+
 weavedb-base@^0.27.0:
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/weavedb-base/-/weavedb-base-0.27.0.tgz#5b71a8199615a2a0374454930d7c0862810ca518"
@@ -7898,6 +7922,19 @@ weavedb-base@^0.27.0:
     ethers "5.7.2"
     pako "^2.1.0"
     ramda "^0.28.0"
+
+weavedb-client@^0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/weavedb-client/-/weavedb-client-0.27.0.tgz#8bd545ef96bd7de24b716ae92ffd841960228fbe"
+  integrity sha512-JixlNSdlvd/P9WiZaf/bwMGFoi0E8d9G765cm87c4lKC4LRs+R1CS9xfRIEWUR9dbFVu33jf8Cc95RhDrZ57uw==
+  dependencies:
+    "@lit-protocol/sdk-browser" "^1.3.3"
+    "@metamask/legacy-web3" "^2.0.0"
+    arweave "^1.11.8"
+    google-protobuf "^3.21.0"
+    grpc-web "^1.3.1"
+    ramda "^0.28.0"
+    weavedb-base "^0.26.10"
 
 weavedb-contracts@^0.27.1:
   version "0.27.1"
