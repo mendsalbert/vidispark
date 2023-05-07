@@ -505,7 +505,7 @@ export default function App() {
   return (
     <div>
       {" "}
-      <NavBar />{" "}
+      {/* <NavBar />{" "} */}
       <div className="mt-60px flex justify-center p-3">
         {" "}
         <div className="w-full max-w-600px">
