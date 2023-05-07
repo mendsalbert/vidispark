@@ -240,7 +240,7 @@ const db = new WeaveDB({
   wallet: `2J0dqD4MvOStHY6aEGEYJ7Z-CggOO9g1mCLeQk1GgeA
   YSReuO6vzkBWd4Tdfe8HE0YLXj4tJokfatsORv7iZ94
   `,
-  contractTxId: WEAVEDB_CONTRACT_TX_ID,
+  contractTxId: contractTxId,
 });
 
 // In case the wallet is not set, you can run initializeWithoutWallet() after the instantiation.
