@@ -249,7 +249,7 @@ export default function App() {
     db = new WeaveDB({
       contractTxId,
     });
-    await db?.initializeWithoutWallet();
+    // await db?.initializeWithoutWallet();
     setInitDB(true);
   };
 
