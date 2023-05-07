@@ -233,8 +233,25 @@ import WeaveDB from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
-let db;
+// let db;
 const contractTxId = "TfVL0dsDYckN1cl0-kGJcKI5WUEPtLjTVbc6Md67R-0";
+
+const db = new WeaveDB({
+  wallet: `2J0dqD4MvOStHY6aEGEYJ7Z-CggOO9g1mCLeQk1GgeA
+  YSReuO6vzkBWd4Tdfe8HE0YLXj4tJokfatsORv7iZ94
+  `,
+  contractTxId: WEAVEDB_CONTRACT_TX_ID,
+});
+
+// In case the wallet is not set, you can run initializeWithoutWallet() after the instantiation.
+await db.initializeWithoutWallet();
+
+// Or you can assign the wallet later. Note initialize() is not an async-function.
+db.initialize({
+  wallet: `2J0dqD4MvOStHY6aEGEYJ7Z-CggOO9g1mCLeQk1GgeA
+  YSReuO6vzkBWd4Tdfe8HE0YLXj4tJokfatsORv7iZ94
+  `,
+});
 
 export default function App() {
   const [user, setUser] = useState(null);
