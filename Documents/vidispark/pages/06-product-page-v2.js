@@ -4,6 +4,7 @@ import ProductV2RelatedItems from "../src/components/Product/ProductV2/ProductV2
 import ProductV2Tabs from "../src/components/Product/ProductV2/ProductV2Tabs";
 import Layouts from "../src/layouts/Layouts";
 import { countdown } from "../src/utils";
+import ReactPlayer from "react-player";
 
 const Product06 = () => {
   useEffect(() => {
@@ -23,11 +24,18 @@ const Product06 = () => {
                 <use xlinkHref="#maximize-icon" />
               </svg>
             </a>
-            <img
+            {/* <img
               src="img/content/product-img/product-1-large.png"
               width={1742}
               height={980}
               alt=""
+            /> */}
+            <ReactPlayer
+              url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8"
+              controls
+              width={1742}
+              height={980}
+              className="rounded-md shadow-lg"
             />
           </div>
         </div>
