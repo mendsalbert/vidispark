@@ -33,7 +33,7 @@ const Product06 = () => {
             <ReactPlayer
               url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8"
               controls
-              width={1742}
+              width="100%"
               height={980}
               className="rounded-md shadow-lg"
             />
