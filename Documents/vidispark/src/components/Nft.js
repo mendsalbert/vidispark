@@ -23,7 +23,7 @@ const Nft = ({ data }) => {
               </a>
             </Link> */}
             <ReactPlayer
-              url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8              "
+              url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8"
               controls
               width="100%"
               height="auto"
