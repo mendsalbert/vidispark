@@ -237,7 +237,7 @@ export default function App() {
   // Define a function for uploading user data to web3storage
   async function uploadUserData(user, data) {
     // Convert the data to a Uint8Array
-    const uint8Data = new TextEncoder().encode(JSON.stringify(data));
+    const uint8Data = JSON.stringify(data);
 
     // Upload the data to web3storage and get the resulting CID
     const { cid } = await client.put(uint8Data);
