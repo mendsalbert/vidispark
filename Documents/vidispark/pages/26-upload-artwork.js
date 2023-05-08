@@ -241,6 +241,8 @@ export default function App() {
     // Upload the data to web3storage and get the resulting CID
     const { cid } = await client.put(uint8Data);
 
+    console.log(uint8Data);
+    console.log(cid);
     // Save the CID to the user's profile
     user.web3storageCid = cid.toString();
   }
