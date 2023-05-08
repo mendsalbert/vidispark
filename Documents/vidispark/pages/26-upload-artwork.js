@@ -244,9 +244,11 @@ const compose = new ComposeClient({
 const get = async () => {
   let res = await compose.executeQuery(`
   query {
-    profile {
-        name
-        bio
+    viewer {
+        profile {
+          name
+          bio
+        }
       }
   }
   
