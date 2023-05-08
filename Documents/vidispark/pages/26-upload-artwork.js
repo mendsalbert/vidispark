@@ -226,45 +226,50 @@
 // Import ComposeDB client
 
 import React from "react";
-import {
-  ApolloClient,
-  ApolloLink,
-  InMemoryCache,
-  Observable,
-} from "@apollo/client";
-import { ComposeClient } from "@composedb/client";
+import { gql, useMutation, useQuery } from "@apollo/client";
 
-// Path to compiled composite
-import definition from "../blog.runtime.json";
+const LIST_SIMPLE_PROFILES = gql`
+  query ListSimpleProfiles {
+    viewer {
+      profile {
+        name
+        bio
+      }
+    }
+  }
+`;
+const ADD_SIMPLE_PROFILE = gql`
+  mutation AddSimpleProfile($displayName: String!) {
+    createSimpleProfile(input: { content: { displayName: $displayName } }) {
+      document {
+        id
+        displayName
+      }
+    }
+  }
+`;
+function Index() {
+  const { loading, error, data } = useQuery(LIST_SIMPLE_PROFILES);
+  const [addSimpleProfile] = useMutation(ADD_SIMPLE_PROFILE);
+  console.log(data);
 
-// Create an instance of ComposeClient
-// Pass the URL of your Ceramic server
-// Pass reference to your compiled composite
+  const addQuery = async () => {
+    const displayName = "mends kofi";
+    const result = await addSimpleProfile({ variables: { displayName } });
+    console.log(result);
+  };
+  return (
+    <div>
+      Index
+      <button
+        onClick={() => {
+          addQuery();
+        }}
+      >
+        Get Query
+      </button>
+    </div>
+  );
+}
 
-const UploadArtwork = () => {
-  const compose = new ComposeClient({
-    ceramic: "http://localhost:7007",
-    definition,
-  });
-
-  // Create custom ApolloLink using ComposeClient instance to execute operations
-  const link = new ApolloLink((operation) => {
-    return new Observable((observer) => {
-      compose.execute(operation.query, operation.variables).then(
-        (result) => {
-          observer.next(result);
-          observer.complete();
-        },
-        (error) => {
-          observer.error(error);
-        }
-      );
-    });
-  });
-
-  const client = new ApolloClient({ cache: new InMemoryCache(), link });
-
-  return <div>UploadArtwork</div>;
-};
-
-export default UploadArtwork;
+export default Index;
