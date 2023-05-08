@@ -84,6 +84,7 @@ function MyApp({ Component, pageProps }) {
 
   const compose = new ComposeClient({
     ceramic: "http://localhost:7007",
+    definition,
   });
 
   // Create custom ApolloLink using ComposeClient instance to execute operations
