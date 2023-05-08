@@ -512,8 +512,8 @@ export default function App() {
         {" "}
         <div className="w-full max-w-600px">
           {" "}
-          {/* <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "} */}
-          <NewTask />
+          <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "}
+          {/* <NewTask /> */}
         </div>{" "}
       </div>{" "}
       <Transactions />{" "}
