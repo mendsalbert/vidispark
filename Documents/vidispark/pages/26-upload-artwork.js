@@ -249,7 +249,7 @@ const get = async () => {
   }
 `);
 
-  console.log(res);
+  console.log("res", res);
 };
 
 get();
