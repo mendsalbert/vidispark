@@ -243,7 +243,7 @@ export default function App() {
     const { cid } = await client.put(userinfo);
 
     // Save the CID to the user's profile
-    // user.web3storageCid = cid.toString();
+    user.web3storageCid = cid.toString();
   }
 
   // Define a function for downloading user data from web3storage
