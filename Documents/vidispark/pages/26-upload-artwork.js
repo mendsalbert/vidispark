@@ -279,8 +279,7 @@ export default function App() {
         user_address: db.signer(),
         done: false,
       },
-      "tasks",
-      user
+      "tasks"
     );
     await getTasks();
   };
