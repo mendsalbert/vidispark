@@ -6,4 +6,5 @@ const client = new ApolloClient({
 });
 
 console.log("client", client);
+
 export default client;
