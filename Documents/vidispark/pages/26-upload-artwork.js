@@ -251,7 +251,6 @@ const get = async () => {
         }
       }
   }
-  
   `);
 
   console.log("res", res);
