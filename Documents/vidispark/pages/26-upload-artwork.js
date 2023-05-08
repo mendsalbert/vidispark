@@ -300,5 +300,9 @@ export default function App() {
     return user;
   }
 
-  return <div></div>;
+  return (
+    <div>
+      <button>Add user</button>
+    </div>
+  );
 }
