@@ -238,6 +238,7 @@ import { definition } from "../definition";
 import React from "react";
 const compose = new ComposeClient({
   ceramic: "http://localhost:7007",
+  definition,
 });
 
 const get = async () => {
