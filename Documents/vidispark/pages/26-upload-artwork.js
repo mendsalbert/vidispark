@@ -223,6 +223,8 @@
 //     </div>
 //   );
 // }
+
+"use client";
 import { Network, EnvironmentType } from "@verida/client-ts";
 import { VaultAccount } from "@verida/account-web-vault";
 export default function App() {
