@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
+    "@composedb/client": "^0.4.4",
     "@heroicons/react": "^2.0.17",
     "@rainbow-me/rainbowkit": "^0.12.12",
     "@tableland/sdk": "^4.2.2",
