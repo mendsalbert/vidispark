@@ -7,7 +7,7 @@ import {
 import { ComposeClient } from "@composedb/client";
 
 // Path to compiled composite
-import definition from "../apollo/apollo-client.js";
+import definition from "../apollo/apollo-client";
 
 const compose = new ComposeClient({
   ceramic: "http://localhost:7007",
