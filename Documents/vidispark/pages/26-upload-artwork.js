@@ -241,13 +241,15 @@ const compose = new ComposeClient({
 });
 
 const get = async () => {
-  await compose.executeQuery(`
+  let res = await compose.executeQuery(`
   query {
     viewer {
       id
     }
   }
 `);
+
+  console.log(res);
 };
 
 get();
