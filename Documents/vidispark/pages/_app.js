@@ -116,13 +116,13 @@ function MyApp({ Component, pageProps }) {
 
         <title>NFT</title>
       </Head>
-      <ApolloProvider client={client}>
-        <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains} theme={myTheme}>
-            <Component {...pageProps} />
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </ApolloProvider>
+      {/* <ApolloProvider client={client}> */}
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider chains={chains} theme={myTheme}>
+          <Component {...pageProps} />
+        </RainbowKitProvider>
+      </WagmiConfig>
+      {/* </ApolloProvider> */}
     </Provider>
   );
 }
