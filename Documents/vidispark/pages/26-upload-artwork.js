@@ -255,50 +255,50 @@ export default function App() {
   };
   console.log(db);
 
-  const getTasks = async () => {
-    setTasks(await db.cget("tasks", ["date", "desc"]));
-  };
+  // const getTasks = async () => {
+  //   setTasks(await db.cget("tasks", ["date", "desc"]));
+  // };
 
-  const getMyTasks = async () => {
-    setTasks(
-      await db.cget(
-        "tasks",
-        ["user_address", "==", user.wallet.toLowerCase()],
-        ["date", "desc"]
-      )
-    );
-  };
+  // const getMyTasks = async () => {
+  //   setTasks(
+  //     await db.cget(
+  //       "tasks",
+  //       ["user_address", "==", user.wallet.toLowerCase()],
+  //       ["date", "desc"]
+  //     )
+  //   );
+  // };
 
-  const addTask = async (task) => {
-    await db.add(
-      {
-        task,
-        date: db.ts(),
-        user_address: db.signer(),
-        done: false,
-      },
-      "tasks",
-      user
-    );
-    await getTasks();
-  };
+  // const addTask = async (task) => {
+  //   await db.add(
+  //     {
+  //       task,
+  //       date: db.ts(),
+  //       user_address: db.signer(),
+  //       done: false,
+  //     },
+  //     "tasks",
+  //     user
+  //   );
+  //   await getTasks();
+  // };
 
-  const completeTask = async (id) => {
-    await db.update(
-      {
-        done: true,
-      },
-      "tasks",
-      id,
-      user
-    );
-    await getTasks();
-  };
+  // const completeTask = async (id) => {
+  //   await db.update(
+  //     {
+  //       done: true,
+  //     },
+  //     "tasks",
+  //     id,
+  //     user
+  //   );
+  //   await getTasks();
+  // };
 
-  const deleteTask = async (id) => {
-    await db.delete("tasks", id, user);
-    await getTasks();
-  };
+  // const deleteTask = async (id) => {
+  //   await db.delete("tasks", id, user);
+  //   await getTasks();
+  // };
 
   const login = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
