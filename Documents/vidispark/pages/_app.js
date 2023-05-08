@@ -81,9 +81,9 @@ function MyApp({ Component, pageProps }) {
   const { address, isConnected } = useAccount();
   console.log(address);
 
-  const compose = new ComposeClient({
-    ceramic: "http://localhost:7007",
-  });
+  // const compose = new ComposeClient({
+  //   ceramic: "http://localhost:7007",
+  // });
 
   // Create custom ApolloLink using ComposeClient instance to execute operations
   // const link = new ApolloLink((operation) => {
