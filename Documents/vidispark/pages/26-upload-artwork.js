@@ -249,7 +249,6 @@ const get = async () => {
         bio
       }
     }
-
   `);
 
   console.log("res", res);
