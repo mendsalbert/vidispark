@@ -231,18 +231,18 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 const LIST_SIMPLE_PROFILES = gql`
   query {
     viewer {
-      id
+      is
     }
   }
 `;
 const ADD_SIMPLE_PROFILE = gql`
   mutation {
-    createProfiljkhke(
+    createProfile(
       input: { content: { name: "Admin2", bio: "The creator of this blog." } }
     ) {
-      projklfile: document {
+      profile: document {
         name
-        blkio
+        bio
       }
     }
   }
