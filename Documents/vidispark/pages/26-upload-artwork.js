@@ -229,10 +229,12 @@ import React from "react";
 import { gql, useMutation, useQuery } from "@apollo/client";
 
 const LIST_SIMPLE_PROFILES = gql`
-  query ListSimpleProfiles {
-    profile {
-      name
-      bio
+  query {
+    viewer {
+      profile {
+        name
+        bio
+      }
     }
   }
 `;
