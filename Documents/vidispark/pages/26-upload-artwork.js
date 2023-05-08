@@ -243,7 +243,7 @@ const ADD_SIMPLE_PROFILE = gql`
     createProfile(
       input: { content: { name: "Admin", bio: "The creator of this blog." } }
     ) {
-      profile {
+      profile: document {
         name
         bio
       }
