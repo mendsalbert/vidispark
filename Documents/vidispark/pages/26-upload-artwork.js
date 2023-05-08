@@ -512,7 +512,7 @@ export default function App() {
         {" "}
         <div className="w-full max-w-600px">
           {" "}
-          <Tabs /> {!isNil(user) ? <NewTask /> : null} <Tasks />{" "}
+          <Tabs /> {isNil(user) ? <NewTask /> : null} <Tasks />{" "}
           {/* <NewTask /> */}
         </div>{" "}
       </div>{" "}
