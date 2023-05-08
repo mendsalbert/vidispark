@@ -323,7 +323,8 @@ export default function App() {
     <div>
       <button
         onClick={() => {
-          createUser("mends", "123", "image");
+          // createUser("mends", "123", "image");
+          makeFileObjects();
         }}
       >
         Add user
