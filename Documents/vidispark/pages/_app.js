@@ -86,22 +86,22 @@ function MyApp({ Component, pageProps }) {
   });
 
   // Create custom ApolloLink using ComposeClient instance to execute operations
-  const link = new ApolloLink((operation) => {
-    return new Observable((observer) => {
-      compose.execute(operation.query, operation.variables).then(
-        (result) => {
-          observer.next(result);
-          observer.complete();
-        },
-        (error) => {
-          observer.error(error);
-        }
-      );
-    });
-  });
+  // const link = new ApolloLink((operation) => {
+  //   return new Observable((observer) => {
+  //     compose.execute(operation.query, operation.variables).then(
+  //       (result) => {
+  //         observer.next(result);
+  //         observer.complete();
+  //       },
+  //       (error) => {
+  //         observer.error(error);
+  //       }
+  //     );
+  //   });
+  // });
 
   // Use ApolloLink instance in ApolloClient config
-  const client = new ApolloClient({ cache: new InMemoryCache(), link });
+  // const client = new ApolloClient({ cache: new InMemoryCache(), link });
   return (
     <Provider store={store}>
       <Head>
@@ -114,13 +114,13 @@ function MyApp({ Component, pageProps }) {
 
         <title>NFT</title>
       </Head>
-      <ApolloClient client={client}>
-        <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains} theme={myTheme}>
-            <Component {...pageProps} />
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </ApolloClient>
+      {/* <ApolloClient client={client}> */}
+      <WagmiConfig client={wagmiClient}>
+        <RainbowKitProvider chains={chains} theme={myTheme}>
+          <Component {...pageProps} />
+        </RainbowKitProvider>
+      </WagmiConfig>
+      {/* </ApolloClient> */}
     </Provider>
   );
 }
