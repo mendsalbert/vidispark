@@ -15,6 +15,11 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 import { ComposeClient } from "@composedb/client";
+import { Web3Provider } from "@ethersproject/providers";
+import Web3Modal from "web3modal";
+import { ComposeClient } from "@composedb/client";
+import { DIDSession } from "did-session";
+import { EthereumWebAuth, getAccountId } from "@didtools/pkh-ethereum";
 import {
   getDefaultWallets,
   RainbowKitProvider,
