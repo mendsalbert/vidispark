@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/styled": "^11.10.8",
     "@heroicons/react": "^2.0.17",
     "@rainbow-me/rainbowkit": "^0.12.12",
     "@tableland/sdk": "^4.2.2",
