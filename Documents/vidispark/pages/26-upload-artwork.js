@@ -225,8 +225,8 @@
 // }
 
 "use client";
-import { Network, EnvironmentType } from "@verida/client-ts";
-import { VaultAccount } from "@verida/account-web-vault";
+import { Client, EnvironmentType } from "@verida/client-ts";
+import { AutoAccount } from "@verida/account-node";
 export default function App() {
   const VERIDA_ENVIRONMENT = EnvironmentType.TESTNET;
   const CONTEXT_NAME = "My Application Context Name";

@@ -14,7 +14,7 @@
     "@tableland/sdk": "^4.2.2",
     "@tabler/icons": "^2.17.0",
     "@types/pouchdb-core": "^7.0.11",
-    "@verida/account-web-vault": "^2.3.4",
+    "@verida/account-web-vault": "2.2.1",
     "@verida/client-ts": "^2.3.4",
     "autoprefixer": "^10.4.14",
     "axios": "^1.4.0",

@@ -1955,21 +1955,21 @@
   resolved "https://registry.yarnpkg.com/@vanilla-extract/sprinkles/-/sprinkles-1.5.0.tgz#c921183ae518bb484299c2dc81f2acefd91c3dbe"
   integrity sha512-W58f2Rzz5lLmk0jbhgStVlZl5wEiPB1Ur3fRvUaBM+MrifZ3qskmFq/CiH//fEYeG5Dh9vF1qRviMMH46cX9Nw==
 
-"@verida/account-web-vault@^2.3.4":
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/@verida/account-web-vault/-/account-web-vault-2.3.4.tgz#b4e2fd16dddf645e23ebf0b5d0d609ec6d2209b7"
-  integrity sha512-aEFvg1eKhsglvkxxZoA17bscH+EqIsMMzNZxZcBu4sPFfzjBlRxsdNdgdCZ+q7x+HSPoDJKxUCSx4j2qqSGtzQ==
+"@verida/account-web-vault@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@verida/account-web-vault/-/account-web-vault-2.2.1.tgz#6793f699025f5bb64dc9b3ec7616e4719e50a6ef"
+  integrity sha512-AOBSKdhBITjkhN5jSLomnRVtfvWWrjqdSCOP8w9jdvmhVkJDEQWk5bGIdDkmOYETf95dvSvSDzPJjXvhXMxQuA==
   dependencies:
-    "@verida/account" "^2.3.4"
+    "@verida/account" "^2.2.1"
     "@verida/encryption-utils" "^2.2.1"
-    "@verida/keyring" "^2.3.1"
-    "@verida/types" "^2.3.1"
+    "@verida/keyring" "^2.2.1"
+    "@verida/types" "^2.2.0"
     jsonwebtoken "^8.5.1"
     lodash "^4.17.21"
     qrcode-with-logos "^1.0.3"
     store "^2.0.12"
 
-"@verida/account@^2.3.4":
+"@verida/account@^2.2.1", "@verida/account@^2.3.4":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@verida/account/-/account-2.3.4.tgz#019618a695a4df16e44228aa7d4bbb0b0cce7fa5"
   integrity sha512-V9hHoHG6gs9ybsUFsfGyeUiIuS1lDPaErz+Dt5Skxg0wI5Ebiyy+lXAJD+ff6P0TJpWoTtxRWOqvE54O4h4A0A==
@@ -2058,7 +2058,7 @@
     bs58 "^5.0.0"
     url "^0.11.0"
 
-"@verida/keyring@^2.3.1":
+"@verida/keyring@^2.2.1", "@verida/keyring@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@verida/keyring/-/keyring-2.3.1.tgz#40fc34e91371325ab6cd3ea5e263f2f0c6d7be51"
   integrity sha512-Rbbp36bwOlFZDF6hV2nr+A2GdHVyK1XV5mFumTDl2pdLEPgKcpzGkfBsfx8fyfNEgMfbaoB35hQt90FO4LrEWg==
@@ -2081,7 +2081,7 @@
     did-resolver "^4.0.0"
     url-parse "^1.5.3"
 
-"@verida/types@^2.3.1":
+"@verida/types@^2.2.0", "@verida/types@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@verida/types/-/types-2.3.1.tgz#7cc6ab253eb5d1bf6995b9c17c77328f5f68e8b9"
   integrity sha512-gbzrVKMNIpUdNrZ/H9T3nCYRNWdYWX1B0cB8sQCMRV5Ad7Xrn4E7WlzN72pT+yWf0NiqwXab4/1jsEdT7UeexA==
@@ -6924,9 +6924,9 @@ node-fetch@2.6.7:
     whatwg-url "^5.0.0"
 
 node-fetch@^2.6.1, node-fetch@^2.6.7, node-fetch@^2.6.8:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.9.tgz#7c7f744b5cc6eb5fd404e0c7a9fec630a55657e6"
-  integrity sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.10.tgz#4a52b637a6802092aa11a3bf73d19aac789fdce1"
+  integrity sha512-5YytjUVbwzjE/BX4N62vnPPkGNxlJPwdA9/ArUc4pcM6cYS4Hinuv4VazzwjMGgnWuiQqcemOanib/5PpcsGug==
   dependencies:
     whatwg-url "^5.0.0"
 
