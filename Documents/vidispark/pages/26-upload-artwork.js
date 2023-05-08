@@ -223,112 +223,27 @@
 //     </div>
 //   );
 // }
-
+import { Network, EnvironmentType } from "@verida/client-ts";
+import { VaultAccount } from "@verida/account-web-vault";
 export default function App() {
-  // Require the web3storage module
-  const { Web3Storage } = require("web3.storage");
+  const VERIDA_ENVIRONMENT = EnvironmentType.TESTNET;
+  const CONTEXT_NAME = "My Application Context Name";
 
-  // Create a new instance of Web3Storage
-  const client = new Web3Storage({
-    token:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk",
+  const LOGO_URL =
+    "https://assets.verida.io/verida_login_request_logo_170x170.png";
+
+  const account = new VaultAccount({
+    logoUrl: LOGO_URL,
   });
 
-  // Define a function for uploading user data to web3storage
-  async function uploadUserData(user, data) {
-    const uint8Data = new TextEncoder().encode(JSON.stringify(user));
-
-    // Upload the data to web3storage and get the resulting CID
-    // const { cid } = await client.put(uint8Data);
-    const obj = { hello: "world" };
-    const blob = new Blob([JSON.stringify(obj)], { type: "application/json" });
-    console.log(blob);
-    // console.log(uint8Data);
-    // console.log(cid);
-    // Save the CID to the user's profile
-    // user.web3storageCid = cid.toString();
-  }
-
-  // Define a function for downloading user data from web3storage
-  async function downloadUserData(user) {
-    // Retrieve the data from web3storage using the CID
-    const res = await fetch(`https://dweb.link/ipfs/${user.web3storageCid}`);
-    const data = await res.json();
-
-    // Return the data
-    return data;
-  }
-
-  // Define a function for authenticating a user
-  async function authenticateUser(username, password) {
-    // Retrieve the user's data from web3storage
-    const user = await downloadUserData(username);
-
-    // Check if the password is correct
-    if (user.password === password) {
-      // Return the user object if the password is correct
-      return user;
-    } else {
-      // Throw an error if the password is incorrect
-      throw new Error("Incorrect password");
-    }
-  }
-
-  // Define a function for creating a new user
-  async function createUser(username, password, profileImage) {
-    // Check if the username is available
-    // const existingUser = await downloadUserData(username);
-    // if (existingUser) {
-    //   throw new Error("Username already taken");
-    // }
-
-    // Upload the user's profile image to IPFS and get the resulting CID
-    // const { cid } = await client.put(profileImage);
-
-    // Create a new user object with the provided data
-    const user = {
-      username,
-      password,
-      // profileImageCid: cid.toString(),
-      web3storageCid: null,
-      followers: [],
-      following: [],
-      tokenBalance: 0,
-    };
-
-    // Upload the user object to web3storage
-    await uploadUserData(user);
-
-    // Return the new user object
-    return user;
-  }
-
-  const makeFileObjects = () => {
-    // You can create File objects from a Blob of binary data
-    // see: https://developer.mozilla.org/en-US/docs/Web/API/Blob
-    // Here we're just storing a JSON object, but you can store images,
-    // audio, or whatever you want!
-    const obj = { hello: "world" };
-    const blob = new Blob([JSON.stringify(obj)], { type: "application/json" });
-
-    const files = [
-      new File(["contents-of-file-1"], "plain-utf8.txt"),
-      new File([blob], "hello.json"),
-    ];
-    console.log(files);
-    return files;
-  };
-
-  return (
-    <div>
-      <button
-        onClick={() => {
-          // createUser("mends", "123", "image");
-          makeFileObjects();
-        }}
-      >
-        Add user
-      </button>
-    </div>
-  );
+  const context = Network.connect({
+    client: {
+      environment: VERIDA_ENVIRONMENT,
+    },
+    account: account,
+    context: {
+      name: CONTEXT_NAME,
+    },
+  });
+  return <></>;
 }
