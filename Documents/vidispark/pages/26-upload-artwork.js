@@ -229,7 +229,10 @@ export default function App() {
   const { Web3Storage } = require("web3.storage");
 
   // Create a new instance of Web3Storage
-  const client = new Web3Storage({ token: "your-api-key" });
+  const client = new Web3Storage({
+    token:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk",
+  });
 
   // Define a function for uploading user data to web3storage
   async function uploadUserData(user, data) {
