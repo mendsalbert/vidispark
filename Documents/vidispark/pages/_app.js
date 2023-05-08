@@ -12,6 +12,7 @@ import {
   ApolloLink,
   InMemoryCache,
   Observable,
+  ApolloProvider,
 } from "@apollo/client";
 import { ComposeClient } from "@composedb/client";
 import {
@@ -113,12 +114,13 @@ function MyApp({ Component, pageProps }) {
 
         <title>NFT</title>
       </Head>
-
-      <WagmiConfig client={wagmiClient}>
-        <RainbowKitProvider chains={chains} theme={myTheme}>
-          <Component {...pageProps} />
-        </RainbowKitProvider>
-      </WagmiConfig>
+      <ApolloClient client={client}>
+        <WagmiConfig client={wagmiClient}>
+          <RainbowKitProvider chains={chains} theme={myTheme}>
+            <Component {...pageProps} />
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </ApolloClient>
     </Provider>
   );
 }
