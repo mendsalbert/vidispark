@@ -249,3 +249,5 @@ const get = async () => {
   }
 `);
 };
+
+get();
