@@ -230,11 +230,9 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 
 const LIST_SIMPLE_PROFILES = gql`
   query {
-    {
-        viewer {
-          id
-        } 
-      }
+    viewer {
+      id
+    }
   }
 `;
 const ADD_SIMPLE_PROFILE = gql`
