@@ -245,5 +245,11 @@ export default function App() {
       name: CONTEXT_NAME,
     },
   });
+
+  const getDiD = async () => {
+    const did = await account.did();
+    console.log("User is connected with Verida Account DID: " + did);
+  };
+  getDiD();
   return <></>;
 }
