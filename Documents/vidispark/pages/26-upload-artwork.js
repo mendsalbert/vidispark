@@ -234,7 +234,7 @@ import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
 export default function App() {
-  let db;
+  let db = null;
   const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
 
   const [user, setUser] = useState(null);
