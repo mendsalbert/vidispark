@@ -7,7 +7,13 @@ import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import merge from "lodash.merge";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
-
+import {
+  ApolloClient,
+  ApolloLink,
+  InMemoryCache,
+  Observable,
+} from "@apollo/client";
+import { ComposeClient } from "@composedb/client";
 import {
   getDefaultWallets,
   RainbowKitProvider,
@@ -73,6 +79,29 @@ function MyApp({ Component, pageProps }) {
 
   const { address, isConnected } = useAccount();
   console.log(address);
+
+  const compose = new ComposeClient({
+    ceramic: "http://localhost:7007",
+    definition,
+  });
+
+  // Create custom ApolloLink using ComposeClient instance to execute operations
+  const link = new ApolloLink((operation) => {
+    return new Observable((observer) => {
+      compose.execute(operation.query, operation.variables).then(
+        (result) => {
+          observer.next(result);
+          observer.complete();
+        },
+        (error) => {
+          observer.error(error);
+        }
+      );
+    });
+  });
+
+  // Use ApolloLink instance in ApolloClient config
+  const client = new ApolloClient({ cache: new InMemoryCache(), link });
   return (
     <Provider store={store}>
       <Head>
