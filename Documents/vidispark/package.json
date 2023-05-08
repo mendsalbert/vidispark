@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.6.1",
-    "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@heroicons/react": "^2.0.17",
     "@rainbow-me/rainbowkit": "^0.12.12",
