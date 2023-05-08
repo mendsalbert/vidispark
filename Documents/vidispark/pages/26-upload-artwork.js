@@ -238,12 +238,11 @@ export default function App() {
   async function uploadUserData(user, data) {
     // Convert the data to a Uint8Array
     const userinfo = JSON.stringify(user);
-    console.log(userinfo);
     // Upload the data to web3storage and get the resulting CID
-    // const { cid } = await client.put(userinfo);
+    const { cid } = await client.put(userinfo);
 
     // Save the CID to the user's profile
-    // user.web3storageCid = cid.toString();
+    user.web3storageCid = cid.toString();
   }
 
   // Define a function for downloading user data from web3storage
