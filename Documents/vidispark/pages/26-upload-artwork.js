@@ -244,7 +244,7 @@ export default function App() {
   const [initDB, setInitDB] = useState(false);
   let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
-
+  console.log(tasks);
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
     let db = new SDK({
