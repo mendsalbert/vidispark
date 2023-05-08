@@ -24,7 +24,7 @@ import {
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
-import definition from "../definition.json";
+import definition from "../definition";
 
 const xdcApothem = {
   id: 51,
