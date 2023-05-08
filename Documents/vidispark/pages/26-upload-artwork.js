@@ -251,6 +251,8 @@ function Index() {
   const { loading, error, data } = useQuery(LIST_SIMPLE_PROFILES);
   const [addSimpleProfile] = useMutation(ADD_SIMPLE_PROFILE);
   console.log(data);
+  console.log(error);
+  console.log(loading);
 
   const addQuery = async () => {
     const displayName = "mends kofi";
