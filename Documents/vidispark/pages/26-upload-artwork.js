@@ -247,7 +247,7 @@ export default function App() {
 
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
-    db = new SDK({
+    let db = new SDK({
       contractTxId,
     });
     await db.initializeWithoutWallet();
