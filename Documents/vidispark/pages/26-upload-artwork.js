@@ -280,13 +280,13 @@ export default function App() {
     // }
 
     // Upload the user's profile image to IPFS and get the resulting CID
-    const { cid } = await client.put(profileImage);
+    // const { cid } = await client.put(profileImage);
 
     // Create a new user object with the provided data
     const user = {
       username,
       password,
-      profileImageCid: cid.toString(),
+      // profileImageCid: cid.toString(),
       web3storageCid: null,
       followers: [],
       following: [],
