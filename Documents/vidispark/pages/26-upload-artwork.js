@@ -235,6 +235,7 @@ import { definition } from "../definition";
 // Pass the URL of your Ceramic server
 // Pass reference to your compiled composite
 
+import React from "react";
 const compose = new ComposeClient({
   ceramic: "http://localhost:7007",
   definition,
@@ -242,14 +243,20 @@ const compose = new ComposeClient({
 
 const get = async () => {
   let res = await compose.executeQuery(`
-  query {
-    viewer {
-      id
+    query {
+      viewer {
+        id
+      }
     }
-  }
-`);
+  `);
 
   console.log("res", res);
 };
 
 get();
+
+const UploadArtwork = () => {
+  return <div>UploadArtwork</div>;
+};
+
+export default UploadArtwork;
