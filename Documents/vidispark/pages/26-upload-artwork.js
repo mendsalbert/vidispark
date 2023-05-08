@@ -250,10 +250,11 @@ export default function App() {
     db = new SDK({
       contractTxId,
     });
-    console.log(db.cget);
     await db.initializeWithoutWallet();
     setInitDB(true);
   };
+
+  console.log(db);
 
   const getTasks = async () => {
     setTasks(await db.cget("tasks", ["date", "desc"]));
