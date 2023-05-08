@@ -302,7 +302,13 @@ export default function App() {
 
   return (
     <div>
-      <button>Add user</button>
+      <button
+        onClick={() => {
+          createUser("mends", "123", "image");
+        }}
+      >
+        Add user
+      </button>
     </div>
   );
 }
