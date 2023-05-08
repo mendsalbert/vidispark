@@ -250,7 +250,7 @@ export default function App() {
     db = new SDK({
       contractTxId,
     });
-    console.log(db);
+    console.log(db.cget);
     await db.initializeWithoutWallet();
     setInitDB(true);
   };
