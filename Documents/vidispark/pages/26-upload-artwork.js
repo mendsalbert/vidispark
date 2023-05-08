@@ -227,25 +227,6 @@
 
 import React from "react";
 import { gql, useMutation, useQuery } from "@apollo/client";
-import client from "../apollo/apollo-client";
-
-const getList = async () => {
-  const { data } = await client.query({
-    query: gql`
-      query Countries {
-        countries {
-          code
-          name
-          emoji
-        }
-      }
-    `,
-  });
-
-  console.log(data);
-};
-
-getList();
 
 const LIST_SIMPLE_PROFILES = gql`
   query {
