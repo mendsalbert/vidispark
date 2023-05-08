@@ -237,12 +237,12 @@ const LIST_SIMPLE_PROFILES = gql`
 `;
 const ADD_SIMPLE_PROFILE = gql`
   mutation {
-    createProfile(
+    createProfiljkhke(
       input: { content: { name: "Admin2", bio: "The creator of this blog." } }
     ) {
-      profile: document {
+      projklfile: document {
         name
-        bio
+        blkio
       }
     }
   }
