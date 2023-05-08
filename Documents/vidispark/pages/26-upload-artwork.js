@@ -229,7 +229,7 @@ import { ComposeClient } from "@composedb/client";
 
 // Import your compiled composite
 
-import { definition } from "../blog.runtime.json";
+import definition from "../blog.runtime.json";
 
 // Create an instance of ComposeClient
 // Pass the URL of your Ceramic server
