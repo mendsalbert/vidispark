@@ -225,40 +225,45 @@
 // }
 // Import ComposeDB client
 
+import React from "react";
+import {
+  ApolloClient,
+  ApolloLink,
+  InMemoryCache,
+  Observable,
+} from "@apollo/client";
 import { ComposeClient } from "@composedb/client";
 
-// Import your compiled composite
-
+// Path to compiled composite
 import definition from "../blog.runtime.json";
 
 // Create an instance of ComposeClient
 // Pass the URL of your Ceramic server
 // Pass reference to your compiled composite
 
-import React from "react";
-const compose = new ComposeClient({
-  ceramic: "http://localhost:7007",
-  definition,
-});
-
-const get = async () => {
-  let res = await compose.executeQuery(`
-  query {
-    viewer {
-        profile {
-          name
-          bio
-        }
-      }
-  }
-  `);
-
-  console.log("res", res);
-};
-
-get();
-
 const UploadArtwork = () => {
+  const compose = new ComposeClient({
+    ceramic: "http://localhost:7007",
+    definition,
+  });
+
+  // Create custom ApolloLink using ComposeClient instance to execute operations
+  const link = new ApolloLink((operation) => {
+    return new Observable((observer) => {
+      compose.execute(operation.query, operation.variables).then(
+        (result) => {
+          observer.next(result);
+          observer.complete();
+        },
+        (error) => {
+          observer.error(error);
+        }
+      );
+    });
+  });
+
+  const client = new ApolloClient({ cache: new InMemoryCache(), link });
+
   return <div>UploadArtwork</div>;
 };
 
