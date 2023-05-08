@@ -255,7 +255,7 @@ export default function App() {
     setInitDB(true);
   };
 
-  console.log(db);
+  // console.log(db);
 
   const getTasks = async () => {
     setTasks(await db.cget("tasks", ["date", "desc"]));
