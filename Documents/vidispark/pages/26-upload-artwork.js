@@ -239,11 +239,13 @@ const LIST_SIMPLE_PROFILES = gql`
   }
 `;
 const ADD_SIMPLE_PROFILE = gql`
-  mutation AddSimpleProfile($displayName: String!) {
-    createSimpleProfile(input: { content: { displayName: $displayName } }) {
-      document {
-        id
-        displayName
+  mutation {
+    createProfile(
+      input: { content: { name: "Admin", bio: "The creator of this blog." } }
+    ) {
+      profile {
+        name
+        bio
       }
     }
   }
