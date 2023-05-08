@@ -274,10 +274,10 @@ export default function App() {
   // Define a function for creating a new user
   async function createUser(username, password, profileImage) {
     // Check if the username is available
-    const existingUser = await downloadUserData(username);
-    if (existingUser) {
-      throw new Error("Username already taken");
-    }
+    // const existingUser = await downloadUserData(username);
+    // if (existingUser) {
+    //   throw new Error("Username already taken");
+    // }
 
     // Upload the user's profile image to IPFS and get the resulting CID
     const { cid } = await client.put(profileImage);
