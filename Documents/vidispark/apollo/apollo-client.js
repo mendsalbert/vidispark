@@ -1,10 +1,33 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  ApolloLink,
+  InMemoryCache,
+  Observable,
+} from "@apollo/client";
+import { ComposeClient } from "@composedb/client";
 
-const client = new ApolloClient({
-  uri: "http://localhost:7007",
-  cache: new InMemoryCache(),
+// Path to compiled composite
+import definition from "../apollo/apollo-client.js";
+
+const compose = new ComposeClient({
+  ceramic: "http://localhost:7007",
+  definition,
 });
 
-console.log("client", client);
+// Create custom ApolloLink using ComposeClient instance to execute operations
+const link = new ApolloLink((operation) => {
+  return new Observable((observer) => {
+    compose.execute(operation.query, operation.variables).then(
+      (result) => {
+        observer.next(result);
+        observer.complete();
+      },
+      (error) => {
+        observer.error(error);
+      }
+    );
+  });
+});
 
-export default client;
+// Use ApolloLink instance in ApolloClient config
+export const client = new ApolloClient({ cache: new InMemoryCache(), link });
