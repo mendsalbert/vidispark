@@ -241,7 +241,7 @@ const LIST_SIMPLE_PROFILES = gql`
 const ADD_SIMPLE_PROFILE = gql`
   mutation {
     createProfile(
-      input: { content: { name: "Admin", bio: "The creator of this blog." } }
+      input: { content: { name: "Admin2", bio: "The creator of this blog." } }
     ) {
       profile: document {
         name
