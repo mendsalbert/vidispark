@@ -246,6 +246,7 @@ const getList = async () => {
 };
 
 getList();
+
 const LIST_SIMPLE_PROFILES = gql`
   query {
     viewer {
