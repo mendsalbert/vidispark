@@ -55,16 +55,16 @@ const xdcApothem = {
 };
 
 const networks = {
-  polygon: {
-    chainId: `0x${Number(137).toString(16)}`,
-    chainName: "Polygon Mainnet",
+  theta: {
+    chainId: 365,
+    chainName: "Theta Testnet",
     nativeCurrency: {
-      name: "MATIC",
-      symbol: "MATIC",
+      name: "Theta Testnet",
+      symbol: "TFUEL",
       decimals: 18,
     },
-    rpcUrls: ["https://polygon-rpc.com/"],
-    blockExplorerUrls: ["https://polygonscan.com/"],
+    rpcUrls: ["https://eth-rpc-api-testnet.thetatoken.org/rpc"],
+    blockExplorerUrls: ["https://testnet-explorer.thetatoken.org/"],
   },
 };
 
