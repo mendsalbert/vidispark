@@ -170,7 +170,7 @@ function MyApp({ Component, pageProps }) {
       compose.setDID(session.did);
     };
 
-    initializeWagmi();
+    // initializeWagmi();
   }, []);
   return (
     <Provider store={store}>
