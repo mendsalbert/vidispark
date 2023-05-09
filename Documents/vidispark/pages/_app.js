@@ -56,7 +56,7 @@ const xdcApothem = {
 
 const networks = {
   theta: {
-    chainId: 365,
+    chainId: `0x${Number(365).toString(16)}`,
     chainName: "Theta Testnet",
     nativeCurrency: {
       name: "Theta Testnet",
