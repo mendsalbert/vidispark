@@ -65,7 +65,7 @@ contract Vidispark {
 
     // NFT-based Creations
     function mintNFT(string memory name, string memory image, uint256 price) public {
-uint256 tokenId = totalSupply + 1;
+        uint256 tokenId = totalSupply + 1;
         _mint(msg.sender, tokenId, price);
         nfts[tokenId] = NFT(name, image, price);
     }
