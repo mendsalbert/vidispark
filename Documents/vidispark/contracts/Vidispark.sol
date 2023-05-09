@@ -7,12 +7,18 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Vidispark is ERC721, ERC20, Ownable {
+
+    function _mint(address to, uint256 tokenId) internal override(ERC721, ERC20) {
+        ERC721._mint(to, tokenId);
+        ERC20._mint(to, tokenId);
+    }
     // NFT-based Creations
     struct NFT {
         string name;
         string image;
     }
     mapping(uint256 => NFT) public nfts;
+
 
     // Social Tokens
     string public constant name = "VDP Token";
