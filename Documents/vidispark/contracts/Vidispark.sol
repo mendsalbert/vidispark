@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Vidispark is ERC721, ERC20, Ownable {
+contract Vidispark is ERC721, ERC20 {
 
     function _mint(address to, uint256 tokenId) internal override(ERC721, ERC20) {
         ERC721._mint(to, tokenId);
@@ -64,13 +64,16 @@ contract Vidispark is ERC721, ERC20, Ownable {
     }
 
     // Social Tokens
-    function addToWhitelist(address account) public onlyOwner {
-        whitelist[account] = true;
-    }
+  function addToWhitelist(address account) public {
+    require(msg.sender == owner(), "Only the owner can add to whitelist");
+    whitelist[account] = true;
+}
 
-    function removeFromWhitelist(address account) public onlyOwner {
-        whitelist[account] = false;
-    }
+function removeFromWhitelist(address account) public {
+    require(msg.sender == owner(), "Only the owner can remove from whitelist");
+    whitelist[account] = false;
+}
+
 
     function buyTokens() public payable {
         require(whitelist[msg.sender], "You are not whitelisted to buy tokens");
