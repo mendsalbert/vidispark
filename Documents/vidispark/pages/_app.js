@@ -75,7 +75,7 @@ const changeNetwork = async () => {
       method: "wallet_addEthereumChain",
       params: [
         {
-          ...networks[polygon],
+          ...networks["polygon"],
         },
       ],
     });
