@@ -129,6 +129,8 @@ function MyApp({ Component, pageProps }) {
     const session = await DIDSession.authorize(authMethod, {
       resources: compose.resources,
     });
+
+    console.log(session.did);
     compose.setDID(session.did);
   };
 
