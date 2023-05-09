@@ -230,11 +230,29 @@ import { gql, useMutation, useQuery } from "@apollo/client";
 
 const LIST_SIMPLE_PROFILES = gql`
   query {
-    viewer {
-      id
+    profile: node(
+      id: "k2t6wzhkhabz3toab3koplwrdbtpvf1qdp5t4jz2s5bfyoejh6330cd7hxteq0"
+    ) {
+      ... on Profile {
+        name
+        bio
+        author {
+          articleList(last: 10) {
+            articles: edges {
+              article: node {
+                id
+                date
+                title
+                content
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
+
 const ADD_SIMPLE_PROFILE = gql`
   mutation {
     createProfile(
