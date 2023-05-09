@@ -53,6 +53,38 @@ const xdcApothem = {
   },
   testnet: true,
 };
+
+const networks = {
+  polygon: {
+    chainId: `0x${Number(137).toString(16)}`,
+    chainName: "Polygon Mainnet",
+    nativeCurrency: {
+      name: "MATIC",
+      symbol: "MATIC",
+      decimals: 18,
+    },
+    rpcUrls: ["https://polygon-rpc.com/"],
+    blockExplorerUrls: ["https://polygonscan.com/"],
+  },
+};
+
+const changeNetwork = async () => {
+  try {
+    if (!window.ethereum) throw new Error("No crypto wallet found");
+    await window.ethereum.request({
+      method: "wallet_addEthereumChain",
+      params: [
+        {
+          ...networks[polygon],
+        },
+      ],
+    });
+  } catch (err) {
+    alert(err.message);
+    // setError(err.message);
+  }
+};
+
 const { provider, chains } = configureChains(
   [xdcApothem],
   [
@@ -109,6 +141,7 @@ function MyApp({ Component, pageProps }) {
   // Use ApolloLink instance in ApolloClient config
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
   useEffect(() => {
+    changeNetwork();
     const initializeWagmi = async () => {
       const providerOptions = {};
       const web3Modal = new Web3Modal({
