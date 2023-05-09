@@ -229,9 +229,11 @@ import React from "react";
 import { gql, useMutation, useQuery } from "@apollo/client";
 
 const LIST_SIMPLE_PROFILES = gql`
-  {
-    viewer {
-      profile {
+  query {
+    profile: node(
+      id: "k2t6wzhkhabz4xpd9cp1fgz8tvzqax2q5x30c6vuj75zqylfahko5pvyvrg0tj"
+    ) {
+      ... on Profile {
         name
         bio
       }
