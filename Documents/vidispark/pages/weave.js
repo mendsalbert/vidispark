@@ -56,7 +56,6 @@ export default function App() {
       user
     );
 
-    console.log(res);
     await getTasks();
   };
 
