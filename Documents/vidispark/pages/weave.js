@@ -91,21 +91,20 @@ export default function App() {
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
       const wallet_address = accounts[0];
-      let identity = JSON.parse(
-        localStorage.getItem(`temp_address:${contractTxId}:${wallet_address}`)
+      let identity = await lf.getItem(
+        `temp_address:${contractTxId}:${wallet_address}`
       );
       let tx;
       let err;
       if (isNil(identity)) {
         ({ tx, identity, err } = await db.createTempAddress(wallet_address));
         const linked = await db.getAddressLink(identity.address);
-        console.log(linked);
         if (isNil(linked)) {
           alert("something went wrong");
           return;
         }
       } else {
-        localStorage.setItem("temp_address:current", wallet_address);
+        await lf.setItem("temp_address:current", wallet_address);
         setUser({
           wallet: wallet_address,
           privateKey: identity.privateKey,
@@ -115,10 +114,10 @@ export default function App() {
       if (!isNil(tx) && isNil(tx.err)) {
         identity.tx = tx;
         identity.linked_address = wallet_address;
-        localStorage.setItem("temp_address:current", wallet_address);
-        localStorage.setItem(
+        await lf.setItem("temp_address:current", wallet_address);
+        await lf.setItem(
           `temp_address:${contractTxId}:${wallet_address}`,
-          JSON.stringify(identity)
+          identity
         );
         setUser({
           wallet: wallet_address,
