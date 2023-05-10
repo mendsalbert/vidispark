@@ -55,17 +55,7 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="notification">
-              {" "}
-              <Link href="/30-notification-settings">
-                <a className="tw-flex tw-flex-row tw-items-center">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#slide-filter-icon" />
-                  </svg>
-                  Notification Settings
-                </a>
-              </Link>{" "}
-            </li>
+
             <li className="artwork">
               {" "}
               <Link href="/26-upload-artwork">
