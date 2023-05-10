@@ -94,7 +94,6 @@ export default function App() {
         `temp_address:${contractTxId}:${wallet_address}`
       );
       let tx;
-      console.log(identity);
       let err;
       if (isNil(identity)) {
         ({ tx, identity, err } = await db.createTempAddress(wallet_address));
