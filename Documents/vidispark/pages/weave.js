@@ -4,7 +4,7 @@ import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
-import { Box, Flex, Input } from "@chakra-ui/react";
+import { Flex, Input } from "@chakra-ui/react";
 
 const contractTxId = WEAVEDB_CONTRACT_TX_ID;
 
@@ -162,39 +162,27 @@ export default function App() {
 
   const Tasks = () =>
     map((v) => (
-      <Flex sx={{ border: "1px solid #ddd", borderRadius: "5px" }} p={3} my={1}>
-        <Box
-          w="30px"
-          textAlign="center"
-          sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
-        >
+      <div>
+        <div>
           {v.data.done ? (
             "✅"
           ) : v.data.user_address !== user?.wallet.toLowerCase() ? null : (
-            <Box onClick={() => completeTask(v.id)}>⬜</Box>
+            <div onClick={() => completeTask(v.id)}>⬜</div>
           )}
-        </Box>
-        <Box px={3} flex={1} style={{ marginLeft: "10px" }}>
-          {v.data.task}
-        </Box>
-        <Box w="100px" textAlign="center" style={{ marginLeft: "10px" }}>
-          {v.data.user_address.slice(0, 7)}
-        </Box>
-        <Box
-          w="50px"
-          textAlign="center"
-          sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
-        >
+        </div>
+        <div>{v.data.task}</div>
+        <div>{v.data.user_address.slice(0, 7)}</div>
+        <div>
           {v.data.user_address === user?.wallet.toLowerCase() ? (
-            <Box
+            <div
               style={{ marginLeft: "10px" }}
               onClick={() => deleteTask(v.id)}
             >
               ❌
-            </Box>
+            </div>
           ) : null}
-        </Box>
-      </Flex>
+        </div>
+      </div>
     ))(tasks);
 
   const NewTask = () => {
@@ -208,57 +196,27 @@ export default function App() {
     };
 
     return (
-      <Flex mb={4}>
-        <Input
+      <>
+        <input
           placeholder="Enter New Task"
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
-          sx={{ borderRadius: "5px 0 0 5px" }}
         />
-        <Flex
-          bg="#111"
-          color="white"
-          py={2}
-          px={6}
-          sx={{
-            borderRadius: "0 5px 5px 0",
-            cursor: "pointer",
-            ":hover": { opacity: 0.75 },
-          }}
-          onClick={handleAddBtnClick}
-        >
-          add
-        </Flex>
-      </Flex>
-    );
-  };
-
-  const Transactions = () => {
-    return (
-      <Flex justify="center" p={4}>
-        <Box
-          as="a"
-          target="_blank"
-          href={`https://sonar.warp.cc/?#/app/contract/${contractTxId}`}
-          sx={{ textDecoration: "underline" }}
-        >
-          view transactions
-        </Box>
-      </Flex>
+        <div onClick={handleAddBtnClick}>add</div>
+      </>
     );
   };
 
   return (
     <div>
       <NavBar />
-      <Flex mt="60px" justify="center" p={3}>
-        <Box w="100%" maxW="600px">
+      <div>
+        <div>
           <Tabs />
           {!isNil(user) ? <NewTask /> : null}
           <Tasks />
-        </Box>
-      </Flex>
-      <Transactions />
+        </div>
+      </div>
     </div>
   );
 }
