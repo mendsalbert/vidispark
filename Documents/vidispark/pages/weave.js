@@ -75,19 +75,19 @@ export default function App() {
     await getTasks();
   };
 
-  const providerOptions = {};
-  const web3Modal = new Web3Modal({
-    cacheProvider: true,
-    providerOptions,
-  });
-
   const providerUrl = "https://eth-rpc-api-testnet.thetatoken.org/rpc";
   const web3 = new Web3(new Web3.providers.HttpProvider(providerUrl));
 
   const login = async () => {
+    const providerOptions = {};
+    const web3Modal = new Web3Modal({
+      cacheProvider: true,
+      providerOptions,
+    });
     try {
-      await window.ethereum.enable();
-      const accounts = await web3.eth.getAccounts();
+      const provider = await web3Modal.connect();
+      const web3Provider = new Web3Provider(provider);
+      const accounts = await web3Provider.listAccounts();
       const wallet_address = accounts[0];
       let identity = await lf.getItem(
         `temp_address:${contractTxId}:${wallet_address}`
