@@ -142,35 +142,6 @@ function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
   useEffect(() => {
     changeNetwork();
-    const initializeWagmi = async () => {
-      const providerOptions = {};
-      const web3Modal = new Web3Modal({
-        cacheProvider: true,
-        providerOptions,
-      });
-
-      const provider = await web3Modal.connect();
-      const web3Provider = new Web3Provider(provider);
-      const signer = web3Provider.getSigner();
-      const accounts = await web3Provider.listAccounts();
-      const address = accounts[0];
-      // console.log(address);
-      // const accounts = await signer.getAddress();
-      const accountId = await getAccountId(provider, address);
-      const authMethod = await EthereumWebAuth.getAuthMethod(
-        provider,
-        accountId
-      );
-
-      const session = await DIDSession.authorize(authMethod, {
-        resources: compose.resources,
-      });
-
-      console.log(session.did);
-      compose.setDID(session.did);
-    };
-
-    // initializeWagmi();
   }, []);
   return (
     <Provider store={store}>
