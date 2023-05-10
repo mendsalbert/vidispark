@@ -47,7 +47,7 @@ const ProfileInfoSidebar = () => {
             <li className="account">
               {" "}
               <Link href="/29-account-settings">
-                <a>
+                <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#settings-icon" />
                   </svg>
@@ -58,7 +58,7 @@ const ProfileInfoSidebar = () => {
             <li className="notification">
               {" "}
               <Link href="/30-notification-settings">
-                <a>
+                <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#slide-filter-icon" />
                   </svg>
@@ -69,7 +69,7 @@ const ProfileInfoSidebar = () => {
             <li className="artwork">
               {" "}
               <Link href="/26-upload-artwork">
-                <a>
+                <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#picture-icon" />
                   </svg>
@@ -80,7 +80,7 @@ const ProfileInfoSidebar = () => {
             <li className="wallet">
               {" "}
               <Link href="/18-connect-a-wallet">
-                <a>
+                <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#wallet-icon" />
                   </svg>
@@ -91,7 +91,7 @@ const ProfileInfoSidebar = () => {
             <li className="verification">
               {" "}
               <Link href="/31-get-verified">
-                <a>
+                <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#circle-checked-icon" />
                   </svg>
