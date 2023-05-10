@@ -94,10 +94,10 @@ export default function App() {
         `temp_address:${contractTxId}:${wallet_address}`
       );
       let tx;
+      console.log(identity.privateKey);
       let err;
       if (isNil(identity)) {
         ({ tx, identity, err } = await db.createTempAddress(wallet_address));
-        console.log(identity.privateKey);
 
         const linked = await db.getAddressLink(identity.address);
         if (isNil(linked)) {
