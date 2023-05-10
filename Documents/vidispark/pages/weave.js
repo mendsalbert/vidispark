@@ -228,11 +228,12 @@ export default function App() {
 
   return (
     <div>
-      {/* <NavBar /> */}
+      <NavBar />
       <div>
         <div>
           <Tabs />
           {!isNil(user) ? <NewTask /> : null}
+          <NewTask />
           <Tasks />
         </div>
       </div>
