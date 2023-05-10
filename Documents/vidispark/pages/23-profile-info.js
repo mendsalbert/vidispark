@@ -12,11 +12,11 @@ const ProfileInfo = () => {
         <ProfileInfoSidebar />
         {/* / Profile Info Sidebar */}
         <div className="main-content-area">
-          <div className="page-title">
+          {/* <div className="page-title">
             <h2>
               <span className="gradient-text">Profile</span> Info
             </h2>
-          </div>
+          </div> */}
           <div className="user-db-content-area">
             {/* / Profile Info Form */}
             <ProfileInfoForm />
