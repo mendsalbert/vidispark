@@ -232,7 +232,7 @@ export default function App() {
         <div>
           <Tabs />
           {!isNil(user) ? <NewTask /> : null}
-          <NewTask />
+          {/* <NewTask /> */}
           <Tasks />
         </div>
       </div>
