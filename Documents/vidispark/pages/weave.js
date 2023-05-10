@@ -99,6 +99,7 @@ export default function App() {
         ({ tx, identity, err } = await db.createTempAddress(wallet_address));
 
         const linked = await db.getAddressLink(identity.address);
+        console.log(linked);
         if (isNil(linked)) {
           alert("something went wrong");
           return;
