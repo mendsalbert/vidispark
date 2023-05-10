@@ -86,8 +86,8 @@ export default function App() {
         providerOptions,
       });
 
-      console.log(web3Modal);
       const provider = await web3Modal.connect();
+      console.log(provider);
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
       const wallet_address = accounts[0];
