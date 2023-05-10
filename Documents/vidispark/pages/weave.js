@@ -3,8 +3,14 @@ import lf from "localforage";
 import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
-import { ethers } from "ethers";
-import Web3 from "web3";
+import Web3Modal from "web3modal";
+import { Web3Provider } from "@ethersproject/providers";
+
+const providerOptions = {};
+const web3Modal = new Web3Modal({
+  cacheProvider: true,
+  providerOptions,
+});
 
 const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
 
@@ -72,14 +78,11 @@ export default function App() {
     await getTasks();
   };
 
-  const providerUrl = "https://eth-rpc-api-testnet.thetatoken.org/rpc";
-  const web3 = new Web3(new Web3.providers.HttpProvider(providerUrl));
-
   const login = async () => {
     try {
-      await window.ethereum.enable();
-      const accounts = await web3.eth.getAccounts();
-      console.log(accounts);
+      const provider = await web3Modal.connect();
+      const web3Provider = new Web3Provider(provider);
+      const accounts = await web3Provider.listAccounts();
       const wallet_address = accounts[0];
       let identity = await lf.getItem(
         `temp_address:${contractTxId}:${wallet_address}`
