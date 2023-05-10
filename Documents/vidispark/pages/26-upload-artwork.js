@@ -13,11 +13,6 @@ const UploadArtWork = () => {
         <ProfileInfoSidebar />
         {/* / Profile Info Sidebar */}
         <div className="main-content-area">
-          <div className="page-title">
-            <h2>
-              <span className="gradient-text">Upload</span> Artwork
-            </h2>
-          </div>
           <div className="user-db-content-area">
             {/* / Profile Upload & Preview */}
             <ProfileUploadAndPreview />
