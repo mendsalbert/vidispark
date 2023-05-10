@@ -42,6 +42,9 @@ const ProfilePurchase = () => {
                   defaultValue={""}
                 />
               </div>
+              <p>Linces and linces type</p>
+              <p>Audience</p>
+              <p>Public or private</p>
               <button className="btn btn-wide btn-dark">Create Item</button>
             </form>
           </div>
