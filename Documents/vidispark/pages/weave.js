@@ -6,6 +6,8 @@ import { Buffer } from "buffer";
 import { ethers } from "ethers";
 import Web3 from "web3";
 
+import Web3Modal from "web3modal";
+import { Web3Provider } from "@ethersproject/providers";
 const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
 
 export default function App() {
