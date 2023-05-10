@@ -1,46 +1,45 @@
-// import React from "react";
-// import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
-// import ProfilePurchase from "../src/components/Profile Page/Profile Upload/ProfilePurchase";
-// import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
-// import Layouts from "../src/layouts/Layouts";
-// import { useAccount,useSigner } from "wagmi";
-// import { useAccount, useConnect, useDisconnect } from "wagmi";
-// import { InjectedConnector } from "wagmi/connectors/injected";
-// const UploadArtWork = () => {
+import React from "react";
+import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
+import ProfilePurchase from "../src/components/Profile Page/Profile Upload/ProfilePurchase";
+import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
+import Layouts from "../src/layouts/Layouts";
+import { useAccount, useSigner } from "wagmi";
+import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
+const UploadArtWork = () => {
+  const signer = useSigner();
+  const { address, isConnected } = useAccount();
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+  const { disconnect } = useDisconnect();
+  return (
+    <Layouts>
+      <div className="primary-content-area container content-padding grid-left-sidebar">
+        {/* / Profile Info Sidebar */}
+        <ProfileInfoSidebar />
+        {/* / Profile Info Sidebar */}
+        <div className="main-content-area">
+          <div className="page-title">
+            <h2>
+              <span className="gradient-text">Upload</span> Artwork
+            </h2>
+          </div>
+          <div className="user-db-content-area">
+            {/* / Profile Upload & Preview */}
+            <ProfileUploadAndPreview />
+            {/* / Profile Upload & Preview */}
 
-//   const signer = useSigner();
-//   const { address, isConnected } = useAccount();
-//   const { connect } = useConnect({
-//     connector: new InjectedConnector(),
-//   });
-//   const { disconnect } = useDisconnect();
-//   return (
-//     <Layouts>
-//       <div className="primary-content-area container content-padding grid-left-sidebar">
-//         {/* / Profile Info Sidebar */}
-//         <ProfileInfoSidebar />
-//         {/* / Profile Info Sidebar */}
-//         <div className="main-content-area">
-//           <div className="page-title">
-//             <h2>
-//               <span className="gradient-text">Upload</span> Artwork
-//             </h2>
-//           </div>
-//           <div className="user-db-content-area">
-//             {/* / Profile Upload & Preview */}
-//             <ProfileUploadAndPreview />
-//             {/* / Profile Upload & Preview */}
-
-//             {/* / Profile Purchase */}
-//             <ProfilePurchase />
-//             {/* / Profile Purchase */}
-//           </div>
-//         </div>
-//       </div>
-//     </Layouts>
-//   );
-// };
-// export default UploadArtWork;
+            {/* / Profile Purchase */}
+            <ProfilePurchase />
+            {/* / Profile Purchase */}
+          </div>
+        </div>
+      </div>
+    </Layouts>
+  );
+};
+export default UploadArtWork;
 
 //GOLD
 // import React, { useState } from "react";
@@ -224,60 +223,3 @@
 //   );
 // }
 // Import ComposeDB client
-
-import React from "react";
-import { gql, useMutation, useQuery } from "@apollo/client";
-
-const LIST_SIMPLE_PROFILES = gql`
-  query {
-    profile: node(
-      id: "k2t6wzhkhabz4xpd9cp1fgz8tvzqax2q5x30c6vuj75zqylfahko5pvyvrg0tj"
-    ) {
-      ... on Profile {
-        name
-        bio
-      }
-    }
-  }
-`;
-
-const ADD_SIMPLE_PROFILE = gql`
-  mutation {
-    createProfile(
-      input: { content: { name: "Admin", bio: "The creator of this blog." } }
-    ) {
-      profile: document {
-        name
-        bio
-        id
-      }
-    }
-  }
-`;
-function Index() {
-  const { loading, error, data } = useQuery(LIST_SIMPLE_PROFILES);
-  const [addSimpleProfile] = useMutation(ADD_SIMPLE_PROFILE);
-  console.log(data);
-  console.log(error);
-  console.log(loading);
-
-  const addQuery = async () => {
-    const displayName = "mends kofi";
-    const result = await addSimpleProfile({ variables: { displayName } });
-    console.log(result);
-  };
-  return (
-    <div>
-      Index
-      <button
-        onClick={() => {
-          addQuery();
-        }}
-      >
-        Get Query
-      </button>
-    </div>
-  );
-}
-
-export default Index;
