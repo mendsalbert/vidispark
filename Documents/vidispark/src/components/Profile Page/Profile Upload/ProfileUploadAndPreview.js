@@ -2,7 +2,7 @@ import React from "react";
 const ProfileUploadAndPreview = () => {
   return (
     <div className="artwork-upload-box">
-      <div className="user-db-title">Upload &amp; Preview</div>
+      <div className="user-db-title">Upload</div>
       <div className="upload-container">
         <div className="artwork-upload">
           <div className="label">Upload File</div>
