@@ -4,7 +4,6 @@ import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
-import { Flex, Input } from "@chakra-ui/react";
 
 const contractTxId = WEAVEDB_CONTRACT_TX_ID;
 
