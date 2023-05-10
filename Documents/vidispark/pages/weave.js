@@ -81,7 +81,7 @@ export default function App() {
 
   const login = async () => {
     try {
-      const provider = await web3Modal.connect();
+      const provider = await Web3Modal.connect();
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
       const wallet_address = accounts[0];
