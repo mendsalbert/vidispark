@@ -13,7 +13,7 @@ const AccountSettings = () => {
               <div className="user-header-user-profile">
                 <div className="avatar box-64">
                   <Link href="/08-profile-page">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <img src="img/avatar.png" alt="avatar" />
                       <span className="verified">
                         <svg className="crumina-icon">
@@ -37,7 +37,7 @@ const AccountSettings = () => {
               <ul className="profile-menu">
                 <li className="profile">
                   <Link href="/23-profile-info">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <svg className="crumina-icon">
                         <use xlinkHref="#user-icon" />
                       </svg>
@@ -47,7 +47,7 @@ const AccountSettings = () => {
                 </li>
                 <li className="account">
                   <Link href="/29-account-settings">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <svg className="crumina-icon">
                         <use xlinkHref="#settings-icon" />
                       </svg>
@@ -57,7 +57,7 @@ const AccountSettings = () => {
                 </li>
                 <li className="notification">
                   <Link href="/30-notification-settings">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <svg className="crumina-icon">
                         <use xlinkHref="#slide-filter-icon" />
                       </svg>
@@ -67,7 +67,7 @@ const AccountSettings = () => {
                 </li>
                 <li className="artwork">
                   <Link href="/26-upload-artwork">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <svg className="crumina-icon">
                         <use xlinkHref="#picture-icon" />
                       </svg>
@@ -77,7 +77,7 @@ const AccountSettings = () => {
                 </li>
                 <li className="wallet">
                   <Link href="/18-connect-a-wallet">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <svg className="crumina-icon">
                         <use xlinkHref="#wallet-icon" />
                       </svg>
@@ -87,7 +87,7 @@ const AccountSettings = () => {
                 </li>
                 <li className="verification">
                   <Link href="/31-get-verified">
-                    <a>
+                    <a className="tw-flex tw-flex-row tw-items-center">
                       <svg className="crumina-icon">
                         <use xlinkHref="#circle-checked-icon" />
                       </svg>
@@ -96,7 +96,7 @@ const AccountSettings = () => {
                   </Link>
                 </li>
                 <li className="logout">
-                  <a href="#">
+                  <a className="tw-flex tw-flex-row tw-items-center">
                     <svg className="crumina-icon">
                       <use xlinkHref="#logout-icon" />
                     </svg>
