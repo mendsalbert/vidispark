@@ -10,11 +10,6 @@ const GetVerfied = () => {
         <ProfileInfoSidebar />
         {/* / Profile Info Sidebar */}
         <div className="main-content-area">
-          <div className="page-title">
-            <h2>
-              Get <span className="gradient-text">Verified</span>
-            </h2>
-          </div>
           <div className="form-description">
             <div className="form-title">Submit Verification Request</div>
             <div className="description">
