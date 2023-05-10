@@ -4,15 +4,8 @@ import ProfilePurchase from "../src/components/Profile Page/Profile Upload/Profi
 import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
 import Layouts from "../src/layouts/Layouts";
 import { useAccount, useSigner } from "wagmi";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 const UploadArtWork = () => {
-  const signer = useSigner();
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  });
-  const { disconnect } = useDisconnect();
   return (
     <Layouts>
       <div className="primary-content-area container content-padding grid-left-sidebar">
