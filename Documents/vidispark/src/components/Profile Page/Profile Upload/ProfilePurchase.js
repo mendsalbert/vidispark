@@ -4,53 +4,6 @@ const ProfilePurchase = () => {
     <div className="purchase-type-box">
       <div className="user-db-title">Purchase Type</div>
       <div className="db-tabs-block">
-        <ul className="db-tabs-list">
-          <li className="active">
-            <a href="#">
-              <div className="purchase-type-symbol">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#dollar-icon" />
-                </svg>
-              </div>
-              <div className="purchase-type-info">
-                <div className="purchase-type-title">Fixed Price</div>
-                <div className="purchase-type-description">
-                  Set a fixed price for people to buy your work instantly
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <div className="purchase-type-symbol">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#clock-icon" />
-                </svg>
-              </div>
-              <div className="purchase-type-info">
-                <div className="purchase-type-title">Timed Auction</div>
-                <div className="purchase-type-description">
-                  Set a fixed price for people to buy your work instantly
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <div className="purchase-type-symbol">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#annotation-icon" />
-                </svg>
-              </div>
-              <div className="purchase-type-info">
-                <div className="purchase-type-title">Open for Bids</div>
-                <div className="purchase-type-description">
-                  Set a fixed price for people to buy your work instantly
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
         <div id="tab-1" className="tab active">
           <div className="tab-content">
             <form className="cryptoki-form" id="personal-info-form">
