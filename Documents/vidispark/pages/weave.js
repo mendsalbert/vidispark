@@ -96,7 +96,6 @@ export default function App() {
       let tx;
       let err;
       if (isNil(identity)) {
-        console.log(await db.createTempAddress(wallet_address));
         ({ tx, identity, err } = await db.createTempAddress(wallet_address));
         const linked = await db.getAddressLink(identity.address);
         console.log(linked);
