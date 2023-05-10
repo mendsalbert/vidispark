@@ -108,11 +108,6 @@ const AccountSettings = () => {
           </div>
         </aside>
         <div className="main-content-area">
-          <div className="page-title">
-            <h2>
-              <span className="gradient-text">Account</span> Settings
-            </h2>
-          </div>
           <form className="cryptoki-form" id="account-settings-form">
             <div className="form-section">
               <div className="user-db-title">My Account</div>
