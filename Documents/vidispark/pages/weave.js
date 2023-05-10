@@ -5,7 +5,7 @@ import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
 
-const contractTxId = WEAVEDB_CONTRACT_TX_ID;
+const contractTxId = "0P-YuG46ghkoxUTiZ_rkRsnqxxlTLVpzYVLd5FXwA80";
 
 export default function App() {
   const [user, setUser] = useState(null);
