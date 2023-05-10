@@ -85,6 +85,8 @@ export default function App() {
         cacheProvider: true,
         providerOptions,
       });
+
+      console.log(web3Modal);
       const provider = await web3Modal.connect();
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
