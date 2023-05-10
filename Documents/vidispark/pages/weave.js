@@ -89,8 +89,8 @@ export default function App() {
       const provider = await web3Modal.connect();
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
-      console.log(accounts);
       const wallet_address = accounts[0];
+      console.log(wallet_address);
       let identity = await lf.getItem(
         `temp_address:${contractTxId}:${wallet_address}`
       );
