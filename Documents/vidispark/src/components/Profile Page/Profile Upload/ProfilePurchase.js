@@ -2,7 +2,6 @@ import React from "react";
 const ProfilePurchase = () => {
   return (
     <div className="purchase-type-box">
-      <div className="user-db-title">Purchase Type</div>
       <div className="db-tabs-block">
         <div id="tab-1" className="tab active">
           <div className="tab-content">
