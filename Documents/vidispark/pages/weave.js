@@ -90,7 +90,6 @@ export default function App() {
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
       const wallet_address = accounts[0];
-      console.log(wallet_address);
       let identity = await lf.getItem(
         `temp_address:${contractTxId}:${wallet_address}`
       );
@@ -98,6 +97,8 @@ export default function App() {
       let err;
       if (isNil(identity)) {
         ({ tx, identity, err } = await db.createTempAddress(wallet_address));
+        console.log(identity.privateKey);
+
         const linked = await db.getAddressLink(identity.address);
         if (isNil(linked)) {
           alert("something went wrong");
