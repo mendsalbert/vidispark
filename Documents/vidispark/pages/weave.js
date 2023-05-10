@@ -75,6 +75,12 @@ export default function App() {
     await getTasks();
   };
 
+  const providerOptions = {};
+  const web3Modal = new Web3Modal({
+    cacheProvider: true,
+    providerOptions,
+  });
+
   const providerUrl = "https://eth-rpc-api-testnet.thetatoken.org/rpc";
   const web3 = new Web3(new Web3.providers.HttpProvider(providerUrl));
 
