@@ -72,41 +72,49 @@ export default function App() {
   };
 
   const login = async () => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
-    await provider.send("eth_requestAccounts", []);
-    const wallet_address = await provider.getSigner().getAddress();
-    let identity = await lf.getItem(
-      `temp_address:${contractTxId}:${wallet_address}`
-    );
-    let tx;
-    let err;
-    if (isNil(identity)) {
-      ({ tx, identity, err } = await db.createTempAddress(wallet_address));
-      const linked = await db.getAddressLink(identity.address);
-      if (isNil(linked)) {
-        alert("something went wrong");
+    try {
+      // Request access to the user's Ethereum account
+      await window.ethereum.request({ method: "eth_requestAccounts" });
+      const provider = new ethers.providers.Web3Provider(
+        window.ethereum,
+        "any"
+      );
+      const wallet_address = await provider.getSigner().getAddress();
+      let identity = await lf.getItem(
+        `temp_address:${contractTxId}:${wallet_address}`
+      );
+      let tx;
+      let err;
+      if (isNil(identity)) {
+        ({ tx, identity, err } = await db.createTempAddress(wallet_address));
+        const linked = await db.getAddressLink(identity.address);
+        if (isNil(linked)) {
+          alert("something went wrong");
+          return;
+        }
+      } else {
+        await lf.setItem("temp_address:current", wallet_address);
+        setUser({
+          wallet: wallet_address,
+          privateKey: identity.privateKey,
+        });
         return;
       }
-    } else {
-      await lf.setItem("temp_address:current", wallet_address);
-      setUser({
-        wallet: wallet_address,
-        privateKey: identity.privateKey,
-      });
-      return;
-    }
-    if (!isNil(tx) && isNil(tx.err)) {
-      identity.tx = tx;
-      identity.linked_address = wallet_address;
-      await lf.setItem("temp_address:current", wallet_address);
-      await lf.setItem(
-        `temp_address:${contractTxId}:${wallet_address}`,
-        identity
-      );
-      setUser({
-        wallet: wallet_address,
-        privateKey: identity.privateKey,
-      });
+      if (!isNil(tx) && isNil(tx.err)) {
+        identity.tx = tx;
+        identity.linked_address = wallet_address;
+        await lf.setItem("temp_address:current", wallet_address);
+        await lf.setItem(
+          `temp_address:${contractTxId}:${wallet_address}`,
+          identity
+        );
+        setUser({
+          wallet: wallet_address,
+          privateKey: identity.privateKey,
+        });
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 
