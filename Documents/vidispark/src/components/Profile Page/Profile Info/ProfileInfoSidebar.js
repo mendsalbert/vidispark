@@ -101,7 +101,7 @@ const ProfileInfoSidebar = () => {
             </li>
             <li className="logout">
               {" "}
-              <a href="#">
+              <a className="tw-flex tw-flex-row tw-items-center">
                 <svg className="crumina-icon">
                   <use xlinkHref="#logout-icon" />
                 </svg>
