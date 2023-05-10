@@ -79,6 +79,7 @@ export default function App() {
     try {
       await window.ethereum.enable();
       const accounts = await web3.eth.getAccounts();
+      console.log(accounts);
       const wallet_address = accounts[0];
       let identity = await lf.getItem(
         `temp_address:${contractTxId}:${wallet_address}`
