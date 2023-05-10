@@ -71,7 +71,7 @@ export default function App() {
     await getTasks();
   };
 
-  const providerUrl = "https://mainnet.infura.io/v3/<your-project-id>";
+  const providerUrl = "https://eth-rpc-api-testnet.thetatoken.org/rpc";
   const provider = new ethers.providers.JsonRpcProvider(providerUrl);
 
   const login = async () => {
