@@ -30,11 +30,6 @@ const ProfileUploadAndPreview = () => {
             </button>
           </div>
         </div>
-
-        <div className="artwork-preview">
-          <div className="label">File Preview </div>
-          <div className="preview-box" />
-        </div>
       </div>
     </div>
   );
