@@ -67,17 +67,7 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="wallet">
-              {" "}
-              <Link href="/18-connect-a-wallet">
-                <a className="tw-flex tw-flex-row tw-items-center">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#wallet-icon" />
-                  </svg>
-                  Wallet info
-                </a>
-              </Link>{" "}
-            </li>
+
             <li className="verification">
               {" "}
               <Link href="/31-get-verified">
