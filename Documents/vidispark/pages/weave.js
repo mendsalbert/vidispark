@@ -79,12 +79,12 @@ export default function App() {
   const web3 = new Web3(new Web3.providers.HttpProvider(providerUrl));
 
   const login = async () => {
-    const providerOptions = {};
-    const web3Modal = new Web3Modal({
-      cacheProvider: true,
-      providerOptions,
-    });
     try {
+      const providerOptions = {};
+      const web3Modal = new Web3Modal({
+        cacheProvider: true,
+        providerOptions,
+      });
       const provider = await web3Modal.connect();
       const web3Provider = new Web3Provider(provider);
       const accounts = await web3Provider.listAccounts();
