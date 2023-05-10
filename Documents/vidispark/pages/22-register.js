@@ -30,17 +30,7 @@ const Registration = () => {
                 type="text"
               />
             </div>
-            <div className="tk-lp-form-item">
-              <label htmlFor="sign_up_email-address" className="tk-lp-label">
-                Email Address
-              </label>
-              <input
-                className="tk-lp-input"
-                id="sign_up_email-address"
-                name="user_email"
-                type="text"
-              />
-            </div>
+
             <div />
             <div className="tk-lp-form-item">
               <label htmlFor="sign_up_password" className="tk-lp-label">
@@ -92,10 +82,6 @@ const Registration = () => {
               I have an account!
             </button>
           </form>
-          <div className="register-notice">
-            You’ll receive a confirmation email in your inbox with a link to
-            activate your account.
-          </div>
         </div>
       </div>
     </Layouts>
