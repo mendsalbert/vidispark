@@ -17,10 +17,6 @@ const ProfilePurchase = () => {
                   />
                 </div>
                 <div className="form-field">
-                  <label htmlFor="price">Thumnail URL</label>
-                  <input type="number" id="price" defaultValue="3.21" />
-                </div>
-                <div className="form-field">
                   <label>Category</label>
                   <select className="select-nice" name="currency">
                     <option value="ETH" selected="">
@@ -29,6 +25,10 @@ const ProfilePurchase = () => {
                     <option value="USD">Music</option>
                     <option value="Euro">Education</option>
                   </select>
+                </div>
+                <div className="form-field">
+                  <label htmlFor="price">Thumnail URL</label>
+                  <input type="number" id="price" defaultValue="3.21" />
                 </div>
               </div>
               <div className="form-field comment-area">
