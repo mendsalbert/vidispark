@@ -45,7 +45,7 @@ export default function App() {
   };
 
   const addTask = async (task) => {
-    await db.add(
+    let res = await db.add(
       {
         task,
         date: db.ts(),
@@ -55,6 +55,8 @@ export default function App() {
       "tasks",
       user
     );
+
+    console.log(res);
     await getTasks();
   };
 
