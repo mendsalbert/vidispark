@@ -4,7 +4,7 @@ import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import { ethers } from "ethers";
-import { Box, Flex, Input, ChakraProvider } from "@chakra-ui/react";
+import { Box, Flex, Input } from "@chakra-ui/react";
 
 const contractTxId = WEAVEDB_CONTRACT_TX_ID;
 
@@ -148,42 +148,16 @@ export default function App() {
   }, [tab, initDB]);
 
   const NavBar = () => (
-    <Flex p={3} position="fixed" w="100%" sx={{ top: 0, left: 0 }}>
-      <Box flex={1} />
-      <Flex
-        bg="#111"
-        color="white"
-        py={2}
-        px={6}
-        sx={{
-          borderRadius: "5px",
-          cursor: "pointer",
-          ":hover": { opacity: 0.75 },
-        }}
-      >
-        {!isNil(user) ? (
-          <Box onClick={() => logout()}>{user.wallet.slice(0, 7)}</Box>
-        ) : (
-          <Box onClick={() => login()}>Connect Wallet</Box>
-        )}
-      </Flex>
-    </Flex>
+    <div>
+      {!isNil(user) ? (
+        <div onClick={() => logout()}>{user.wallet.slice(0, 7)}</div>
+      ) : (
+        <div onClick={() => login()}>Connect Wallet</div>
+      )}
+    </div>
   );
-
   const Tabs = () => (
-    <Flex justify="center" style={{ display: "flex" }} mb={4}>
-      {map((v) => (
-        <Box
-          mx={2}
-          onClick={() => setTab(v)}
-          color={tab === v ? "red" : ""}
-          textDecoration={tab === v ? "underline" : ""}
-          sx={{ cursor: "pointer", ":hover": { opacity: 0.75 } }}
-        >
-          {v}
-        </Box>
-      ))(tabs)}
-    </Flex>
+    <div>{map((v) => <div onClick={() => setTab(v)}>{v}</div>)(tabs)}</div>
   );
 
   const Tasks = () =>
@@ -275,7 +249,7 @@ export default function App() {
   };
 
   return (
-    <ChakraProvider>
+    <div>
       <NavBar />
       <Flex mt="60px" justify="center" p={3}>
         <Box w="100%" maxW="600px">
@@ -285,6 +259,6 @@ export default function App() {
         </Box>
       </Flex>
       <Transactions />
-    </ChakraProvider>
+    </div>
   );
 }
