@@ -232,6 +232,7 @@ export default function App() {
         <div>
           <Tabs />
           {!isNil(user) ? <NewTask /> : null}
+          <NewTask />
           <Tasks />
         </div>
       </div>
