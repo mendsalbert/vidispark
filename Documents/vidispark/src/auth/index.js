@@ -40,6 +40,12 @@ export const useAuth = () => {
       contractTxId,
     });
     setdb(db);
+    localStorage.setItem(
+      "db",
+      JSON.stringify({
+        db,
+      })
+    );
     await db.initializeWithoutWallet();
     setInitDB(true);
   };
