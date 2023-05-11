@@ -30,6 +30,7 @@ import definition from "../blog.runtime.json";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
+import { useAuth } from "./auth";
 
 const xdcApothem = {
   id: 51,
@@ -112,6 +113,7 @@ const myTheme = merge(midnightTheme(), {
 });
 
 function MyApp({ Component, pageProps }) {
+  const { setupWeaveDB } = useAuth();
   useEffect(() => {
     countdown();
   }, []);
@@ -140,8 +142,9 @@ function MyApp({ Component, pageProps }) {
 
   // Use ApolloLink instance in ApolloClient config
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
-  useEffect(() => {
+  useEffect(async () => {
     changeNetwork();
+    await setupWeaveDB();
   }, []);
   return (
     <Provider store={store}>
