@@ -15,6 +15,7 @@ import { AuthContext } from "./authContext";
 export default function App() {
   const { user, initDB, db, login, logout, checkUser } =
     useContext(AuthContext);
+  console.log(db);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
 
