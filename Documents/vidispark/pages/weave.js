@@ -9,7 +9,6 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import { Web3Provider } from "@ethersproject/providers";
 
-const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 import { useAuth } from "../src/auth";
 import { AuthContext } from "./authContext";
 export default function App() {
