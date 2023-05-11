@@ -6,7 +6,15 @@ import { AuthContext } from "../../pages/authContext";
 export const useUserRegister = () => {
   const { db, user } = useContext(AuthContext);
 
+  const isUserNameExist = async (username) => {
+    setTasks(
+      await db.cget("user", ["username", "==", username], ["date", "desc"])
+    );
+  };
+
   const addUser = async (userObj) => {
+    let value = await isUserNameExist(userObj.username);
+    console.log(value);
     // let res = await db.add(
     //   {
     //     task,
