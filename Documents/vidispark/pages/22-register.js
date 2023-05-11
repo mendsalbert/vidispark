@@ -12,6 +12,10 @@ const Registration = () => {
   const { addUser } = useUserRegister();
 
   const onHandleSubmit = () => {
+    if (password != confirmPassword) {
+      alert("passowrd must match");
+      return;
+    }
     const hash = bcrypt.hashSync(password, salt);
     addUser({ username, password, hash, aggred });
     // console.log("button clicked");
