@@ -5,7 +5,8 @@ import Web3Modal from "web3modal";
 import { Web3Provider } from "@ethersproject/providers";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
-import flatted from "flatted";
+// import flatted from "flatted";
+import Flatted from "flatted";
 export const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 
 export const useAuth = () => {
@@ -42,7 +43,7 @@ export const useAuth = () => {
     setdb(db);
     localStorage.setItem(
       "db",
-      flatted.stringify({
+      Flatted.stringify({
         db,
       })
     );
