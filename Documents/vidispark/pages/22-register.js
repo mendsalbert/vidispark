@@ -12,8 +12,8 @@ const Registration = () => {
 
   const onHandleSubmit = () => {
     addUser({ username, password, confirmPassword, aggred });
-    console.log("button clicked");
-    console.log(username, password, confirmPassword, aggred);
+    // console.log("button clicked");
+    // console.log(username, password, confirmPassword, aggred);
   };
   return (
     <Layouts>
