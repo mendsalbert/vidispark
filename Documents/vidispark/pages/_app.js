@@ -117,6 +117,7 @@ function MyApp({ Component, pageProps }) {
   const authenticationContext = useContext(AuthContext);
   const { user } = authenticationContext;
 
+  console.log("user-----", user);
   useEffect(() => {
     countdown();
   }, []);
