@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import lf from "localforage";
 import { isNil, map } from "ramda";
 import SDK from "weavedb-sdk";
@@ -11,14 +11,13 @@ import { Web3Provider } from "@ethersproject/providers";
 
 const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 import { useAuth } from "../src/auth";
+import { AuthContext } from "./authContext";
 export default function App() {
+  const { user } = useContext(AuthContext);
+  console.log("user-=-=-=-=", user);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
-  const [user, setUser] = useState(
-    (typeof window !== "undefined" &&
-      JSON.parse(localStorage.getItem("user"))) ||
-      ""
-  );
+
   const [initDB, setInitDB] = useState(
     typeof window !== "undefined" && localStorage.getItem("initDB")
   );
