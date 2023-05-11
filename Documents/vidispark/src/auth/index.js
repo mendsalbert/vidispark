@@ -41,7 +41,7 @@ export const useAuth = () => {
       contractTxId,
     });
     setdb(db);
-    const serializedDb = flatted.stringify(db);
+    const serializedDb = stringify(db);
     localStorage.setItem("db", serializedDb);
     console.log(db);
     await db.initializeWithoutWallet();
