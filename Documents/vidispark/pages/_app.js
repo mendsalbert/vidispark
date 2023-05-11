@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { Provider } from "react-redux";
 import store from "../src/redux/store";
 import { countdown } from "../src/utils";
@@ -30,7 +30,7 @@ import definition from "../blog.runtime.json";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
-import { useAuth } from "../src/auth";
+import { AuthContext } from "./authContext";
 
 const xdcApothem = {
   id: 51,
@@ -113,7 +113,6 @@ const myTheme = merge(midnightTheme(), {
 });
 
 function MyApp({ Component, pageProps }) {
-  const { setupWeaveDB } = useAuth();
   useEffect(() => {
     countdown();
   }, []);
@@ -139,7 +138,7 @@ function MyApp({ Component, pageProps }) {
       );
     });
   });
-
+  const { setupWeaveDB } = useContext(AuthContext);
   // Use ApolloLink instance in ApolloClient config
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
   useEffect(async () => {
