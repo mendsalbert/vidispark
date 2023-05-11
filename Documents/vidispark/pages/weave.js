@@ -1,24 +1,13 @@
 import { useRef, useState, useEffect, useContext } from "react";
-import lf from "localforage";
 import { isNil, map } from "ramda";
-import SDK from "weavedb-sdk";
-import { Buffer } from "buffer";
-import { ethers } from "ethers";
-import Web3 from "web3";
 
-import Web3Modal from "web3modal";
-import { Web3Provider } from "@ethersproject/providers";
-
-import { useAuth } from "../src/auth";
 import { AuthContext } from "./authContext";
 export default function App() {
   const { user, initDB, db, login, logout, checkUser } =
     useContext(AuthContext);
-  console.log(db);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
 
-  let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
 
   const getTasks = async () => {
