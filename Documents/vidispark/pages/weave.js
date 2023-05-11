@@ -13,7 +13,7 @@ const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 import { useAuth } from "../src/auth";
 import { AuthContext } from "./authContext";
 export default function App() {
-  const { user } = useContext(AuthContext);
+  const { user, initDB } = useContext(AuthContext);
   console.log("user-=-=-=-=", user);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
