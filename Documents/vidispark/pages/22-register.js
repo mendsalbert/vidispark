@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUserRegister } from "../src/services/register";
+import { AuthContext } from "./authContext";
+
 const bcrypt = require("bcryptjs");
 const Registration = () => {
+  const { login } = useContext(AuthContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
@@ -12,6 +15,7 @@ const Registration = () => {
   const { addUser } = useUserRegister();
 
   const onHandleSubmit = () => {
+    login();
     if (password != confirmPassword) {
       alert("passowrd must match");
       return;
