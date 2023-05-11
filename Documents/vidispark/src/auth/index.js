@@ -6,7 +6,7 @@ import { Web3Provider } from "@ethersproject/providers";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 // import flatted from "flatted";
-import Flatted from "flatted";
+import { stringify } from "flatted";
 export const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 
 export const useAuth = () => {
@@ -41,13 +41,8 @@ export const useAuth = () => {
       contractTxId,
     });
     setdb(db);
-    localStorage.setItem(
-      "db",
-      JSON.stringify({
-        db,
-      })
-    );
-
+    const serializedDb = flatted.stringify(db);
+    localStorage.setItem("db", serializedDb);
     console.log(db);
     await db.initializeWithoutWallet();
     setInitDB(true);
