@@ -144,7 +144,7 @@ function MyApp({ Component, pageProps }) {
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
   useEffect(async () => {
     changeNetwork();
-    await setupWeaveDB();
+    setupWeaveDB();
   }, []);
   return (
     <Provider store={store}>
