@@ -43,7 +43,8 @@ export const useAuth = () => {
     setdb(db);
     // const serializedDb = stringify(db);
     // localStorage.setItem("db", serializedDb);
-    await lf.setItem("db", JSON.stringify(db));
+    // await lf.setItem("db", JSON.stringify(db));
+    console.log(db);
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
