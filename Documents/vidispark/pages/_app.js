@@ -116,7 +116,7 @@ const myTheme = merge(midnightTheme(), {
 function MyApp({ Component, pageProps }) {
   const { initDB } = useContext(AuthContext);
 
-  console.log("user-----", user);
+  console.log("user-----", initDB);
   useEffect(() => {
     countdown();
   }, []);
