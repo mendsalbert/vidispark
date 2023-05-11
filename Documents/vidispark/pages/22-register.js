@@ -15,7 +15,7 @@ const Registration = () => {
   const { addUser } = useUserRegister();
 
   const onHandleSubmit = () => {
-    login();
+    // login();
     if (password != confirmPassword) {
       alert("passowrd must match");
       return;
