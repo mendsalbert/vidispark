@@ -14,9 +14,15 @@ import { useAuth } from "../src/auth";
 export default function App() {
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
-  const [initDB, setInitDB] = useState(localStorage.getItem("initDB"));
-  const [db, setdb] = useState(JSON.parse(localStorage.getItem("db")));
+  const [user, setUser] = useState(
+    typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
+  );
+  const [initDB, setInitDB] = useState(
+    typeof window !== "undefined" && localStorage.getItem("initDB")
+  );
+  const [db, setdb] = useState(
+    typeof window !== "undefined" && JSON.parse(localStorage.getItem("db"))
+  );
   let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
 
