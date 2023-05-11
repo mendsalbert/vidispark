@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUserRegister } from "../src/services/register";
 const bcrypt = require("bcryptjs");
-const salt = bcrypt.genSaltSync(10);
 const Registration = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
   const [aggred, setAggred] = useState(false);
+  const salt = bcrypt.genSaltSync(10);
 
   const { addUser } = useUserRegister();
 
