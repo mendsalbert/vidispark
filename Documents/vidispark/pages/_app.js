@@ -30,7 +30,9 @@ import definition from "../blog.runtime.json";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
+
 import { AuthContext } from "./authContext";
+
 const xdcApothem = {
   id: 51,
   name: "Apothem-Network (TestNet)",
@@ -137,14 +139,14 @@ function MyApp({ Component, pageProps }) {
       );
     });
   });
-  const authenticationContext = useContext(AuthContext);
+  const auth = useContext(AuthContext);
 
-  const { setupWeaveDB } = authenticationContext;
+  // const { setupWeaveDB } = authenticationContext;
   // Use ApolloLink instance in ApolloClient config
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
   useEffect(async () => {
     changeNetwork();
-    setupWeaveDB();
+    // setupWeaveDB();
   }, []);
   return (
     <Provider store={store}>
