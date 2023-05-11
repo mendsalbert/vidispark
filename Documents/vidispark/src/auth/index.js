@@ -47,6 +47,8 @@ export const useAuth = () => {
         db,
       })
     );
+
+    console.log(db);
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
