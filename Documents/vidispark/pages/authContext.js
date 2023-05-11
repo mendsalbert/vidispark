@@ -115,7 +115,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, initDB, login, logout, checkUser, setupWeaveDB }}
+      value={{ user, db, initDB, login, logout, checkUser, setupWeaveDB }}
     >
       {children}
     </AuthContext.Provider>
