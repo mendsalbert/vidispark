@@ -12,23 +12,23 @@ import { Web3Provider } from "@ethersproject/providers";
 const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 
 export default function App() {
-  const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
+  const [user, setUser] = useState(null);
   const [initDB, setInitDB] = useState(false);
   const [db, setdb] = useState("");
   let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
 
-  const setupWeaveDB = async () => {
-    window.Buffer = Buffer;
-    let db = new SDK({
-      contractTxId,
-    });
-    setdb(db);
-    await db.initializeWithoutWallet();
-    setInitDB(true);
-  };
+  //   const setupWeaveDB = async () => {
+  //     window.Buffer = Buffer;
+  //     let db = new SDK({
+  //       contractTxId,
+  //     });
+  //     setdb(db);
+  //     await db.initializeWithoutWallet();
+  //     setInitDB(true);
+  //   };
 
   const getTasks = async () => {
     setTasks(await db.cget("tasks", ["date", "desc"]));
