@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Layouts from "../src/layouts/Layouts";
+import { useUserRegister } from "../src/services/register";
 
 const Registration = () => {
   const [username, setUsername] = useState("");
@@ -7,7 +8,10 @@ const Registration = () => {
   const [confirmPassword, setconfirmPassword] = useState("");
   const [aggred, setAggred] = useState(false);
 
+  const { addUser } = useUserRegister();
+
   const onHandleSubmit = () => {
+    addUser({ username, password, confirmPassword, aggred });
     console.log("button clicked");
     console.log(username, password, confirmPassword, aggred);
   };
