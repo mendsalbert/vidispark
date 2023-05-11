@@ -8,6 +8,7 @@ const Registration = () => {
   const [aggred, setAggred] = useState(false);
 
   const onHandleSubmit = () => {
+    console.log("button clicked");
     console.log(username, password, confirmPassword, aggred);
   };
   return (
