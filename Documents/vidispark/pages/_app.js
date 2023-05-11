@@ -114,7 +114,7 @@ const myTheme = merge(midnightTheme(), {
 });
 
 function MyApp({ Component, pageProps }) {
-  const { user } = useContext(AuthContext);
+  const { initDB } = useContext(AuthContext);
 
   console.log("user-----", user);
   useEffect(() => {
