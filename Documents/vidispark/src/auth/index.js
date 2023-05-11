@@ -41,12 +41,12 @@ export const useAuth = () => {
       contractTxId,
     });
     setdb(db);
-    localStorage.setItem(
-      "db",
-      Flatted.stringify({
-        db,
-      })
-    );
+    // localStorage.setItem(
+    //   "db",
+    //   Flatted.stringify({
+    //     db,
+    //   })
+    // );
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
