@@ -30,7 +30,7 @@ import definition from "../blog.runtime.json";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
-import { useAuth } from "./auth";
+import { useAuth } from "../src/auth";
 
 const xdcApothem = {
   id: 51,
