@@ -137,7 +137,9 @@ function MyApp({ Component, pageProps }) {
       );
     });
   });
-  const { setupWeaveDB } = useContext(AuthContext);
+  const authenticationContext = useContext(AuthContext);
+
+  const { setupWeaveDB } = authenticationContext;
   // Use ApolloLink instance in ApolloClient config
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
   useEffect(async () => {
