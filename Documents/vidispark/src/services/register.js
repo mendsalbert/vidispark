@@ -7,9 +7,12 @@ export const useUserRegister = () => {
   const { db, user } = useContext(AuthContext);
 
   const isUserNameExist = async (username) => {
-    setTasks(
-      await db.cget("user", ["username", "==", username], ["date", "desc"])
+    let res = await db.cget(
+      "user",
+      ["username", "==", username],
+      ["date", "desc"]
     );
+    return res;
   };
 
   const addUser = async (userObj) => {
