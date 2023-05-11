@@ -23,7 +23,7 @@ export default function App() {
     typeof window !== "undefined" && localStorage.getItem("initDB")
   );
   const [db, setdb] = useState(
-    typeof window !== "undefined" && JSON.parse(localStorage.getItem("db"))
+    typeof window !== "undefined" && JSON.parse(localStorage.getItem("dbobj"))
   );
   let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
