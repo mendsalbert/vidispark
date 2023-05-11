@@ -41,7 +41,7 @@ export const useAuth = () => {
     });
     setdb(db);
     localStorage.setItem(
-      "db",
+      "dbobj",
       JSON.stringify({
         db,
       })
