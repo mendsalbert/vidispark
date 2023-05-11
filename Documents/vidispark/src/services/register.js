@@ -3,7 +3,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../../pages/authContext";
 
-export const useTodo = () => {
+export const useUserRegister = () => {
   const { db, user } = useContext(AuthContext);
 
   const addUser = async (userObj) => {
