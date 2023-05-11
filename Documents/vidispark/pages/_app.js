@@ -31,7 +31,7 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
 
-import { AuthContext, AuthProvider } from "./authContext";
+import { AuthProvider } from "./authContext";
 
 const xdcApothem = {
   id: 51,
@@ -114,9 +114,6 @@ const myTheme = merge(midnightTheme(), {
 });
 
 function MyApp({ Component, pageProps }) {
-  const { initDB } = useContext(AuthContext);
-
-  console.log("user-----", initDB);
   useEffect(() => {
     countdown();
   }, []);
