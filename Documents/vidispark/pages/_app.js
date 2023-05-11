@@ -114,6 +114,9 @@ const myTheme = merge(midnightTheme(), {
 });
 
 function MyApp({ Component, pageProps }) {
+  const authenticationContext = useContext(AuthContext);
+  const { user } = authenticationContext;
+
   useEffect(() => {
     countdown();
   }, []);
@@ -139,7 +142,6 @@ function MyApp({ Component, pageProps }) {
       );
     });
   });
-  const auth = useContext(AuthContext);
   // const { setupWeaveDB } = authenticationContext;
   // Use ApolloLink instance in ApolloClient config
   const client = new ApolloClient({ cache: new InMemoryCache(), link });
