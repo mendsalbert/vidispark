@@ -2,10 +2,12 @@ import { useRef, useState, useEffect, useContext } from "react";
 import { isNil, map } from "ramda";
 
 import { AuthContext } from "./authContext";
+import { useTodo } from "../src/services/todo";
 export default function App() {
   const { user, initDB, db, login, logout, checkUser } =
     useContext(AuthContext);
-  const [tasks, setTasks] = useState([]);
+  const { tasks, getTasks, addTask, completeTask, deleteTask, getMyTasks } =
+    useTodo();
   const [tab, setTab] = useState("All");
 
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
