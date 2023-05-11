@@ -17,18 +17,17 @@ export const useUserRegister = () => {
 
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
-    console.log(value);
-    // let res = await db.add(
-    //   {
-    //     task,
-    //     date: db.ts(),
-    //     user_address: db.signer(),
-    //     done: false,
-    //   },
-    //   "tasks",
-    //   user
-    // );
-    console.log(userObj);
+    let res = await db.add(
+      {
+        username: userObj.username,
+        salt: userObj.salt,
+        password: userObj.hash,
+        date: db.ts(),
+        user_address: db.signer(),
+      },
+      "user",
+      user
+    );
   };
 
   return { addUser };
