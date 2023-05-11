@@ -48,6 +48,10 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("initDB", "true");
   };
 
+  useEffect(() => {
+    setupWeaveDB();
+  }, []);
+
   const login = async () => {
     try {
       const providerOptions = {};
