@@ -17,7 +17,7 @@ const Registration = () => {
       return;
     }
     const hash = bcrypt.hashSync(password, salt);
-    addUser({ username, password, hash, aggred });
+    addUser({ username, hash, aggred });
     // console.log("button clicked");
     // console.log(username, password, confirmPassword, aggred);
   };
