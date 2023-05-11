@@ -25,8 +25,7 @@ export const useUserRegister = () => {
         date: db.ts(),
         user_address: db.signer(),
       },
-      "user",
-      user
+      "user"
     );
   };
 
