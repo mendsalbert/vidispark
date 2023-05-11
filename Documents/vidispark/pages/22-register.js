@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Layouts from "../src/layouts/Layouts";
 
 const Registration = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setconfirmPassword] = useState("");
+  const [aggred, setAggred] = useState(false);
+
   return (
     <Layouts>
       <div className="primary-content-area container content-padding">
@@ -28,6 +33,10 @@ const Registration = () => {
                 id="sign_up_username"
                 name="user_login"
                 type="text"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
               />
             </div>
 
@@ -41,6 +50,10 @@ const Registration = () => {
                 id="sign_up_password"
                 name="user_password"
                 type="password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
             </div>
             <div className="tk-lp-form-item">
@@ -52,12 +65,24 @@ const Registration = () => {
                 id="sign_up_confirm-password"
                 name="user_password_confirm"
                 type="password"
+                value={confirmPassword}
+                onChange={(e) => {
+                  setconfirmPassword(e.target.value);
+                }}
               />
             </div>
             <div className="tk-lp-form-item">
               <div className="tk-lp-check">
                 <label className="tk-lp-checkbox">
-                  <input type="checkbox" name="gdpr" defaultValue={1} />
+                  <input
+                    type="checkbox"
+                    name="gdpr"
+                    defaultValue={1}
+                    value={aggred}
+                    onChange={(e) => {
+                      setAggred(e.target.checked);
+                    }}
+                  />
                   <span className="tk-lp-control-indicator" />
                 </label>
                 <div className="tk-lp-check-text">
