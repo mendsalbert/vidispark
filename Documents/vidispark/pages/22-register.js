@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUserRegister } from "../src/services/register";
-
+const bcrypt = require("bcryptjs");
+const salt = bcrypt.genSaltSync(10);
 const Registration = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,7 +12,8 @@ const Registration = () => {
   const { addUser } = useUserRegister();
 
   const onHandleSubmit = () => {
-    addUser({ username, password, confirmPassword, aggred });
+    const hash = bcrypt.hashSync(password, salt);
+    addUser({ username, password, hash, aggred });
     // console.log("button clicked");
     // console.log(username, password, confirmPassword, aggred);
   };
