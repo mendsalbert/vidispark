@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import lf from "localforage";
 import { isNil } from "ramda";
 import Web3Modal from "web3modal";
