@@ -89,7 +89,7 @@ export default function App() {
   const NavBar = () => (
     <div>
       {!isNil(user) ? (
-        <div onClick={() => logout()}>{user.wallet.slice(0, 7)}</div>
+        <div onClick={() => logout()}>{user?.wallet?.slice(0, 7)}</div>
       ) : (
         <div onClick={() => login()}>Connect Wallet</div>
       )}
