@@ -13,18 +13,13 @@ const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
 import { useAuth } from "../src/auth";
 import { AuthContext } from "./authContext";
 export default function App() {
-  const { user, initDB } = useContext(AuthContext);
-  console.log("user-=-=-=-=", initDB);
+  const { user, initDB, db, login, logout, checkUser } =
+    useContext(AuthContext);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
 
-  const [db, setdb] = useState(
-    typeof window !== "undefined" && JSON.parse(localStorage.getItem("dbobj"))
-  );
   let task = useRef();
   const tabs = isNil(user) ? ["All"] : ["All", "Yours"];
-
-  const { login, checkUser, logout } = useAuth();
 
   const getTasks = async () => {
     setTasks(await db.cget("tasks", ["date", "desc"]));
