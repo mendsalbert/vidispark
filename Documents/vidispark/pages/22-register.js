@@ -97,7 +97,6 @@ const Registration = () => {
               </div>
             </div>
             <button
-              type="button"
               onChange={onHandleSubmit()}
               className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
             >
