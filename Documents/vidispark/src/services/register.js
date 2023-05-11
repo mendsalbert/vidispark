@@ -13,7 +13,7 @@ export const useUserRegister = () => {
   };
 
   const addUser = async (userObj) => {
-    let value = await isUserNameExist(userObj.username);
+    let value = isUserNameExist(userObj.username);
     console.log(value);
     // let res = await db.add(
     //   {
