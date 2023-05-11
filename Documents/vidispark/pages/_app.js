@@ -31,7 +31,7 @@ import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
 
-import { AuthContext } from "./authContext";
+import { AuthContext, AuthProvider } from "./authContext";
 
 const xdcApothem = {
   id: 51,
@@ -161,13 +161,16 @@ function MyApp({ Component, pageProps }) {
 
         <title>NFT</title>
       </Head>
-      <ApolloProvider client={client}>
-        <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains} theme={myTheme}>
-            <Component {...pageProps} />
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </ApolloProvider>
+
+      <AuthProvider>
+        <ApolloProvider client={client}>
+          <WagmiConfig client={wagmiClient}>
+            <RainbowKitProvider chains={chains} theme={myTheme}>
+              <Component {...pageProps} />
+            </RainbowKitProvider>
+          </WagmiConfig>
+        </ApolloProvider>
+      </AuthProvider>
     </Provider>
   );
 }
