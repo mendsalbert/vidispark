@@ -11,7 +11,7 @@ export const useTodo = () => {
     setTasks(await db.cget("tasks", ["date", "desc"]));
   };
 
-  const getMyTasks = async (user) => {
+  const getMyTasks = async () => {
     setTasks(
       await db.cget(
         "tasks",
@@ -21,7 +21,7 @@ export const useTodo = () => {
     );
   };
 
-  const addTask = async (task, user) => {
+  const addTask = async (task) => {
     let res = await db.add(
       {
         task,
@@ -36,7 +36,7 @@ export const useTodo = () => {
     await getTasks();
   };
 
-  const completeTask = async (id, user) => {
+  const completeTask = async (id) => {
     await db.update(
       {
         done: true,
@@ -48,7 +48,7 @@ export const useTodo = () => {
     await getTasks();
   };
 
-  const deleteTask = async (id, user) => {
+  const deleteTask = async (id) => {
     await db.delete("tasks", id, user);
     await getTasks();
   };
