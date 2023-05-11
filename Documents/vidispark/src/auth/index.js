@@ -41,10 +41,11 @@ export const useAuth = () => {
       contractTxId,
     });
     setdb(db);
-    const serializedDb = stringify(db);
+    // const serializedDb = stringify(db);
     // localStorage.setItem("db", serializedDb);
     // await lf.setItem("db", JSON.stringify(db));
-    console.log(serializedDb);
+    const dbString = JSON.stringify(db);
+    console.log(dbString);
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
