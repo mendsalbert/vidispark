@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../pages/authContext";
 
 export const useTodo = () => {
-  const { db } = useContext(AuthContext);
+  const { db, user } = useContext(AuthContext);
   const [tasks, setTasks] = useState([]);
 
   const getTasks = async () => {
