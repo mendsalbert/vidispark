@@ -7,6 +7,9 @@ const Registration = () => {
   const [confirmPassword, setconfirmPassword] = useState("");
   const [aggred, setAggred] = useState(false);
 
+  const onHandleSubmit = () => {
+    console.log(username, password, confirmPassword, aggred);
+  };
   return (
     <Layouts>
       <div className="primary-content-area container content-padding">
