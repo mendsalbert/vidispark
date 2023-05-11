@@ -48,6 +48,7 @@ export const useAuth = () => {
     );
     await db.initializeWithoutWallet();
     setInitDB(true);
+    localStorage.setItem("initDB", "true");
   };
 
   const login = async () => {
