@@ -52,6 +52,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     setupWeaveDB();
+    login();
   }, []);
 
   const login = async () => {
