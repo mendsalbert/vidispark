@@ -14,13 +14,10 @@ import { useAuth } from "../src/auth";
 import { AuthContext } from "./authContext";
 export default function App() {
   const { user, initDB } = useContext(AuthContext);
-  console.log("user-=-=-=-=", user);
+  console.log("user-=-=-=-=", initDB);
   const [tasks, setTasks] = useState([]);
   const [tab, setTab] = useState("All");
 
-  const [initDB, setInitDB] = useState(
-    typeof window !== "undefined" && localStorage.getItem("initDB")
-  );
   const [db, setdb] = useState(
     typeof window !== "undefined" && JSON.parse(localStorage.getItem("dbobj"))
   );
