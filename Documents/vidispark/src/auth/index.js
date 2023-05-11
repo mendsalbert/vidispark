@@ -24,6 +24,13 @@ export const useAuth = () => {
           wallet: wallet_address,
           privateKey: identity.privateKey,
         });
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          wallet: wallet_address,
+          privateKey: identity.privateKey,
+        })
+      );
     }
   };
 
@@ -68,6 +75,13 @@ export const useAuth = () => {
           wallet: wallet_address,
           privateKey: identity.privateKey,
         });
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            wallet: wallet_address,
+            privateKey: identity.privateKey,
+          })
+        );
         return;
       }
       if (!isNil(tx) && isNil(tx.err)) {
@@ -82,6 +96,13 @@ export const useAuth = () => {
           wallet: wallet_address,
           privateKey: identity.privateKey,
         });
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            wallet: wallet_address,
+            privateKey: identity.privateKey,
+          })
+        );
       }
     } catch (error) {
       console.error(error);
@@ -92,6 +113,7 @@ export const useAuth = () => {
     if (confirm("Would you like to sign out?")) {
       await lf.removeItem("temp_address:current");
       setUser(null, "temp_current");
+      localStorage.setItem("user", "temp_current");
     }
   };
 
