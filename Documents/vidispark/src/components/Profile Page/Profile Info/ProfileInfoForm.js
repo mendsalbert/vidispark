@@ -6,7 +6,9 @@ import { v4 as uuidv4 } from "uuid";
 const ProfileInfoForm = () => {
   const { updateUser, userInfo } = useUser();
   const [selectedFile, setSelectedFile] = useState(null);
-
+  const [isLoadingUrl, setIsloadingUrl] = useState(false);
+  const [urlReady, setUrlReady] = useState(false);
+  const [url, setUrl] = useState("");
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
@@ -16,6 +18,7 @@ const ProfileInfoForm = () => {
 
   const handleUpload = async () => {
     console.log("uploading");
+    setIsloadingUrl(true);
     if (selectedFile) {
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk"; // Replace with your actual Web3.Storage API token
@@ -26,6 +29,9 @@ const ProfileInfoForm = () => {
       const cid = await client.put([selectedFile], { name: fileName });
       console.log("Image uploaded with CID:", cid);
       console.log("clicable link", `https://${cid}.ipfs.dweb.link/${fileName}`);
+      setUrlReady(true);
+      setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
+      setIsloadingUrl(false);
     } else {
       console.log("No file selected");
     }
