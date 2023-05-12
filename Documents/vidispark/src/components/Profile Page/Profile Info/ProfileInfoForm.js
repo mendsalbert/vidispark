@@ -134,14 +134,15 @@ const ProfileInfoForm = () => {
           onChange={handleFileChange}
         />
         {/* {isLoadingUrl ? } */}
-        <label htmlFor="fileInput">
-          <div className="user-avatar">
-            <img
-              src="https://i.ibb.co/0C0Dkz1/placeholder-image-person-jpg.jpg"
-              alt=""
-            />
-          </div>
-        </label>
+        <div
+          class="tw-inline-block tw-h-8 tw-w-8 tw-animate-spin tw-rounded-full tw-border-4 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
+          role="status"
+        >
+          <span class="tw-!absolute tw!-m-px tw!h-px tw!w-px tw!overflow-hidden tw!whitespace-nowrap tw!border-0 tw!p-0 tw![clip:rect(0,0,0,0)]">
+            Loading...
+          </span>
+        </div>
+
         <div className="tw-flex tw-justify-center tw-items-center">
           <div className="tw-animate-spin tw-rounded-full tw-h-8 tw-w-8 tw-border-t-2 tw-border-b-2 tw-border-gray-900"></div>
         </div>
