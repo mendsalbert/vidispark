@@ -100,7 +100,7 @@ const ProfileUploadAndPreview = () => {
         <div className="artwork-upload">
           <label htmlFor="fileInput2">
             <div className="label">Upload File</div>
-            {/* <div className="upload-box">
+            <div className="upload-box">
               <svg className="crumina-icon">
                 <use xlinkHref="#upload-icon" />
               </svg>
@@ -111,7 +111,7 @@ const ProfileUploadAndPreview = () => {
               <button className="btn btn-normal btn-dark browse-btn">
                 Browse File
               </button>
-            </div> */}
+            </div>
           </label>
         </div>
 
