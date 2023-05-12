@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
         "user",
         JSON.stringify({
           wallet: wallet_address,
-          privateKey: identity.privateKey,
+          privateKey: identity?.privateKey,
         })
       );
     }
