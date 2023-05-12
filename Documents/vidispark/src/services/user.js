@@ -36,5 +36,24 @@ export const useUser = () => {
     console.log(value.length);
   };
 
+  const loginUser = async (userObj) => {
+    let user_ = await isUserNameExist(userObj.username);
+
+    console.log(user);
+    // let res = await db.add(
+    //   {
+    //     username: userObj.username,
+    //     salt: userObj.salt,
+    //     password: userObj.hash,
+    //     date: db.ts(),
+    //     user_address: db.signer(),
+    //   },
+    //   "user",
+    //   user
+    // );
+
+    // console.log(value.length);
+  };
+
   return { addUser };
 };
