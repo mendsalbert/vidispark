@@ -10,7 +10,7 @@ const ProfileInfoSidebar = () => {
         <div className="user-db-header">
           {/* <div className="user-db-cover-image profile-cover-image" /> */}
           <div className="user-db-cover-image profile-cover-image user-cover-image">
-            <img src={`img/content/profile/profile-cover-1.png`} alt="" />
+            <img src={userInfo[0]?.data?.avatarCover} alt="" />
           </div>
           <div className="user-header-user-profile">
             <div className="avatar box-64">
