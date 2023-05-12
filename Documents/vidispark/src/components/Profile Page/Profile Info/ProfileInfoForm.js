@@ -14,6 +14,8 @@ const ProfileInfoForm = () => {
     updateUser({ username, email, fullname, bio, contact });
   };
 
+  console.log(userInfo);
+
   return (
     <div className="cryptoki-form" id="personal-info-form">
       <div className="user-db-title">Personal Info</div>
