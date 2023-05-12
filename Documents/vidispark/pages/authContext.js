@@ -47,7 +47,6 @@ export const AuthProvider = ({ children }) => {
     setdb(db);
     await db.initializeWithoutWallet();
     setInitDB(true);
-    setUpdateState(false);
     localStorage.setItem("initDB", "true");
   };
 
