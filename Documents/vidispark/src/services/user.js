@@ -39,7 +39,10 @@ export const useUser = () => {
 
   const loginUser = async (userObj) => {
     let user_ = await isUserNameExist(userObj.username);
-    const enteredPasswordHash = bcrypt.hashSync(userObj.password, user_.salt);
+    const enteredPasswordHash = bcrypt.hashSync(
+      userObj.password,
+      user_[0].salt
+    );
 
     if (enteredPasswordHash === user.password) {
       // Passwords match, authentication successful
