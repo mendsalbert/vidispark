@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useUser } from "../../../services/user";
 
 const ProfileInfoForm = () => {
   const { userInfo } = useUser();
-  // console.log(userInfo);
+
+  const [fullname, setFullname] = useState("");
+  const [username, setUsername] = useState("");
+  const [contact, setContact] = useState("");
+  const [password, setPassword] = useState("");
+  const [bio, setBio] = useState("");
+
   return (
     <form className="cryptoki-form" id="personal-info-form">
       <div className="user-db-title">Personal Info</div>
