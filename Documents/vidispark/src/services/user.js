@@ -46,7 +46,7 @@ export const useUser = () => {
   };
 
   const updateUser = async (userObj) => {
-    console.log(user_[0]?.id);
+    console.log(userInfo[0]?.id);
     // let res = await db.update(
     //   {
     //     username: userObj.username,
