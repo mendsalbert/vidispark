@@ -29,7 +29,7 @@ export const useUserRegister = () => {
       user
     );
 
-    console.log(value);
+    console.log(value.length);
   };
 
   return { addUser };
