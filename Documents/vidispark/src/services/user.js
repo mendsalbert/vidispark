@@ -35,8 +35,7 @@ export const useUser = () => {
       user
     );
 
-    console.log(value.length);
-  };
+\  };
 
   const loginUser = async (userObj) => {
     let user_ = await isUserNameExist(userObj.username);
