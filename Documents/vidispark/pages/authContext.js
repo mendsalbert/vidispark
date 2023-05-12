@@ -61,7 +61,6 @@ export const AuthProvider = ({ children }) => {
     setupWeaveDB();
     login();
     checkUser();
-    getUserInformation();
   }, []);
 
   const login = async () => {
