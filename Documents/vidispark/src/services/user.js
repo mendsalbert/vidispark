@@ -30,7 +30,7 @@ export const useUser = () => {
 
   useEffect(() => {
     getUserInformation();
-  }, []);
+  }, [db]);
 
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
