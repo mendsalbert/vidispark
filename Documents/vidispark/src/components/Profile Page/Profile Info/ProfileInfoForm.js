@@ -25,7 +25,7 @@ const ProfileInfoForm = () => {
       const ext = selectedFile.name;
 
       const client = new Web3Storage({ token });
-      const cid = await client.put([selectedFile], { name: fileName });
+      const cid = await client.put([selectedFile], { name: ext });
       console.log("clicable link", `https://${cid}.ipfs.dweb.link/${ext}`);
       setUrlReady(true);
       setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
