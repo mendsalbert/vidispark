@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
     setupWeaveDB();
     login();
     checkUser();
-  }, [user]);
+  }, []);
 
   const login = async () => {
     try {
