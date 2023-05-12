@@ -21,6 +21,7 @@ const Registration = () => {
       return;
     } else if (aggred == false) {
       alert("you have to aggre to our privacy policy first");
+      return;
     }
     const hash = bcrypt.hashSync(password, salt);
     addUser({ username, hash, salt, aggred });
