@@ -9,8 +9,8 @@ const ProfileInfoForm = () => {
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
   const [url, setUrl] = useState("");
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
     setSelectedFile(file);
     handleUpload();
   };
