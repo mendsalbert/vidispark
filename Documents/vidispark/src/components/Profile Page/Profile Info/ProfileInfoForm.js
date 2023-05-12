@@ -27,7 +27,6 @@ const ProfileInfoForm = () => {
 
       const client = new Web3Storage({ token });
       const cid = await client.put([selectedFile], { name: fileName });
-      console.log("Image uploaded with CID:", cid);
       console.log("clicable link", `https://${cid}.ipfs.dweb.link/${fileName}`);
       setUrlReady(true);
       setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
