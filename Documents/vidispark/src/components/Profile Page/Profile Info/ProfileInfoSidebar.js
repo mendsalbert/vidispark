@@ -26,7 +26,7 @@ const ProfileInfoSidebar = () => {
             <div className="title">
               {" "}
               <Link href="/08-profile-page">
-                <a>{userInfo[0]?.data?.username}</a>
+                <a>{userInfo[0]?.data?.fullname}</a>
               </Link>{" "}
             </div>
             <div className="item-meta">
