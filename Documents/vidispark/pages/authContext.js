@@ -46,11 +46,12 @@ export const AuthProvider = ({ children }) => {
     });
     setdb(db);
     await db.initializeWithoutWallet();
+    getUserInformation(db);
     setInitDB(true);
     localStorage.setItem("initDB", "true");
   };
 
-  const getUserInformation = async () => {
+  const getUserInformation = async (db) => {
     console.log(db);
     // const res = await db.cget(
     //   "user",
@@ -66,7 +67,6 @@ export const AuthProvider = ({ children }) => {
     setupWeaveDB();
     login();
     checkUser();
-    getUserInformation();
   }, [updateState]);
 
   const login = async () => {
