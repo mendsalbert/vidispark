@@ -136,7 +136,12 @@ const Registration = () => {
               </div>
               <div className="wallet-info">
                 <div className="title h5">Metamask</div>
-                <button className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full">
+                <button
+                  onClick={() => {
+                    login();
+                  }}
+                  className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
+                >
                   Sign Up with Metamask
                 </button>
               </div>
