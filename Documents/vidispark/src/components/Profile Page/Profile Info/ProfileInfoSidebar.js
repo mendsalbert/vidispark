@@ -1,6 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
+  const { getUserInformation } = useUser();
+
+  console.log(getUserInformation());
+
   return (
     <aside>
       <div className="user-db-menu">
