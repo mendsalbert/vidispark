@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
-import { useUserRegister } from "../src/services/user";
+import { useUser } from "../src/services/user";
 import { AuthContext } from "./authContext";
 
 const bcrypt = require("bcryptjs");
@@ -12,7 +12,7 @@ const Registration = () => {
   const [aggred, setAggred] = useState(false);
   const salt = bcrypt.genSaltSync(10);
 
-  const { addUser } = useUserRegister();
+  const { addUser } = useUser();
 
   const onHandleSubmit = () => {
     login();
