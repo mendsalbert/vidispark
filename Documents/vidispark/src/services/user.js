@@ -29,7 +29,7 @@ export const useUser = () => {
     return res;
   };
 
-  getUserInformation();
+  // getUserInformation();
 
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
