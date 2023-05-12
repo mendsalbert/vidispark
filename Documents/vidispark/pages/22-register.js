@@ -17,6 +17,7 @@ const Registration = () => {
   const onHandleSubmit = () => {
     login();
     if (password != confirmPassword) {
+      //TODO: use a password validator here.
       alert("passowrd must match");
       return;
     } else if (aggred == false) {
@@ -25,8 +26,6 @@ const Registration = () => {
     }
     const hash = bcrypt.hashSync(password, salt);
     addUser({ username, hash, salt, aggred });
-    // console.log("button clicked");
-    // console.log(username, password, confirmPassword, aggred);
   };
   return (
     <Layouts>
@@ -122,6 +121,10 @@ const Registration = () => {
             >
               Register Now
             </button>
+
+            <div>
+              <p>Or</p>
+            </div>
             <button
               type="button"
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
