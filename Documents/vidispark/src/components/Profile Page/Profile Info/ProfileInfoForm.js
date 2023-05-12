@@ -47,7 +47,7 @@ const ProfileInfoForm = () => {
           <input
             type="number"
             id="phone"
-            defaultValue={userInfo[0]?.data?.contact}
+            defaultValue={Number(userInfo[0]?.data?.contact)}
             value={contact}
             onChange={(e) => {
               setContact(e.target.value);
