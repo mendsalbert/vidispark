@@ -42,10 +42,12 @@ export const useUser = () => {
       return;
     }
 
-    // Get the user information
-    getUserInformation().then((res) => {
-      setUserInfo(res);
-    });
+    const res = await db.cget(
+      "user",
+      ["user_address", "==", user?.wallet?.toLowerCase()],
+      ["date", "desc"]
+    );
+    setUserInfo(res)
   }, [db]);
 
   const addUser = async (userObj) => {
