@@ -130,7 +130,7 @@ const Registration = () => {
               or
             </button>
 
-            <div className="wallet-item orange-gradient">
+            <div className="wallet-item orange-gradient tw-py-10">
               <div className="wallet-icon">
                 <img src="img/content/wallet/icon-1.png" alt="" />
               </div>
