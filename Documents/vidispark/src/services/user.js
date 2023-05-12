@@ -53,7 +53,7 @@ export const useUser = () => {
         fullname: userObj.fullname,
         contact: userObj.contact,
         bio: userObj.bio,
-        avatarUrlL: "",
+        avatarUrlL: userObj.url,
         avatarCover: "",
         followers: [],
         following: [],
