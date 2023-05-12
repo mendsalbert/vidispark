@@ -46,13 +46,12 @@ export const useUser = () => {
   };
 
   const updateUser = async (userObj) => {
-    let res = await db.add(
+    let res = await db.update(
       {
         username: userObj.username,
-        salt: userObj.salt,
-        password: userObj.hash,
         email: userObj.email,
         fullname: userObj.fullname,
+        contact: userObj.contact,
         bio: userObj.bio,
         avatarUrlL: "",
         avatarCover: "",
@@ -62,7 +61,7 @@ export const useUser = () => {
         user_address: db.signer(),
       },
       "user",
-      user
+      `${user_[0]?.id}`
     );
   };
 
@@ -88,5 +87,5 @@ export const useUser = () => {
     // console.log(user_[0].);
   };
 
-  return { addUser, loginUser, userInfo };
+  return { addUser, loginUser, userInfo, updateUser };
 };
