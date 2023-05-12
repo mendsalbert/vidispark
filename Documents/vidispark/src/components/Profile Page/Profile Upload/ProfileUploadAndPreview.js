@@ -93,23 +93,20 @@ const ProfileUploadAndPreview = () => {
       />
 
       <div className="upload-container">
-        <label htmlFor="fileInput2">
-          <div className="artwork-upload">
-            <div className="label">Upload File</div>
-            <div className="upload-box">
-              <svg className="crumina-icon">
-                <use xlinkHref="#upload-icon" />
-              </svg>
-              <div className="upload-notice">
-                {" "}
-                Max 120MB, PNG, JPEG, MP3, MP4
-              </div>
-              <button className="btn btn-normal btn-dark browse-btn">
-                Browse File
-              </button>
-            </div>
+        {/* <label htmlFor="fileInput2"> */}
+        <div className="artwork-upload">
+          <div className="label">Upload File</div>
+          <div className="upload-box">
+            <svg className="crumina-icon">
+              <use xlinkHref="#upload-icon" />
+            </svg>
+            <div className="upload-notice"> Max 120MB, PNG, JPEG, MP3, MP4</div>
+            <button className="btn btn-normal btn-dark browse-btn">
+              Browse File
+            </button>
           </div>
-        </label>
+        </div>
+        {/* </label> */}
 
         <div className="artwork-upload">
           <div className="label">Go Live</div>
