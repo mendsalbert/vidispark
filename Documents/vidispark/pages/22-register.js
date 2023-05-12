@@ -136,10 +136,7 @@ const Registration = () => {
               </div>
               <div className="wallet-info">
                 <div className="title h5">Metamask</div>
-                <div className="description">
-                  Learn about how to get the wallet and much more clicking{" "}
-                  <a href="#">here</a>
-                </div>
+                <button>Sign Up with Metamask</button>
               </div>
             </div>
             <button
