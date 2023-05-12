@@ -11,7 +11,6 @@ const ProfileInfoForm = () => {
   const [bio, setBio] = useState("");
 
   const onUpdateUserDataHandler = () => {
-    login();
     updateUser({ username, email, fullname, bio, contact });
   };
 
