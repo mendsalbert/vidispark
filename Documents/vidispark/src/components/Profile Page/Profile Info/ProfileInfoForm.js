@@ -175,7 +175,7 @@ const ProfileInfoForm = () => {
 
         <input
           type="file"
-          id="fileInput"
+          id="fileInput2"
           className="tw-hidden"
           onChange={(e) => handleFileChange(e, "cover")}
         />
@@ -188,7 +188,7 @@ const ProfileInfoForm = () => {
             <span class="tw-!absolute tw!-m-px tw!h-px tw!w-px tw!overflow-hidden tw!whitespace-nowrap tw!border-0 tw!p-0 tw![clip:rect(0,0,0,0)]"></span>
           </div>
         ) : (
-          <label htmlFor="fileInput">
+          <label htmlFor="fileInput2">
             <div className="user-cover-image">
               <img
                 src={`${
