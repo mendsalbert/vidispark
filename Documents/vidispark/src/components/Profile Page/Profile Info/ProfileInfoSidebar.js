@@ -5,7 +5,7 @@ const ProfileInfoSidebar = () => {
   const { userInfo, getUserInformation } = useUser();
 
   useEffect(() => {
-    getUserInformation();
+    getUserInformation;
   }, []);
   console.log(userInfo);
 
