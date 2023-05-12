@@ -45,6 +45,7 @@ export const AuthProvider = ({ children }) => {
       contractTxId,
     });
     setdb(db);
+    console.log(db);
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
