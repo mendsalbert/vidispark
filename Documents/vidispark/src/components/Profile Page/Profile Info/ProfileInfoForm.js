@@ -2,13 +2,18 @@ import React, { useState, useEffect, useContext } from "react";
 import { useUser } from "../../../services/user";
 
 const ProfileInfoForm = () => {
-  const { userInfo } = useUser();
+  const { updateUser } = useUser();
 
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [contact, setContact] = useState("");
-
+  const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
+
+  const onUpdateUserDataHandler = () => {
+    login();
+    updateUser({ username, email, fullname, bio });
+  };
 
   return (
     <form className="cryptoki-form" id="personal-info-form">
@@ -57,12 +62,12 @@ const ProfileInfoForm = () => {
         <div className="form-field">
           <label htmlFor="username">Email</label>
           <input
-            type="text"
+            type="email"
             id="username"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setEmail(e.target.value);
             }}
-            defaultValue={userInfo[0]?.data?.username}
+            defaultValue={userInfo[0]?.data?.email}
           />
         </div>
       </div>
@@ -101,7 +106,13 @@ const ProfileInfoForm = () => {
           1920x320px (cover)
         </div>
       </div>
-      <button className="btn btn-wide btn-dark tw-mt-3" type="submit">
+      <button
+        onClick={() => {
+          onUpdateUserDataHandler();
+        }}
+        className="btn btn-wide btn-dark tw-mt-3"
+        type="submit"
+      >
         Save Changes
       </button>
     </form>
