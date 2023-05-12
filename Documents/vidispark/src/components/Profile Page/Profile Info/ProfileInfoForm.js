@@ -3,7 +3,6 @@ import { useUser } from "../../../services/user";
 
 const ProfileInfoForm = () => {
   const { userInfo } = useUser();
-
   console.log(userInfo);
   return (
     <form className="cryptoki-form" id="personal-info-form">
