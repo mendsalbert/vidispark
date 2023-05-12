@@ -8,7 +8,7 @@ const ProfileInfoSidebar = () => {
     <aside>
       <div className="user-db-menu">
         <div className="user-db-header">
-          <div className="user-db-cover-image profile-cover-image" />
+          {/* <div className="user-db-cover-image profile-cover-image" /> */}
           <div className="user-header-user-profile">
             <div className="avatar box-64">
               {" "}
