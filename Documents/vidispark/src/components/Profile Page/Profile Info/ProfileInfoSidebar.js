@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
-  const { getUserInformation } = useUser();
+  const { userInfo } = useUser();
 
-  console.log(getUserInformation());
+  // console.log(userInfo);
 
   return (
     <aside>
