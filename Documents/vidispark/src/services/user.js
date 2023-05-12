@@ -34,8 +34,7 @@ export const useUser = () => {
       "user",
       user
     );
-
-\  };
+  };
 
   const loginUser = async (userObj) => {
     let user_ = await isUserNameExist(userObj.username);
