@@ -112,9 +112,6 @@ const AccountSettings = () => {
                 </div>
               </div>
             </div>
-            <button className="btn btn-wide btn-dark" type="submit">
-              Save Changes
-            </button>
           </form>
         </div>
       </div>
