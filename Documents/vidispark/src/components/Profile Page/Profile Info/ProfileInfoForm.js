@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 const ProfileInfoForm = () => {
   const { updateUser, userInfo } = useUser();
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
+  const [isCoverLoading, setIsCoverLoaidng] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
   const [url, setUrl] = useState("");
   const [coverUrl, setCoverUrl] = useState("");
@@ -19,7 +20,7 @@ const ProfileInfoForm = () => {
 
   const handleUpload = async (file, type) => {
     if (file) {
-      setIsloadingUrl(true);
+      type === "avatar" ? setIsloadingUrl(true) : setIsCoverLoaidng(true);
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk"; // Replace with your actual Web3.Storage API token
       const fileName = file.name;
@@ -31,12 +32,12 @@ const ProfileInfoForm = () => {
       );
       if (type === "avatar") {
         setUrlReady(true);
-        setAvatarUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
+        setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
       } else if (type === "cover") {
         setCoverReady(true);
         setCoverUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
       }
-      setIsLoadingUrl(false);
+      type === "cover" ? setIsloadingUrl(false) : setIsCoverLoaidng(false);
     } else {
       console.log("No file selected");
     }
@@ -190,7 +191,7 @@ const ProfileInfoForm = () => {
             <div className="user-cover-image">
               <img
                 src={`${
-                  coverReady
+                  isCoverLoading
                     ? coverUrl
                     : userInfo[0]?.data?.avatarCover?.length > 1
                     ? userInfo[0]?.data?.avatarCover
