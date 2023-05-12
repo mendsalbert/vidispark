@@ -2,11 +2,12 @@
 
 import { useState, useContext } from "react";
 import { AuthContext } from "../../pages/authContext";
+import { useRouter } from "next/router";
 const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
   const { db, user } = useContext(AuthContext);
-
+  const router = useRouter();
   const isUserNameExist = async (username) => {
     let res = await db.cget(
       "user",
@@ -47,6 +48,11 @@ export const useUser = () => {
     if (enteredPasswordHash === user_[0]?.data?.password) {
       // Passwords match, authentication successful
       console.log("Login successful!");
+      /*
+  TODO: 1. redirect user to homepage 
+  TODO: 2. After some few minute show a sweet alert to tell user complete his profile
+      */
+      router.push("/dashboard");
     } else {
       // Passwords don't match, authentication failed
       console.log("Incorrect username or password.");
