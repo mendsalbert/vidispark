@@ -7,6 +7,7 @@ const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
   const { db, user } = useContext(AuthContext);
+  const [userInfo, setUserInfo] = useState("");
   const router = useRouter();
   const isUserNameExist = async (username) => {
     let res = await db.cget(
@@ -23,6 +24,7 @@ export const useUser = () => {
       ["user_address", "==", user.wallet.toLowerCase()],
       ["date", "desc"]
     );
+    setUserInfo(res);
     return res;
   };
   const addUser = async (userObj) => {
