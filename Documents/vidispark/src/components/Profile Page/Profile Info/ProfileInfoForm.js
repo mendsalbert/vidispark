@@ -133,6 +133,7 @@ const ProfileInfoForm = () => {
           className="tw-hidden"
           onChange={handleFileChange}
         />
+        {/* {isLoadingUrl ? } */}
         <label htmlFor="fileInput">
           <div className="user-avatar">
             <img
@@ -141,6 +142,10 @@ const ProfileInfoForm = () => {
             />
           </div>
         </label>
+        <div className="tw-flex tw-justify-center tw-items-center">
+          <div className="tw-animate-spin tw-rounded-full tw-h-8 tw-w-8 tw-border-t-2 tw-border-b-2 tw-border-gray-900"></div>
+        </div>
+
         <div className="user-cover-image">
           <img src="img/content/profile/profile-cover-1.png" alt="" />
         </div>
