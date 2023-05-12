@@ -18,24 +18,6 @@ export const useUser = () => {
     return res;
   };
 
-  const getUserInformation = async () => {
-    if (!db) {
-      return undefined;
-    }
-    // Get the user information
-    const res = await db.cget(
-      "user",
-      ["user_address", "==", user?.wallet?.toLowerCase()],
-      ["date", "desc"]
-    );
-    setUserInfo(res);
-    return res;
-  };
-
-  useEffect(() => {
-    getUserInformation();
-  }, []);
-
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
     if (value.length > 1) {
