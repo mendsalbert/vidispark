@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useUser } from "../../../services/user";
 
 const ProfileInfoForm = () => {
-  const { updateUser } = useUser();
+  const { updateUser, userInfo } = useUser();
 
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
