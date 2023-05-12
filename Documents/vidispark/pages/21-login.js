@@ -94,7 +94,9 @@ const Login = () => {
             </button>
           </div>
           <div className="social-login">
-            <div className="social-login-text">Or connect with your wallet</div>
+            <div className="social-login-text tw-mt-3">
+              Or connect with your wallet
+            </div>
             <div className="social-login-buttons">
               <button className="btn btn-normal facebook">
                 <svg className="crumina-icon">
