@@ -1,6 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const ProfileUploadAndPreview = () => {
+  const [uploadUrl, setUploadUrl] = useState("");
+  const [videoUrl, setVideoUrl] = useState("");
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    const uploadResponse = await fetch("https://api.thetavideoapi.com/upload", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+      },
+      body: JSON.stringify({}),
+    });
+    const uploadResponseJson = await uploadResponse.json();
+    const { presigned_url } = uploadResponseJson.body.uploads[0];
+    setUploadUrl(presigned_url);
+    await fetch(presigned_url, {
+      method: "PUT",
+      headers: { "Content-Type": "application/octet-stream" },
+      body: file,
+    });
+    const videoResponse = await fetch("https://api.thetavideoapi.com/video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+      },
+      body: JSON.stringify({
+        source_upload_id: uploadResponseJson.body.uploads[0].id,
+        playback_policy: "public",
+        nft_collection: "0x5d0004fe2e0ec6d002678c7fa01026cabde9e793",
+      }),
+    });
+    const videoResponseJson = await videoResponse.json();
+    console.log(videoResponseJson.body.videos);
+    let finished = false;
+
+    while (!finished) {
+      const { data } = await axios.get(
+        `https://api.thetavideoapi.com/video/${videoResponseJson.body.videos[0].id}`,
+        {
+          headers: {
+            "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+            "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
+          },
+        }
+      );
+      console.log("data", data);
+      if (
+        data?.body?.videos?.[0]?.state === "success" &&
+        data?.body?.videos?.[0]?.sub_state === "none"
+      ) {
+        finished = true;
+        setVideoUrl(data.body.videos[0].player_uri);
+      } else {
+        await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
+      }
+    }
+  };
+
   const categories = [
     { name: "Entertainment" },
     { name: "Music" },
@@ -22,19 +85,31 @@ const ProfileUploadAndPreview = () => {
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
+      <input
+        type="file"
+        id="fileInput2"
+        className="tw-hidden"
+        onChange={(e) => handleFileChange()}
+      />
+
       <div className="upload-container">
-        <div className="artwork-upload">
-          <div className="label">Upload File</div>
-          <div className="upload-box">
-            <svg className="crumina-icon">
-              <use xlinkHref="#upload-icon" />
-            </svg>
-            <div className="upload-notice"> Max 120MB, PNG, JPEG, MP3, MP4</div>
-            <button className="btn btn-normal btn-dark browse-btn">
-              Browse File
-            </button>
+        <label htmlFor="fileInput2">
+          <div className="artwork-upload">
+            <div className="label">Upload File</div>
+            <div className="upload-box">
+              <svg className="crumina-icon">
+                <use xlinkHref="#upload-icon" />
+              </svg>
+              <div className="upload-notice">
+                {" "}
+                Max 120MB, PNG, JPEG, MP3, MP4
+              </div>
+              <button className="btn btn-normal btn-dark browse-btn">
+                Browse File
+              </button>
+            </div>
           </div>
-        </div>
+        </label>
 
         <div className="artwork-upload">
           <div className="label">Go Live</div>
