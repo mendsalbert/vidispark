@@ -14,7 +14,7 @@ const ProfileInfoSidebar = () => {
               {" "}
               <Link href="/08-profile-page">
                 <a>
-                  <img src={userInfo[0]?.data?.url} alt="avatar" />
+                  <img src={userInfo[0]?.data?.avatarCover} alt="avatar" />
                   <span className="verified">
                     <svg className="crumina-icon">
                       <use xlinkHref="#check-icon" />
