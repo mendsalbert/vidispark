@@ -89,7 +89,7 @@ const ProfileUploadAndPreview = () => {
         type="file"
         id="fileInput2"
         className="tw-hidden"
-        onChange={(e) => handleFileChange()}
+        onChange={handleFileChange}
       />
 
       <div className="upload-container">
