@@ -25,6 +25,7 @@ export const useUser = () => {
       ["date", "desc"]
     );
     setUserInfo(res);
+    console.log(res);
     return res;
   };
 
