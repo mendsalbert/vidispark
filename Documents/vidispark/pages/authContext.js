@@ -37,7 +37,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  console.log(db);
   const setupWeaveDB = async () => {
     window.Buffer = Buffer;
     let db = new SDK({
