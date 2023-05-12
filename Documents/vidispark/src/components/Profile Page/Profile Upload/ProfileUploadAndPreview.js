@@ -57,7 +57,7 @@ const ProfileUploadAndPreview = () => {
             <div className="form-title">Main Details</div>
             <div className="form-group">
               <div className="form-field">
-                <label htmlFor="name">Artwork name</label>
+                <label htmlFor="name">Video name</label>
                 <input type="text" id="name" defaultValue="Breathing Nature" />
               </div>
               <div className="form-field">
