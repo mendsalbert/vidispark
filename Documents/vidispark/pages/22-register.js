@@ -16,7 +16,7 @@ const Registration = () => {
 
   const onHandleSubmit = () => {
     login();
-    if (password != confirmPassword) {
+    if (password != confirmPassword || aggred == false) {
       alert("passowrd must match");
       return;
     }
