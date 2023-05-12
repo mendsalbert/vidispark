@@ -75,7 +75,7 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label htmlFor="price">Thumnail URL</label>
-                <input type="number" id="price" defaultValue="3.21" />
+                <input type="text" id="price" defaultValue="3.21" />
               </div>
             </div>
             <div className="form-field comment-area">
