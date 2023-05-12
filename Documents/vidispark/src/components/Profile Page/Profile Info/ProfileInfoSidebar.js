@@ -41,14 +41,14 @@ const ProfileInfoSidebar = () => {
         </div>
         <div className="user-db-body">
           <ul className="profile-menu">
-            <li className="account">
+            <li className="profile">
               {" "}
-              <Link href="/29-account-settings">
+              <Link href="/23-profile-info">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
-                    <use xlinkHref="#settings-icon" />
+                    <use xlinkHref="#user-icon" />
                   </svg>
-                  Account Settings
+                  Profile Info
                 </a>
               </Link>{" "}
             </li>
