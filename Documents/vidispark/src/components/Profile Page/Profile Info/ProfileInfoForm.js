@@ -10,7 +10,7 @@ const ProfileInfoForm = () => {
       <div className="form-group">
         <div className="form-field">
           <label htmlFor="name">Full name</label>
-          <input type="text" id="name" defaultValue="Dexter Stark" />
+          <input type="text" id="name" defaultValue="" />
         </div>
       </div>
       <div className="form-group">
@@ -54,6 +54,9 @@ const ProfileInfoForm = () => {
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
+      <button className="btn btn-wide btn-dark" type="submit">
+        Save Changes
+      </button>
     </form>
   );
 };
