@@ -36,8 +36,7 @@ const ProfileInfoForm = () => {
           <label htmlFor="password-2">Repeat password</label>
           <input type="password" name="password" id="password-2" />
         </div>
-
-        <div className="form-field comment-area">
+        <div className="form-field ">
           <label htmlFor="message">Your comment</label>
           <textarea
             id="message"
