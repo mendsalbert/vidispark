@@ -1,9 +1,12 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
-  const { userInfo } = useUser();
+  const { userInfo, getUserInformation } = useUser();
 
+  useEffect(() => {
+    getUserInformation();
+  }, []);
   console.log(userInfo);
 
   return (
