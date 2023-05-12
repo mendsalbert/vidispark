@@ -49,12 +49,6 @@ export const AuthProvider = ({ children }) => {
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
-    const res = await db.cget(
-      "user",
-      ["user_address", "==", user?.wallet?.toLowerCase()],
-      ["date", "desc"]
-    );
-    setUserInfo(res);
   };
 
   useEffect(() => {
