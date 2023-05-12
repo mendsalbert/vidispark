@@ -17,6 +17,14 @@ export const useUser = () => {
     return res;
   };
 
+  const getUserInformation = async (username) => {
+    let res = await db.cget(
+      "user",
+      ["username", "==", username],
+      ["date", "desc"]
+    );
+    return res;
+  };
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
     if (value.length > 1) {
@@ -58,20 +66,7 @@ export const useUser = () => {
       console.log("Incorrect username or password.");
     }
     // console.log(user_[0].);
-    // let res = await db.add(
-    //   {
-    //     username: userObj.username,
-    //     salt: userObj.salt,
-    //     password: userObj.hash,
-    //     date: db.ts(),
-    //     user_address: db.signer(),
-    //   },
-    //   "user",
-    //   user
-    // );
-
-    // console.log(value.length);
   };
 
-  return { addUser, loginUser };
+  return { addUser, loginUser, getUserInformation };
 };
