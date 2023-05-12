@@ -82,7 +82,7 @@ export const useUser = () => {
     //   "user",
     //   `${user_[0]?.id}`
     // );
-    console.log(res);
+    // console.log(res);
   };
 
   const loginUser = async (userObj) => {
