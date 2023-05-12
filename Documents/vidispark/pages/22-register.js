@@ -16,9 +16,11 @@ const Registration = () => {
 
   const onHandleSubmit = () => {
     login();
-    if (password != confirmPassword || aggred == false) {
+    if (password != confirmPassword) {
       alert("passowrd must match");
       return;
+    } else if (aggred == false) {
+      alert("you have to aggre to our privacy policy first");
     }
     const hash = bcrypt.hashSync(password, salt);
     addUser({ username, hash, salt, aggred });
