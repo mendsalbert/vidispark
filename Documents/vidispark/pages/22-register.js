@@ -122,7 +122,7 @@ const Registration = () => {
               Register Now
             </button>
             <div className="tw-flex tw-flex-row tw-items-center w-full">
-              <p className="tw-text-center tw-text-emerald-400"> Or</p>
+              <p className="tw-text-center "> Or</p>
             </div>
             <button
               type="button"
