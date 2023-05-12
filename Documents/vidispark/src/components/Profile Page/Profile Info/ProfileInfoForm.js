@@ -21,7 +21,7 @@ const ProfileInfoForm = () => {
   const handleUpload = async () => {
     if (selectedFile) {
       const token = "YOUR_API_TOKEN"; // Replace with your actual Web3.Storage API token
-      const client = new Web3Storage({ token });
+      const client = new Web3Storage({ 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk' });
       const cid = await client.put([selectedFile]);
       console.log("Image uploaded with CID:", cid);
     } else {
