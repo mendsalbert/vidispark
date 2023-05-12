@@ -43,7 +43,7 @@ const ProfileInfoForm = () => {
           />
         </div>
         <div className="form-field">
-          <label htmlFor="phone">Phone contact</label>
+          <label htmlFor="phone"> contact</label>
           <input
             type="number"
             id="phone"
