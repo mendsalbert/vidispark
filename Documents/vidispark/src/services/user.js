@@ -22,7 +22,6 @@ export const useUser = () => {
     if (!db) {
       return undefined;
     }
-
     // Get the user information
     const res = await db.cget(
       "user",
