@@ -11,7 +11,7 @@ const Login = () => {
               <span className="gradient-text">Account</span> Login
             </h2>
           </div>
-          <form
+          <div
             id="sign-in"
             className="tk-lp-form user-register-kit-sign tk-lp-tabs-form-content active"
             data-handler="lrk_sign_in_action"
@@ -72,7 +72,7 @@ const Login = () => {
             >
               Create an Account
             </button>
-          </form>
+          </div>
           <div className="social-login">
             <div className="social-login-text">Or login with your wallet</div>
             <div className="social-login-buttons">
