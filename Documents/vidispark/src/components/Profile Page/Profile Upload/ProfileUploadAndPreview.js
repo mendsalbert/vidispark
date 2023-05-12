@@ -2,22 +2,23 @@ import React from "react";
 
 const ProfileUploadAndPreview = () => {
   const categories = [
-    {
-      name: "Entertainment",
-    },
-    {
-      name: "Music",
-    },
-    {
-      name: "Education",
-    },
-    {
-      name: "Sports",
-    },
-    {
-      name: "Gaming",
-    },
+    { name: "Entertainment" },
+    { name: "Music" },
+    { name: "Sports" },
+    { name: "Gaming" },
+    { name: "Education" },
+    { name: "News" },
+    { name: "Comedy" },
+    { name: "Lifestyle" },
+    { name: "Travel" },
+    { name: "Science and Technology" },
+    { name: "Health and Fitness" },
+    { name: "Fashion and Beauty" },
+    { name: "Food and Cooking" },
+    { name: "Business and Finance" },
+    { name: "Art and Design" },
   ];
+
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
