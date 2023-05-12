@@ -36,7 +36,7 @@ export const useUser = () => {
   //   getUserInformation();
   // }, []);
 
-  useEffect(() => {
+  useEffect(async () => {
     // Check if the db is initialized
     if (!db) {
       return;
@@ -47,7 +47,7 @@ export const useUser = () => {
       ["user_address", "==", user?.wallet?.toLowerCase()],
       ["date", "desc"]
     );
-    setUserInfo(res)
+    setUserInfo(res);
   }, [db]);
 
   const addUser = async (userObj) => {
