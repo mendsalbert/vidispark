@@ -28,6 +28,10 @@ export const useUser = () => {
     return res;
   };
 
+  useEffect(() => {
+    getUserInformation();
+  }, []);
+
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
     if (value.length > 1) {
@@ -71,5 +75,5 @@ export const useUser = () => {
     // console.log(user_[0].);
   };
 
-  return { addUser, loginUser, userInfo, getUserInformation };
+  return { addUser, loginUser, userInfo };
 };
