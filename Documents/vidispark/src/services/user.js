@@ -18,7 +18,6 @@ export const useUser = () => {
     return res;
   };
 
-  console.log(user);
   const getUserInformation = async () => {
     if (!db) {
       return undefined;
