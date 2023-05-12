@@ -68,7 +68,7 @@ const ProfileUploadAndPreview = () => {
                             strokeLinecap="round"
                             strokeLinejoin="round"
                             strokeWidth="2"
-                            d={icons[category.icon]}
+                            d={category.icon}
                           ></path>
                         </svg>
                         {category.name}
