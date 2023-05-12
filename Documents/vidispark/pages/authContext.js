@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const [initDB, setInitDB] = useState(false);
   const [db, setdb] = useState("");
   const [userInfo, setUserInfo] = useState("");
-
+  const [updateState, setUpdateState] = useState(false);
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
@@ -47,6 +47,7 @@ export const AuthProvider = ({ children }) => {
     setdb(db);
     await db.initializeWithoutWallet();
     setInitDB(true);
+    setUpdateState(!updateState);
     localStorage.setItem("initDB", "true");
   };
 
