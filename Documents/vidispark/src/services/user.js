@@ -58,5 +58,5 @@ export const useUser = () => {
     // console.log(user_[0].);
   };
 
-  return { addUser, loginUser };
+  return { addUser, loginUser, userInfo };
 };
