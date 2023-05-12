@@ -9,7 +9,7 @@ const ProfileInfoSidebar = () => {
       <div className="user-db-menu">
         <div className="user-db-header">
           {/* <div className="user-db-cover-image profile-cover-image" /> */}
-          <div className="profile-cover-image tw-h-20">
+          <div className="profile-cover-image tw-h-20 tw-rounded-2xl">
             <img src={userInfo[0]?.data?.avatarCover} alt="" />
           </div>
           <div className="user-header-user-profile">
