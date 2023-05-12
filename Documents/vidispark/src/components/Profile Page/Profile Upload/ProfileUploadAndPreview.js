@@ -68,8 +68,7 @@ const ProfileUploadAndPreview = () => {
                 >
                   {categories.map((category, index) => (
                     <option key={index} value={category.name}>
-                      {category.icon}
-                      {category.name}
+                      \ {category.name}
                     </option>
                   ))}
                 </select>
