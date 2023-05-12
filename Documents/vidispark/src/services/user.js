@@ -39,7 +39,7 @@ export const useUser = () => {
   const loginUser = async (userObj) => {
     let user_ = await isUserNameExist(userObj.username);
 
-    console.log(user);
+    console.log(user_);
     // let res = await db.add(
     //   {
     //     username: userObj.username,
