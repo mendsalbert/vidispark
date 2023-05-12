@@ -46,7 +46,7 @@ export const useUser = () => {
   };
 
   const updateUser = async (userObj) => {
-    console.log();
+    console.log(userInfo);
     // let res = await db.update(
     //   {
     //     username: userObj.username,
@@ -64,24 +64,6 @@ export const useUser = () => {
     //   "user",
     //   userInfo[0]?.id,
     //   user
-    );
-
-    // let res = await db.update(
-    //   {
-    //     username: userObj.username,
-    //     email: userObj.email,
-    //     fullname: userObj.fullname,
-    //     contact: userObj.contact,
-    //     bio: userObj.bio,
-    //     avatarUrlL: "",
-    //     avatarCover: "",
-    //     followers: [],
-    //     following: [],
-    //     date: db.ts(),
-    //     user_address: db.signer(),
-    //   },
-    //   "user",
-    //   `${user_[0]?.id}`
     // );
     console.log(res);
   };
