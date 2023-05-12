@@ -5,9 +5,10 @@ const ProfileUploadAndPreview = () => {
   const [uploadUrl, setUploadUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
   const [videoUploading, setVideoUploading] = useState(false);
-  const [uploadStep, setUploadStep] = useState(0);
+  const [uploadStep, setUploadStep] = useState("");
   const handleFileChange = async (event) => {
     setVideoUploading(true);
+    setUploadStep("Uploading Video");
     const file = event.target.files[0];
     const uploadResponse = await fetch("https://api.thetavideoapi.com/upload", {
       method: "POST",
@@ -21,6 +22,7 @@ const ProfileUploadAndPreview = () => {
     const uploadResponseJson = await uploadResponse.json();
     const { presigned_url } = uploadResponseJson.body.uploads[0];
     setUploadUrl(presigned_url);
+    setUploadStep("Analyzing Video");
     await fetch(presigned_url, {
       method: "PUT",
       headers: { "Content-Type": "application/octet-stream" },
@@ -42,6 +44,7 @@ const ProfileUploadAndPreview = () => {
     const videoResponseJson = await videoResponse.json();
     console.log(videoResponseJson.body.videos);
     let finished = false;
+    setUploadStep("About to Complete ");
 
     while (!finished) {
       const { data } = await axios.get(
@@ -60,6 +63,8 @@ const ProfileUploadAndPreview = () => {
       ) {
         finished = true;
         setVideoUrl(data.body.videos[0].player_uri);
+        setUploadStep("Completed ");
+
         setVideoUploading(false);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
