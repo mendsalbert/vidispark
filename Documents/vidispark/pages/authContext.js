@@ -55,7 +55,6 @@ export const AuthProvider = ({ children }) => {
       ["date", "desc"]
     );
     setUserInfo(res);
-    return res;
   };
 
   useEffect(() => {
