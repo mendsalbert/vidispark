@@ -19,7 +19,7 @@ const UploadArtWork = () => {
             {/* / Profile Upload & Preview */}
 
             {/* / Profile Purchase */}
-            <ProfilePurchase />
+            {/* <ProfilePurchase /> */}
             {/* / Profile Purchase */}
           </div>
         </div>
