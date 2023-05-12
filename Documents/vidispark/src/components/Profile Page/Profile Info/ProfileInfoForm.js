@@ -17,6 +17,7 @@ const ProfileInfoForm = () => {
   };
 
   console.log(userInfo);
+  console.log(userInfo[0]?.data?.avatarUrl);
   const handleUpload = async () => {
     console.log("uploading");
     if (selectedFile) {
