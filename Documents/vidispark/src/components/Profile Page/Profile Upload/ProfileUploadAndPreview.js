@@ -64,6 +64,8 @@ const ProfileUploadAndPreview = () => {
     }
   };
 
+  console.log(videoUrl);
+
   const categories = [
     { name: "Entertainment" },
     { name: "Music" },
