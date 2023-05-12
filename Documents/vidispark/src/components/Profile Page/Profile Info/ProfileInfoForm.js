@@ -9,6 +9,7 @@ const ProfileInfoForm = () => {
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
   const [url, setUrl] = useState("");
+
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(e);
@@ -36,14 +37,21 @@ const ProfileInfoForm = () => {
     }
   };
 
-  const [fullname, setFullname] = useState("");
-  const [username, setUsername] = useState("");
-  const [contact, setContact] = useState("");
-  const [email, setEmail] = useState("");
-  const [bio, setBio] = useState("");
-
+  const [fullname, setFullname] = useState(userInfo[0]?.data?.fullname || "");
+  const [username, setUsername] = useState(userInfo[0]?.data?.username || "");
+  const [contact, setContact] = useState(userInfo[0]?.data?.contact || "");
+  const [email, setEmail] = useState(userInfo[0]?.data?.email || "");
+  const [bio, setBio] = useState(userInfo[0]?.data?.bio || "");
   const onUpdateUserDataHandler = () => {
-    updateUser({ username, email, fullname, bio, contact, url });
+    const updatedUserData = {
+      username: username !== userInfo[0]?.data?.username ? username : undefined,
+      email: email !== userInfo[0]?.data?.email ? email : undefined,
+      fullname: fullname !== userInfo[0]?.data?.fullname ? fullname : undefined,
+      bio: bio !== userInfo[0]?.data?.bio ? bio : undefined,
+      contact: contact !== userInfo[0]?.data?.contact ? contact : undefined,
+      url: urlReady ? url : undefined,
+    };
+    updateUser(updatedUserData);
   };
 
   return (
