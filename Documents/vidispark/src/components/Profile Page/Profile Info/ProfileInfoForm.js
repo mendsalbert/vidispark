@@ -44,7 +44,16 @@ const ProfileInfoForm = () => {
   const [bio, setBio] = useState("");
 
   const onUpdateUserDataHandler = () => {
-    updateUser({ username, email, fullname, bio, contact, url });
+    const updatedUserData = {
+      username: username !== "" ? username : userInfo[0]?.data?.username,
+      email: email !== "" ? email : userInfo[0]?.data?.email,
+      fullname: fullname !== "" ? fullname : userInfo[0]?.data?.fullname,
+      bio: bio !== "" ? bio : userInfo[0]?.data?.bio,
+      contact: contact !== "" ? contact : userInfo[0]?.data?.contact,
+      url: url !== "" ? url : userInfo[0]?.data?.url,
+    };
+
+    updateUser(updatedUserData);
   };
 
   return (
