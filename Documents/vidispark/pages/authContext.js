@@ -27,9 +27,7 @@ export const AuthProvider = ({ children }) => {
     return res;
   };
 
-  useEffect(() => {
-    getUserInformation();
-  }, []);
+  useEffect(() => {}, []);
 
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
@@ -68,6 +66,7 @@ export const AuthProvider = ({ children }) => {
     setupWeaveDB();
     login();
     checkUser();
+    getUserInformation();
   }, []);
 
   const login = async () => {
