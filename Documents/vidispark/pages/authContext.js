@@ -53,7 +53,6 @@ export const AuthProvider = ({ children }) => {
 
   const getUserInformation = async (db) => {
     console.log(db);
-    console.log(user);
     // const res = await db.cget(
     //   "user",
     //   ["user_address", "==", user?.wallet?.toLowerCase()],
@@ -68,7 +67,7 @@ export const AuthProvider = ({ children }) => {
     setupWeaveDB();
     login();
     checkUser();
-  }, [updateState]);
+  }, []);
 
   const login = async () => {
     try {
