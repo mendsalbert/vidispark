@@ -8,28 +8,35 @@ const ProfileInfoForm = () => {
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
   const [url, setUrl] = useState("");
+  const [coverUrl, setCoverUrl] = useState("");
+  const [coverReady, setCoverReady] = useState(false);
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e, type) => {
     const file = e.target.files[0];
     console.log(e);
-    handleUpload(file);
+    handleUpload(file, type);
   };
 
-  console.log(userInfo);
-  console.log(userInfo[0]?.data);
-  const handleUpload = async (file) => {
-    console.log("uploading");
+  const handleUpload = async (file, type) => {
     if (file) {
-      setIsloadingUrl(true);
+      setIsLoadingUrl(true);
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk"; // Replace with your actual Web3.Storage API token
       const fileName = file.name;
       const client = new Web3Storage({ token });
       const cid = await client.put([file], { name: fileName });
-      console.log("clicable link", `https://${cid}.ipfs.dweb.link/${fileName}`);
-      setUrlReady(true);
-      setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
-      setIsloadingUrl(false);
+      console.log(
+        "Clickable link",
+        `https://${cid}.ipfs.dweb.link/${fileName}`
+      );
+      if (type === "avatar") {
+        setUrlReady(true);
+        setAvatarUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
+      } else if (type === "cover") {
+        setCoverReady(true);
+        setCoverUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
+      }
+      setIsLoadingUrl(false);
     } else {
       console.log("No file selected");
     }
@@ -49,6 +56,7 @@ const ProfileInfoForm = () => {
       bio: bio !== "" ? bio : userInfo[0]?.data?.bio,
       contact: contact !== "" ? contact : userInfo[0]?.data?.contact,
       url: url !== "" ? url : userInfo[0]?.data?.url,
+      cover: coverUrl !== "" ? coverUrl : userInfo[0]?.data?.avatarCover,
     };
 
     updateUser(updatedUserData);
@@ -137,7 +145,7 @@ const ProfileInfoForm = () => {
           type="file"
           id="fileInput"
           className="tw-hidden"
-          onChange={handleFileChange}
+          onChange={(e) => handleFileChange(e, "avatar")}
         />
         {isLoadingUrl ? (
           <div
@@ -163,13 +171,39 @@ const ProfileInfoForm = () => {
           </label>
         )}
 
-        <div className="tw-flex tw-justify-center tw-items-center">
-          <div className="tw-animate-spin tw-rounded-full tw-h-8 tw-w-8 tw-border-t-2 tw-border-b-2 tw-border-gray-900"></div>
-        </div>
+        <input
+          type="file"
+          id="fileInput"
+          className="tw-hidden"
+          onChange={(e) => handleFileChange(e, "cover")}
+        />
 
-        <div className="user-cover-image">
+        {isLoadingUrl ? (
+          <div
+            class="tw-inline-block tw-h-8 tw-w-8 tw-animate-spin tw-rounded-full tw-border-4 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status"
+          >
+            <span class="tw-!absolute tw!-m-px tw!h-px tw!w-px tw!overflow-hidden tw!whitespace-nowrap tw!border-0 tw!p-0 tw![clip:rect(0,0,0,0)]"></span>
+          </div>
+        ) : (
+          <label htmlFor="fileInput">
+            <div className="user-cover-image">
+              <img
+                src={`${
+                  coverReady
+                    ? coverUrl
+                    : userInfo[0]?.data?.avatarCover?.length > 1
+                    ? userInfo[0]?.data?.avatarCover
+                    : "img/content/profile/profile-cover-1.png"
+                } `}
+                alt=""
+              />
+            </div>
+          </label>
+        )}
+        {/* <div className="user-cover-image">
           <img src="img/content/profile/profile-cover-1.png" alt="" />
-        </div>
+        </div> */}
         <div className="upload-notice">
           Images must be .png or .jpg format. Min size 100x100px (avatar) and
           1920x320px (cover)
