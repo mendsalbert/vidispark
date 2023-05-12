@@ -4,33 +4,18 @@ const ProfileUploadAndPreview = () => {
   const categories = [
     {
       name: "Entertainment",
-      icon: (
-        <ChevronDownIcon className="tw-w-5 tw-h-5 tw-mr-2 tw-text-gray-400" />
-      ),
     },
     {
       name: "Music",
-      icon: (
-        <ChevronDownIcon className="tw-w-5 tw-h-5 tw-mr-2 tw-text-gray-400" />
-      ),
     },
     {
       name: "Education",
-      icon: (
-        <ChevronDownIcon className="tw-w-5 tw-h-5 tw-mr-2 tw-text-gray-400" />
-      ),
     },
     {
       name: "Sports",
-      icon: (
-        <ChevronDownIcon className="tw-w-5 tw-h-5 tw-mr-2 tw-text-gray-400" />
-      ),
     },
     {
       name: "Gaming",
-      icon: (
-        <ChevronDownIcon className="tw-w-5 tw-h-5 tw-mr-2 tw-text-gray-400" />
-      ),
     },
   ];
   return (
