@@ -18,37 +18,23 @@ export const useUser = () => {
     return res;
   };
 
-  // const getUserInformation = async () => {
-  //   // if (!db) {
-  //   //   return undefined;
-  //   // }
-  //   // Get the user information
-  //   const res = await db.cget(
-  //     "user",
-  //     ["user_address", "==", user?.wallet?.toLowerCase()],
-  //     ["date", "desc"]
-  //   );
-  //   setUserInfo(res);
-  //   return res;
-  // };
-
-  // useEffect(() => {
-  //   getUserInformation();
-  // }, []);
-
-  useEffect(async () => {
-    // Check if the db is initialized
-    if (!db) {
-      return;
-    }
-
+  const getUserInformation = async () => {
+    // if (!db) {
+    //   return undefined;
+    // }
+    // Get the user information
     const res = await db.cget(
       "user",
       ["user_address", "==", user?.wallet?.toLowerCase()],
       ["date", "desc"]
     );
     setUserInfo(res);
-  }, [db]);
+    return res;
+  };
+
+  useEffect(() => {
+    getUserInformation();
+  }, []);
 
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
