@@ -117,6 +117,7 @@ export const AuthProvider = ({ children }) => {
         ["date", "desc"]
       );
       setUserInfo(res);
+      console.log(res);
     } catch (error) {
       console.error(error);
     }
@@ -129,8 +130,6 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("user", "temp_current");
     }
   };
-
-  console.log(userInfo);
 
   return (
     <AuthContext.Provider
