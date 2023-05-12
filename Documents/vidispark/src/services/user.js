@@ -36,23 +36,17 @@ export const useUser = () => {
   //   getUserInformation();
   // }, []);
 
-  const useUserInformation = () => {
-    const [userInformation, setUserInformation] = useState(undefined);
+  useEffect(() => {
+    // Check if the db is initialized
+    if (!db) {
+      return;
+    }
 
-    useEffect(() => {
-      // Check if the db is initialized
-      if (!db) {
-        return;
-      }
-
-      // Get the user information
-      getUserInformation().then((res) => {
-        setUserInformation(res);
-      });
-    }, [db]);
-
-    return userInformation;
-  };
+    // Get the user information
+    getUserInformation().then((res) => {
+      setUserInfo(res);
+    });
+  }, [db]);
 
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
