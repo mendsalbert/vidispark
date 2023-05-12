@@ -18,10 +18,6 @@ export const AuthProvider = ({ children }) => {
   const [db, setdb] = useState("");
   const [userInfo, setUserInfo] = useState(second);
   const getUserInformation = async () => {
-    if (!db) {
-      return undefined;
-    }
-    // Get the user information
     const res = await db.cget(
       "user",
       ["user_address", "==", user?.wallet?.toLowerCase()],
