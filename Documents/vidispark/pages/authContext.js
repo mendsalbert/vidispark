@@ -16,7 +16,6 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [initDB, setInitDB] = useState(false);
   const [db, setdb] = useState("");
-  console.log(user);
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
@@ -54,7 +53,7 @@ export const AuthProvider = ({ children }) => {
     setupWeaveDB();
     login();
     checkUser();
-  }, []);
+  }, [user]);
 
   const login = async () => {
     try {
