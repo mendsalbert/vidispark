@@ -6,6 +6,7 @@ const ProfileUploadAndPreview = () => {
   const [videoUrl, setVideoUrl] = useState("");
   const [videoUploading, setVideoUploading] = useState(false);
   const [uploadStep, setUploadStep] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
   const handleFileChange = async (event) => {
     setVideoUploading(true);
     setUploadStep("Uploading Video");
@@ -64,7 +65,7 @@ const ProfileUploadAndPreview = () => {
         finished = true;
         setVideoUrl(data.body.videos[0].player_uri);
         setUploadStep("Completed ");
-
+        setIsComplete(true);
         setVideoUploading(false);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
