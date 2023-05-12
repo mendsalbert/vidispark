@@ -4,8 +4,9 @@ import axios from "axios";
 const ProfileUploadAndPreview = () => {
   const [uploadUrl, setUploadUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
-
+  const [videoUploading, setVideoUploading] = useState(false);
   const handleFileChange = async (event) => {
+    setVideoUploading(true);
     const file = event.target.files[0];
     const uploadResponse = await fetch("https://api.thetavideoapi.com/upload", {
       method: "POST",
@@ -58,6 +59,7 @@ const ProfileUploadAndPreview = () => {
       ) {
         finished = true;
         setVideoUrl(data.body.videos[0].player_uri);
+        setVideoUploading(false);
       } else {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // wait one second before checking again
       }
