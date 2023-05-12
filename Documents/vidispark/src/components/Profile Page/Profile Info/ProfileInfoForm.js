@@ -36,11 +36,11 @@ const ProfileInfoForm = () => {
     }
   };
 
-  const [fullname, setFullname] = useState(userInfo[0]?.data?.fullname);
-  const [username, setUsername] = useState(userInfo[0]?.data?.username);
+  const [fullname, setFullname] = useState();
+  const [username, setUsername] = useState();
   const [contact, setContact] = useState("");
-  const [email, setEmail] = useState(userInfo[0]?.data?.email);
-  const [bio, setBio] = useState(userInfo[0]?.data?.bio);
+  const [email, setEmail] = useState();
+  const [bio, setBio] = useState(u);
 
   const onUpdateUserDataHandler = () => {
     updateUser({ username, email, fullname, bio, contact, url });
