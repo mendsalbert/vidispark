@@ -37,21 +37,14 @@ const ProfileInfoForm = () => {
     }
   };
 
-  const [fullname, setFullname] = useState(userInfo[0]?.data?.fullname || "");
-  const [username, setUsername] = useState(userInfo[0]?.data?.username || "");
-  const [contact, setContact] = useState(userInfo[0]?.data?.contact || "");
-  const [email, setEmail] = useState(userInfo[0]?.data?.email || "");
-  const [bio, setBio] = useState(userInfo[0]?.data?.bio || "");
+  const [fullname, setFullname] = useState("");
+  const [username, setUsername] = useState("");
+  const [contact, setContact] = useState("");
+  const [email, setEmail] = useState("");
+  const [bio, setBio] = useState("");
+
   const onUpdateUserDataHandler = () => {
-    const updatedUserData = {
-      username: username !== userInfo[0]?.data?.username ? username : undefined,
-      email: email !== userInfo[0]?.data?.email ? email : undefined,
-      fullname: fullname !== userInfo[0]?.data?.fullname ? fullname : undefined,
-      bio: bio !== userInfo[0]?.data?.bio ? bio : undefined,
-      contact: contact !== userInfo[0]?.data?.contact ? contact : undefined,
-      url: urlReady ? url : undefined,
-    };
-    updateUser(updatedUserData);
+    updateUser({ username, email, fullname, bio, contact, url });
   };
 
   return (
@@ -118,6 +111,7 @@ const ProfileInfoForm = () => {
           className="comment-form message"
           cols={30}
           rows={10}
+          value={bio}
           onChange={(e) => {
             setBio(e.target.value);
           }}
