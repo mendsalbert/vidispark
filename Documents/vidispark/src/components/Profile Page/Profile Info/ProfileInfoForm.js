@@ -179,7 +179,7 @@ const ProfileInfoForm = () => {
           onChange={(e) => handleFileChange(e, "cover")}
         />
 
-        {isLoadingUrl ? (
+        {isCoverLoading ? (
           <div
             class="tw-inline-block tw-h-8 tw-w-8 tw-animate-spin tw-rounded-full tw-border-4 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
             role="status"
@@ -191,7 +191,7 @@ const ProfileInfoForm = () => {
             <div className="user-cover-image">
               <img
                 src={`${
-                  isCoverLoading
+                  coverReady
                     ? coverUrl
                     : userInfo[0]?.data?.avatarCover?.length > 1
                     ? userInfo[0]?.data?.avatarCover
