@@ -98,16 +98,7 @@ const Login = () => {
               Or connect with your wallet
             </div>
             <div className="social-login-buttons">
-              <button className="btn btn-normal facebook">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#facebook-icon" />
-                </svg>
-              </button>
-              <button className="btn btn-normal twitter">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#twitter-icon" />
-                </svg>
-              </button>
+              <button className="btn btn-normal facebook">connect</button>
             </div>
           </div>
         </div>
