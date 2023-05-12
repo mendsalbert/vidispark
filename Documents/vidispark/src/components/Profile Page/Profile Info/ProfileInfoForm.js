@@ -19,6 +19,7 @@ const ProfileInfoForm = () => {
   };
 
   const handleUpload = async (file, type) => {
+    console.log(type);
     if (file) {
       type == "avatar" ? setIsloadingUrl(true) : setIsCoverLoaidng(true);
       const token =
