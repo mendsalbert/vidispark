@@ -144,7 +144,11 @@ const ProfileInfoForm = () => {
           <label htmlFor="fileInput">
             <div className="user-avatar">
               <img
-                src="https://i.ibb.co/0C0Dkz1/placeholder-image-person-jpg.jpg"
+                src={`${
+                  urlReady
+                    ? url
+                    : "https://i.ibb.co/0C0Dkz1/placeholder-image-person-jpg.jpg"
+                } `}
                 alt=""
               />
             </div>
