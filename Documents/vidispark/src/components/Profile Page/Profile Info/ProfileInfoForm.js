@@ -14,8 +14,6 @@ const ProfileInfoForm = () => {
     updateUser({ username, email, fullname, bio, contact });
   };
 
-  console.log(parseInt(userInfo[0]?.data?.contact));
-
   return (
     <div className="cryptoki-form" id="personal-info-form">
       <div className="user-db-title">Personal Info</div>
@@ -49,7 +47,7 @@ const ProfileInfoForm = () => {
           <input
             type="number"
             id="phone"
-            defaultValue={userInfo[0]?.data?.contact}
+            defaultValue={"0" + parseInt(userInfo[0]?.data?.contact)}
             value={contact}
             onChange={(e) => {
               setContact(e.target.value);
