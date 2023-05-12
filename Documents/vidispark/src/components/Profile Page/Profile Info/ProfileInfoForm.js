@@ -15,7 +15,7 @@ const ProfileInfoForm = () => {
   };
 
   return (
-    <form className="cryptoki-form" id="personal-info-form">
+    <div className="cryptoki-form" id="personal-info-form">
       <div className="user-db-title">Personal Info</div>
       <div className="form-group">
         <div className="form-field">
@@ -109,11 +109,10 @@ const ProfileInfoForm = () => {
           onUpdateUserDataHandler();
         }}
         className="btn btn-wide btn-dark tw-mt-3"
-        type="submit"
       >
         Save Changes
       </button>
-    </form>
+    </div>
   );
 };
 
