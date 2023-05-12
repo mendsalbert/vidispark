@@ -33,12 +33,12 @@ const ProfileInfoForm = () => {
       if (type === "avatar") {
         setUrlReady(true);
         setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
+        setIsloadingUrl(false);
       } else if (type === "cover") {
         setCoverReady(true);
         setCoverUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
+        setIsCoverLoaidng(false);
       }
-      setIsloadingUrl(false);
-      setIsCoverLoaidng(false);
     } else {
       console.log("No file selected");
     }
