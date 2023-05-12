@@ -12,10 +12,6 @@ const ProfileInfoForm = () => {
           <label htmlFor="name">Full name</label>
           <input type="text" id="name" defaultValue="Dexter Stark" />
         </div>
-        <div className="form-field">
-          <label htmlFor="email">Email address</label>
-          <input type="email" id="email" defaultValue="dexstark@fakemail.com" />
-        </div>
       </div>
       <div className="form-group">
         <div className="form-field">
