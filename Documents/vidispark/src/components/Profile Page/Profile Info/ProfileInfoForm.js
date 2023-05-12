@@ -4,11 +4,7 @@ import { Web3Storage } from "web3.storage";
 
 const ProfileInfoForm = () => {
   const { updateUser, userInfo } = useUser();
-  function makeStorageClient() {
-    return new Web3Storage({
-      token: "",
-    });
-  }
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
