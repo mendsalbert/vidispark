@@ -56,7 +56,7 @@ const ProfileInfoForm = () => {
       </div>
 
       <div className="upload-photo-box">
-        <div className="user-db-title">Avatar and Cover</div>
+        <div className="user-db-title tw-mt-2">Avatar and Cover</div>
         <div className="user-avatar">
           <img src="img/content/profile/avatar-upload.png" alt="" />
         </div>
@@ -68,7 +68,7 @@ const ProfileInfoForm = () => {
           1920x320px (cover)
         </div>
       </div>
-      <button className="btn btn-wide btn-dark" type="submit">
+      <button className="btn btn-wide btn-dark tw-mt-3" type="submit">
         Save Changes
       </button>
     </form>
