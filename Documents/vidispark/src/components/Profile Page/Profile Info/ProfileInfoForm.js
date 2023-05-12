@@ -118,7 +118,6 @@ const ProfileInfoForm = () => {
           className="comment-form message"
           cols={30}
           rows={10}
-          value={bio}
           onChange={(e) => {
             setBio(e.target.value);
           }}
