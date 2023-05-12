@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   const [initDB, setInitDB] = useState(false);
   const [db, setdb] = useState("");
   const [userInfo, setUserInfo] = useState(second);
+
   const getUserInformation = async () => {
     const res = await db.cget(
       "user",
