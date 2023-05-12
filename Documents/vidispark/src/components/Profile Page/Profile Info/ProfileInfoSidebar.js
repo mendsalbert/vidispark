@@ -1,6 +1,9 @@
 import Link from "next/link";
 import React from "react";
+import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
+  const { userInfo } = useUser();
+
   return (
     <aside>
       <div className="user-db-menu">
@@ -23,11 +26,13 @@ const ProfileInfoSidebar = () => {
             <div className="title">
               {" "}
               <Link href="/08-profile-page">
-                <a>Dexter Stark</a>
+                <a>{userInfo[0]?.data?.username}</a>
               </Link>{" "}
             </div>
             <div className="item-meta">
-              <span className="gradient-text">@DexterStark</span>
+              <span className="gradient-text">
+                @{userInfo[0]?.data?.username}
+              </span>
             </div>
           </div>
         </div>
