@@ -7,7 +7,6 @@ const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
   const { db, user } = useContext(AuthContext);
-  const [userInfo, setUserInfo] = useState("");
   const router = useRouter();
   const isUserNameExist = async (username) => {
     let res = await db.cget(
@@ -61,5 +60,5 @@ export const useUser = () => {
     // console.log(user_[0].);
   };
 
-  return { addUser, loginUser, userInfo };
+  return { addUser, loginUser };
 };
