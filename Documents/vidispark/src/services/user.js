@@ -17,7 +17,7 @@ export const useUser = () => {
     return res;
   };
 
-  const getUserInformation = async (username) => {
+  const getUserInformation = async () => {
     let res = await db.cget(
       "user",
       ["user_address", "==", user.wallet.toLowerCase()],
