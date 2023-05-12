@@ -62,7 +62,8 @@ export const useUser = () => {
         user_address: db.signer(),
       },
       "user",
-      user_[0]?.id
+      user_[0]?.id,
+      user
     );
 
     // let res = await db.update(
