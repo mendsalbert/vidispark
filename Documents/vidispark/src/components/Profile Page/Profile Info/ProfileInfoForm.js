@@ -7,8 +7,7 @@ const ProfileInfoForm = () => {
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [contact, setContact] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+
   const [bio, setBio] = useState("");
 
   return (
@@ -50,32 +49,6 @@ const ProfileInfoForm = () => {
             value={contact}
             onChange={(e) => {
               setContact(e.target.value);
-            }}
-          />
-        </div>
-      </div>
-      <div className="form-group">
-        <div className="form-field">
-          <label htmlFor="password-1">Change password</label>
-          <input
-            type="password"
-            name="password"
-            id="password-1"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </div>
-        <div className="form-field">
-          <label htmlFor="password-2">Repeat password</label>
-          <input
-            type="password"
-            name="password"
-            id="password-2"
-            value={confirmPassword}
-            onChange={(e) => {
-              setConfirmPassword(e.target.value);
             }}
           />
         </div>
