@@ -16,6 +16,25 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [initDB, setInitDB] = useState(false);
   const [db, setdb] = useState("");
+  const [userInfo, setUserInfo] = useState(second);
+  const getUserInformation = async () => {
+    if (!db) {
+      return undefined;
+    }
+    // Get the user information
+    const res = await db.cget(
+      "user",
+      ["user_address", "==", user?.wallet?.toLowerCase()],
+      ["date", "desc"]
+    );
+    setUserInfo(res);
+    return res;
+  };
+
+  useEffect(() => {
+    getUserInformation();
+  }, []);
+
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
@@ -123,7 +142,16 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, db, initDB, login, logout, checkUser, setupWeaveDB }}
+      value={{
+        user,
+        db,
+        initDB,
+        login,
+        logout,
+        checkUser,
+        setupWeaveDB,
+        userInfo,
+      }}
     >
       {children}
     </AuthContext.Provider>
