@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
   return (
     <Layouts>
       <div className="primary-content-area container content-padding">
@@ -26,6 +29,10 @@ const Login = () => {
                 id="sign_in_username"
                 name="log"
                 type="text"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
               />
             </div>
             <div className="tk-lp-form-item">
@@ -37,6 +44,10 @@ const Login = () => {
                 id="sign_in_password"
                 name="pwd"
                 type="password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
               />
             </div>
             <div className="tk-lp-form-item">
@@ -46,6 +57,10 @@ const Login = () => {
                     type="checkbox"
                     name="rememberme"
                     defaultValue="forever"
+                    value={remember}
+                    onChange={(e) => {
+                      setRemember(e.target.checked);
+                    }}
                   />
                   <span className="tk-lp-control-indicator" />
                   Remember Me
