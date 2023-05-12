@@ -18,16 +18,6 @@ export const AuthProvider = ({ children }) => {
   const [db, setdb] = useState("");
   const [userInfo, setUserInfo] = useState("");
 
-  const getUserInformation = async () => {
-    const res = await db.cget(
-      "user",
-      ["user_address", "==", user?.wallet?.toLowerCase()],
-      ["date", "desc"]
-    );
-    setUserInfo(res);
-    return res;
-  };
-
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
@@ -59,6 +49,13 @@ export const AuthProvider = ({ children }) => {
     await db.initializeWithoutWallet();
     setInitDB(true);
     localStorage.setItem("initDB", "true");
+    const res = await db.cget(
+      "user",
+      ["user_address", "==", user?.wallet?.toLowerCase()],
+      ["date", "desc"]
+    );
+    setUserInfo(res);
+    return res;
   };
 
   useEffect(() => {
