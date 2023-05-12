@@ -44,7 +44,7 @@ export const useUser = () => {
       user_[0]?.data?.salt
     );
 
-    if (enteredPasswordHash === userObj.password) {
+    if (enteredPasswordHash === user_[0]?.data?.password) {
       // Passwords match, authentication successful
       console.log("Login successful!");
     } else {
