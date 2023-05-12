@@ -52,6 +52,17 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
+            <li className="account">
+              {" "}
+              <Link href="/29-account-settings">
+                <a className="tw-flex tw-flex-row tw-items-center">
+                  <svg className="crumina-icon">
+                    <use xlinkHref="#settings-icon" />
+                  </svg>
+                  Sponserhip Stream{" "}
+                </a>
+              </Link>{" "}
+            </li>
 
             <li className="artwork">
               {" "}
