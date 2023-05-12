@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
   const { userInfo } = useUser();
-  const [userData, setUserData] = useState(userInfo[0]?.data);
+  const [userData, setUserData] = useState();
+  useEffect(() => {
+    setUserData(userInfo[0]?.data);
+  }, []);
 
   console.log(userData);
 
