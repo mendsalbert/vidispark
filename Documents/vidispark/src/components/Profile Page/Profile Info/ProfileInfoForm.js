@@ -22,11 +22,11 @@ const ProfileInfoForm = () => {
       setIsloadingUrl(true);
       const token =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk"; // Replace with your actual Web3.Storage API token
-      const ext = selectedFile.name;
+      const fileName = selectedFile.name;
 
       const client = new Web3Storage({ token });
-      const cid = await client.put([selectedFile], { name: ext });
-      console.log("clicable link", `https://${cid}.ipfs.dweb.link/${ext}`);
+      const cid = await client.put([selectedFile], { name: fileName });
+      console.log("clicable link", `https://${cid}.ipfs.dweb.link/${fileName}`);
       setUrlReady(true);
       setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
       setIsloadingUrl(false);
