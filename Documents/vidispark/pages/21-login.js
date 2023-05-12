@@ -30,7 +30,7 @@ const Login = () => {
             <div className="tk-lp-alert-cont" />
             <div className="tk-lp-form-item">
               <label htmlFor="sign_in_username" className="tk-lp-label">
-                Username or Email Address
+                Username
               </label>
               <input
                 className="tk-lp-input"
