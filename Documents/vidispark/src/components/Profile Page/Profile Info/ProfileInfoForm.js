@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from "uuid";
 
 const ProfileInfoForm = () => {
   const { updateUser, userInfo } = useUser();
-  const [selectedFile, setSelectedFile] = useState(null);
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
   const [urlReady, setUrlReady] = useState(false);
   const [url, setUrl] = useState("");
@@ -13,7 +12,6 @@ const ProfileInfoForm = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(e);
-    // setSelectedFile(file);
     handleUpload(file);
   };
 
