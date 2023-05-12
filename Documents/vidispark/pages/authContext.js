@@ -53,6 +53,8 @@ export const AuthProvider = ({ children }) => {
 
   const getUserInformation = async (db) => {
     console.log(db);
+    const wallet_address = await localStorage.getItem(`temp_address:current`);
+    console.log(wallet_address);
     // const res = await db.cget(
     //   "user",
     //   ["user_address", "==", user?.wallet?.toLowerCase()],
