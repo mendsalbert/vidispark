@@ -11,6 +11,7 @@ const ProfileInfoForm = () => {
   const [url, setUrl] = useState("");
   const handleFileChange = (e) => {
     const file = e.target.files[0];
+    console.log(e);
     setSelectedFile(file);
     handleUpload();
   };
