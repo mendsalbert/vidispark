@@ -37,7 +37,8 @@ const ProfileInfoForm = () => {
         setCoverReady(true);
         setCoverUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
       }
-      type === "cover" ? setIsloadingUrl(false) : setIsCoverLoaidng(false);
+      setIsloadingUrl(false);
+      setIsCoverLoaidng(false);
     } else {
       console.log("No file selected");
     }
