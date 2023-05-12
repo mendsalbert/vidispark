@@ -59,6 +59,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = async () => {
     try {
+      const res = await db.cget(
+        "user",
+        ["user_address", "==", user?.wallet?.toLowerCase()],
+        ["date", "desc"]
+      );
+      setUserInfo(res);
+      console.log(res);
       const providerOptions = {};
       const web3Modal = new Web3Modal({
         cacheProvider: true,
