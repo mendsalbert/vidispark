@@ -52,14 +52,14 @@ export const AuthProvider = ({ children }) => {
 
   const getUserInformation = async () => {
     console.log(db);
-    const res = await db.cget(
-      "user",
-      ["user_address", "==", user?.wallet?.toLowerCase()],
-      ["date", "desc"]
-    );
-    setUserInfo(res);
-    console.log(res);
-    return res;
+    // const res = await db.cget(
+    //   "user",
+    //   ["user_address", "==", user?.wallet?.toLowerCase()],
+    //   ["date", "desc"]
+    // );
+    // setUserInfo(res);
+    // console.log(res);
+    // return res;
   };
 
   useEffect(() => {
