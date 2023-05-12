@@ -110,6 +110,13 @@ export const AuthProvider = ({ children }) => {
           privateKey: identity.privateKey,
         });
       }
+
+      const res = await db.cget(
+        "user",
+        ["user_address", "==", user?.wallet?.toLowerCase()],
+        ["date", "desc"]
+      );
+      setUserInfo(res);
     } catch (error) {
       console.error(error);
     }
