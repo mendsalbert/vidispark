@@ -12,7 +12,7 @@ const ProfileInfoForm = () => {
 
   const onUpdateUserDataHandler = () => {
     login();
-    updateUser({ username, email, fullname, bio });
+    updateUser({ username, email, fullname, bio, contact });
   };
 
   return (
@@ -24,8 +24,7 @@ const ProfileInfoForm = () => {
           <input
             type="text"
             id="name"
-            defaultValue=""
-            value={fullname}
+            defaultValue={userInfo[0]?.data?.fullname}
             onChange={(e) => {
               setFullname(e.target.value);
             }}
@@ -49,7 +48,7 @@ const ProfileInfoForm = () => {
           <input
             type="number"
             id="phone"
-            defaultValue=""
+            defaultValue={userInfo[0]?.data?.contact}
             value={contact}
             onChange={(e) => {
               setContact(e.target.value);
@@ -88,7 +87,7 @@ const ProfileInfoForm = () => {
           data-val-msg="* Please, type a message."
           data-val-msg-id="textareaMessage"
           required=""
-          defaultValue={""}
+          defaultValue={userInfo[0]?.data?.bio}
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
