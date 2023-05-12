@@ -1,10 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
   const { userInfo } = useUser();
+  const [userData, setUserData] = useState(userInfo[0]?.data);
 
-  console.log(userInfo);
+  console.log(userData);
 
   return (
     <aside>
