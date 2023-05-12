@@ -55,7 +55,7 @@ export const useUser = () => {
         contact: userObj.contact,
         bio: userObj.bio,
         avatarUrlL: userObj.url,
-        avatarCover: "",
+        avatarCover: userObj.cover,
         followers: [],
         following: [],
         date: db.ts(),
