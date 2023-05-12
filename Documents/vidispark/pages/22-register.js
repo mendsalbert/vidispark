@@ -122,8 +122,8 @@ const Registration = () => {
               Register Now
             </button>
 
-            <div className="tw-flex tw-flex-row tw-items-center tw-text-center">
-              <p>Or</p>
+            <div className="tw-flex tw-flex-row tw-items-center tw-text-center tw-m-auto">
+              <p> Or</p>
             </div>
             <button
               type="button"
