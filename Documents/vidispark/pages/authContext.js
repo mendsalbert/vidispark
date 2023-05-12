@@ -18,9 +18,9 @@ export const AuthProvider = ({ children }) => {
   const [db, setdb] = useState("");
 
   const checkUser = async () => {
-    const wallet_address = await lf.getItem(`temp_address:current`);
+    const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
-      const identity = await lf.getItem(
+      const identity = await localStorage.getItem(
         `temp_address:${contractTxId}:${wallet_address}`
       );
       if (!isNil(identity))
