@@ -1,14 +1,40 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useUser } from "../../../services/user";
+import { Web3Storage } from "web3.storage";
 
 const ProfileInfoForm = () => {
   const { updateUser, userInfo } = useUser();
+  const [selectedFile, setSelectedFile] = useState(null);
+  function makeStorageClient() {
+    return new Web3Storage({
+      token: "",
+    });
+  }
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+
+    handleUpload();
+  };
+
+  const handleUpload = async () => {
+    if (selectedFile) {
+      const token = "YOUR_API_TOKEN"; // Replace with your actual Web3.Storage API token
+      const client = new Web3Storage({ token });
+      const cid = await client.put([selectedFile]);
+      console.log("Image uploaded with CID:", cid);
+    } else {
+      console.log("No file selected");
+    }
+  };
 
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
+  const [avatarurl, setAvatarurl] = useState("");
 
   const onUpdateUserDataHandler = () => {
     updateUser({ username, email, fullname, bio, contact });
@@ -93,7 +119,12 @@ const ProfileInfoForm = () => {
 
       <div className="upload-photo-box">
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
-        <input type="file" id="fileInput" className="tw-hidden" />
+        <input
+          type="file"
+          id="fileInput"
+          className="tw-hidden"
+          onChange={handleFileChange}
+        />
         <label htmlFor="fileInput">
           <div className="user-avatar">
             <img
