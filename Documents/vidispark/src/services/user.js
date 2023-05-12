@@ -49,7 +49,16 @@ export const useUser = () => {
     let res = await db.add(
       {
         username: userObj.username,
-
+        salt: userObj.salt,
+        password: userObj.hash,
+        email: "",
+        fullname: "",
+        bio: "",
+        avatarUrlL: "",
+        avatarCover: "",
+        acceptPolicy: false,
+        followers: [],
+        following: [],
         date: db.ts(),
         user_address: db.signer(),
       },
