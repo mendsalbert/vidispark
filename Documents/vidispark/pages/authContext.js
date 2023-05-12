@@ -27,8 +27,6 @@ export const AuthProvider = ({ children }) => {
     return res;
   };
 
-  useEffect(() => {}, []);
-
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
