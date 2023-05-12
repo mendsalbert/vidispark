@@ -61,13 +61,13 @@ const Login = () => {
                   <span className="tk-lp-control-indicator" />
                   Remember Me
                 </label>
-                <a
+                {/* <a
                   href="#"
                   className="tk-lp-link-lost tk-lp-tabs-form-item"
                   data-id="lost-password"
                 >
                   Lost your password?
-                </a>
+                </a> */}
               </div>
             </div>
             <button
