@@ -29,6 +29,27 @@ export const useUser = () => {
         username: userObj.username,
         salt: userObj.salt,
         password: userObj.hash,
+        email: "",
+        fullname: "",
+        bio: "",
+        avatarUrlL: "",
+        avatarCover: "",
+        acceptPolicy: false,
+        followers: [],
+        following: [],
+        date: db.ts(),
+        user_address: db.signer(),
+      },
+      "user",
+      user
+    );
+  };
+
+  const updateUser = async (userObj) => {
+    let res = await db.add(
+      {
+        username: userObj.username,
+
         date: db.ts(),
         user_address: db.signer(),
       },
@@ -59,8 +80,5 @@ export const useUser = () => {
     // console.log(user_[0].);
   };
 
-  // const updateUser =
-
-  console.log(userInfo);
   return { addUser, loginUser, userInfo };
 };
