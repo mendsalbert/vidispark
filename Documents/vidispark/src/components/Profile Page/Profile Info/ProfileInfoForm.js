@@ -42,7 +42,7 @@ const ProfileInfoForm = () => {
   const [avatarurl, setAvatarurl] = useState("");
 
   const onUpdateUserDataHandler = () => {
-    updateUser({ username, email, fullname, bio, contact });
+    updateUser({ username, email, fullname, bio, contact, url });
   };
 
   return (
