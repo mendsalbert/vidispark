@@ -1,6 +1,6 @@
 // services/todo.js
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../pages/authContext";
 import { useRouter } from "next/router";
 const bcrypt = require("bcryptjs");
@@ -29,7 +29,9 @@ export const useUser = () => {
     return res;
   };
 
-  // getUserInformation();
+  useEffect(() => {
+    getUserInformation();
+  }, []);
 
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
