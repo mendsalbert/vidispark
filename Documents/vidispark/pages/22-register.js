@@ -129,6 +129,19 @@ const Registration = () => {
             >
               or
             </button>
+
+            <div className="wallet-item orange-gradient">
+              <div className="wallet-icon">
+                <img src="img/content/wallet/icon-1.png" alt="" />
+              </div>
+              <div className="wallet-info">
+                <div className="title h5">Metamask</div>
+                <div className="description">
+                  Learn about how to get the wallet and much more clicking{" "}
+                  <a href="#">here</a>
+                </div>
+              </div>
+            </div>
             <button
               type="button"
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
