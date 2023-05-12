@@ -55,7 +55,6 @@ export const AuthProvider = ({ children }) => {
     checkUser();
   }, []);
 
-  console.log(user);
   const login = async () => {
     try {
       const providerOptions = {};
