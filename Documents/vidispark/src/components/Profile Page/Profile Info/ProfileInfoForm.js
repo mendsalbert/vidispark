@@ -93,12 +93,12 @@ const ProfileInfoForm = () => {
 
       <div className="upload-photo-box">
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
-        <div className="user-avatar">
+        {/* <div className="user-avatar">
           <img
             src="https://i.ibb.co/0C0Dkz1/placeholder-image-person-jpg.jpg"
             alt=""
           />
-        </div>
+        </div> */}
         <div className="user-cover-image">
           <img src="img/content/profile/profile-cover-1.png" alt="" />
         </div>
