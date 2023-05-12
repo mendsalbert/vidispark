@@ -1,10 +1,19 @@
 import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
-
+import { useUser } from "../src/services/user";
+import { AuthContext } from "./authContext";
 const Login = () => {
+  const { login } = useContext(AuthContext);
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+
+  const { loginUser } = useUser();
+
+  const onLoginHandler = () => {
+    loginUser({ username, password });
+  };
   return (
     <Layouts>
       <div className="primary-content-area container content-padding">
@@ -65,16 +74,12 @@ const Login = () => {
                   <span className="tk-lp-control-indicator" />
                   Remember Me
                 </label>
-                {/* <a
-                  href="#"
-                  className="tk-lp-link-lost tk-lp-tabs-form-item"
-                  data-id="lost-password"
-                >
-                  Lost your password?
-                </a> */}
               </div>
             </div>
             <button
+              onClick={() => {
+                onLoginHandler();
+              }}
               type="button"
               className="submit-bttn tk-lp-button tk-lp-button--dark tk-lp-w-full"
             >
