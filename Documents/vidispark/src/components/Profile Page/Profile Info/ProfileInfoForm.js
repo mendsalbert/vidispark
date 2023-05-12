@@ -16,6 +16,7 @@ const ProfileInfoForm = () => {
     handleUpload();
   };
 
+  console.log(userInfo);
   const handleUpload = async () => {
     console.log("uploading");
     if (selectedFile) {
