@@ -36,22 +36,23 @@ const ProfileInfoForm = () => {
           <label htmlFor="password-2">Repeat password</label>
           <input type="password" name="password" id="password-2" />
         </div>
-        <div className="form-field ">
-          <label htmlFor="message">Your comment</label>
-          <textarea
-            id="message"
-            name="message"
-            className="comment-form message"
-            cols={30}
-            rows={10}
-            data-val="\S"
-            data-val-msg="* Please, type a message."
-            data-val-msg-id="textareaMessage"
-            required=""
-            defaultValue={""}
-          />
-          <span className="input_error-message" id="textareaMessage" />
-        </div>
+      </div>
+
+      <div className="form-field ">
+        <label htmlFor="message">Your comment</label>
+        <textarea
+          id="message"
+          name="message"
+          className="comment-form message"
+          cols={30}
+          rows={10}
+          data-val="\S"
+          data-val-msg="* Please, type a message."
+          data-val-msg-id="textareaMessage"
+          required=""
+          defaultValue={""}
+        />
+        <span className="input_error-message" id="textareaMessage" />
       </div>
     </form>
   );
