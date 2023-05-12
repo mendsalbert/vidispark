@@ -92,27 +92,6 @@ const ProfileInfoForm = () => {
       </div>
 
       <div className="upload-photo-box">
-        <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:pt-5">
-          <label
-            htmlFor="event-link"
-            className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
-          >
-            Image
-            <p className="mt-1 max-w-2xl text-sm text-gray-400">
-              Upload an image
-            </p>
-          </label>
-          <div className="mt-1 sm:mt-0 sm:col-span-2">
-            <input
-              id="event-image"
-              name="event-image"
-              type="file"
-              className="block max-w-lg w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border border-gray-300 rounded-md"
-              required
-            />
-          </div>
-        </div>
-
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
         <div className="user-avatar">
           <img src="img/content/profile/avatar-upload.png" alt="" />
