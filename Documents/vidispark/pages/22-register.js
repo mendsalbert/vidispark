@@ -27,6 +27,7 @@ const Registration = () => {
     const hash = bcrypt.hashSync(password, salt);
     addUser({ username, hash, salt, aggred });
   };
+
   return (
     <Layouts>
       <div className="primary-content-area container content-padding">
