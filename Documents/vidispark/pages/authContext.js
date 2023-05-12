@@ -55,8 +55,7 @@ export const AuthProvider = ({ children }) => {
     checkUser();
   }, []);
 
-  useEffect(() => {}, [user]);
-
+  console.log(user);
   const login = async () => {
     try {
       const providerOptions = {};
