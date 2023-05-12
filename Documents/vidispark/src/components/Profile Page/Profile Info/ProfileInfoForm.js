@@ -39,7 +39,7 @@ const ProfileInfoForm = () => {
       </div>
 
       <div className="form-field ">
-        <label htmlFor="message">Your comment</label>
+        <label htmlFor="message">Bio</label>
         <textarea
           id="message"
           name="message"
