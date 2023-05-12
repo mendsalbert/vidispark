@@ -122,9 +122,6 @@ const Registration = () => {
               Register Now
             </button>
 
-            <div className="tw-flex tw-flex-row tw-items-center tw-text-center tw-m-auto">
-              <p className="tw-text-center"> Or</p>
-            </div>
             <button
               type="button"
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
@@ -132,6 +129,9 @@ const Registration = () => {
             >
               I have an account!
             </button>
+          </div>
+          <div className="tw-flex tw-flex-row tw-items-center tw-text-center tw-m-auto">
+            <p className="tw-text-center"> Or</p>
           </div>
         </div>
       </div>
