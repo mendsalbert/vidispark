@@ -13,7 +13,7 @@ const ProfileInfoForm = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(e);
-    setSelectedFile(file);
+    // setSelectedFile(file);
     handleUpload(file);
   };
 
