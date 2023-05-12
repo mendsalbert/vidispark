@@ -85,9 +85,7 @@ const Login = () => {
             </button>
           </form>
           <div className="social-login">
-            <div className="social-login-text">
-              Or login with your social account!
-            </div>
+            <div className="social-login-text">Or login with your wallet</div>
             <div className="social-login-buttons">
               <button className="btn btn-normal facebook">
                 <svg className="crumina-icon">
