@@ -98,7 +98,14 @@ const Login = () => {
               Or connect with your wallet
             </div>
             <div className="social-login-buttons">
-              <button className="btn btn-normal facebook">connect</button>
+              <button
+                onClick={() => {
+                  login();
+                }}
+                className="btn btn-normal facebook"
+              >
+                connect
+              </button>
             </div>
           </div>
         </div>
