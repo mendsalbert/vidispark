@@ -53,6 +53,20 @@ const ProfileInfoForm = () => {
         </div>
       </div>
 
+      <div className="form-group">
+        <div className="form-field">
+          <label htmlFor="username">Email</label>
+          <input
+            type="text"
+            id="username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            defaultValue={userInfo[0]?.data?.username}
+          />
+        </div>
+      </div>
+
       <div className="form-field ">
         <label htmlFor="message">Bio</label>
         <textarea
