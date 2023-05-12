@@ -1,5 +1,12 @@
 import React from "react";
 const ProfileUploadAndPreview = () => {
+  const categories = [
+    { name: "Entertainment", icon: "music-note" },
+    { name: "Music", icon: "music" },
+    { name: "Education", icon: "academic-cap" },
+    { name: "Sports", icon: "trophy" },
+    { name: "Gaming", icon: "game-controller" },
+  ];
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
@@ -43,12 +50,31 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label>Category</label>
-                <select className="select-nice" name="currency">
-                  <option value="ETH" selected="">
-                    Gaming
-                  </option>
-                  <option value="USD">Music</option>
-                  <option value="Euro">Education</option>
+                <select
+                  className="tw-appearance-none tw-w-full tw-py-2 tw-px-4 tw-pr-8 tw-leading-tight tw-focus:tw-outline-none tw-focus:tw-bg-white tw-focus:tw-border-gray-500"
+                  name="category"
+                >
+                  {categories.map((category, index) => (
+                    <option key={index} value={category.name}>
+                      <span className="tw-flex tw-items-center">
+                        <svg
+                          className="tw-w-5 tw-h-5 tw-mr-2 tw-text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d={icons[category.icon]}
+                          ></path>
+                        </svg>
+                        {category.name}
+                      </span>
+                    </option>
+                  ))}
                 </select>
               </div>
               <div className="form-field">
