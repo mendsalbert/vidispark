@@ -121,9 +121,14 @@ const Registration = () => {
             >
               Register Now
             </button>
-            <div className="tw-flex tw-flex-row tw-items-center w-full">
-              <p className="tw-text-center "> Or</p>
-            </div>
+
+            <button
+              type="button"
+              className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
+              data-id="sign-in"
+            >
+              or
+            </button>
             <button
               type="button"
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
