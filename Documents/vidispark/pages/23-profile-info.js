@@ -26,7 +26,7 @@ const ProfileInfo = () => {
             <ProfileInfoAvatar />
             {/* / Profile Info Avatar */}
           </div>
-          <button className="btn btn-wide btn-dark">Save Changes</button>
+          {/* <button className="btn btn-wide btn-dark">Save Changes</button> */}
         </div>
       </div>
     </Layouts>
