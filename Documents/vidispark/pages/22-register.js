@@ -124,7 +124,7 @@ const Registration = () => {
 
             <button
               type="button"
-              className="= tk-lp-w-full tk-lp-tabs-form-item"
+              className=" tk-lp-w-full tk-lp-tabs-form-item"
               data-id="sign-in"
             >
               or
