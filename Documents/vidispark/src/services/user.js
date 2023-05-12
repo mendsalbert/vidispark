@@ -2,6 +2,7 @@
 
 import { useState, useContext } from "react";
 import { AuthContext } from "../../pages/authContext";
+const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
   const { db, user } = useContext(AuthContext);
@@ -38,8 +39,16 @@ export const useUser = () => {
 
   const loginUser = async (userObj) => {
     let user_ = await isUserNameExist(userObj.username);
+    const enteredPasswordHash = bcrypt.hashSync(userObj.password, user_.salt);
 
-    console.log(user_);
+    if (enteredPasswordHash === user.password) {
+      // Passwords match, authentication successful
+      console.log("Login successful!");
+    } else {
+      // Passwords don't match, authentication failed
+      console.log("Incorrect username or password.");
+    }
+    // console.log(user_[0].);
     // let res = await db.add(
     //   {
     //     username: userObj.username,
