@@ -55,5 +55,5 @@ export const useUser = () => {
     // console.log(value.length);
   };
 
-  return { addUser };
+  return { addUser, loginUser };
 };
