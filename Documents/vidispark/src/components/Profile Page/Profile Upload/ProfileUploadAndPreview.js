@@ -79,6 +79,7 @@ const ProfileUploadAndPreview = () => {
 
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
+  const [thumbnail, setThumbnail] = useState("");
   const categories = [
     { name: "Entertainment", icon: "🎭" },
     { name: "Music", icon: "🎵" },
@@ -189,7 +190,14 @@ const ProfileUploadAndPreview = () => {
 
               <div className="form-field">
                 <label htmlFor="price">Thumnail URL</label>
-                <input type="text" id="price" />
+                <input
+                  type="text"
+                  id="price"
+                  value={thumbnail}
+                  onChange={(e) => {
+                    setThumbnail(e.target.value);
+                  }}
+                />
               </div>
             </div>
 
