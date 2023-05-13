@@ -7,7 +7,7 @@ const ProfileUploadAndPreview = () => {
   const [videoUploading, setVideoUploading] = useState(false);
   const [uploadStep, setUploadStep] = useState("");
   const [isComplete, setIsComplete] = useState(false);
-
+  const [category, setCategory] = useState("");
   const [tagInput, setTagInput] = useState("");
   const [selectedTags, setSelectedTags] = useState([]);
 
