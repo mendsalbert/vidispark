@@ -244,7 +244,7 @@ const ProfileUploadAndPreview = () => {
                   ))}
                 </select> */}
                 <select
-                  value={category}
+                  // value={castegory}
                   onChange={(e) => {
                     console.log(e.target.value);
                   }}
