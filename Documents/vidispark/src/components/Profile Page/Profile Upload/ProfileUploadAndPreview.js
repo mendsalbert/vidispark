@@ -167,7 +167,7 @@ const ProfileUploadAndPreview = () => {
               <div className="form-field">
                 {categories.map((category) => (
                   <button
-                    t
+                    type="button"
                     key={category.name}
                     className={`flex items-center justify-center px-3 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 ${
                       selectedCategory === category.name
