@@ -81,6 +81,7 @@ const ProfileUploadAndPreview = () => {
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [description, setDescription] = useState("");
+
   const categories = [
     { name: "Entertainment", icon: "🎭" },
     { name: "Music", icon: "🎵" },
@@ -220,7 +221,15 @@ const ProfileUploadAndPreview = () => {
             <p>Linces and linces type</p>
             <p>Audience</p>
             <p>Public or private</p>
-            <button className="btn btn-wide btn-dark">Create Item</button>
+            <button
+              type="button"
+              onChange={() => {
+                onSubmitVideoHandler();
+              }}
+              className="btn btn-wide btn-dark"
+            >
+              Create Item
+            </button>
           </form>
         </div>
       </div>
