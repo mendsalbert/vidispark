@@ -4242,7 +4242,7 @@ body.dark-mode .search-form-with-text .main-search .search-button {
        12.1. Cryptoki select
        ================================ */
 
-select {
+/* select {
     appearance: none;
     display: inline-block;
     background-image: url(../svg/arrow-down.svg);
@@ -4254,13 +4254,13 @@ select {
     padding: max(1vw, 12px) max(1.5vw, 40px) max(1vw, 12px) max(1.5vw, 20px);
     font-weight: var(--heading-font-weight);
     line-height: 1.2;
-}
+} */
 
-select::before {
+/* select::before {
     content: url(../svg/arrow-down.svg);
     width: 8px;
     height: 8px;
-}
+} */
 
 .cryptoki-form select {
     position: relative;
