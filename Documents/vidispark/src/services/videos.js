@@ -13,21 +13,22 @@ export const useVideo = () => {
 
   const addVideo = async (videoObj) => {
     console.log(videoObj);
-    // let res = await db.add(
-    //   {
-    //     id: uuidv4(),
-    //     title: videoObj.title,
-    //     description: videoObj.description,
-    //     category: videoObj.category,
-    //     thumbnailUrl: videoObj.thumbnailUrl,
-    //     uploaderId: videoObj.uploaderId,
-    //     uploaderAddress: db.signer(),
-    //     tags:userObj.tags,
-    //     date: db.ts(),
-    //   },
-    //   "video",
-    //   user
-    // );
+    let res = await db.add(
+      {
+        id: uuidv4(),
+        title: videoObj.title,
+        description: videoObj.description,
+        category: videoObj.category,
+        thumbnailUrl: videoObj.thumbnailUrl,
+        uploaderId: videoObj.uploaderId,
+        uploaderAddress: db.signer(),
+        tags: userObj.tags,
+        date: db.ts(),
+      },
+      "video",
+      user
+    );
+    console.log(res);
   };
 
   return { addVideo };
