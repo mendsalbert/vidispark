@@ -165,23 +165,21 @@ const ProfileUploadAndPreview = () => {
                 <input type="text" id="name" />
               </div>
               <div className="form-field">
-                {categories.map((category) => (
-                  <button
-                    key={category.name}
-                    className={`flex items-center justify-center px-3 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 ${
-                      selectedCategory === category.name
-                        ? "bg-blue-500 text-white"
-                        : ""
-                    }`}
-                    onClick={() => handleCategoryClick(category)}
-                    disabled={
-                      selectedCategory && selectedCategory !== category.name
-                    }
-                  >
-                    <span className="mr-1">{category.icon}</span>
-                    <span>{category.name}</span>
-                  </button>
-                ))}
+                <label>Category</label>
+                <select
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                  }}
+                  onSelect={(e) => {
+                    console.log("working");
+                  }}
+                >
+                  {categories.map((category, index) => (
+                    <option key={index} value={category.name}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div className="form-field">
