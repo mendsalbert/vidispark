@@ -239,7 +239,7 @@ const ProfileUploadAndPreview = () => {
                   ))}
                 </select>
               </div>
-              {category && (
+              {true && (
                 <div className="tw-space-x-2">
                   <label htmlFor="tagInput" className="tw-block tw-font-medium">
                     Tags:
