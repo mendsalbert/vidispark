@@ -235,7 +235,7 @@ const ProfileUploadAndPreview = () => {
                   value={category}
                   onChange={handleCategoryChange}
                   // className="tw-appearance-none tw-w-full tw-py-2 tw-px-4 tw-pr-8 tw-leading-tight tw-focus:tw-outline-none tw-focus:tw-bg-white tw-focus:tw-border-gray-500"
-                  name="category"
+                  // name="category"
                 >
                   {categories.map((category, index) => (
                     <option key={index} value={category.name}>
