@@ -235,6 +235,9 @@ const ProfileUploadAndPreview = () => {
                   onChange={(e) => {
                     console.log(e.target.value);
                   }}
+                  onSelect={(e) => {
+                    console.log("working");
+                  }}
                 >
                   {categories.map((category, index) => (
                     <option key={index} value={category.name}>
