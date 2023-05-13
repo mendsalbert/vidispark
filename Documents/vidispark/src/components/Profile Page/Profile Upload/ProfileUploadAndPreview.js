@@ -251,40 +251,6 @@ const ProfileUploadAndPreview = () => {
               </div>
             </div>
 
-            {/* {true && (
-              <div className="tw-space-x-2">
-                <label htmlFor="tagInput" className="tw-block tw-font-medium">
-                  Tags:
-                </label>
-                <div className="tw-flex tw-items-center tw-space-x-2">
-                  {selectedTags.map((tag) => (
-                    <div
-                      key={tag}
-                      className="tw-bg-blue-500 tw-text-white tw-rounded-full tw-px-2 tw-py-1 tw-text-sm tw-flex tw-items-center tw-space-x-1 tw-cursor-pointer"
-                      onClick={() => handleRemoveTag(tag)}
-                    >
-                      <span>{tag}</span>
-                      <span className="tw-text-xs">X</span>
-                    </div>
-                  ))}
-                  <input
-                    type="text"
-                    id="tagInput"
-                    value={tagInput}
-                    onChange={handleTagInputChange}
-                    placeholder="Enter a tag"
-                    className="tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-focus:outline-none tw-focus:ring tw-focus:border-blue-500"
-                  />
-                  <button
-                    type="button" // Set the type to "button"
-                    onClick={handleAddTag}
-                    className="tw-bg-blue-500 tw-text-white tw-rounded tw-px-3 tw-py-1 tw-text-sm tw-focus:outline-none tw-focus:ring tw-focus:border-blue-500"
-                  >
-                    Add
-                  </button>
-                </div>
-              </div>
-            )} */}
             <div className="form-field comment-area">
               <label>Description</label>
               <textarea
