@@ -95,15 +95,8 @@ const ProfileUploadAndPreview = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategoryClick = (category) => {
-    if (selectedCategory === category.name) {
-      // Deselect the currently selected category
-      setSelectedCategory(null);
-    } else {
-      // Select a different category
-      setSelectedCategory(category.name);
-    }
+    setSelectedCategory(category.name);
   };
-
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
@@ -180,7 +173,7 @@ const ProfileUploadAndPreview = () => {
             <div className="form-field">
               {categories.map((category) => (
                 <button
-                  type="button "
+                  type="button"
                   key={category.name}
                   className={`flex items-center justify-center px-3 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 ${
                     selectedCategory === category.name
