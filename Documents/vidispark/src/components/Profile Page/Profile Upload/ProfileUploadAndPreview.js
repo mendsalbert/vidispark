@@ -83,9 +83,6 @@ const ProfileUploadAndPreview = () => {
   const [thumbnail, setThumbnail] = useState("");
   const [description, setDescription] = useState("");
 
-  const onSubmitVideoHandler = () => {
-    addVideo({ category, title, thumbnail, description, videoUrl });
-  };
   const categories = [
     { name: "Entertainment", icon: "🎭" },
     { name: "Music", icon: "🎵" },
@@ -108,6 +105,10 @@ const ProfileUploadAndPreview = () => {
     setCategory(value);
   };
 
+  const onSubmitVideoHandler = () => {
+    console.log(".......");
+    addVideo({ category, title, thumbnail, description, videoUrl });
+  };
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
