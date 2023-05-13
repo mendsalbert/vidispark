@@ -95,7 +95,13 @@ const ProfileUploadAndPreview = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleCategoryClick = (category) => {
-    setSelectedCategory(category.name);
+    if (selectedCategory === category.name) {
+      // If the clicked category is already selected, deselect it
+      setSelectedCategory(null);
+    } else {
+      // Otherwise, select the new category
+      setSelectedCategory(category.name);
+    }
   };
   return (
     <div className="artwork-upload-box">
