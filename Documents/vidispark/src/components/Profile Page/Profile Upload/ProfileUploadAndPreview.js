@@ -135,6 +135,7 @@ const ProfileUploadAndPreview = () => {
   ];
 
   const handleCategoryChange = (event) => {
+    console.log("change");
     setCategory(event.target.value);
     const tagsForCategory =
       categories.find((category) => category.name === selectedCategory)?.tags ||
