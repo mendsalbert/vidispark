@@ -227,9 +227,7 @@ const ProfileUploadAndPreview = () => {
             <p>Public or private</p>
             <button
               type="button"
-              onChange={() => {
-                onSubmitVideoHandler();
-              }}
+              onChange={onSubmitVideoHandler}
               className="btn btn-wide btn-dark"
             >
               Create Item
