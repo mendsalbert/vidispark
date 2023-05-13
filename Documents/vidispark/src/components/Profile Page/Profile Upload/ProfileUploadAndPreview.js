@@ -231,7 +231,6 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label>Category</label>
-
                 <select
                   // value={castegory}
                   onChange={(e) => {
