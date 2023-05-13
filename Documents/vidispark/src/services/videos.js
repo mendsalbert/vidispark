@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const bcrypt = require("bcryptjs");
 
-export const useUser = () => {
+export const useVideo = () => {
   const { db, user, userInfo } = useContext(AuthContext);
   const router = useRouter();
 
