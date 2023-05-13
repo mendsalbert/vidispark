@@ -164,32 +164,33 @@ const ProfileUploadAndPreview = () => {
                 <label htmlFor="name">Video name</label>
                 <input type="text" id="name" />
               </div>
+              <div className="form-field">
+                {categories.map((category) => (
+                  <button
+                    type="button"
+                    key={category.name}
+                    className={`flex items-center justify-center px-3 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 ${
+                      selectedCategory === category.name
+                        ? "bg-blue-500 text-white"
+                        : ""
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                    disabled={
+                      selectedCategory && selectedCategory !== category.name
+                    }
+                  >
+                    <span className="mr-1">{category.icon}</span>
+                    <span>{category.name}</span>
+                  </button>
+                ))}
+              </div>
 
               <div className="form-field">
                 <label htmlFor="price">Thumnail URL</label>
                 <input type="text" id="price" />
               </div>
             </div>
-            <div className="form-field">
-              <select
-                style={{
-                  background: "none",
-                  border: "1px solid #000",
-                  borderRadius: "4px",
-                  color: "#000",
-                  padding: "8px",
-                  fontSize: "16px",
-                  outline: "none",
-                  // Add more custom styles as needed
-                }}
-              >
-                <option value="">Select a category</option>
-                <option value="entertainment">Entertainment</option>
-                <option value="music">Music</option>
-                <option value="sports">Sports</option>
-                {/* Add more options here */}
-              </select>
-            </div>
+
             <div className="form-field comment-area">
               <label>Description</label>
               <textarea
