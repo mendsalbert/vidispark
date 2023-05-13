@@ -7,9 +7,6 @@ const ProfileUploadAndPreview = () => {
   const [videoUploading, setVideoUploading] = useState(false);
   const [uploadStep, setUploadStep] = useState("");
   const [isComplete, setIsComplete] = useState(false);
-  const [category, setCategory] = useState("");
-  const [tagInput, setTagInput] = useState("");
-  const [selectedTags, setSelectedTags] = useState([]);
 
   const handleFileChange = async (event) => {
     setVideoUploading(true);
@@ -78,90 +75,28 @@ const ProfileUploadAndPreview = () => {
   };
 
   const categories = [
-    {
-      name: "Entertainment",
-      tags: ["Movies", "TV Shows", "Celebrities", "Events"],
-    },
-    { name: "Music", tags: ["Pop", "Rock", "Hip Hop", "Jazz", "Classical"] },
-    {
-      name: "Sports",
-      tags: ["Football", "Basketball", "Soccer", "Tennis", "Golf"],
-    },
-    {
-      name: "Gaming",
-      tags: ["Video Games", "Esports", "Game Reviews", "Game Streaming"],
-    },
-    {
-      name: "Education",
-      tags: ["Science", "History", "Mathematics", "Language Learning"],
-    },
-    {
-      name: "News",
-      tags: ["World News", "Politics", "Technology News", "Breaking News"],
-    },
-    {
-      name: "Comedy",
-      tags: ["Stand-up Comedy", "Sketch Comedy", "Funny Videos"],
-    },
-    {
-      name: "Lifestyle",
-      tags: ["Fashion", "Home Decor", "Travel", "Personal Development"],
-    },
-    { name: "Travel", tags: ["Adventure", "Beaches", "City Tours", "Hiking"] },
-    {
-      name: "Science and Technology",
-      tags: ["Space", "Innovation", "Gadgets", "Artificial Intelligence"],
-    },
-    {
-      name: "Health and Fitness",
-      tags: ["Exercise", "Nutrition", "Mental Health", "Yoga"],
-    },
-    {
-      name: "Fashion and Beauty",
-      tags: ["Fashion Trends", "Makeup", "Skincare", "Hairstyles"],
-    },
-    {
-      name: "Food and Cooking",
-      tags: ["Recipes", "Cooking Techniques", "Food Reviews", "Healthy Eating"],
-    },
-    {
-      name: "Business and Finance",
-      tags: ["Entrepreneurship", "Investing", "Personal Finance", "Startups"],
-    },
-    {
-      name: "Art and Design",
-      tags: ["Painting", "Photography", "Graphic Design", "Architecture"],
-    },
+    { name: "Entertainment", icon: "🎭" },
+    { name: "Music", icon: "🎵" },
+    { name: "Sports", icon: "⚽" },
+    { name: "Gaming", icon: "🎮" },
+    { name: "Education", icon: "📚" },
+    { name: "News", icon: "📰" },
+    { name: "Comedy", icon: "😄" },
+    { name: "Lifestyle", icon: "🌴" },
+    { name: "Travel", icon: "✈️" },
+    { name: "Science and Technology", icon: "🔬" },
+    { name: "Health and Fitness", icon: "💪" },
+    { name: "Fashion and Beauty", icon: "👗" },
+    { name: "Food and Cooking", icon: "🍔" },
+    { name: "Business and Finance", icon: "💼" },
+    { name: "Art and Design", icon: "🎨" },
   ];
 
-  const handleCategoryChange = (event) => {
-    console.log("change");
-    setCategory(event.target.value);
-    const tagsForCategory =
-      categories.find((category) => category.name === selectedCategory)?.tags ||
-      [];
-    console.log(tagsForCategory);
-    // setSelectedTags(categories.filter());
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category.name);
   };
-
-  const handleTagInputChange = (event) => {
-    setTagInput(event.target.value);
-  };
-
-  const handleAddTag = () => {
-    if (tagInput.trim() !== "") {
-      setSelectedTags([...selectedTags, tagInput]);
-      setTagInput("");
-    }
-  };
-
-  const handleRemoveTag = (tag) => {
-    setSelectedTags(selectedTags.filter((t) => t !== tag));
-  };
-
-  const selectedCategory = categories.find((c) => c.name === category);
-  const suggestedTags = selectedCategory ? selectedCategory.tags : [];
-
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
@@ -230,21 +165,23 @@ const ProfileUploadAndPreview = () => {
                 <input type="text" id="name" />
               </div>
               <div className="form-field">
-                <label>Category</label>
-                <select
-                  onChange={(e) => {
-                    console.log(e.target.value);
-                  }}
-                  onSelect={(e) => {
-                    console.log("working");
-                  }}
-                >
-                  {categories.map((category, index) => (
-                    <option key={index} value={category.name}>
-                      {category.name}
-                    </option>
-                  ))}
-                </select>
+                {categories.map((category) => (
+                  <button
+                    key={category.name}
+                    className={`flex items-center justify-center px-3 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 ${
+                      selectedCategory === category.name
+                        ? "bg-blue-500 text-white"
+                        : ""
+                    }`}
+                    onClick={() => handleCategoryClick(category)}
+                    disabled={
+                      selectedCategory && selectedCategory !== category.name
+                    }
+                  >
+                    <span className="mr-1">{category.icon}</span>
+                    <span>{category.name}</span>
+                  </button>
+                ))}
               </div>
 
               <div className="form-field">
