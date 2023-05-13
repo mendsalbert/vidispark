@@ -28,7 +28,6 @@ const Explore = ({ catagoryfilter, data, filter, singleCatagoryfilter }) => {
   };
 
   const onChnage = (name, value) => {
-    console.log("chaning");
     setFilter_({ ...filter_, [name]: value });
   };
 
