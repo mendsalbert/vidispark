@@ -229,7 +229,7 @@ const ProfileUploadAndPreview = () => {
                 <label htmlFor="name">Video name</label>
                 <input type="text" id="name" />
               </div>
-              <div className="form-field">
+              {/* <div className="form-field">
                 <label>Category</label>
                 <select
                   value={category}
@@ -243,7 +243,7 @@ const ProfileUploadAndPreview = () => {
                     </option>
                   ))}
                 </select>
-              </div>
+              </div> */}
 
               <div className="form-field">
                 <label htmlFor="price">Thumnail URL</label>
