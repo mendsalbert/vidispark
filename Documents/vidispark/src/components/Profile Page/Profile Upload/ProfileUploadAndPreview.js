@@ -166,7 +166,6 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label>Category</label>
-
                 <NiceSelect
                   arr={categories.map((category) => ({
                     name: category.name,
