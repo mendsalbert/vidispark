@@ -227,7 +227,13 @@ const ProfileUploadAndPreview = () => {
             <div className="form-group">
               <div className="form-field">
                 <label htmlFor="name">Video name</label>
-                <input type="text" id="name" />
+                <input
+                  type="text"
+                  id="name"
+                  onChange={(e) => {
+                    console.log(e);
+                  }}
+                />
               </div>
               <div className="form-field">
                 <label>Category</label>
