@@ -218,7 +218,7 @@ const ProfileUploadAndPreview = () => {
                 defaultValue={""}
                 value={description}
                 onChange={(e) => {
-                  setCategory(e.target.value);
+                  setDescription(e.target.value);
                 }}
               />
             </div>
