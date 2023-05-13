@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import NiceSelect from "../../NiceSelect";
 
 const ProfileUploadAndPreview = () => {
   const [uploadUrl, setUploadUrl] = useState("");
@@ -92,11 +93,10 @@ const ProfileUploadAndPreview = () => {
     { name: "Art and Design", icon: "🎨" },
   ];
 
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category.name);
+  const onChnage = (name, value) => {
+    console.log(name, value);
   };
+
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
@@ -166,7 +166,7 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label>Category</label>
-                <select
+                {/* <select
                   onChange={(e) => {
                     console.log(e.target.value);
                   }}
@@ -179,7 +179,17 @@ const ProfileUploadAndPreview = () => {
                       {category.name}
                     </option>
                   ))}
-                </select>
+
+                </select> */}
+
+                <NiceSelect
+                  arr={categories.map((category) => ({
+                    name: category.name,
+                    value: category.name.toLowerCase().replace(/\s/g, "-"),
+                  }))}
+                  ChangeFilterData={(name, value) => onChnage(name, value)}
+                  name={"Category"}
+                />
               </div>
 
               <div className="form-field">
