@@ -22,7 +22,6 @@ export const useVideo = () => {
         thumbnailUrl: videoObj.thumbnail,
         uploaderId: videoObj.videoUrl,
         uploaderAddress: db.signer(),
-        tags: userObj.tags,
         date: db.ts(),
       },
       "video",
