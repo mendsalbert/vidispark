@@ -271,6 +271,7 @@ const ProfileUploadAndPreview = () => {
                     className="tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-focus:outline-none tw-focus:ring tw-focus:border-blue-500"
                   />
                   <button
+                    type="button" // Set the type to "button"
                     onClick={handleAddTag}
                     className="tw-bg-blue-500 tw-text-white tw-rounded tw-px-3 tw-py-1 tw-text-sm tw-focus:outline-none tw-focus:ring tw-focus:border-blue-500"
                   >
