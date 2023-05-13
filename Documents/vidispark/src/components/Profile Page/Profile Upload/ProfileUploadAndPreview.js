@@ -75,6 +75,10 @@ const ProfileUploadAndPreview = () => {
     }
   };
 
+  //states
+
+  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState("");
   const categories = [
     { name: "Entertainment", icon: "🎭" },
     { name: "Music", icon: "🎵" },
@@ -94,7 +98,7 @@ const ProfileUploadAndPreview = () => {
   ];
 
   const onChnage = (name, value) => {
-    console.log(name, value);
+    setCategory(value);
   };
 
   return (
@@ -161,8 +165,15 @@ const ProfileUploadAndPreview = () => {
             <div className="form-title">Main Details</div>
             <div className="form-group">
               <div className="form-field">
-                <label htmlFor="name">Video name</label>
-                <input type="text" id="name" />
+                <label htmlFor="name">Video Title</label>
+                <input
+                  type="text"
+                  id="name"
+                  value={title}
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
+                />
               </div>
               <div className="form-field">
                 <label>Category</label>
