@@ -231,7 +231,12 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label>Category</label>
-                <select value={category} onChange={handleCategoryChange}>
+                <select
+                  value={category}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                  }}
+                >
                   {categories.map((category, index) => (
                     <option key={index} value={category.name}>
                       {category.name}
