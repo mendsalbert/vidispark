@@ -229,8 +229,20 @@ const ProfileUploadAndPreview = () => {
                 <label htmlFor="name">Video name</label>
                 <input type="text" id="name" />
               </div>
-              {/* <div className="form-field">
+              <div className="form-field">
                 <label>Category</label>
+                {/* <select
+                  value={category}
+                  onChange={(e) => {
+                    console.log(e.target.value);
+                  }}
+                >
+                  {categories.map((category, index) => (
+                    <option key={index} value={category.name}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select> */}
                 <select
                   value={category}
                   onChange={(e) => {
@@ -243,7 +255,7 @@ const ProfileUploadAndPreview = () => {
                     </option>
                   ))}
                 </select>
-              </div> */}
+              </div>
 
               <div className="form-field">
                 <label htmlFor="price">Thumnail URL</label>
