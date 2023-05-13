@@ -229,7 +229,7 @@ const ProfileUploadAndPreview = () => {
                 <label htmlFor="name">Video name</label>
                 <input type="text" id="name" />
               </div>
-              <div className="">
+              <div className="form-field">
                 <label>Category</label>
                 <select
                   value={category}
