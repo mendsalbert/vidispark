@@ -8,6 +8,9 @@ const ProfileUploadAndPreview = () => {
   const [uploadStep, setUploadStep] = useState("");
   const [isComplete, setIsComplete] = useState(false);
 
+  const [tagInput, setTagInput] = useState("");
+  const [selectedTags, setSelectedTags] = useState([]);
+
   const handleFileChange = async (event) => {
     setVideoUploading(true);
     setUploadStep("Uploading Video");
@@ -75,22 +78,84 @@ const ProfileUploadAndPreview = () => {
   };
 
   const categories = [
-    { name: "Entertainment" },
-    { name: "Music" },
-    { name: "Sports" },
-    { name: "Gaming" },
-    { name: "Education" },
-    { name: "News" },
-    { name: "Comedy" },
-    { name: "Lifestyle" },
-    { name: "Travel" },
-    { name: "Science and Technology" },
-    { name: "Health and Fitness" },
-    { name: "Fashion and Beauty" },
-    { name: "Food and Cooking" },
-    { name: "Business and Finance" },
-    { name: "Art and Design" },
+    {
+      name: "Entertainment",
+      tags: ["Movies", "TV Shows", "Celebrities", "Events"],
+    },
+    { name: "Music", tags: ["Pop", "Rock", "Hip Hop", "Jazz", "Classical"] },
+    {
+      name: "Sports",
+      tags: ["Football", "Basketball", "Soccer", "Tennis", "Golf"],
+    },
+    {
+      name: "Gaming",
+      tags: ["Video Games", "Esports", "Game Reviews", "Game Streaming"],
+    },
+    {
+      name: "Education",
+      tags: ["Science", "History", "Mathematics", "Language Learning"],
+    },
+    {
+      name: "News",
+      tags: ["World News", "Politics", "Technology News", "Breaking News"],
+    },
+    {
+      name: "Comedy",
+      tags: ["Stand-up Comedy", "Sketch Comedy", "Funny Videos"],
+    },
+    {
+      name: "Lifestyle",
+      tags: ["Fashion", "Home Decor", "Travel", "Personal Development"],
+    },
+    { name: "Travel", tags: ["Adventure", "Beaches", "City Tours", "Hiking"] },
+    {
+      name: "Science and Technology",
+      tags: ["Space", "Innovation", "Gadgets", "Artificial Intelligence"],
+    },
+    {
+      name: "Health and Fitness",
+      tags: ["Exercise", "Nutrition", "Mental Health", "Yoga"],
+    },
+    {
+      name: "Fashion and Beauty",
+      tags: ["Fashion Trends", "Makeup", "Skincare", "Hairstyles"],
+    },
+    {
+      name: "Food and Cooking",
+      tags: ["Recipes", "Cooking Techniques", "Food Reviews", "Healthy Eating"],
+    },
+    {
+      name: "Business and Finance",
+      tags: ["Entrepreneurship", "Investing", "Personal Finance", "Startups"],
+    },
+    {
+      name: "Art and Design",
+      tags: ["Painting", "Photography", "Graphic Design", "Architecture"],
+    },
   ];
+
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+    setSelectedTags([]);
+  };
+
+  const handleTagInputChange = (event) => {
+    setTagInput(event.target.value);
+  };
+
+  const handleAddTag = () => {
+    if (tagInput.trim() !== "") {
+      setSelectedTags([...selectedTags, tagInput]);
+      setTagInput("");
+    }
+  };
+
+  const handleRemoveTag = (tag) => {
+    setSelectedTags(selectedTags.filter((t) => t !== tag));
+  };
+
+  const selectedCategory = categories.find((c) => c.name === category);
+  const suggestedTags = selectedCategory ? selectedCategory.tags : [];
 
   return (
     <div className="artwork-upload-box">
@@ -162,6 +227,8 @@ const ProfileUploadAndPreview = () => {
               <div className="form-field">
                 <label>Category</label>
                 <select
+                  value={category}
+                  onChange={handleCategoryChange}
                   className="tw-appearance-none tw-w-full tw-py-2 tw-px-4 tw-pr-8 tw-leading-tight tw-focus:tw-outline-none tw-focus:tw-bg-white tw-focus:tw-border-gray-500"
                   name="category"
                 >
@@ -172,6 +239,39 @@ const ProfileUploadAndPreview = () => {
                   ))}
                 </select>
               </div>
+              {category && (
+                <div className="tw-space-x-2">
+                  <label htmlFor="tagInput" className="tw-block tw-font-medium">
+                    Tags:
+                  </label>
+                  <div className="tw-flex tw-items-center tw-space-x-2">
+                    {selectedTags.map((tag) => (
+                      <div
+                        key={tag}
+                        className="tw-bg-blue-500 tw-text-white tw-rounded-full tw-px-2 tw-py-1 tw-text-sm tw-flex tw-items-center tw-space-x-1 tw-cursor-pointer"
+                        onClick={() => handleRemoveTag(tag)}
+                      >
+                        <span>{tag}</span>
+                        <span className="tw-text-xs">X</span>
+                      </div>
+                    ))}
+                    <input
+                      type="text"
+                      id="tagInput"
+                      value={tagInput}
+                      onChange={handleTagInputChange}
+                      placeholder="Enter a tag"
+                      className="tw-border tw-border-gray-300 tw-rounded tw-px-2 tw-py-1 tw-focus:outline-none tw-focus:ring tw-focus:border-blue-500"
+                    />
+                    <button
+                      onClick={handleAddTag}
+                      className="tw-bg-blue-500 tw-text-white tw-rounded tw-px-3 tw-py-1 tw-text-sm tw-focus:outline-none tw-focus:ring tw-focus:border-blue-500"
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              )}
               <div className="form-field">
                 <label htmlFor="price">Thumnail URL</label>
                 <input type="text" id="price" />
