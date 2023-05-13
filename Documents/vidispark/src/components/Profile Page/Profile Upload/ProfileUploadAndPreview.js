@@ -80,6 +80,7 @@ const ProfileUploadAndPreview = () => {
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
   const [thumbnail, setThumbnail] = useState("");
+  const [description, setDescription] = useState("");
   const categories = [
     { name: "Entertainment", icon: "🎭" },
     { name: "Music", icon: "🎵" },
@@ -210,6 +211,10 @@ const ProfileUploadAndPreview = () => {
                 className=""
                 spellCheck="false"
                 defaultValue={""}
+                value={description}
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                }}
               />
             </div>
             <p>Linces and linces type</p>
