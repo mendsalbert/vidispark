@@ -166,21 +166,6 @@ const ProfileUploadAndPreview = () => {
               </div>
               <div className="form-field">
                 <label>Category</label>
-                {/* <select
-                  onChange={(e) => {
-                    console.log(e.target.value);
-                  }}
-                  onSelect={(e) => {
-                    console.log("working");
-                  }}
-                >
-                  {categories.map((category, index) => (
-                    <option key={index} value={category.name}>
-                      {category.name}
-                    </option>
-                  ))}
-
-                </select> */}
 
                 <NiceSelect
                   arr={categories.map((category) => ({
