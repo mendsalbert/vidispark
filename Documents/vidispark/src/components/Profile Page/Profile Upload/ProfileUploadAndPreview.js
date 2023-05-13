@@ -136,7 +136,11 @@ const ProfileUploadAndPreview = () => {
 
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
-    setSelectedTags([]);
+    const tagsForCategory =
+      categories.find((category) => category.name === selectedCategory)?.tags ||
+      [];
+    console.log(tagsForCategory);
+    // setSelectedTags(categories.filter());
   };
 
   const handleTagInputChange = (event) => {
