@@ -251,7 +251,7 @@ const ProfileUploadAndPreview = () => {
               </div>
             </div>
 
-            {/* {true && (
+            {true && (
               <div className="tw-space-x-2">
                 <label htmlFor="tagInput" className="tw-block tw-font-medium">
                   Tags:
@@ -284,7 +284,7 @@ const ProfileUploadAndPreview = () => {
                   </button>
                 </div>
               </div>
-            )} */}
+            )}
             <div className="form-field comment-area">
               <label>Description</label>
               <textarea
