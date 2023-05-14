@@ -49,7 +49,7 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
-          {singleVid?.user?.following?.includeds(userInfo[0]?.id) ? (
+          {singleVid?.user?.following?.includes(userInfo[0]?.id) ? (
             <button
               type="button"
               onClick={() => {
