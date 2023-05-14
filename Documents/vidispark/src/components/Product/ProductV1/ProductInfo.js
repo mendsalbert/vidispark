@@ -4,7 +4,9 @@ const ProductInfo = ({ singleVid }) => {
   return (
     <>
       <div className="page-title-section">
-        <h1 className="tw-text-xl -tw-mb-20">{singleVid?.videoData?.title}</h1>
+        <h1 className="tw-text-xl -tw-mb-20">
+          {singleVid?.videoData?.title} {singleVid?.videoData?.views}
+        </h1>
       </div>
       <div className="avatar-block">
         <div className="avatar box-42">
