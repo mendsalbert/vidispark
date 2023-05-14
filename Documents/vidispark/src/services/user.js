@@ -93,33 +93,33 @@ export const useUser = () => {
   const followUser = async (followerId) => {
     console.log(followerId);
 
-    if (userInfo[0]?.id === followerId) {
-      alert("Cannot follow yourself.");
-      return;
-    }
-    // // Fetch the existing user data
-    // const user = await db.get("user", userInfo[0]?.id);
-
-    // // Check if the followerId is already in the user's followers array
-    // if (!user.followers.includes(followerId)) {
-    //   // Add the followerId to the user's followers array
-    //   user.followers.push(followerId);
-
-    //   // Update only the followers field in the user data
-    //   await db.update({ followers: user.followers }, "user", userInfo[0]?.id);
-
-    //   // Fetch the existing follower data
-    //   const follower = await db.get("user", followerId);
-
-    //   // Add the userId to the follower's following array
-    //   follower.following.push(userInfo[0]?.id);
-
-    //   // Update only the following field in the follower's data
-    //   await db.update({ following: follower.following }, "user", followerId);
-    // } else {
-    //   // User is already following
-    //   console.log("User is already following.");
+    // if (userInfo[0]?.id === followerId) {
+    //   alert("Cannot follow yourself.");
+    //   return;
     // }
+    // Fetch the existing user data
+    const user = await db.get("user", userInfo[0]?.id);
+
+    // Check if the followerId is already in the user's followers array
+    if (!user.followers.includes(followerId)) {
+      // Add the followerId to the user's followers array
+      user.followers.push(followerId);
+
+      // Update only the followers field in the user data
+      await db.update({ followers: user.followers }, "user", userInfo[0]?.id);
+
+      // Fetch the existing follower data
+      const follower = await db.get("user", followerId);
+
+      // Add the userId to the follower's following array
+      follower.following.push(userInfo[0]?.id);
+
+      // Update only the following field in the follower's data
+      await db.update({ following: follower.following }, "user", followerId);
+    } else {
+      // User is already following
+      console.log("User is already following.");
+    }
   };
 
   return { addUser, loginUser, userInfo, updateUser, followUser };
