@@ -1,7 +1,9 @@
 import { EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React from "react";
+import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
+  const { followUser } = useUser();
   return (
     <>
       <div className="page-title-section">
