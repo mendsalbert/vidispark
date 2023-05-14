@@ -33,25 +33,23 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    if (db) {
-      const videos = await db.cget("video");
+    const videos = await db.cget("video");
 
-      const results = [];
+    const results = [];
 
-      for (const video of videos) {
-        console.log(video.data.uploaderId);
-        const userId = video.data.uploaderId;
-        const user = await db.get("user", userId);
+    for (const video of videos) {
+      console.log(video.data.uploaderId);
+      const userId = video.data.uploaderId;
+      const user = await db.get("user", userId);
 
-        results.push({
-          videoId: video.id,
-          videoData: video.data,
-          user: user,
-        });
-      }
-
-      setVideoResults(results);
+      results.push({
+        videoId: video.id,
+        videoData: video.data,
+        user: user,
+      });
     }
+
+    setVideoResults(results);
   };
 
   return { addVideo, getAllVideos, videoResults };
