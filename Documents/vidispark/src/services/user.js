@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
-  const { db, user, userInfo, logout } = useContext(AuthContext);
+  const { db, user, userInfo, logout, login } = useContext(AuthContext);
   const router = useRouter();
 
   const isUserNameExist = async (username) => {
@@ -69,6 +69,7 @@ export const useUser = () => {
   };
 
   const loginUser = async (userObj) => {
+    login();
     let user_ = await isUserNameExist(userObj.username);
     const enteredPasswordHash = await bcrypt.hashSync(
       userObj.password,
