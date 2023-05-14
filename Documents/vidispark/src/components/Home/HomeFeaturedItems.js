@@ -2,9 +2,11 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { featuredCarousel } from "../../sliderProps";
 import Nft from "../Nft";
+import { useVideo } from "../../services/videos";
 
-const HomeFeaturedItems = ({ data }) => {
-  console.log(data);
+const HomeFeaturedItems = () => {
+  const { getAllVideos } = useVideo();
+
   return (
     <div className="container section-padding overflow-hidden">
       <div className="section-title-wrapper">
@@ -26,8 +28,8 @@ const HomeFeaturedItems = ({ data }) => {
       </div>
       <Swiper {...featuredCarousel} className="featured-carousel">
         <div className="swiper-wrapper">
-          {data &&
-            data.map(
+          {getAllVideos &&
+            getAllVideos.map(
               (d, i) =>
                 d.featured && (
                   <SwiperSlide className="swiper-slide" key={i}>
