@@ -99,7 +99,7 @@ export const useUser = () => {
     const user = await db.get("user", userInfo[0]?.id);
 
     // Check if the followerId is already in the user's followers array
-    if (!user.followers.includes(followerId)) {
+    if (!user?.followers?.includes(followerId)) {
       // Add the followerId to the user's followers array
       user.followers.push(followerId);
 
