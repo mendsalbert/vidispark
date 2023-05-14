@@ -5,7 +5,7 @@ import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
   const { followUser, userInfo, unfollowUser } = useUser();
-
+  console.log(userInfo);
   return (
     <>
       <div className="page-title-section">
