@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
-  const [followerState, setFollowerState] = useState("f");
+  const [followerState, setFollowerState] = useState("");
   const { followUser, userInfo, unfollowUser } = useUser();
 
   return (
