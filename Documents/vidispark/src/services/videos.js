@@ -12,10 +12,6 @@ export const useVideo = () => {
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
 
-  useEffect(() => {
-    getAllVideos();
-  }, [db]);
-
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
@@ -37,9 +33,6 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    if (!db) {
-      return;
-    }
     const videos = await db.cget("video");
     const results = [];
 
