@@ -18,8 +18,6 @@ export const useVideo = () => {
   }, [initDB]);
 
   const addVideo = async (videoObj) => {
-    await db.delete("video", "6jebHFjlrVPNJ06dMx4M");
-
     console.log(videoObj);
     let res = await db.add(
       {
