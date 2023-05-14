@@ -13,8 +13,7 @@ const Login = () => {
 
   const onLoginHandler = () => {
     //!this must be called before the real login start
-    login();
-    // loginUser({ username, password });
+    loginUser({ username, password });
   };
   return (
     <Layouts>
