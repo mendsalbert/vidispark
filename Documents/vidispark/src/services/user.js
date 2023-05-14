@@ -137,7 +137,7 @@ export const useUser = () => {
       const follower = await db.get("user", followerId);
 
       // Check if the userId is in the follower's following array
-      const followingIndex = follower.following.indexOf(userId);
+      const followingIndex = follower.following.indexOf(userInfo[0]?.id);
       if (followingIndex !== -1) {
         // Remove the userId from the follower's following array
         follower.following.splice(followingIndex, 1);
