@@ -12,6 +12,28 @@ export const useVideo = () => {
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
 
+  useEffect(() => {
+    const getAllVideos = async () => {
+      const videos = await db.cget("video");
+      const results = [];
+
+      for (const video of videos) {
+        console.log(video.data.uploaderId);
+        const userId = video.data.uploaderId;
+        const user = await db.get("user", userId);
+
+        results.push({
+          videoId: video.id,
+          videoData: video.data,
+          user: user,
+        });
+      }
+      setVideoResults(results);
+    };
+
+    getAllVideos();
+  }, [db]);
+
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
@@ -30,24 +52,6 @@ export const useVideo = () => {
       user
     );
     console.log(res);
-  };
-
-  const getAllVideos = async () => {
-    const videos = await db.cget("video");
-    const results = [];
-
-    for (const video of videos) {
-      console.log(video.data.uploaderId);
-      const userId = video.data.uploaderId;
-      const user = await db.get("user", userId);
-
-      results.push({
-        videoId: video.id,
-        videoData: video.data,
-        user: user,
-      });
-    }
-    setVideoResults(results);
   };
 
   return { addVideo, getAllVideos, videoResults };
