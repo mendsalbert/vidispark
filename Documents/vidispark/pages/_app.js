@@ -126,7 +126,6 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(async () => {
     changeNetwork();
-    setupWeaveDB();
   }, []);
   return (
     <Provider store={store}>
