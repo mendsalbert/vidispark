@@ -110,7 +110,7 @@ export const useUser = () => {
       const follower = await db.get("user", followerId);
 
       // Add the userId to the follower's following array
-      follower.following.push(userInfo[0]?.id);
+      follower?.following?.push(userInfo[0]?.id);
 
       // Update only the following field in the follower's data
       await db.update({ following: follower.following }, "user", followerId);
