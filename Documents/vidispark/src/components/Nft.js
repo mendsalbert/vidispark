@@ -44,7 +44,12 @@ const Nft = ({ data }) => {
             </Link>
           </div>
           <div className="featured-item-info">
-            <div className="title">
+            <div
+              className="title"
+              onClick={() => {
+                console.log("clicked");
+              }}
+            >
               {" "}
               <Link href={`/video/${data?.videoId}`}>
                 <a>{data?.videoData?.title}</a>
