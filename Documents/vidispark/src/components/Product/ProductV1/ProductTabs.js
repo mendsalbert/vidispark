@@ -12,13 +12,13 @@ const ProductTabs = () => {
           className={activeTabNav("tab1")}
           onClick={() => setActiveTab("tab1")}
         >
-          <a>Bids</a>
+          <a>Comments</a>
         </li>
         <li
           className={activeTabNav("tab2")}
           onClick={() => setActiveTab("tab2")}
         >
-          <a>Additional Details</a>
+          <a>Other Videos from creators</a>
         </li>
         <li
           className={activeTabNav("tab3")}
