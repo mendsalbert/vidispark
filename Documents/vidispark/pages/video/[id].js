@@ -8,15 +8,16 @@ import ReactPlayer from "react-player";
 import { useRouter } from "next/router";
 import { useVideo } from "../../src/services/videos";
 const Product05 = () => {
-  useEffect(() => {
-    countdown();
-  }, []);
-
   const router = useRouter();
   const { id } = router.query;
 
-  const { videoResults } = useVideo();
+  const { videoResults, updateCount } = useVideo();
   const singleVid = videoResults?.filter((item) => item.videoId == id);
+
+  useEffect(() => {
+    updateCount(singleVid[0].videoId);
+  }, []);
+  //TODO: 1. update the views count. 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
   return (
     <Layouts>
       {/* <div className="product-page product-version-1"> */}
