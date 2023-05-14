@@ -60,7 +60,8 @@ const ProductInfo = ({ singleVid }) => {
               }}
               className="btn btn-wide btn-dark"
             >
-              {followerState == "f" ? "Admire" : "Stop Admiring"}
+              {/* {followerState == "f" ? "Admire" : "Stop Admiring"} */}
+              Stop Admiring
             </button>
           ) : (
             <button
@@ -71,7 +72,7 @@ const ProductInfo = ({ singleVid }) => {
               }}
               className="btn btn-wide btn-dark"
             >
-              {followerState == "nf" ? "Stop Admiring" : " Admiring"}
+              {/* {followerState == "nf" ? "Stop Admiring" : " Admiring"} */}
               Admire
             </button>
           )}
