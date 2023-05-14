@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
-  const { followUser, userInfo } = useUser();
+  const { followUser, userInfo, unfollowUser } = useUser();
   return (
     <>
       <div className="page-title-section">
@@ -53,7 +53,7 @@ const ProductInfo = ({ singleVid }) => {
             <button
               type="button"
               onClick={() => {
-                followUser(singleVid?.videoData?.uploaderId);
+                unfollowUser(singleVid?.videoData?.uploaderId);
               }}
               className="btn btn-wide btn-dark"
             >
