@@ -4,7 +4,7 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 import ReactPlayer from "react-player";
 
 const Nft = ({ data }) => {
-  console.log(data);
+  console.log(data.videoData);
   return (
     <></>
     // <div className="featured-item">
