@@ -52,7 +52,7 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              followUser(singleVid?.user);
+              followUser(singleVid?.videoData);
             }}
             className="btn btn-wide btn-dark"
           >
