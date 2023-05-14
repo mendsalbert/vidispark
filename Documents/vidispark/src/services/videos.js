@@ -36,18 +36,19 @@ export const useVideo = () => {
 
     const videoResults = [];
 
-    // for (const video of videos) {
-    //   const userId = video.data.uploaderId;
-    //   const user = await db.get("user", userId);
+    for (const video of videos) {
+      const userId = video.data.uploaderId;
+      const user = await db.get("user", userId);
 
-    //   videoResults.push({
-    //     videoId: video.id,
-    //     videoData: video.data,
-    //     user: user.data
-    //   });
-    // }
-    console.log(videos);
-    console.log(videos.data.uploaderId);
+      videoResults.push({
+        videoId: video.id,
+        videoData: video.data,
+        user: user.data,
+      });
+    }
+
+    console.log(videoResults);
+
     //TODO get videos as well as the user who posted it
     // await db.get("collection_name", "doc_id", "sub_collection_name_1", "sub_doc_id_1", "sub_collection_name_2", "sub_doc_id_2")
   };
