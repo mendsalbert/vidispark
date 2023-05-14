@@ -150,5 +150,5 @@ export const useUser = () => {
       alert("User is not following.");
     }
   };
-  return { addUser, loginUser, userInfo, updateUser, followUser };
+  return { addUser, loginUser, userInfo, updateUser, followUser, unfollowUser };
 };
