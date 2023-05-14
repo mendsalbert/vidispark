@@ -32,7 +32,7 @@ export const useVideo = () => {
     };
 
     getAllVideos();
-  }, [db]);
+  }, []);
 
   const addVideo = async (videoObj) => {
     console.log(videoObj);
