@@ -12,7 +12,7 @@ const Login = () => {
   const { loginUser } = useUser();
 
   const onLoginHandler = () => {
-    login();
+    // login();
     loginUser({ username, password });
   };
   return (
