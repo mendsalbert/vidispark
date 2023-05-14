@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import ProductInfo from "../src/components/Product/ProductV1/ProductInfo";
-import ProductRelatedItems from "../src/components/Product/ProductV1/ProductRelatedItems";
-import ProductTabs from "../src/components/Product/ProductV1/ProductTabs";
-import Layouts from "../src/layouts/Layouts";
-import { countdown } from "../src/utils";
+import ProductInfo from "../../src/components/Product/ProductV1/ProductInfo";
+import ProductRelatedItems from "../../src/components/Product/ProductV1/ProductRelatedItems";
+import ProductTabs from "../../src/components/Product/ProductV1/ProductTabs";
+import Layouts from "../../src/layouts/Layouts";
+import { countdown } from "../../src/utils";
 import ReactPlayer from "react-player";
 
 const Product05 = () => {
