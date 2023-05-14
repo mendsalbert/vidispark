@@ -53,7 +53,7 @@ const ProductInfo = ({ singleVid }) => {
       <div className="bidding-section">
         <div className="place-bid">
           {singleVid?.user?.following?.includes(userInfo[0]?.id) ||
-          singleVid?.user?.following == undefined ? (
+          singleVid?.user?.following == "undefined" ? (
             <button
               type="button"
               onClick={() => {
