@@ -15,7 +15,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [initDB, setInitDB] = useState(false);
-  const [db, setdb] = useState(null);
+  const [db, setdb] = useState(undefined);
   const [userInfo, setUserInfo] = useState("");
   const [updateState, setUpdateState] = useState(false);
   const checkUser = async () => {
