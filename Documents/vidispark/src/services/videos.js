@@ -63,5 +63,9 @@ export const useVideo = () => {
     setVideoResults(results);
   };
 
-  return { addVideo, videoResults };
+  const updateCount = async (videoId) => {
+    await db.update({ views: db.inc(1) }, "video", videoId);
+  };
+
+  return { addVideo, videoResults, updateCount };
 };
