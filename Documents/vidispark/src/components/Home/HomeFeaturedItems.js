@@ -6,7 +6,7 @@ import { useVideo } from "../../services/videos";
 
 const HomeFeaturedItems = () => {
   const { videoResults } = useVideo();
-
+  console.log(videoResults);
   return (
     <div className="container section-padding overflow-hidden">
       <div className="section-title-wrapper">
