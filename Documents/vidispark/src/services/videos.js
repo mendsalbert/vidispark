@@ -11,29 +11,32 @@ export const useVideo = () => {
   const { db, user, userInfo } = useContext(AuthContext);
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
-
+  const [initialFetch, setInitialFetch] = useState(true); // Track initial fetch
   useEffect(() => {
-    const getAllVideos = async () => {
-      const videos = await db.cget("video");
-      const results = [];
+    // Fetch videos when db is available and on initial fetch
+    if (db && initialFetch) {
+      const fetchVideos = async () => {
+        const videos = await db.cget("video");
+        const results = [];
 
-      for (const video of videos) {
-        console.log(video.data.uploaderId);
-        const userId = video.data.uploaderId;
-        const user = await db.get("user", userId);
+        for (const video of videos) {
+          console.log(video.data.uploaderId);
+          const userId = video.data.uploaderId;
+          const user = await db.get("user", userId);
 
-        results.push({
-          videoId: video.id,
-          videoData: video.data,
-          user: user,
-        });
-      }
-      setVideoResults(results);
-    };
+          results.push({
+            videoId: video.id,
+            videoData: video.data,
+            user: user,
+          });
+        }
+        setVideoResults(results);
+      };
 
-    getAllVideos();
-  }, []);
-
+      fetchVideos();
+      setInitialFetch(false); // Set initial fetch to false after the first fetch
+    }
+  }, [db, initialFetch]);
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
