@@ -6,7 +6,7 @@ const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
   const { followUser, userInfo, unfollowUser } = useUser();
 
-  console.log(singleVid?.user);
+  // console.log(singleVid?.user);
   return (
     <>
       <div className="page-title-section">
@@ -52,7 +52,8 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
-          {singleVid?.user?.following?.includes(userInfo[0]?.id) ? (
+          {singleVid?.user?.following?.includes(userInfo[0]?.id) ||
+          singleVid?.user?.following ? (
             <button
               type="button"
               onClick={() => {
