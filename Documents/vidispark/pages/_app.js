@@ -58,14 +58,14 @@ const xdcApothem = {
 
 const networks = {
   theta: {
-    chainId: `0x${Number(365).toString(16)}`,
+    chainId: `0x${Number(361).toString(16)}`,
     chainName: "Theta Testnet",
     nativeCurrency: {
       name: "Theta Testnet",
       symbol: "TFUEL",
       decimals: 18,
     },
-    rpcUrls: ["https://eth-rpc-api-testnet.thetatoken.org/rpc"],
+    rpcUrls: ["https://eth-rpc-api.thetatoken.org/rpc"],
     blockExplorerUrls: ["https://testnet-explorer.thetatoken.org/"],
   },
 };
