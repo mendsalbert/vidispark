@@ -101,7 +101,7 @@ export const useUser = () => {
     // Check if the followerId is already in the user's followers array
     if (!user?.followers?.includes(followerId)) {
       // Add the followerId to the user's followers array
-      user.followers.push(followerId);
+      user?.followers.push(followerId);
 
       // Update only the followers field in the user data
       await db.update({ followers: user.followers }, "user", userInfo[0]?.id);
