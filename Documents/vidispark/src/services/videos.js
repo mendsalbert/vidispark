@@ -38,9 +38,9 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    // if (!db) {
-    //   return;
-    // }
+    if (!db) {
+      return;
+    }
     const videos = await db.cget("video");
 
     const results = [];
