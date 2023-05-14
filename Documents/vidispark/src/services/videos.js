@@ -11,6 +11,7 @@ export const useVideo = () => {
   const { db, user, userInfo } = useContext(AuthContext);
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
+
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
@@ -49,5 +50,6 @@ export const useVideo = () => {
     }
     setVideoResults(results);
   };
-  return { addVideo, videoResults };
+
+  return { addVideo, getAllVideos, videoResults };
 };
