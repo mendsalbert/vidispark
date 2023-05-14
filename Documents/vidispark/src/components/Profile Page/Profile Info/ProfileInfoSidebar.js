@@ -3,6 +3,7 @@ import React from "react";
 import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
   const { userInfo, logout } = useUser();
+
   console.log(userInfo);
   return (
     <aside>
