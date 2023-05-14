@@ -87,10 +87,24 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="logout" onClick={logout}>
-              {" "}
-              <a className="tw-flex tw-flex-row tw-items-center">
-                <svg className="crumina-icon">
+            <li
+              className="logout"
+              onClick={() => {
+                logout();
+              }}
+            >
+              <a
+                onClick={() => {
+                  logout();
+                }}
+                className="tw-flex tw-flex-row tw-items-center"
+              >
+                <svg
+                  onClick={() => {
+                    logout();
+                  }}
+                  className="crumina-icon"
+                >
                   <use xlinkHref="#logout-icon" />
                 </svg>
                 Log Out
