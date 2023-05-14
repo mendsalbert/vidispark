@@ -49,17 +49,29 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
-          {singleVid?.user?.following?.includeds(userInfo[0]?.id)}
-          <button
-            type="button"
-            onClick={() => {
-              followUser(singleVid?.videoData?.uploaderId);
-            }}
-            className="btn btn-wide btn-dark"
-          >
-            {user}
-            Admire
-          </button>
+          {singleVid?.user?.following?.includeds(userInfo[0]?.id) ? (
+            <button
+              type="button"
+              onClick={() => {
+                followUser(singleVid?.videoData?.uploaderId);
+              }}
+              className="btn btn-wide btn-dark"
+            >
+              {user}
+              Admire
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                followUser(singleVid?.videoData?.uploaderId);
+              }}
+              className="btn btn-wide btn-dark"
+            >
+              {user}
+              Admire
+            </button>
+          )}
         </div>
         <div className="product-fav-counter">
           <svg className="crumina-icon">
