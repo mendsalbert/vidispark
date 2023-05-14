@@ -51,7 +51,7 @@ const Product05 = () => {
         <div className="product-info">
           <div className="product-info-wrapper">
             {/* / Products Info */}
-            <ProductInfo />
+            <ProductInfo singleVid={singleVid[0]} />
             {/* / Products Tabs */}
             <ProductTabs />
             {/*  RELATED ITEMS */}
