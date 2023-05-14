@@ -14,6 +14,7 @@ const Product05 = () => {
   const router = useRouter();
   const { id } = router.query;
   console.log(id);
+
   return (
     <Layouts>
       {/* <div className="product-page product-version-1"> */}
