@@ -41,26 +41,25 @@ export const useVideo = () => {
 
   const getAllVideos = async () => {
     if (!db) {
-      return;
+      const videos = await db.cget("video");
+      // await db.delete("video", "6jebHFjlrVPNJ06dMx4M");
+
+      const results = [];
+
+      for (const video of videos) {
+        console.log(video.data.uploaderId);
+        const userId = video.data.uploaderId;
+        const user = await db.get("user", userId);
+
+        results.push({
+          videoId: video.id,
+          videoData: video.data,
+          user: user,
+        });
+      }
+
+      setVideoResults(results);
     }
-    const videos = await db.cget("video");
-    // await db.delete("video", "6jebHFjlrVPNJ06dMx4M");
-
-    const results = [];
-
-    for (const video of videos) {
-      console.log(video.data.uploaderId);
-      const userId = video.data.uploaderId;
-      const user = await db.get("user", userId);
-
-      results.push({
-        videoId: video.id,
-        videoData: video.data,
-        user: user,
-      });
-    }
-
-    setVideoResults(results);
   };
 
   const updateCount = async (videoId) => {
