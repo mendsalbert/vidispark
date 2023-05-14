@@ -47,14 +47,7 @@ const ProductInfo = ({ singleVid }) => {
           </svg>
           <span className="count">105</span>
         </div>
-        <div className="more-link">
-          {" "}
-          <a href="#">
-            <svg className="crumina-icon">
-              <use xlinkHref="#dots-icon" />
-            </svg>
-          </a>
-        </div>
+
         <div className="social-share-box">
           <div className="share-icons">
             {" "}
