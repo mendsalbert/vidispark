@@ -38,6 +38,9 @@ export const useVideo = () => {
 
   const getAllVideos = async () => {
     // await db.delete("video", "ONvTSdMRtd4idxstaLWa");
+    if (!db) {
+      return;
+    }
     const videos = await db.cget("video");
     const results = [];
 
