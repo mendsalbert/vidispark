@@ -6,6 +6,7 @@ import Layouts from "../../src/layouts/Layouts";
 import { countdown } from "../../src/utils";
 import ReactPlayer from "react-player";
 import { useRouter } from "next/router";
+import { useVideo } from "../../src/services/videos";
 const Product05 = () => {
   useEffect(() => {
     countdown();
@@ -13,8 +14,12 @@ const Product05 = () => {
 
   const router = useRouter();
   const { id } = router.query;
+
   console.log(id);
 
+  const { videoResults } = useVideo();
+  const singleVid = videoResults?.filter((item) => item.videoid == id);
+  console.log(singleVid);
   return (
     <Layouts>
       {/* <div className="product-page product-version-1"> */}
