@@ -3,7 +3,9 @@ import Link from "next/link";
 import React from "react";
 import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
+  const [followerState, setFollowerState] = useState("f");
   const { followUser, userInfo, unfollowUser } = useUser();
+
   return (
     <>
       <div className="page-title-section">
@@ -53,20 +55,23 @@ const ProductInfo = ({ singleVid }) => {
             <button
               type="button"
               onClick={() => {
+                setFollowerState("f");
                 unfollowUser(singleVid?.videoData?.uploaderId);
               }}
               className="btn btn-wide btn-dark"
             >
-              Stop Admiring
+              {followerState == "f" ? "Admire" : "Stop Admiring"}
             </button>
           ) : (
             <button
               type="button"
               onClick={() => {
+                setFollowerState("nf");
                 followUser(singleVid?.videoData?.uploaderId);
               }}
               className="btn btn-wide btn-dark"
             >
+              {followerState == "nf" ? "Stop Admiring" : " Admiring"}
               Admire
             </button>
           )}
