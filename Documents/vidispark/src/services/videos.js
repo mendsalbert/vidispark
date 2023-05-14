@@ -32,7 +32,7 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    await db.delete("video", "ONvTSdMRtd4idxstaLWa");
+    // await db.delete("video", "ONvTSdMRtd4idxstaLWa");
 
     const videos = await db.cget("video");
 
