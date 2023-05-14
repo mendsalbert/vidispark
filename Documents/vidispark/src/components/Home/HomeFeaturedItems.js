@@ -28,8 +28,8 @@ const HomeFeaturedItems = () => {
       </div>
       <Swiper {...featuredCarousel} className="featured-carousel">
         <div className="swiper-wrapper">
-          {data &&
-            data.map(
+          {videoResults &&
+            videoResults.map(
               (d, i) =>
                 d.featured && (
                   <SwiperSlide className="swiper-slide" key={i}>
