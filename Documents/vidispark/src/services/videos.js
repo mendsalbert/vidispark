@@ -33,7 +33,6 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    console.log(initDB);
     if (!db) {
       return;
     }
