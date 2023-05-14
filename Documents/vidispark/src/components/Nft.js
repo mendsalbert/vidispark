@@ -22,7 +22,7 @@ const Nft = ({ data }) => {
                 </picture>
               </a>
             </Link> */}
-            <ReactPlayer
+            {/* <ReactPlayer
               url="https://media.thetavideoapi.com/video_s8g3s885wr5q2z8ifk4apj2xke/master.m3u8"
               // url="https://media.thetavideoapi.com/video_s8g3s885wr5q2z8ifk4apj2xke/master.m3u8"
               // url={`${data?.videoData?.videoUrl}/master.m3u8`}
@@ -30,6 +30,13 @@ const Nft = ({ data }) => {
               width="100%"
               height="auto"
               className="rounded-md shadow-lg"
+            /> */}
+            <iframe
+              src={data?.videoData?.videoUrl}
+              border="0"
+              width="100%"
+              height="100%"
+              allowfullscreen
             />
           </div>
           <div className="featured-item-info">
