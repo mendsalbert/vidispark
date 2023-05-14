@@ -47,7 +47,15 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
-          <button className="btn btn-wide btn-dark">Admire</button>
+          <button
+            type="button"
+            onClick={() => {
+              followUser(singleVid?.user?.id);
+            }}
+            className="btn btn-wide btn-dark"
+          >
+            Admire
+          </button>
         </div>
         <div className="product-fav-counter">
           <svg className="crumina-icon">
