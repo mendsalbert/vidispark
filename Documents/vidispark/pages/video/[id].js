@@ -42,7 +42,7 @@ const Product05 = () => {
             src={singleVid[0]?.videoData?.videoUrl}
             border="0"
             width="100%"
-            height="700"
+            height="500"
             allowfullscreen
             allow="autoplay; fullscreen"
             autoplay="false"
