@@ -54,5 +54,5 @@ export const useVideo = () => {
     console.log(res);
   };
 
-  return { addVideo, getAllVideos, videoResults };
+  return { addVideo, videoResults };
 };
