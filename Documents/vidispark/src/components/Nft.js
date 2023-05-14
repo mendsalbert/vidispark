@@ -31,11 +31,11 @@ const Nft = ({ data }) => {
               className="rounded-md shadow-lg"
             />
           </div>
-          {/* <div className="featured-item-info">
+          <div className="featured-item-info">
             <div className="title">
               {" "}
               <Link href="/05-product-page">
-                <a>{data.name}</a>
+                <a>{data.videoData.title}</a>
               </Link>{" "}
             </div>
             <div className="tw-flex tw-flex-row tw-items-center tw-justify-between tw-w-full">
@@ -45,9 +45,12 @@ const Nft = ({ data }) => {
                   <Link href="/08-profile-page">
                     <a>
                       <picture>
-                        <source type="image/avif" srcSet={data.author.image} />
+                        <source
+                          type="image/avif"
+                          srcSet={data.user.avatarUrlL}
+                        />
                         <img
-                          src={data.author.image}
+                          src={data.user.avatarUrlL}
                           alt="avatar"
                           loading="lazy"
                           width={100}
@@ -62,14 +65,14 @@ const Nft = ({ data }) => {
                     </svg>{" "}
                   </span>
                 </span>
-                <span>@{data.author.name}</span>
+                <span>@{data.user.username}</span>
               </span>
               <span className="tw-flex tw-flex-row tw-items-center tw-space-x-1 ">
-                <span>239K</span>
+                <span>{0}</span>
                 <EyeIcon />
               </span>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
