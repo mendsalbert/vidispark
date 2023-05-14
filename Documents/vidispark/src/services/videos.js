@@ -49,10 +49,8 @@ export const useVideo = () => {
         user: user,
       });
     }
-
+    console.log("working perfectly");
     return videoResults;
-    //TODO get videos as well as the user who posted it
-    // await db.get("collection_name", "doc_id", "sub_collection_name_1", "sub_doc_id_1", "sub_collection_name_2", "sub_doc_id_2")
   };
   return { addVideo, getAllVideos };
 };
