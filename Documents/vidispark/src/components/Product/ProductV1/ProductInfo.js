@@ -11,7 +11,7 @@ const ProductInfo = ({ singleVid }) => {
           {" "}
           <Link href="/08-profile-page">
             <a>
-              <img src="img/avatar.png" alt="avatar" />
+              <img src={singleVid?.user?.avatarUrlL} alt="avatar" />
             </a>
           </Link>{" "}
           <span className="verified">
@@ -25,11 +25,11 @@ const ProductInfo = ({ singleVid }) => {
             <span className="gradient-text">
               {" "}
               <Link href="/08-profile-page">
-                <a>Dexter Stark</a>
+                <a>{singleVid?.user?.fullname}</a>
               </Link>{" "}
             </span>
           </div>
-          <div className="avatar-meta">@DexterStark</div>
+          <div className="avatar-meta">@{singleVid?.user?.username}</div>
         </div>
       </div>
 
