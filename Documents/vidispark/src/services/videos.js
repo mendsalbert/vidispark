@@ -43,7 +43,7 @@ export const useVideo = () => {
       return;
     }
     const videos = await db.cget("video");
-    await db.delete("video", "6jebHFjlrVPNJ06dMx4M");
+    // await db.delete("video", "6jebHFjlrVPNJ06dMx4M");
 
     const results = [];
 
