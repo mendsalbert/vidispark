@@ -39,7 +39,7 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
-          <button className="btn btn-wide btn-dark">Place a Bid!</button>
+          <button className="btn btn-wide btn-dark">Admire!</button>
         </div>
         <div className="product-fav-counter">
           <svg className="crumina-icon">
