@@ -6,7 +6,7 @@ const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
   const { followUser, userInfo, unfollowUser } = useUser();
 
-  console.log(singleVid?.user);
+  console.log(singleVid?.user.following);
   return (
     <>
       <div className="page-title-section">
