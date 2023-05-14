@@ -32,7 +32,22 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    let res = await db.get("video");
+    let res = await db.cget("video", {
+      fields: ["id", "title", "uploaderId"],
+      includes: [
+        {
+          name: "user",
+          fields: ["id", "name", "email"],
+          includes: [
+            {
+              name: "address",
+              fields: ["street", "city", "country"],
+            },
+          ],
+        },
+      ],
+    });
+
     console.log(res);
     //TODO get videos as well as the user who posted it
     // await db.get("collection_name", "doc_id", "sub_collection_name_1", "sub_doc_id_1", "sub_collection_name_2", "sub_doc_id_2")
