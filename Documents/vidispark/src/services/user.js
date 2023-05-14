@@ -99,7 +99,7 @@ export const useUser = () => {
     // Fetch the existing user data
     const user = await db.get("user", userInfo[0]?.id);
 
-    console.log(user);
+    console.log(user.followers);
     // Check if the followerId is already in the user's followers array
     if (!user?.followers?.includes(followerId)) {
       // Add the followerId to the user's followers array
