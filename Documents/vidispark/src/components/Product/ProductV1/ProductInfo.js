@@ -88,16 +88,6 @@ const ProductInfo = ({ singleVid }) => {
                 <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
               </svg>
             </a>{" "}
-            <a href="#">
-              <svg className="crumina-icon">
-                <use xlinkHref="#twitter-icon" />
-              </svg>
-            </a>
-            <a href="">
-              <svg className="crumina-icon">
-                <use xlinkHref="#instagram-icon" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
