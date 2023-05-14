@@ -30,6 +30,7 @@ export const useVideo = () => {
         uploaderId: userInfo[0]?.id,
         uploaderAddress: db.signer(),
         views: 1,
+        likes: 0,
         date: db.ts(),
       },
       "video",
