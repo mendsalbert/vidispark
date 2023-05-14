@@ -9,7 +9,7 @@ const ProductInfo = ({ singleVid }) => {
           <span>{singleVid?.videoData?.title}</span>
           <div class="tw-w-3 tw-h-3 tw-rounded-full tw-bg-gray-400 "></div>
           <span className="tw-flex tw-flex-row tw-items-center tw-space-x-1 ">
-            <span>{singleVid?.videoData?.views}</span>
+            <span className="tw-text-sm">{singleVid?.videoData?.views}</span>
             <EyeIcon />
           </span>
         </h1>
