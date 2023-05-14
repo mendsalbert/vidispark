@@ -13,6 +13,10 @@ export const useVideo = () => {
   const [videoResults, setVideoResults] = useState([]);
   console.log(initDB);
 
+  useEffect(() => {
+    getAllVideos();
+  }, [initDB]);
+
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
@@ -34,9 +38,9 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    if (!db) {
-      return;
-    }
+    // if (!db) {
+    //   return;
+    // }
     const videos = await db.cget("video");
 
     const results = [];
@@ -56,5 +60,5 @@ export const useVideo = () => {
     setVideoResults(results);
   };
 
-  return { addVideo, getAllVideos, videoResults };
+  return { addVideo, videoResults };
 };
