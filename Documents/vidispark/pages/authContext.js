@@ -133,7 +133,7 @@ export const AuthProvider = ({ children }) => {
     if (confirm("Would you like to sign out?")) {
       await lf.removeItem("temp_address:current");
       setUser(null, "temp_current");
-      localStorage.setItem("user", "temp_current");
+      localStorage.removeItem("user", "temp_current");
     }
   };
 
