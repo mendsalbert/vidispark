@@ -49,5 +49,5 @@ export const useVideo = () => {
     }
     setVideoResults(results);
   };
-  return { addVideo, getAllVideos };
+  return { addVideo, videoResults };
 };
