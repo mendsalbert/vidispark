@@ -33,7 +33,6 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    let ready = await setupWeaveDB();
     const videos = await db.cget("video");
     const results = [];
 
