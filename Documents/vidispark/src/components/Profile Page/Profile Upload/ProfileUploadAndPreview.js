@@ -9,7 +9,7 @@ const ProfileUploadAndPreview = () => {
   const [videoUploading, setVideoUploading] = useState(false);
   const [uploadStep, setUploadStep] = useState("");
   const [isComplete, setIsComplete] = useState(false);
-  const { addVideo, getAllVideos } = useVideo();
+  const { addVideo } = useVideo();
   const handleFileChange = async (event) => {
     setVideoUploading(true);
     setUploadStep("Uploading Video");
@@ -77,10 +77,6 @@ const ProfileUploadAndPreview = () => {
   };
 
   //states
-
-  useEffect(() => {
-    getAllVideos();
-  }, []);
 
   const [category, setCategory] = useState("");
   const [title, setTitle] = useState("");
