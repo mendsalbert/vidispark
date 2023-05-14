@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
-const ProductInfo = () => {
+const ProductInfo = ({ singleVid }) => {
   return (
     <>
       <div className="page-title-section">
-        <h1>Breathing Nature</h1>
+        <h1>{singleVid.videoData.title}</h1>
       </div>
       <div className="avatar-block">
         <div className="avatar box-42">
