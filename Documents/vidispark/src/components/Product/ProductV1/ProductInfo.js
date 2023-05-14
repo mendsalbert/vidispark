@@ -56,7 +56,7 @@ const ProductInfo = ({ singleVid }) => {
               type="button"
               onClick={() => {
                 setFollowerState("f");
-                unfollowUser(singleVid?.videoData?.uploaderId);
+                followUser(singleVid?.videoData?.uploaderId);
               }}
               className="btn btn-wide btn-dark"
             >
