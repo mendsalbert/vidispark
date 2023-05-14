@@ -12,8 +12,9 @@ const Login = () => {
   const { loginUser } = useUser();
 
   const onLoginHandler = () => {
-    login();
-    // loginUser({ username, password });
+    //!this must be called before the real login start
+    // login();
+    loginUser({ username, password });
   };
   return (
     <Layouts>
