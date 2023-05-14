@@ -4,9 +4,9 @@ import { featuredCarousel } from "../../sliderProps";
 import Nft from "../Nft";
 import { useVideo } from "../../services/videos";
 
-const HomeFeaturedItems = () => {
+const HomeFeaturedItems = ({ data }) => {
   const { getAllVideos } = useVideo();
-
+  console.log(getAllVideos);
   return (
     <div className="container section-padding overflow-hidden">
       <div className="section-title-wrapper">
@@ -28,8 +28,8 @@ const HomeFeaturedItems = () => {
       </div>
       <Swiper {...featuredCarousel} className="featured-carousel">
         <div className="swiper-wrapper">
-          {getAllVideos &&
-            getAllVideos.map(
+          {data &&
+            data.map(
               (d, i) =>
                 d.featured && (
                   <SwiperSlide className="swiper-slide" key={i}>
