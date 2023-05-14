@@ -5,9 +5,9 @@ const ProductInfo = ({ singleVid }) => {
     <>
       <div className="page-title-section">
         <h1 className="tw-text-xl -tw-mb-20">
-          {singleVid?.videoData?.title} {singleVid?.videoData?.views}{" "}
+          {singleVid?.videoData?.title}
           <span className="tw-flex tw-flex-row tw-items-center tw-space-x-1 ">
-            <span>{data?.videoData?.views}</span>
+            <span>{singleVid?.videoData?.views}</span>
             <EyeIcon />
           </span>
         </h1>
