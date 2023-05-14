@@ -92,6 +92,11 @@ export const useUser = () => {
 
   const followUser = async (followerId) => {
     console.log(followerId);
+
+    if (userInfo[0]?.id === followerId) {
+      alert("Cannot follow yourself.");
+      return;
+    }
     // // Fetch the existing user data
     // const user = await db.get("user", userInfo[0]?.id);
 
