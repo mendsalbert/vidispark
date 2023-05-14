@@ -37,6 +37,7 @@ export const useVideo = () => {
     const videoResults = [];
 
     for (const video of videos) {
+      console.log(video.data.uploaderId);
       const userId = video.data.uploaderId;
       const user = await db.get("user", userId);
 
