@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 const bcrypt = require("bcryptjs");
 
 export const useVideo = () => {
-  const { db, user, userInfo } = useContext(AuthContext);
+  const { db, user, userInfo, setupWeaveDB } = useContext(AuthContext);
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
 
@@ -33,6 +33,7 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
+    setupWeaveDB();
     const videos = await db.cget("video");
     const results = [];
 
