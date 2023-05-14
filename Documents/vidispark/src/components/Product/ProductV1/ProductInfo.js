@@ -52,7 +52,7 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              followUser(singleVid?.user?.id);
+              followUser(singleVid?.user);
             }}
             className="btn btn-wide btn-dark"
           >
