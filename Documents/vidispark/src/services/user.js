@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
-  const { db, user, userInfo } = useContext(AuthContext);
+  const { db, user, userInfo, logout } = useContext(AuthContext);
   const router = useRouter();
 
   const isUserNameExist = async (username) => {
@@ -151,5 +151,13 @@ export const useUser = () => {
       alert("User is not following.");
     }
   };
-  return { addUser, loginUser, userInfo, updateUser, followUser, unfollowUser };
+  return {
+    addUser,
+    loginUser,
+    userInfo,
+    updateUser,
+    followUser,
+    unfollowUser,
+    logout,
+  };
 };
