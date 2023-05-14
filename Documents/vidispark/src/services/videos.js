@@ -10,7 +10,7 @@ const bcrypt = require("bcryptjs");
 export const useVideo = () => {
   const { db, user, userInfo } = useContext(AuthContext);
   const router = useRouter();
-
+  const [videoResults, setVideoResults] = useState([]);
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
@@ -33,24 +33,21 @@ export const useVideo = () => {
 
   const getAllVideos = async () => {
     // await db.delete("video", "ONvTSdMRtd4idxstaLWa");
-
     const videos = await db.cget("video");
-
-    const videoResults = [];
+    const results = [];
 
     for (const video of videos) {
       console.log(video.data.uploaderId);
       const userId = video.data.uploaderId;
       const user = await db.get("user", userId);
 
-      videoResults.push({
+      results.push({
         videoId: video.id,
         videoData: video.data,
         user: user,
       });
     }
-    console.log("working perfectly");
-    return videoResults;
+    setVideoResults(results);
   };
   return { addVideo, getAllVideos };
 };
