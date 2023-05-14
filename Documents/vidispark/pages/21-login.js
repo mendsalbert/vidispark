@@ -12,7 +12,8 @@ const Login = () => {
   const { loginUser } = useUser();
 
   const onLoginHandler = () => {
-    loginUser({ username, password });
+    login();
+    // loginUser({ username, password });
   };
   return (
     <Layouts>
