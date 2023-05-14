@@ -31,7 +31,7 @@ const Nft = ({ data }) => {
               height="auto"
               className="rounded-md shadow-lg"
             /> */}
-            <Link href="/05-product-page">
+            <Link href={`/video/${date?.videoId}`}>
               <iframe
                 src={data?.videoData?.videoUrl}
                 border="0"
