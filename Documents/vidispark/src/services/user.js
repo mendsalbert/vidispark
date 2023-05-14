@@ -118,7 +118,7 @@ export const useUser = () => {
       await db.update({ following: follower.following }, "user", followerId);
     } else {
       // User is already following
-      console.log("User is already following.");
+      alert("User is already following.");
     }
   };
 
