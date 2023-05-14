@@ -5,8 +5,8 @@ import Nft from "../Nft";
 import { useVideo } from "../../services/videos";
 
 const HomeFeaturedItems = ({ data }) => {
-  const { getAllVideos } = useVideo();
-  console.log(getAllVideos());
+  const { videoResults } = useVideo();
+  console.log(videoResults);
   return (
     <div className="container section-padding overflow-hidden">
       <div className="section-title-wrapper">
