@@ -4,6 +4,7 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 import ReactPlayer from "react-player";
 
 const Nft = ({ data }) => {
+  console.log(data);
   return (
     <div className="featured-item">
       <div className="featured-item-wrapper">
@@ -30,8 +31,7 @@ const Nft = ({ data }) => {
               className="rounded-md shadow-lg"
             />
           </div>
-          <div className="featured-item-info">
-            {/* {data.time && <CountDown endDateTime={data.time} />} */}
+          {/* <div className="featured-item-info">
             <div className="title">
               {" "}
               <Link href="/05-product-page">
@@ -69,7 +69,7 @@ const Nft = ({ data }) => {
                 <EyeIcon />
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
