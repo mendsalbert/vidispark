@@ -31,7 +31,7 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    let res = await db.get("video");
+    let res = await db.get("video", "user", userInfo[0]?.id);
     console.log(res);
     return res;
     //TODO get videos as well as the user who posted it
