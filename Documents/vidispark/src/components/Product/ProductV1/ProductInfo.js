@@ -47,7 +47,7 @@ const ProductInfo = ({ singleVid }) => {
           </svg>
           <span className="count">105</span>
         </div>
-        <div className="social-share-box">
+        <div className="social-share-box tw-flex tw-flex-row tw-items-center">
           <div className="share-icons">
             {" "}
             <a href="#">
