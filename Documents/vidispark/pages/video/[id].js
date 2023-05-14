@@ -14,7 +14,7 @@ const Product05 = () => {
   const { videoResults } = useVideo();
   const singleVid = videoResults?.filter((item) => item.videoId == id);
 
-  //TODO: 1. update the views count. 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
+  //TODO: 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
   return (
     <Layouts>
       {/* <div className="product-page product-version-1"> */}
