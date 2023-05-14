@@ -11,6 +11,7 @@ export const useVideo = () => {
   const { db, user, userInfo, setupWeaveDB, initDB } = useContext(AuthContext);
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
+  console.log(initDB);
 
   const addVideo = async (videoObj) => {
     console.log(videoObj);
