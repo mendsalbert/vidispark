@@ -57,7 +57,6 @@ const ProductInfo = ({ singleVid }) => {
               }}
               className="btn btn-wide btn-dark"
             >
-              {user}
               Stop Admiring
             </button>
           ) : (
