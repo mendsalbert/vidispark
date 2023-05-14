@@ -35,18 +35,7 @@ const ProductInfo = ({ singleVid }) => {
 
       <div className="product-description">
         <div className="small-title">Description</div>
-        <p>
-          I am a self-taught digital artist who specializes in 3d art and motion
-          graphics. Most of my works are inspired by nature and biomechanic
-          themes.
-        </p>
-        <p>
-          What does it mean? Biomechanics is the study of the structure,
-          function and motion of the mechanical aspects of biological systems,
-          at any level from whole organisms to organs, cells and cell
-          organelles, using the methods of mechanics. Biomechanics is a branch
-          of biophysics.
-        </p>
+        <p>{singleVid?.videoData?.description}</p>
       </div>
       <div className="bidding-section">
         <div className="place-bid">
