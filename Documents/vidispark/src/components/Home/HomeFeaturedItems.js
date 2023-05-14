@@ -29,14 +29,11 @@ const HomeFeaturedItems = () => {
       <Swiper {...featuredCarousel} className="featured-carousel">
         <div className="swiper-wrapper">
           {videoResults &&
-            videoResults.map(
-              (d, i) =>
-                d.featured && (
-                  <SwiperSlide className="swiper-slide" key={i}>
-                    <Nft data={d} />
-                  </SwiperSlide>
-                )
-            )}
+            videoResults.map((d, i) => (
+              <SwiperSlide className="swiper-slide" key={i}>
+                <Nft data={d} />
+              </SwiperSlide>
+            ))}
         </div>
       </Swiper>
     </div>
