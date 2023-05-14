@@ -4,13 +4,9 @@ import { featuredCarousel } from "../../sliderProps";
 import Nft from "../Nft";
 import { useVideo } from "../../services/videos";
 
-const HomeFeaturedItems = ({ data }) => {
-  const { getAllVideos, videoResults } = useVideo();
-  // useEffect(() => {
-  //   getAllVideos();
-  // }, []);
+const HomeFeaturedItems = () => {
+  const { videoResults } = useVideo();
 
-  console.log(videoResults);
   return (
     <div className="container section-padding overflow-hidden">
       <div className="section-title-wrapper">
