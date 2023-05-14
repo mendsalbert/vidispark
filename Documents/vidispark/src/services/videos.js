@@ -40,10 +40,9 @@ export const useVideo = () => {
   };
 
   const getAllVideos = async () => {
-    if (!db) {
+    if (db) {
       const videos = await db.cget("video");
       // await db.delete("video", "6jebHFjlrVPNJ06dMx4M");
-
       const results = [];
 
       for (const video of videos) {
