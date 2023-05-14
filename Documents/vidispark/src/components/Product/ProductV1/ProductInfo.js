@@ -74,7 +74,7 @@ const ProductInfo = ({ singleVid }) => {
               }}
               className="btn btn-wide btn-dark"
             >
-              {followerState == "nf" ? "Stop Admiring" : " Admiring"}
+              {followerState == "nf" ? "Stop Admiring" : " Admire"}
               {/* Admire */}
             </button>
           )}
