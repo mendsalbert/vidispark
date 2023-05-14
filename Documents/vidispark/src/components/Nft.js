@@ -31,15 +31,17 @@ const Nft = ({ data }) => {
               height="auto"
               className="rounded-md shadow-lg"
             /> */}
-            <iframe
-              src={data?.videoData?.videoUrl}
-              border="0"
-              width="100%"
-              height="100%"
-              allowfullscreen
-              allow="autoplay; fullscreen"
-              autoplay="false"
-            />
+            <Link href="/05-product-page">
+              <iframe
+                src={data?.videoData?.videoUrl}
+                border="0"
+                width="100%"
+                height="100%"
+                allowfullscreen
+                allow="autoplay; fullscreen"
+                autoplay="false"
+              />
+            </Link>
           </div>
           <div className="featured-item-info">
             <div className="title">
