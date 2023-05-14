@@ -5,12 +5,15 @@ import ProductTabs from "../../src/components/Product/ProductV1/ProductTabs";
 import Layouts from "../../src/layouts/Layouts";
 import { countdown } from "../../src/utils";
 import ReactPlayer from "react-player";
-
+import { useRouter } from "next/router";
 const Product05 = () => {
   useEffect(() => {
     countdown();
   }, []);
 
+  const router = useRouter();
+  const { id } = router.query;
+  console.log(id);
   return (
     <Layouts>
       {/* <div className="product-page product-version-1"> */}
