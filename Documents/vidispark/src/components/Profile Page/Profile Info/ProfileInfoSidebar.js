@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { useUser } from "../../../services/user";
 const ProfileInfoSidebar = () => {
-  const { userInfo } = useUser();
+  const { userInfo, logout } = useUser();
   console.log(userInfo);
   return (
     <aside>
@@ -87,7 +87,7 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="logout">
+            <li className="logout" onClick={logout}>
               {" "}
               <a className="tw-flex tw-flex-row tw-items-center">
                 <svg className="crumina-icon">
