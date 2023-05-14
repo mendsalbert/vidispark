@@ -77,12 +77,7 @@ const Nft = ({ data }) => {
                         />
                       </picture>
                     </a>
-                  </Link>{" "}
-                  {/* <span className="verified">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#check-icon" />
-                    </svg>{" "}
-                  </span> */}
+                  </Link>
                 </span>
                 <span>@{data?.user?.username}</span>
               </span>
