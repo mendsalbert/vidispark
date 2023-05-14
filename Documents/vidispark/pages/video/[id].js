@@ -15,7 +15,7 @@ const Product05 = () => {
   const singleVid = videoResults?.filter((item) => item.videoId == id);
 
   useEffect(() => {
-    updateCount(singleVid[0].videoId);
+    updateCount(singleVid[0]?.videoId);
   }, []);
   //TODO: 1. update the views count. 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
   return (
