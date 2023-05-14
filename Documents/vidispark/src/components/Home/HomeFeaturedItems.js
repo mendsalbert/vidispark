@@ -6,9 +6,9 @@ import { useVideo } from "../../services/videos";
 
 const HomeFeaturedItems = ({ data }) => {
   const { getAllVideos, videoResults } = useVideo();
-  useEffect(() => {
-    getAllVideos();
-  }, []);
+  // useEffect(() => {
+  //   getAllVideos();
+  // }, []);
 
   console.log(videoResults);
   return (
