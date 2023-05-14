@@ -126,29 +126,30 @@ export const useUser = () => {
 
     // Check if the followerId is in the user's followers array
     const followerIndex = user.followers.indexOf(followerId);
-    if (followerIndex !== -1) {
-      // Remove the followerId from the user's followers array
-      user.followers.splice(followerIndex, 1);
+    console.log(followerIndex);
+    // if (followerIndex !== -1) {
+    //   // Remove the followerId from the user's followers array
+    //   user.followers.splice(followerIndex, 1);
 
-      // Update only the followers field in the user data
-      await db.update({ followers: user.followers }, "user", userInfo[0]?.id);
+    //   // Update only the followers field in the user data
+    //   await db.update({ followers: user.followers }, "user", userInfo[0]?.id);
 
-      // Fetch the existing follower data
-      const follower = await db.get("user", followerId);
+    //   // Fetch the existing follower data
+    //   const follower = await db.get("user", followerId);
 
-      // Check if the userId is in the follower's following array
-      const followingIndex = follower.following.indexOf(userInfo[0]?.id);
-      if (followingIndex !== -1) {
-        // Remove the userId from the follower's following array
-        follower.following.splice(followingIndex, 1);
+    //   // Check if the userId is in the follower's following array
+    //   const followingIndex = follower.following.indexOf(userInfo[0]?.id);
+    //   if (followingIndex !== -1) {
+    //     // Remove the userId from the follower's following array
+    //     follower.following.splice(followingIndex, 1);
 
-        // Update only the following field in the follower's data
-        await db.update({ following: follower.following }, "user", followerId);
-      }
-    } else {
-      // User is not following
-      alert("User is not following.");
-    }
+    //     // Update only the following field in the follower's data
+    //     await db.update({ following: follower.following }, "user", followerId);
+    //   }
+    // } else {
+    //   // User is not following
+    //   alert("User is not following.");
+    // }
   };
   return { addUser, loginUser, userInfo, updateUser, followUser, unfollowUser };
 };
