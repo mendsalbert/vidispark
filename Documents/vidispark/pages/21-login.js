@@ -13,7 +13,7 @@ const Login = () => {
 
   const onLoginHandler = () => {
     login();
-    // loginUser({ username, password });
+    loginUser({ username, password });
   };
   return (
     <Layouts>
