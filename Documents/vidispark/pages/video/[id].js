@@ -16,7 +16,7 @@ const Product05 = () => {
   const { id } = router.query;
 
   const { videoResults } = useVideo();
-  const singleVid = videoResults?.filter((item) => item.videoid == id);
+  const singleVid = videoResults?.filter((item) => item.videoId == id);
   console.log(singleVid);
   return (
     <Layouts>
