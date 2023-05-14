@@ -12,6 +12,9 @@ export const useVideo = () => {
   const router = useRouter();
   const [videoResults, setVideoResults] = useState([]);
 
+  useEffect(() => {
+    getAllVideos();
+  }, []);
   const addVideo = async (videoObj) => {
     console.log(videoObj);
     let res = await db.add(
