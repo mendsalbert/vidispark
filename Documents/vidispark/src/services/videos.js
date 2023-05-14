@@ -42,12 +42,12 @@ export const useVideo = () => {
       console.log(video.data.uploaderId);
       const userId = video.data.uploaderId;
       const user = await db.get("user", userId);
-      console.log(user);
-      //   videoResults.pulosh({
-      //     videoId: video.id,
-      //     videoData: video.data,
-      //     user: user.data,
-      //   });
+
+      videoResults.push({
+        videoId: video.id,
+        videoData: video.data,
+        user: user,
+      });
     }
 
     console.log(videoResults);
