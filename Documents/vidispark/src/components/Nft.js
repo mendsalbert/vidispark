@@ -2,8 +2,10 @@ import Link from "next/link";
 import CountDown from "./CountDown";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import ReactPlayer from "react-player";
+import { useVideo } from "../services/videos";
 
 const Nft = ({ data }) => {
+  const { updateCount } = useVideo();
   return (
     <div className="featured-item">
       <div className="featured-item-wrapper">
@@ -47,7 +49,7 @@ const Nft = ({ data }) => {
             <div
               className="title"
               onClick={() => {
-                console.log("clicked");
+                updateCount(data?.videoId);
               }}
             >
               {" "}
