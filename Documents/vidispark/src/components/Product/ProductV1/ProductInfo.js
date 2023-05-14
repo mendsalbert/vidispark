@@ -7,7 +7,7 @@ const ProductInfo = ({ singleVid }) => {
       <div className="page-title-section">
         <h1 className="tw-text-xl -tw-mb-20 tw-flex tw-flex-row tw-items-center">
           <span>{singleVid?.videoData?.title}</span>
-          <div class="tw-w-6 tw-h-6 tw-rounded-full tw-bg-blue-500"></div>
+          <div class="tw-w-4 tw-h-4 tw-rounded-full tw-bg-blue-500"></div>
           <span className="tw-flex tw-flex-row tw-items-center tw-space-x-1 ">
             <span>{singleVid?.videoData?.views}</span>
             <EyeIcon />
