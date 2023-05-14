@@ -152,6 +152,7 @@ export const useUser = () => {
       alert("User is not following.");
     }
   };
+
   return {
     addUser,
     loginUser,
