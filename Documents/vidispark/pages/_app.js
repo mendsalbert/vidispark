@@ -142,13 +142,11 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <AuthProvider>
-        <ApolloProvider client={client}>
-          <WagmiConfig client={wagmiClient}>
-            <RainbowKitProvider chains={chains} theme={myTheme}>
-              <Component {...pageProps} />
-            </RainbowKitProvider>
-          </WagmiConfig>
-        </ApolloProvider>
+        <WagmiConfig client={wagmiClient}>
+          <RainbowKitProvider chains={chains} theme={myTheme}>
+            <Component {...pageProps} />
+          </RainbowKitProvider>
+        </WagmiConfig>
       </AuthProvider>
     </Provider>
   );
