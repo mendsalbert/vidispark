@@ -126,7 +126,7 @@ export const useUser = () => {
 
     // Check if the followerId is in the user's followers array
     const followerIndex = user.followers.indexOf(followerId);
-    console.log(followerIndex);
+    console.log(followerIndex !== -1);
     // if (followerIndex !== -1) {
     //   // Remove the followerId from the user's followers array
     //   user.followers.splice(followerIndex, 1);
