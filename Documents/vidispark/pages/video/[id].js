@@ -17,7 +17,6 @@ const Product05 = () => {
 
   const { videoResults } = useVideo();
   const singleVid = videoResults?.filter((item) => item.videoId == id);
-  console.log(singleVid);
   return (
     <Layouts>
       {/* <div className="product-page product-version-1"> */}
@@ -32,12 +31,21 @@ const Product05 = () => {
               <use xlinkHref="#maximize-icon" />
             </svg>
           </a>
-          <ReactPlayer
+          {/* <ReactPlayer
             url="https://media.thetavideoapi.com/video_u3d9u6gy1pmxfrscd9j5csmiam/master.m3u8"
             controls
             width="100%"
             height="auto"
             className="rounded-md shadow-lg"
+          /> */}
+          <iframe
+            src={singleVid[0]?.videoData?.videoUrl}
+            border="0"
+            width="100%"
+            height="auto"
+            allowfullscreen
+            allow="autoplay; fullscreen"
+            autoplay="false"
           />
         </div>
         <div className="product-info">
