@@ -37,6 +37,7 @@ const Nft = ({ data }) => {
               width="100%"
               height="100%"
               allowfullscreen
+              allowFullScreen
             />
           </div>
           <div className="featured-item-info">
