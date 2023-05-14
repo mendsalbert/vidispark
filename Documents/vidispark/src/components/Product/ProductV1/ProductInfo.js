@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
-  const { followUser } = useUser();
+  const { followUser, userInfo } = useUser();
   return (
     <>
       <div className="page-title-section">
@@ -49,6 +49,7 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
+          {singleVid?.user?.following?.includeds(userInfo[0]?.id)}
           <button
             type="button"
             onClick={() => {
@@ -56,6 +57,7 @@ const ProductInfo = ({ singleVid }) => {
             }}
             className="btn btn-wide btn-dark"
           >
+            {user}
             Admire
           </button>
         </div>
