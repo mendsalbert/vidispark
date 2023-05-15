@@ -333,7 +333,7 @@ const Explorev2 = ({
             active={active}
             setActive={setActive}
             sort={sort}
-            length={filteredData && filteredData.length}
+            length={videoResults && videoResults.length}
           />
           {/* PAGINATION */}
         </div>
