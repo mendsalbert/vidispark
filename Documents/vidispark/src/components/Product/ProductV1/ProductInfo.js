@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
-  const { followUser, userInfo, unfollowUser } = useUser();
+  const { followUser, userInfo } = useUser();
 
   // console.log(singleVid?.user.following);
   return (
@@ -52,32 +52,17 @@ const ProductInfo = ({ singleVid }) => {
       </div>
       <div className="bidding-section">
         <div className="place-bid">
-          {singleVid?.user?.following?.includes(userInfo[0]?.id) ||
-          singleVid?.user?.following == "undefined" ? (
-            <button
-              type="button"
-              onClick={() => {
-                setFollowerState("f");
-                unfollowUser(singleVid?.videoData?.uploaderId);
-              }}
-              className="btn btn-wide btn-dark"
-            >
-              {followerState == "f" ? "Admiring" : "Stop Admiring"}
-              {/* Stop Admiring */}
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => {
-                setFollowerState("nf");
-                followUser(singleVid?.videoData?.uploaderId);
-              }}
-              className="btn btn-wide btn-dark"
-            >
-              {followerState == "nf" ? "Stop Admiring" : " Admire"}
-              {/* Admire */}
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => {
+              setFollowerState("nf");
+              followUser(singleVid?.videoData?.uploaderId);
+            }}
+            className="btn btn-wide btn-dark"
+          >
+            {followerState == "nf" ? "Subscribed" : " Subscribe"}
+            {/* Admire */}
+          </button>
         </div>
         <div className="product-fav-counter">
           <svg className="crumina-icon">
