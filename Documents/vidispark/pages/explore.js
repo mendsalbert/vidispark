@@ -164,28 +164,14 @@ const Explorev2 = ({
                       <div className="form-list-elem">
                         <input
                           type="checkbox"
-                          name="Science-and-technology"
-                          id="Science-and-technology"
+                          name="science-and-technology"
+                          id="science-and-technology"
                           className="cryptoki-checkbox"
                           onClick={(e) =>
-                            catagoryfilter("Science-and-technology")
+                            catagoryfilter("science-and-technology")
                           }
                         />
-                        <label htmlFor="Science-and-technology">
-                          🔬 Science and Technology
-                        </label>
-                      </div>
-                      <div className="form-list-elem">
-                        <input
-                          type="checkbox"
-                          name="Science-and-technology"
-                          id="Science-and-technology"
-                          className="cryptoki-checkbox"
-                          onClick={(e) =>
-                            catagoryfilter("Science-and-technology")
-                          }
-                        />
-                        <label htmlFor="Science-and-technology">
+                        <label htmlFor="science-and-technology">
                           🔬 Science and Technology
                         </label>
                       </div>
