@@ -45,7 +45,7 @@ const Explorev2 = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setFilteredData(data && getProductByFilter(data, filter));
+    setFilteredData(videoResults && getProductByFilter(videoResults, filter));
   };
 
   const [active, setActive] = useState(0);
