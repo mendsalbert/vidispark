@@ -56,6 +56,7 @@ const ProductTabs = () => {
             </div>
           </div>
 
+          {/* comment */}
           <div className="placed-bid">
             <div className="bid-placer">
               <div className="avatar box-42">
