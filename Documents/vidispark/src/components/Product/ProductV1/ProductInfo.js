@@ -69,7 +69,9 @@ const ProductInfo = ({ singleVid }) => {
         <div
           className="product-fav-counter"
           onClick={() => {
-            setTempCount(tempCount++);
+            setTempCount((prev) => {
+              prev++;
+            });
             updateLike(singleVid?.videoId);
           }}
         >
