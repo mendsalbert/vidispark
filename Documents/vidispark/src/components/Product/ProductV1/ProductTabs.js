@@ -28,7 +28,9 @@ const ProductTabs = () => {
       <div id="tab1" className={`tab ${activeContent("tab1")}`}>
         <div className="tab-content">
           <div className="placed-bid">
-            <div className="bid-placer">{/*  */}</div>
+            <div className="bid-placer">
+              <input />
+            </div>
             <div className="bid-box">
               <div className="crypto-value">2.31 ETH</div>
               <div className="currency-value">125.230 U$D</div>
