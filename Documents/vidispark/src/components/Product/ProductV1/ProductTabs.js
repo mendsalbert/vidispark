@@ -20,12 +20,6 @@ const ProductTabs = () => {
         >
           <a>Other Videos from creators</a>
         </li>
-        <li
-          className={activeTabNav("tab3")}
-          onClick={() => setActiveTab("tab3")}
-        >
-          <a>Activity</a>
-        </li>
       </ul>
       {/*/TAB TITLE*/}
       {/*TAB BIDS*/}
