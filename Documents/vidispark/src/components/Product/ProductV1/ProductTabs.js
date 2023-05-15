@@ -33,11 +33,11 @@ const ProductTabs = () => {
               rows={10}
               className=""
               spellCheck="false"
-              defaultValue={""}
-              value={description}
-              onChange={(e) => {
-                setDescription(e.target.value);
-              }}
+              // defaultValue={""}
+              // value={description}
+              // onChange={(e) => {
+              //   setDescription(e.target.value);
+              // }}
             />
           </div>
 
