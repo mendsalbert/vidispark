@@ -341,7 +341,7 @@ const Explorev2 = ({
               ))
             ) : (
               <h2 className="text-center">
-                No<span className="gradient-text"> Nft </span> Found
+                No<span className="gradient-text"> Videos </span> Found
               </h2>
             )}
           </div>
