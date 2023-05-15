@@ -5,7 +5,6 @@ import Paggination from "../src/components/Paggination";
 import { getProductByFilter } from "../src/filter";
 import Layouts from "../src/layouts/Layouts";
 import { getData } from "../src/redux/action/data";
-import { useVideo } from "../../services/videos";
 
 import {
   catagoryfilter,
