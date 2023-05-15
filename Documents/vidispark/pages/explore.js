@@ -92,12 +92,12 @@ const Explorev2 = ({
                       <div className="form-list-elem">
                         <input
                           type="checkbox"
-                          name="illustrations"
-                          id="illustrations"
+                          name="sports"
+                          id="sports"
                           className="cryptoki-checkbox"
-                          onClick={(e) => catagoryfilter("illustrations")}
+                          onClick={(e) => catagoryfilter("sports")}
                         />
-                        <label htmlFor="illustrations">Illustrations</label>
+                        <label htmlFor="sports">⚽ Sports</label>
                       </div>
                       <div className="form-list-elem">
                         <input
