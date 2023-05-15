@@ -29,7 +29,7 @@ const ProductTabs = () => {
         <div className="tab-content">
           <div className="placed-bid">
             <div className="bid-placer">
-              <input className="tw-bg-white dark:tw-bg-[#121419]" />
+              <input className="tw-bg-white " />
             </div>
             <div className="bid-box">
               <div className="crypto-value">2.31 ETH</div>
