@@ -9,6 +9,7 @@ import Layouts from "../src/layouts/Layouts";
 import { getCreator } from "../src/redux/action/creator";
 import { iconSlider } from "../src/sliderProps";
 import { dblock } from "../src/utils";
+import { useUser } from "../src/services/user";
 
 const Cretors = ({ getCreator, creators }) => {
   const [state, setstate] = useState([]);
@@ -29,6 +30,7 @@ const Cretors = ({ getCreator, creators }) => {
     setActive(0);
   };
 
+  const {} = useUser();
   // Paggination
   const [active, setActive] = useState(0);
   let sort = 8;
