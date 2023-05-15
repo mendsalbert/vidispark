@@ -21,8 +21,7 @@ const HomeNewestItems = () => {
       </div>
       <div className="featured-box">
         <div className="featured-box-wrapper grid-4-columns">
-          {videoResults &&
-            videoResults.map((d, i) => d.newest && <Nft data={d} key={i} />)}
+          {videoResults && videoResults.map((d, i) => <Nft data={d} key={i} />)}
         </div>
         <div className="more-section flex-center">
           {" "}
