@@ -27,22 +27,6 @@ const ProductTabs = () => {
       {/*TAB BIDS*/}
       <div id="tab1" className={`tab ${activeContent("tab1")}`}>
         <div className="tab-content">
-          <div className="form-field comment-area">
-            <label>Description</label>
-            <textarea
-              id="message"
-              cols={30}
-              rows={10}
-              className=""
-              spellCheck="false"
-              defaultValue={""}
-              value={description}
-              onChange={(e) => {
-                setDescription(e.target.value);
-              }}
-            />
-          </div>
-
           <div className="placed-bid">
             <div className="bid-placer">
               <div className="avatar box-42">
