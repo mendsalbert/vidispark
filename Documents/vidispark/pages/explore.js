@@ -45,7 +45,8 @@ const Explorev2 = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setFilteredData(videoResults && getProductByFilter(videoResults, filter));
+    console.log(filter);
+    // setFilteredData(videoResults && getProductByFilter(videoResults, filter));
   };
 
   const [active, setActive] = useState(0);
@@ -331,6 +332,7 @@ const Explorev2 = ({
               <span className="gradient-text">Explore</span> Artworks
             </h2>
           </div>
+
           {/* FEATURED ITEMS */}
           <div className="featured-box grid-4-columns">
             {filteredData && filteredData?.length > 0 ? (
@@ -345,8 +347,7 @@ const Explorev2 = ({
               </h2>
             )}
           </div>
-          {/* FEATURED ITEMS */}
-          {/* PAGINATION */}
+
           <Paggination
             active={active}
             setActive={setActive}
