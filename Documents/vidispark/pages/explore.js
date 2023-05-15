@@ -5,6 +5,8 @@ import Paggination from "../src/components/Paggination";
 import { getProductByFilter } from "../src/filter";
 import Layouts from "../src/layouts/Layouts";
 import { getData } from "../src/redux/action/data";
+import { useVideo } from "../../services/videos";
+
 import {
   catagoryfilter,
   creatorFilter,
@@ -14,6 +16,7 @@ import {
   typeFilter,
 } from "../src/redux/action/filter";
 import { dblock } from "../src/utils";
+import { useVideo } from "../src/services/videos";
 
 const Explorev2 = ({
   catagoryfilter,
@@ -48,6 +51,8 @@ const Explorev2 = ({
 
   const [active, setActive] = useState(0);
   let sort = 6;
+
+  const { videoResults } = useVideo();
 
   return (
     <Layouts>
@@ -311,8 +316,8 @@ const Explorev2 = ({
           </div>
           {/* FEATURED ITEMS */}
           <div className="featured-box grid-4-columns">
-            {filteredData && filteredData.length > 0 ? (
-              filteredData.map((data, i) => (
+            {videoResults && videoResults?.length > 0 ? (
+              videoResults?.map((data, i) => (
                 <div key={data.id} className={`${dblock(active, i, sort)}`}>
                   <Nft data={data} />
                 </div>
