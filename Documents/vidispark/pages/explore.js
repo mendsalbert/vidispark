@@ -49,6 +49,15 @@ const Explorev2 = ({
     e.preventDefault();
     console.log(filter);
     console.log(videoResults);
+
+    const filteredVideos = [];
+    for (let category of filter?.category) {
+      for (let video of videoResults) {
+        if (video?.videoData?.category === category) {
+          filteredVideos.push(video);
+        }
+      }
+    }
     // setFilteredData(videoResults && getProductByFilter(videoResults, filter));
   };
 
