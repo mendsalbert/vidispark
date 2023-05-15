@@ -2,10 +2,11 @@ import { EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useUser } from "../../../services/user";
+import { useVideo } from "../../../services/videos";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
-  const { followUser, userInfo, updateUser } = useUser();
-
+  const { followUser, userInfo } = useUser();
+  const { updateLike } = useVideo();
   // console.log(singleVid?.user.following);
   return (
     <>
@@ -64,7 +65,12 @@ const ProductInfo = ({ singleVid }) => {
             {/* Admire */}
           </button>
         </div>
-        <div className="product-fav-counter">
+        <div
+          className="product-fav-counter"
+          onClick={() => {
+            updateLike(singleVid?.videoId);
+          }}
+        >
           <svg className="crumina-icon">
             <use xlinkHref="#heart-icon" />
           </svg>
