@@ -23,8 +23,10 @@ export const useUser = () => {
   };
 
   const getAllUsers = async () => {
-    let res = await db.get("user");
-    console.log(res);
+    if (db) {
+      let res = await db.get("user");
+      console.log(res);
+    }
   };
 
   const addUser = async (userObj) => {
