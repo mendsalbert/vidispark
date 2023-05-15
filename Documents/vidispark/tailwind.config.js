@@ -11,6 +11,7 @@ module.exports = {
   prefix: "tw-",
   theme: {
     extend: {},
+    darkSelector: ".dark-mode",
   },
   plugins: [],
 };
