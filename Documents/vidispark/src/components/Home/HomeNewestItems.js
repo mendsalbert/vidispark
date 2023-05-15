@@ -26,7 +26,7 @@ const HomeNewestItems = () => {
         <div className="more-section flex-center">
           {" "}
           <Link href="/explore">
-            <a className="btn btn-normal btn-dark">View All Collections</a>
+            <a className="btn btn-normal btn-dark">View All Collection</a>
           </Link>{" "}
         </div>
       </div>
