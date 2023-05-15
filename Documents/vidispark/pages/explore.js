@@ -200,6 +200,44 @@ const Explorev2 = ({
                           🔬 Science and Technology
                         </label>
                       </div>
+                      <div className="form-list-elem">
+                        <input
+                          type="checkbox"
+                          name="food-and-cooking"
+                          id="food-and-cooking"
+                          className="cryptoki-checkbox"
+                          onClick={(e) => catagoryfilter("food-and-cooking")}
+                        />
+                        <label htmlFor="food-and-cooking">
+                          🍔 Food and Cooking
+                        </label>
+                      </div>{" "}
+                      <div className="form-list-elem">
+                        <input
+                          type="checkbox"
+                          name="business-and-finance"
+                          id="business-and-finance"
+                          className="cryptoki-checkbox"
+                          onClick={(e) =>
+                            catagoryfilter("business-and-finance")
+                          }
+                        />
+                        <label htmlFor="business-and-finance">
+                          💼 Business and Finance
+                        </label>
+                      </div>
+                      <div className="form-list-elem">
+                        <input
+                          type="checkbox"
+                          name="art-and-design"
+                          id="art-and-design"
+                          className="cryptoki-checkbox"
+                          onClick={(e) => catagoryfilter("art-and-design")}
+                        />
+                        <label htmlFor="art-and-design">
+                          🎨 Art and Design
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
