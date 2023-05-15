@@ -6,8 +6,12 @@ import { useRouter } from "next/router";
 const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
-  const { db, user, userInfo, logout, login } = useContext(AuthContext);
+  const { db, user, userInfo, logout, login, initDB } = useContext(AuthContext);
   const router = useRouter();
+
+  useEffect(() => {
+    getAllUsers();
+  }, [initDB]);
 
   const isUserNameExist = async (username) => {
     let res = await db.cget(
@@ -20,6 +24,7 @@ export const useUser = () => {
 
   const getAllUsers = async () => {
     let res = await db.get("user");
+    console.log(res);
   };
 
   const addUser = async (userObj) => {
