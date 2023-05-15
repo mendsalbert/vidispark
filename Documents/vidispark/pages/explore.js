@@ -48,6 +48,7 @@ const Explorev2 = ({
   const onSubmit = (e) => {
     e.preventDefault();
     console.log(filter);
+    console.log(videoResults);
     // setFilteredData(videoResults && getProductByFilter(videoResults, filter));
   };
 
