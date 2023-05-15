@@ -36,8 +36,8 @@ const Explorev2 = ({
     setPrice({ ...price, [e.target.name]: Number(e.target.value) });
   };
   useEffect(() => {
-    setFilteredData(data);
-  }, [data]);
+    setFilteredData(videoResults);
+  }, [videoResults]);
 
   useEffect(() => {
     priceFilter(price);
