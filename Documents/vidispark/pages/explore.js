@@ -319,22 +319,7 @@ const Explorev2 = ({
                     <label htmlFor="soon">Soon</label>
                   </div>
                 </div>
-                <div className="form-group">
-                  <div className="price-range">
-                    <input
-                      type="number"
-                      name="min"
-                      onChange={(e) => changePrice(e)}
-                      placeholder="From"
-                    />
-                    <input
-                      type="number"
-                      name="max"
-                      onChange={(e) => changePrice(e)}
-                      placeholder="To"
-                    />
-                  </div>
-                </div>
+
                 <input type="submit" defaultValue="Apply Filters" />
               </form>
             </div>
