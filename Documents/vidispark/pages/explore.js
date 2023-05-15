@@ -16,7 +16,6 @@ import {
   typeFilter,
 } from "../src/redux/action/filter";
 import { dblock } from "../src/utils";
-import { useVideo } from "../src/services/videos";
 
 const Explorev2 = ({
   catagoryfilter,
