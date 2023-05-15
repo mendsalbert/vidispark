@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 const ProductTabs = () => {
   const [activeTab, setActiveTab] = useState("tab1");
+  const [description, setDescription] = useState("");
+
   const activeTabNav = (value) => (value === activeTab ? "active" : ""),
     activeContent = (value) => (value === activeTab ? "active" : "");
   return (
@@ -26,6 +28,7 @@ const ProductTabs = () => {
       <div id="tab1" className={`tab ${activeContent("tab1")}`}>
         <div className="tab-content">
           <div className="form-field comment-area">
+            <label>Description</label>
             <textarea
               id="message"
               cols={30}
@@ -33,10 +36,10 @@ const ProductTabs = () => {
               className=""
               spellCheck="false"
               defaultValue={""}
-              // value={description}
-              // onChange={(e) => {
-              //   setDescription(e.target.value);
-              // }}
+              value={description}
+              onChange={(e) => {
+                setDescription(e.target.value);
+              }}
             />
           </div>
 
