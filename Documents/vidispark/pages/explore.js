@@ -119,6 +119,31 @@ const Explorev2 = ({
                         />
                         <label htmlFor="education">📚 Education</label>
                       </div>
+
+                      <div className="form-list-elem">
+                        <input
+                          type="checkbox"
+                          name="health-and-fitness"
+                          id="health-and-fitness"
+                          className="cryptoki-checkbox"
+                          onClick={(e) => catagoryfilter("health-and-fitness")}
+                        />
+                        <label htmlFor="health-and-fitness">
+                          💪 Health and Fitness
+                        </label>
+                      </div>
+                      <div className="form-list-elem">
+                        <input
+                          type="checkbox"
+                          name="fashion-and-beauty"
+                          id="fashion-and-beauty"
+                          className="cryptoki-checkbox"
+                          onClick={(e) => catagoryfilter("fashion-and-beauty")}
+                        />
+                        <label htmlFor="fashion-and-beauty">
+                          👗 Fashion and Beauty
+                        </label>
+                      </div>
                     </div>
                     <div className="form-list-wrapper">
                       <div className="form-list-elem">
