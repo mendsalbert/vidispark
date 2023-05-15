@@ -5,6 +5,7 @@ import { useUser } from "../../../services/user";
 import { useVideo } from "../../../services/videos";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
+  const [tempCount, setTempCount] = useState(0)
   const { followUser, userInfo } = useUser();
   const { updateLike } = useVideo();
   // console.log(singleVid?.user.following);
@@ -68,7 +69,7 @@ const ProductInfo = ({ singleVid }) => {
         <div
           className="product-fav-counter"
           onClick={() => {
-            tempCount(parseInt(singleVid?.videoData?.likes)++)
+            setTempCount(parseInt(singleVid?.videoData?.likes)++)
             updateLike(singleVid?.videoId);
           }}
         >
