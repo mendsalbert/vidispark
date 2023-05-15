@@ -68,6 +68,7 @@ const ProductInfo = ({ singleVid }) => {
         <div
           className="product-fav-counter"
           onClick={() => {
+            tempCount(parseInt(singleVid?.videoData?.likes)++)
             updateLike(singleVid?.videoId);
           }}
         >
