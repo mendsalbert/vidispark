@@ -272,39 +272,7 @@ const Explorev2 = ({
                     <label htmlFor="trending">Trending</label>
                   </div>
                 </div>
-                <div className="form-group">
-                  <div className="small-title">Type</div>
-                  <div className="form-list-elem">
-                    <input
-                      type="radio"
-                      name="type"
-                      id="all-artwork"
-                      className="cryptoki-radio"
-                      onClick={() => typeFilter("")}
-                    />
-                    <label htmlFor="all-artwork">All Artwork</label>
-                  </div>
-                  <div className="form-list-elem">
-                    <input
-                      type="radio"
-                      name="type"
-                      id="auctions-only"
-                      className="cryptoki-radio"
-                      onClick={() => typeFilter("auctions-only")}
-                    />
-                    <label htmlFor="auctions-only">Auctions Only</label>
-                  </div>
-                  <div className="form-list-elem">
-                    <input
-                      type="radio"
-                      name="type"
-                      id="buy-now"
-                      className="cryptoki-radio"
-                      onClick={() => typeFilter("buy-now")}
-                    />
-                    <label htmlFor="buy-now">Buy Now</label>
-                  </div>
-                </div>
+
                 <div className="form-group">
                   <div className="small-title">Creators</div>
                   <div className="form-list-elem">
