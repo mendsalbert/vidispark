@@ -65,5 +65,8 @@ export const useVideo = () => {
     await db.update({ views: db.inc(1) }, "video", videoId);
   };
 
-  return { addVideo, videoResults, updateCount };
+  const updateLike = async (videoId) => {
+    await db.update({ likes: db.inc(1) }, "video", videoId);
+  };
+  return { addVideo, videoResults, updateCount, updateLike };
 };
