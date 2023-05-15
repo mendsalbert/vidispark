@@ -66,7 +66,7 @@ const Explorev2 = ({
                 onSubmit={(e) => onSubmit(e)}
               >
                 <div className="form-group">
-                  <div className="small-title">Categories</div>
+                  <div className="small-title">🎭 Entertainment</div>
                   <div className="is-two-col-element">
                     <div className="form-list-wrapper">
                       <div className="form-list-elem">
@@ -75,9 +75,9 @@ const Explorev2 = ({
                           name="featured"
                           id="featured"
                           className="cryptoki-checkbox"
-                          onClick={(e) => catagoryfilter("featured")}
+                          onClick={(e) => catagoryfilter("entertainment")}
                         />
-                        <label htmlFor="featured">Featured</label>
+                        <label htmlFor="featured">Music</label>
                       </div>
                       <div className="form-list-elem">
                         <input
