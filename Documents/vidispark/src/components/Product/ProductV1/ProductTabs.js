@@ -32,7 +32,7 @@ const ProductTabs = () => {
               rows={10}
               className=""
               spellCheck="false"
-              // defaultValue={""}
+              defaultValue={""}
               // value={description}
               // onChange={(e) => {
               //   setDescription(e.target.value);
