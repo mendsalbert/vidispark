@@ -5,7 +5,7 @@ import { useUser } from "../../../services/user";
 import { useVideo } from "../../../services/videos";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
-  const [tempCount, setTempCount] = useState(0)
+  const [tempCount, setTempCount] = useState(singleVid?.videoData?.likes);
   const { followUser, userInfo } = useUser();
   const { updateLike } = useVideo();
   // console.log(singleVid?.user.following);
@@ -69,14 +69,16 @@ const ProductInfo = ({ singleVid }) => {
         <div
           className="product-fav-counter"
           onClick={() => {
-            setTempCount(parseInt(singleVid?.videoData?.likes)++)
+            setTempCount(tempCount++);
             updateLike(singleVid?.videoId);
           }}
         >
           <svg className="crumina-icon">
             <use xlinkHref="#heart-icon" />
           </svg>
-          <span className="count">{tempCount > 1 ? singleVid?.videoData?.likes || 0 : 0}</span>
+          <span className="count">
+            {tempCount > 1 ? singleVid?.videoData?.likes || 0 : 0}
+          </span>
         </div>
         <div className="social-share-box tw-flex tw-flex-row tw-items-center">
           <div className="share-icons tw-flex tw-flex-row tw-items-center">
