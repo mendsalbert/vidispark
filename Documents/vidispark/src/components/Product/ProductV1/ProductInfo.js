@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useUser } from "../../../services/user";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
-  const { followUser, userInfo } = useUser();
+  const { followUser, userInfo, updateUser } = useUser();
 
   // console.log(singleVid?.user.following);
   return (
@@ -68,7 +68,7 @@ const ProductInfo = ({ singleVid }) => {
           <svg className="crumina-icon">
             <use xlinkHref="#heart-icon" />
           </svg>
-          <span className="count">{singleVid?.videoData?.uploaderId || 0}</span>
+          <span className="count">{singleVid?.videoData?.likes || 0}</span>
         </div>
         <div className="social-share-box tw-flex tw-flex-row tw-items-center">
           <div className="share-icons tw-flex tw-flex-row tw-items-center">
