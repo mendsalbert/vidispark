@@ -107,7 +107,7 @@ const Explorev2 = ({
                           className="cryptoki-checkbox"
                           onClick={(e) => catagoryfilter("gaming")}
                         />
-                        <label htmlFor="gaming">Gaming</label>
+                        <label htmlFor="gaming">🎮 Gaming</label>
                       </div>
                       <div className="form-list-elem">
                         <input
