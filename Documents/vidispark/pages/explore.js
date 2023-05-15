@@ -333,8 +333,8 @@ const Explorev2 = ({
           </div>
           {/* FEATURED ITEMS */}
           <div className="featured-box grid-4-columns">
-            {videoResults && videoResults?.length > 0 ? (
-              videoResults?.map((data, i) => (
+            {filteredData && filteredData?.length > 0 ? (
+              filteredData?.map((data, i) => (
                 <div key={data.id} className={`${dblock(active, i, sort)}`}>
                   <Nft data={data} />
                 </div>
