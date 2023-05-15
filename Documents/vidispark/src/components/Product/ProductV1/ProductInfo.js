@@ -78,9 +78,7 @@ const ProductInfo = ({ singleVid }) => {
           <svg className="crumina-icon">
             <use xlinkHref="#heart-icon" />
           </svg>
-          <span className="count">
-            {tempCount > 1 ? singleVid?.videoData?.likes || 0 : 0}
-          </span>
+          <span className="count">{singleVid?.videoData?.likes}</span>
         </div>
         <div className="social-share-box tw-flex tw-flex-row tw-items-center">
           <div className="share-icons tw-flex tw-flex-row tw-items-center">
