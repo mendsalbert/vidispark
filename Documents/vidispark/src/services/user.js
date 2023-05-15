@@ -18,6 +18,10 @@ export const useUser = () => {
     return res;
   };
 
+  const getAllUsers = async () => {
+    let res = await db.get("user");
+  };
+
   const addUser = async (userObj) => {
     let value = await isUserNameExist(userObj.username);
     if (value.length > 1) {
