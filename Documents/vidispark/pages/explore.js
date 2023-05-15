@@ -320,7 +320,7 @@ const Explorev2 = ({
                   </div>
                 </div>
 
-                <input type="submit" defaultValue="Apply Filters" />
+                {/* <input type="submit" defaultValue="Apply Filters" /> */}
               </form>
             </div>
           </div>
