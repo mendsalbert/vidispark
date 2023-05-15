@@ -32,6 +32,8 @@ const Explorev2 = ({
 }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [price, setPrice] = useState({ min: 0, max: 100 });
+  const { videoResults } = useVideo();
+
   const changePrice = (e) => {
     setPrice({ ...price, [e.target.name]: Number(e.target.value) });
   };
@@ -51,8 +53,6 @@ const Explorev2 = ({
 
   const [active, setActive] = useState(0);
   let sort = 6;
-
-  const { videoResults } = useVideo();
 
   return (
     <Layouts>
