@@ -58,6 +58,7 @@ const Explorev2 = ({
         }
       }
     }
+    console.log(filteredVideos);
     // setFilteredData(videoResults && getProductByFilter(videoResults, filter));
   };
 
