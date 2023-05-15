@@ -28,28 +28,7 @@ const ProductTabs = () => {
       <div id="tab1" className={`tab ${activeContent("tab1")}`}>
         <div className="tab-content">
           <div className="placed-bid">
-            <div className="bid-placer">
-              <div className="avatar box-42">
-                {" "}
-                <Link href="/08-profile-page">
-                  <a>
-                    <img src="img/avatar-3.png" alt="avatar" />
-                  </a>
-                </Link>{" "}
-              </div>
-              <div className="bid-info">
-                <div className="bid-title">
-                  Bid placed by{" "}
-                  <span className="gradient-text">
-                    {" "}
-                    <Link href="/08-profile-page">
-                      <a>Crimson Ray</a>
-                    </Link>{" "}
-                  </span>
-                </div>
-                <div className="bid-date">03/25/2021 at 12:19pm</div>
-              </div>
-            </div>
+            <div className="bid-placer">{/*  */}</div>
             <div className="bid-box">
               <div className="crypto-value">2.31 ETH</div>
               <div className="currency-value">125.230 U$D</div>
