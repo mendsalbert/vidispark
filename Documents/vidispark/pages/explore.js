@@ -197,7 +197,7 @@ const Explorev2 = ({
                           }
                         />
                         <label htmlFor="science-and-technology">
-                          🔬 Science and Technology
+                          🔬 Science
                         </label>
                       </div>
                       <div className="form-list-elem">
@@ -208,9 +208,7 @@ const Explorev2 = ({
                           className="cryptoki-checkbox"
                           onClick={(e) => catagoryfilter("food-and-cooking")}
                         />
-                        <label htmlFor="food-and-cooking">
-                          🍔 Food and Cooking
-                        </label>
+                        <label htmlFor="food-and-cooking">🍔 Food</label>
                       </div>{" "}
                       <div className="form-list-elem">
                         <input
@@ -223,7 +221,7 @@ const Explorev2 = ({
                           }
                         />
                         <label htmlFor="business-and-finance">
-                          💼 Business and Finance
+                          💼 Business
                         </label>
                       </div>
                       <div className="form-list-elem">
