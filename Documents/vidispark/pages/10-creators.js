@@ -89,7 +89,9 @@ const Cretors = ({ getCreator, creators }) => {
                     <div className="follow-me">
                       <button
                         onClick={() => {
-                          console.log(creator?.data?.followers);
+                          console.log(
+                            creator?.data?.followers.includes[userInfo[0]?.id]
+                          );
                           console.log(userInfo[0]?.id);
                           // if (
                           //   creator?.data?.followers?.includes[userInfo[0]?.id]
