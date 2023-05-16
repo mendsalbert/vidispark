@@ -25,7 +25,7 @@ export const useUser = () => {
   const getAllUsers = async () => {
     if (db) {
       let res = await db.get("user");
-      setUsers(res);
+      setUsers(res.data);
     }
   };
 
