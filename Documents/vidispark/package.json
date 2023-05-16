@@ -24,7 +24,6 @@
     "bcryptjs": "^2.4.3",
     "buffer": "^6.0.3",
     "did-session": "^2.0.1",
-    "ethers": "^5.4.7",
     "flatted": "^3.2.7",
     "framer-motion": "^10.12.7",
     "localforage": "^1.10.0",

@@ -76,6 +76,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async () => {
     try {
+      console.log("running");
       const providerOptions = {};
       const web3Modal = new Web3Modal({
         cacheProvider: true,
