@@ -78,7 +78,7 @@ const Cretors = ({ getCreator, creators }) => {
                       </div>
                       <div className="item-meta">
                         <span className="gradient-text">
-                          @{creator.username}
+                          @{creator?.username}
                         </span>
                       </div>
                     </div>
