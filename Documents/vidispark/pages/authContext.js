@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     setupWeaveDB();
-    // login();
+    login();
     checkUser();
   }, []);
 
@@ -96,7 +96,7 @@ export const AuthProvider = ({ children }) => {
       let err;
       if (isNil(identity)) {
         console.log("calling db.createTempAddress");
-        ({ tx, identity, err } = await db?.(wallet_address));
+        ({ tx, identity, err } = await db.createTempAddress(wallet_address));
         const linked = await db.getAddressLink(identity.address);
         console.log(linked);
         if (isNil(linked)) {
@@ -135,29 +135,29 @@ export const AuthProvider = ({ children }) => {
       console.error(error);
     }
   };
-};
 
-const logout = async () => {
-  if (confirm("Would you like to sign out?")) {
-    await lf.removeItem("temp_address:current");
-    setUser(null, "temp_current");
-    localStorage.removeItem("user", "temp_current");
-  }
-};
+  const logout = async () => {
+    if (confirm("Would you like to sign out?")) {
+      await lf.removeItem("temp_address:current");
+      setUser(null, "temp_current");
+      localStorage.removeItem("user", "temp_current");
+    }
+  };
 
-return (
-  <AuthContext.Provider
-    value={{
-      user,
-      db,
-      initDB,
-      login,
-      logout,
-      checkUser,
-      setupWeaveDB,
-      userInfo,
-    }}
-  >
-    {children}
-  </AuthContext.Provider>
-);
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        db,
+        initDB,
+        login,
+        logout,
+        checkUser,
+        setupWeaveDB,
+        userInfo,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};
