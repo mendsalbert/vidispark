@@ -51,68 +51,6 @@ const HomeTopCreators = () => {
             <div className="number title">135</div>
             <div className="label">Created</div>
           </div>
-          <div className="projects-previews">
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/05-product-page">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-1.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-1.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/06-product-page-v2">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-2.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-2.png"
-                      height={66}
-                      width={66}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/07-product-page-v3">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-3.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-3.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-          </div>
         </div>
         <div className="top-creator-item">
           <div className="creator-number">02</div>
@@ -149,68 +87,6 @@ const HomeTopCreators = () => {
           <div className="projects-score">
             <div className="number title">107</div>
             <div className="label">Created</div>
-          </div>
-          <div className="projects-previews">
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/05-product-page">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-5.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-5.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/06-product-page-v2">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-9.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-9.png"
-                      height={74}
-                      width={74}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/07-product-page-v3">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-10.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-10.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
           </div>
         </div>
         <div className="top-creator-item">
@@ -249,68 +125,6 @@ const HomeTopCreators = () => {
             <div className="number title">94</div>
             <div className="label">Created</div>
           </div>
-          <div className="projects-previews">
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/05-product-page">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-4.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-4.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/06-product-page-v2">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-11.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-11.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/07-product-page-v3">
-                <a>
-                  <picture>
-                    <source
-                      type="image/avif"
-                      srcSet="avif/content/previews/project-thumb-12.avif"
-                    />
-                    <img
-                      src="img/content/previews/project-thumb-12.png"
-                      height={68}
-                      width={68}
-                      alt=""
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-              </Link>{" "}
-            </div>
-          </div>
         </div>
         <div className="top-creator-item">
           <div className="creator-number">04</div>
@@ -347,50 +161,6 @@ const HomeTopCreators = () => {
           <div className="projects-score">
             <div className="number title">83</div>
             <div className="label">Created</div>
-          </div>
-          <div className="projects-previews">
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/05-product-page">
-                <a>
-                  <img
-                    src="img/content/previews/project-thumb-13.png"
-                    height={68}
-                    width={68}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/06-product-page-v2">
-                <a>
-                  <img
-                    src="img/content/previews/project-thumb-14.png"
-                    height={68}
-                    width={68}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="preview-box box-68">
-              {" "}
-              <Link href="/07-product-page-v3">
-                <a>
-                  <img
-                    src="img/content/previews/project-thumb-8.png"
-                    height={74}
-                    width={74}
-                    alt=""
-                    loading="lazy"
-                  />
-                </a>
-              </Link>{" "}
-            </div>
           </div>
         </div>
       </div>
