@@ -312,6 +312,87 @@ const HomeTopCreators = () => {
             </div>
           </div>
         </div>
+        <div className="top-creator-item">
+          <div className="creator-number">04</div>
+          <div className="creator-box">
+            <div className="avatar box-64">
+              {" "}
+              <Link href="/08-profile-page">
+                <a>
+                  <img
+                    src="img/avatar-3.png"
+                    height={52}
+                    width={52}
+                    alt="avatar"
+                    loading="lazy"
+                  />
+                  <span className="verified">
+                    <svg className="crumina-icon">
+                      <use xlinkHref="#check-icon" />
+                    </svg>
+                  </span>
+                </a>
+              </Link>{" "}
+            </div>
+            <div className="creator-meta">
+              <div className="title">
+                {" "}
+                <Link href="/08-profile-page">
+                  <a>The Green Goo</a>
+                </Link>{" "}
+              </div>
+              <div className="creator-meta">@daGreenGoo</div>
+            </div>
+          </div>
+          <div className="projects-score">
+            <div className="number title">83</div>
+            <div className="label">Created</div>
+          </div>
+          <div className="projects-previews">
+            <div className="preview-box box-68">
+              {" "}
+              <Link href="/05-product-page">
+                <a>
+                  <img
+                    src="img/content/previews/project-thumb-13.png"
+                    height={68}
+                    width={68}
+                    alt=""
+                    loading="lazy"
+                  />
+                </a>
+              </Link>{" "}
+            </div>
+            <div className="preview-box box-68">
+              {" "}
+              <Link href="/06-product-page-v2">
+                <a>
+                  <img
+                    src="img/content/previews/project-thumb-14.png"
+                    height={68}
+                    width={68}
+                    alt=""
+                    loading="lazy"
+                  />
+                </a>
+              </Link>{" "}
+            </div>
+            <div className="preview-box box-68">
+              {" "}
+              <Link href="/07-product-page-v3">
+                <a>
+                  <img
+                    src="img/content/previews/project-thumb-8.png"
+                    height={74}
+                    width={74}
+                    alt=""
+                    loading="lazy"
+                  />
+                </a>
+              </Link>{" "}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
