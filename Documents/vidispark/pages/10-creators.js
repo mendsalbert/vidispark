@@ -89,6 +89,11 @@ const Cretors = ({ getCreator, creators }) => {
                     <div className="follow-me">
                       <button
                         onClick={() => {
+                          console.log(
+                            creator?.data?.followers.indexOf(
+                              userInfo[0]?.id
+                            ) !== -1
+                          );
                           if (
                             creator?.data?.followers.indexOf(
                               userInfo[0]?.id
