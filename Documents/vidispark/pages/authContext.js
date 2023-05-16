@@ -75,7 +75,6 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async () => {
-    console.log(db);
     try {
       console.log(address);
       const providerOptions = {};
