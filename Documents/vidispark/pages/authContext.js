@@ -76,18 +76,19 @@ export const AuthProvider = ({ children }) => {
 
   const login = async () => {
     try {
-      console.log(address);
-      const providerOptions = {};
-      const web3Modal = new Web3Modal({
-        cacheProvider: true,
-        providerOptions,
-      });
+      // const providerOptions = {};
+      // const web3Modal = new Web3Modal({
+      //   cacheProvider: true,
+      //   providerOptions,
+      // });
 
-      const provider = await web3Modal.connect();
-      const web3Provider = new Web3Provider(provider);
-      const accounts = await web3Provider.listAccounts();
+      // const provider = await web3Modal.connect();
+      // const web3Provider = new Web3Provider(provider);
+      // const accounts = await web3Provider.listAccounts();
 
-      const wallet_address = accounts[0];
+      const wallet_address = address;
+      console.log(wallet_address);
+
       let identity = JSON.parse(
         localStorage.getItem(`temp_address:${contractTxId}:${wallet_address}`)
       );
