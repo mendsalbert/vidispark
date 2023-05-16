@@ -4,8 +4,15 @@ import ProfileHeader from "../src/components/Profile Page/ProfileHeader";
 import ProfilePageTabs from "../src/components/Profile Page/ProfilePageTabs";
 import Layouts from "../src/layouts/Layouts";
 import { countdown } from "../src/utils";
+import { useRouter } from "next/router";
+import { useUser } from "../../src/services/user";
 
 const Profile = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const { users } = useUser();
+  const user = users?.filter((item) => item?.data?.id == id);
+  console.log(user);
   useEffect(() => {
     countdown();
   }, []);
