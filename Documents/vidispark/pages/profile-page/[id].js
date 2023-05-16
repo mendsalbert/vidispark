@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
-import ProfileHeader from "../src/components/Profile Page/ProfileHeader";
-import ProfilePageTabs from "../src/components/Profile Page/ProfilePageTabs";
-import Layouts from "../src/layouts/Layouts";
-import { countdown } from "../src/utils";
+import ProfileHeader from "../../src/components/Profile Page/ProfileHeader";
+import ProfilePageTabs from "../../src/components/Profile Page/ProfilePageTabs";
+import Layouts from "../../src/layouts/Layouts";
+import { countdown } from "../../src/utils";
 import { useRouter } from "next/router";
 import { useUser } from "../../src/services/user";
 
