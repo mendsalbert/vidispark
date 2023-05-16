@@ -66,10 +66,10 @@ const Nft = ({ data }) => {
                       <picture>
                         <source
                           type="image/avif"
-                          srcSet={data?.user?.avatarUrlL}
+                          srcSet={data?.user?.avatarUrl}
                         />
                         <img
-                          src={data?.user?.avatarUrlL}
+                          src={data?.user?.avatarUrl}
                           alt="avatar"
                           loading="lazy"
                           width={100}
