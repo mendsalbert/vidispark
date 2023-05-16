@@ -135,7 +135,7 @@ function MyApp({ Component, pageProps }) {
           href="/img/favicon01.png"
         />
 
-        <title>NFT</title>
+        <title>Vidispark</title>
       </Head>
 
       <AuthProvider>
