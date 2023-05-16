@@ -16,16 +16,16 @@ const Registration = () => {
 
   const onHandleSubmit = () => {
     login();
-    // if (password != confirmPassword) {
-    //   //TODO: use a password validator here.
-    //   alert("passowrd must match");
-    //   return;
-    // } else if (aggred == false) {
-    //   alert("you have to aggre to our privacy policy first");
-    //   return;
-    // }
-    // const hash = bcrypt.hashSync(password, salt);
-    // addUser({ username, hash, salt, aggred });
+    if (password != confirmPassword) {
+      //TODO: use a password validator here.
+      alert("passowrd must match");
+      return;
+    } else if (aggred == false) {
+      alert("you have to aggre to our privacy policy first");
+      return;
+    }
+    const hash = bcrypt.hashSync(password, salt);
+    addUser({ username, hash, salt, aggred });
   };
 
   return (
