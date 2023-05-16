@@ -95,9 +95,8 @@ const Cretors = ({ getCreator, creators }) => {
                             ) !== -1
                           );
                           if (
-                            creator?.data?.followers.indexOf(
-                              userInfo[0]?.id
-                            ) !== -1
+                            creator?.data?.followers.indexOf(userInfo[0]?.id) ==
+                            -1
                           ) {
                             unfollowUser(creator?.id);
                           } else {
