@@ -89,27 +89,31 @@ const Cretors = ({ getCreator, creators }) => {
                     <div className="follow-me">
                       <button
                         onClick={() => {
-                          console.log(
+                          // console.log(
+                          //   creator?.data?.followers.indexOf(
+                          //     userInfo[0]?.id
+                          //   ) !== -1
+                          // );
+                          // console.log(userInfo[0]?.id);
+                          if (
                             creator?.data?.followers.indexOf(
                               userInfo[0]?.id
                             ) !== -1
-                          );
-                          console.log(userInfo[0]?.id);
-                          // if (
-                          //   creator?.data?.followers?.includes[userInfo[0]?.id]
-                          // ) {
-                          //   unfollowUser(creator?.id);
-                          // } else {
-                          //   followUser(creator?.id);
-                          // }
+                          ) {
+                            unfollowUser(creator?.id);
+                          } else {
+                            followUser(creator?.id);
+                          }
                         }}
                         className={`btn btn-small ${
-                          creator?.data?.followers?.includes[userInfo[0]?.id]
+                          creator?.data?.followers.indexOf(userInfo[0]?.id) !==
+                          -1
                             ? "btn-fuchsia"
                             : "btn-dark"
                         }`}
                       >
-                        {creator?.data?.followers?.includes[userInfo[0]?.id]
+                        {creator?.data?.followers.indexOf(userInfo[0]?.id) !==
+                        -1
                           ? "Unfollow"
                           : "Follow!"}
                       </button>
