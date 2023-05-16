@@ -89,7 +89,7 @@ const Cretors = ({ getCreator, creators }) => {
                           creator.follow ? "btn-fuchsia" : "btn-dark"
                         }`}
                       >
-                        {creator.followers.includes[] ? "Unfollow" : "Follow!"}
+                        {creator.followers.includes[1] ? "Unfollow" : "Follow!"}
                       </button>
                     </div>
                   </div>
