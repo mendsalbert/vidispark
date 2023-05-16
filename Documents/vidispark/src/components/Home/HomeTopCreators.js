@@ -22,7 +22,7 @@ const HomeTopCreators = () => {
                   <picture>
                     <source type="image/avif" srcSet="avif/avatar.avif" />
                     <img
-                      src="img/avatar.png"
+                      src={users[0].data.avatarUrl}
                       alt="avatar"
                       loading="lazy"
                       width={100}
