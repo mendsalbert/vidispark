@@ -63,7 +63,10 @@ const Cretors = ({ getCreator, creators }) => {
                       <div className="avatar box-64">
                         <Link href="/08-profile-page">
                           <a>
-                            <img src={creator?.avatarUrl || ""} alt="avatar" />
+                            <img
+                              src={creator?.data?.avatarUrl || ""}
+                              alt="avatar"
+                            />
                             {/* <span className="verified">
                               <svg className="crumina-icon">
                                 <use xlinkHref="#check-icon" />
@@ -74,27 +77,29 @@ const Cretors = ({ getCreator, creators }) => {
                       </div>
                       <div className="title">
                         <Link href="/08-profile-page">
-                          <a>{creator?.fullname}</a>
+                          <a>{creator?.data?.fullname}</a>
                         </Link>
                       </div>
                       <div className="item-meta">
                         <span className="gradient-text">
-                          @{creator?.username}
+                          @{creator?.data?.username}
                         </span>
                       </div>
                     </div>
                     <div className="follow-me">
                       <button
                         onClick={() => {
-                          if (creator?.followers?.includes[userInfo[0]?.id]) {
+                          if (
+                            creator?.data?.followers?.includes[userInfo[0]?.id]
+                          ) {
                             unfollowUser();
                           }
                         }}
                         className={`btn btn-small ${
-                          creator.follow ? "btn-fuchsia" : "btn-dark"
+                          creator.data?.follow ? "btn-fuchsia" : "btn-dark"
                         }`}
                       >
-                        {creator?.followers?.includes[userInfo[0]?.id]
+                        {creator?.data?.followers?.includes[userInfo[0]?.id]
                           ? "Unfollow"
                           : "Follow!"}
                       </button>
@@ -102,7 +107,7 @@ const Cretors = ({ getCreator, creators }) => {
                   </div>
 
                   <div className="about-creator">
-                    <p>{creator?.bio}...</p>
+                    <p>{creator?.data?.bio}...</p>
                   </div>
                   <div className="projects-previews">
                     {/* {creator.projects &&
@@ -131,11 +136,15 @@ const Cretors = ({ getCreator, creators }) => {
                 <div className="creator-stats">
                   <div className="stats-item">
                     <div className="label">Followers</div>
-                    <div className="number">{creator?.followers?.length}</div>
+                    <div className="number">
+                      {creator?.data?.followers?.length}
+                    </div>
                   </div>
                   <div className="stats-item">
                     <div className="label">Following</div>
-                    <div className="number">{creator?.following?.length}</div>
+                    <div className="number">
+                      {creator?.data?.following?.length}
+                    </div>
                   </div>
                 </div>
               </div>
