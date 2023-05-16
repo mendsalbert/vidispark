@@ -92,7 +92,7 @@ const Cretors = ({ getCreator, creators }) => {
                           if (
                             creator?.data?.followers?.includes[userInfo[0]?.id]
                           ) {
-                            unfollowUser();
+                            unfollowUser(creator?.id);
                           }
                         }}
                         className={`btn btn-small ${
