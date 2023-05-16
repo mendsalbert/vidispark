@@ -94,7 +94,7 @@ const Cretors = ({ getCreator, creators }) => {
                   </div>
 
                   <div className="about-creator">
-                    <p>{creator.bio}...</p>
+                    <p>{creator?.bio}...</p>
                   </div>
                   <div className="projects-previews">
                     {creator.projects &&
