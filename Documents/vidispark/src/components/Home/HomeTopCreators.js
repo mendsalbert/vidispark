@@ -44,7 +44,7 @@ const HomeTopCreators = () => {
                   <a>{users[0].data.fullname}</a>
                 </Link>{" "}
               </div>
-              <div className="creator-meta">@DexterStark</div>
+              <div className="creator-meta">@{users[0].data.username}</div>
             </div>
           </div>
           <div className="projects-score">
