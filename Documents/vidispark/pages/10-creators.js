@@ -31,6 +31,7 @@ const Cretors = ({ getCreator, creators }) => {
   };
 
   const { users } = useUser();
+  console.log(users[0]);
   // Paggination
   const [active, setActive] = useState(0);
   let sort = 8;
@@ -88,7 +89,7 @@ const Cretors = ({ getCreator, creators }) => {
                           creator.follow ? "btn-fuchsia" : "btn-dark"
                         }`}
                       >
-                        {creator.follow ? "Unfollow" : "Follow!"}
+                        {creator.followers.includes[] ? "Unfollow" : "Follow!"}
                       </button>
                     </div>
                   </div>
