@@ -164,7 +164,7 @@ const ProfileInfoForm = () => {
                 src={`${
                   urlReady
                     ? url
-                    : userInfo[0]?.data?.avatarUrlL?.length > 1
+                    : userInfo[0]?.data?.avatarUrl?.length > 1
                     ? userInfo[0]?.data?.avatarUrlL
                     : "https://i.ibb.co/0C0Dkz1/placeholder-image-person-jpg.jpg"
                 } `}
