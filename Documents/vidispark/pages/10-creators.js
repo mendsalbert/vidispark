@@ -55,7 +55,7 @@ const Cretors = ({ getCreator, creators }) => {
                 className={` creator-item ${dblock(active, i, sort)}`}
               >
                 <div className="creator-cover">
-                  <img src={creator?.avatarCover || ""} alt="" />
+                  <img src={creator?.data?.avatarCover || ""} alt="" />
                 </div>
                 <div className="creator-wrapper">
                   <div className="creator-info-wrapper">
