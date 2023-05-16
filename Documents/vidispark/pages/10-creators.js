@@ -63,11 +63,11 @@ const Cretors = ({ getCreator, creators }) => {
                         <Link href="/08-profile-page">
                           <a>
                             <img src={creator?.avatarUrl || ""} alt="avatar" />
-                            <span className="verified">
+                            {/* <span className="verified">
                               <svg className="crumina-icon">
                                 <use xlinkHref="#check-icon" />
                               </svg>
-                            </span>
+                            </span> */}
                           </a>
                         </Link>
                       </div>
