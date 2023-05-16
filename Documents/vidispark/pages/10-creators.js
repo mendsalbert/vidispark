@@ -92,57 +92,6 @@ const Cretors = ({ getCreator, creators }) => {
                       </button>
                     </div>
                   </div>
-                  {creator.links && creator.links.length > 5 ? (
-                    <Fragment>
-                      <div className="social-swiper-nav">
-                        <div className="swiper-button-next">
-                          <svg className="crumina-icon next-button">
-                            <use xlinkHref="#arrow-right2-icon" />
-                          </svg>
-                        </div>
-                        <div className="swiper-button-prev">
-                          <svg className="crumina-icon prev-button">
-                            <use xlinkHref="#arrow-left2-icon" />
-                          </svg>
-                        </div>
-                      </div>
-                      <Swiper {...iconSlider} className="social-icons-carousel">
-                        <ul className="social-icons-list swiper-wrapper">
-                          {creator.links &&
-                            creator.links.map((link, l) => (
-                              <SwiperSlide
-                                className="social-icon icon-border swiper-slide"
-                                key={l}
-                              >
-                                <a href="#">
-                                  <svg className="crumina-icon">
-                                    <use xlinkHref={`#${link.name}-icon`} />
-                                  </svg>
-                                </a>
-                              </SwiperSlide>
-                            ))}
-                        </ul>
-                      </Swiper>
-                    </Fragment>
-                  ) : (
-                    <Fragment>
-                      <ul className="social-icons-list swiper-wrapper">
-                        {creator.links &&
-                          creator.links.map((link, l) => (
-                            <li
-                              className="social-icon icon-border swiper-slide"
-                              key={l}
-                            >
-                              <a href="#">
-                                <svg className="crumina-icon">
-                                  <use xlinkHref={`#${link.name}-icon`} />
-                                </svg>
-                              </a>
-                            </li>
-                          ))}
-                      </ul>
-                    </Fragment>
-                  )}
 
                   <div className="about-creator">
                     <p>{creator.bio}...</p>
