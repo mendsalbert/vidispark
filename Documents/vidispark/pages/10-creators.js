@@ -31,7 +31,6 @@ const Cretors = ({ getCreator, creators }) => {
   };
 
   const { users, userInfo, unfollowUser, followUser } = useUser();
-  console.log(users);
   // Paggination
   const [active, setActive] = useState(0);
   let sort = 8;
