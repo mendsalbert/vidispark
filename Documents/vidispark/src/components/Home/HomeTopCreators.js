@@ -72,7 +72,7 @@ const HomeTopCreators = () => {
             <div className="creator-meta">
               <div className="title">
                 {" "}
-                <Link href="profile-page">
+                <Link href={`profile-page/${users[1]?.id}`}>
                   <a>{users[1]?.data?.fullname}</a>
                 </Link>{" "}
               </div>
