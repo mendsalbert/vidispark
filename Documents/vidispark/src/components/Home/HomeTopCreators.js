@@ -122,7 +122,7 @@ const HomeTopCreators = () => {
               <Link href="profile-page">
                 <a>
                   <img
-                    src="img/avatar-3.png"
+                    src={users[3]?.data?.avatarUrl}
                     height={52}
                     width={52}
                     alt="avatar"
@@ -140,10 +140,10 @@ const HomeTopCreators = () => {
               <div className="title">
                 {" "}
                 <Link href="profile-page">
-                  <a>The Green Goo</a>
+                  <a>{users[3]?.data?.fullname}</a>
                 </Link>{" "}
               </div>
-              <div className="creator-meta">@daGreenGoo</div>
+              <div className="creator-meta">@{users[3]?.data?.username}</div>
             </div>
           </div>
         </div>
