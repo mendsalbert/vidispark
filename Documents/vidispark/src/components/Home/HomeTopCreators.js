@@ -53,8 +53,7 @@ const HomeTopCreators = () => {
           <div className="creator-box">
             <div className="avatar box-64">
               {" "}
-              <Link href={`profile-page/${users[1]?.id}`}>
-                {" "}
+              <Link href="profile-page">
                 <a>
                   <img
                     src={users[1]?.data?.avatarUrl}
@@ -74,8 +73,7 @@ const HomeTopCreators = () => {
             <div className="creator-meta">
               <div className="title">
                 {" "}
-                <Link href={`profile-page/${users[1]?.id}`}>
-                  {" "}
+                <Link href="profile-page">
                   <a>{users[1]?.data?.fullname}</a>
                 </Link>{" "}
               </div>
@@ -88,8 +86,7 @@ const HomeTopCreators = () => {
           <div className="creator-box">
             <div className="avatar box-64">
               {" "}
-              <Link href={`profile-page/${users[2]?.id}`}>
-                {" "}
+              <Link href="profile-page">
                 <a>
                   <img
                     src={users[2]?.data?.avatarUrl}
@@ -109,10 +106,9 @@ const HomeTopCreators = () => {
             <div className="creator-meta">
               <div className="title">
                 {" "}
-                <Link href={`profile-page/${users[2]?.id}`}>
-                  {" "}
+                <Link href="profile-page">
                   <a>{users[2]?.data?.fullname}</a>
-                </Link>
+                </Link>{" "}
               </div>
               <div className="creator-meta">@{users[2]?.data?.username}</div>
             </div>
@@ -123,8 +119,7 @@ const HomeTopCreators = () => {
           <div className="creator-box">
             <div className="avatar box-64">
               {" "}
-              <Link href={`profile-page/${users[3]?.id}`}>
-                {" "}
+              <Link href="profile-page">
                 <a>
                   <img
                     src={users[3]?.data?.avatarUrl}
@@ -144,8 +139,7 @@ const HomeTopCreators = () => {
             <div className="creator-meta">
               <div className="title">
                 {" "}
-                <Link href={`profile-page/${users[3]?.id}`}>
-                  {" "}
+                <Link href="profile-page">
                   <a>{users[3]?.data?.fullname}</a>
                 </Link>{" "}
               </div>
