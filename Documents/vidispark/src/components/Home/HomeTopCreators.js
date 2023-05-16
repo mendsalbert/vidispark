@@ -16,7 +16,7 @@ const HomeTopCreators = () => {
           <div className="creator-box">
             <div className="avatar box-64">
               {" "}
-              <Link href={`profile-page/${users[0]?.data?.id}`}>
+              <Link href={`profile-page/${users[0]?.id}`}>
                 <a>
                   <picture>
                     <source type="image/avif" srcSet="avif/avatar.avif" />
