@@ -9,7 +9,7 @@ import { Buffer } from "buffer";
 import * as flatted from "flatted";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 const contractTxId = "CdyjIAskh7bwpzWLVtfYroqZcNPvHB57bwk1hVVSgwk";
-
+import {} from "ethers";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -76,7 +76,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async () => {
     try {
-      console.log("running");
+      console.log(accounts);
       const providerOptions = {};
       const web3Modal = new Web3Modal({
         cacheProvider: true,
