@@ -26,7 +26,7 @@ const ProductInfo = ({ singleVid }) => {
           {" "}
           <Link href="/08-profile-page">
             <a>
-              <img src={singleVid?.user?.avatarUrlL} alt="avatar" />
+              <img src={singleVid?.user?.avatarUrl} alt="avatar" />
             </a>
           </Link>{" "}
           <span className="verified">
