@@ -55,6 +55,8 @@ export const useUser = () => {
       "user",
       user
     );
+
+    console.log(res);
   };
 
   const updateUser = async (userObj) => {
