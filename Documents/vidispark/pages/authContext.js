@@ -7,7 +7,8 @@ import { Web3Provider } from "@ethersproject/providers";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import * as flatted from "flatted";
-
+import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { InjectedConnector } from "wagmi/connectors/injected";
 const contractTxId = "CdyjIAskh7bwpzWLVtfYroqZcNPvHB57bwk1hVVSgwk";
 
 export const AuthContext = createContext();
@@ -18,6 +19,12 @@ export const AuthProvider = ({ children }) => {
   const [db, setdb] = useState(undefined);
   const [userInfo, setUserInfo] = useState("");
   const [updateState, setUpdateState] = useState(false);
+
+  const { address, isConnected } = useAccount();
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
     if (!isNil(wallet_address)) {
@@ -72,61 +79,64 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async () => {
-    try {
-      const providerOptions = {};
-      const web3Modal = new Web3Modal({
-        cacheProvider: true,
-        providerOptions,
-      });
+    // try {
+    // const providerOptions = {};
+    // const web3Modal = new Web3Modal({
+    //   cacheProvider: true,
+    //   providerOptions,
+    // });
 
-      const provider = await web3Modal.connect();
-      const web3Provider = new Web3Provider(provider);
-      const accounts = await web3Provider.listAccounts();
-      const wallet_address = accounts[0];
-      let identity = JSON.parse(
-        localStorage.getItem(`temp_address:${contractTxId}:${wallet_address}`)
-      );
-      let tx;
-      let err;
-      if (isNil(identity)) {
-        ({ tx, identity, err } = await db.createTempAddress(wallet_address));
-        const linked = await db.getAddressLink(identity.address);
-        console.log(linked);
-        if (isNil(linked)) {
-          alert("something went wrong");
-          return;
-        }
-      } else {
-        localStorage.setItem("temp_address:current", wallet_address);
-        setUser({
-          wallet: wallet_address,
-          privateKey: identity.privateKey,
-        });
-        localStorage.setItem(
-          "user",
-          JSON.stringify({
-            wallet: wallet_address,
-            privateKey: identity.privateKey,
-          })
-        );
-        return;
-      }
-      if (!isNil(tx) && isNil(tx.err)) {
-        identity.tx = tx;
-        identity.linked_address = wallet_address;
-        localStorage.setItem("temp_address:current", wallet_address);
-        localStorage.setItem(
-          `temp_address:${contractTxId}:${wallet_address}`,
-          JSON.stringify(identity)
-        );
-        setUser({
-          wallet: wallet_address,
-          privateKey: identity.privateKey,
-        });
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    // const provider = await web3Modal.connect();
+    // const web3Provider = new Web3Provider(provider);
+    // const accounts = await web3Provider.listAccounts();
+
+    connect();
+    console.log(address);
+    //   const wallet_address = accounts[0];
+    //   let identity = JSON.parse(
+    //     localStorage.getItem(`temp_address:${contractTxId}:${wallet_address}`)
+    //   );
+    //   let tx;
+    //   let err;
+    //   if (isNil(identity)) {
+    //     ({ tx, identity, err } = await db.createTempAddress(wallet_address));
+    //     const linked = await db.getAddressLink(identity.address);
+    //     console.log(linked);
+    //     if (isNil(linked)) {
+    //       alert("something went wrong");
+    //       return;
+    //     }
+    //   } else {
+    //     localStorage.setItem("temp_address:current", wallet_address);
+    //     setUser({
+    //       wallet: wallet_address,
+    //       privateKey: identity.privateKey,
+    //     });
+    //     localStorage.setItem(
+    //       "user",
+    //       JSON.stringify({
+    //         wallet: wallet_address,
+    //         privateKey: identity.privateKey,
+    //       })
+    //     );
+    //     return;
+    //   }
+    //   if (!isNil(tx) && isNil(tx.err)) {
+    //     identity.tx = tx;
+    //     identity.linked_address = wallet_address;
+    //     localStorage.setItem("temp_address:current", wallet_address);
+    //     localStorage.setItem(
+    //       `temp_address:${contractTxId}:${wallet_address}`,
+    //       JSON.stringify(identity)
+    //     );
+    //     setUser({
+    //       wallet: wallet_address,
+    //       privateKey: identity.privateKey,
+    //     });
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   const logout = async () => {
