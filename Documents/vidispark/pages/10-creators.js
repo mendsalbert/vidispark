@@ -95,7 +95,7 @@ const Cretors = ({ getCreator, creators }) => {
                             ) !== -1
                           );
                           if (
-                            !creator?.data?.followers.indexOf(
+                            creator?.data?.followers.indexOf(
                               userInfo[0]?.id
                             ) !== -1
                           ) {
