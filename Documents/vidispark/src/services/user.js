@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 export const useUser = () => {
   const { db, user, userInfo, logout, login, initDB } = useContext(AuthContext);
   const router = useRouter();
-
+  const [users, setUsers] = useState([]);
   useEffect(() => {
     getAllUsers();
   }, [initDB]);
@@ -25,7 +25,7 @@ export const useUser = () => {
   const getAllUsers = async () => {
     if (db) {
       let res = await db.get("user");
-      console.log(res);
+      setUsers(res);
     }
   };
 
@@ -172,5 +172,6 @@ export const useUser = () => {
     updateUser,
     followUser,
     logout,
+    users,
   };
 };
