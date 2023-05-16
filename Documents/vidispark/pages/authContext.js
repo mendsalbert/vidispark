@@ -86,7 +86,6 @@ export const AuthProvider = ({ children }) => {
     // const web3Provider = new Web3Provider(provider);
     // const accounts = await web3Provider.listAccounts();
 
-    connect();
     console.log(address);
     //   const wallet_address = accounts[0];
     //   let identity = JSON.parse(
