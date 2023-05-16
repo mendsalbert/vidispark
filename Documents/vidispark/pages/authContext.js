@@ -8,7 +8,7 @@ import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import * as flatted from "flatted";
 
-const contractTxId = "tqRK32rdpnBNQ3rGTwfGZVAYBSgKCVkfYh9JTmd9v_c";
+const contractTxId = "CdyjIAskh7bwpzWLVtfYroqZcNPvHB57bwk1hVVSgwk";
 
 export const AuthContext = createContext();
 
