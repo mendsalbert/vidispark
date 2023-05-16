@@ -97,7 +97,7 @@ const Cretors = ({ getCreator, creators }) => {
                     <p>{creator?.bio}...</p>
                   </div>
                   <div className="projects-previews">
-                    {creator.projects &&
+                    {/* {creator.projects &&
                       creator.projects.map((project, j) => (
                         <div className="preview-box" key={j}>
                           <Link href="/07-product-page-v3">
@@ -106,7 +106,7 @@ const Cretors = ({ getCreator, creators }) => {
                             </a>
                           </Link>
                         </div>
-                      ))}
+                      ))} */}
                     {creator.projects && creator.projects.length >= 3 && (
                       <div className="preview-box more-projects">
                         <Link href="/08-profile-page">
