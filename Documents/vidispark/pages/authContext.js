@@ -75,7 +75,9 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async () => {
+    if (db) {
       try {
+        console.log(address);
         const providerOptions = {};
         const web3Modal = new Web3Modal({
           cacheProvider: true,
@@ -133,7 +135,9 @@ export const AuthProvider = ({ children }) => {
       } catch (error) {
         console.error(error);
       }
-    } 
+    } else {
+      setupWeaveDB();
+    }
   };
 
   const logout = async () => {
