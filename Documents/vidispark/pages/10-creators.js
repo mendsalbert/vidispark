@@ -89,14 +89,15 @@ const Cretors = ({ getCreator, creators }) => {
                     <div className="follow-me">
                       <button
                         onClick={() => {
-                          // if (
-                          //   creator?.data?.followers.indexOf(userInfo[0]?.id) !==
-                          //   -1
-                          // ) {
-                          //   unfollowUser(creator?.id);
-                          // } else {
-                          followUser(creator?.id);
-                          // }
+                          if (
+                            creator?.data?.followers.indexOf(
+                              userInfo[0]?.id
+                            ) !== -1
+                          ) {
+                            unfollowUser(creator?.id);
+                          } else {
+                            followUser(creator?.id);
+                          }
                         }}
                         className={`btn btn-small ${
                           creator?.data?.followers.indexOf(userInfo[0]?.id) !==
