@@ -3,7 +3,6 @@ import React from "react";
 import { useUser } from "../../services/user";
 const HomeTopCreators = () => {
   const { users, userInfo, unfollowUser, followUser } = useUser();
-  console.log(users[0]);
   return (
     <div className="container section-padding">
       <div className="section-title-wrapper">
@@ -17,7 +16,7 @@ const HomeTopCreators = () => {
           <div className="creator-box">
             <div className="avatar box-64">
               {" "}
-              <Link href={`profile-page/${users[0]?.data?.id}`}>
+              <Link href={`profile-page/${users[0]?.id}`}>
                 <a>
                   <picture>
                     <source type="image/avif" srcSet="avif/avatar.avif" />
