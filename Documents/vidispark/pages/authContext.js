@@ -7,8 +7,6 @@ import { Web3Provider } from "@ethersproject/providers";
 import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import * as flatted from "flatted";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
-import { InjectedConnector } from "wagmi/connectors/injected";
 const contractTxId = "CdyjIAskh7bwpzWLVtfYroqZcNPvHB57bwk1hVVSgwk";
 
 export const AuthContext = createContext();
@@ -19,11 +17,6 @@ export const AuthProvider = ({ children }) => {
   const [db, setdb] = useState(undefined);
   const [userInfo, setUserInfo] = useState("");
   const [updateState, setUpdateState] = useState(false);
-
-  const { address, isConnected } = useAccount();
-  const { connect } = useConnect({
-    connector: new InjectedConnector(),
-  });
 
   const checkUser = async () => {
     const wallet_address = await localStorage.getItem(`temp_address:current`);
@@ -90,7 +83,6 @@ export const AuthProvider = ({ children }) => {
     // const web3Provider = new Web3Provider(provider);
     // const accounts = await web3Provider.listAccounts();
 
-    connect();
     console.log(address);
     //   const wallet_address = accounts[0];
     //   let identity = JSON.parse(
