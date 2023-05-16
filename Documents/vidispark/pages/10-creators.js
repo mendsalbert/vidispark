@@ -90,7 +90,9 @@ const Cretors = ({ getCreator, creators }) => {
                       <button
                         onClick={() => {
                           console.log(
-                            creator?.data?.followers.includes[userInfo[0]?.id]
+                            creator?.data?.followers.indexOf(
+                              userInfo[0]?.id
+                            ) !== -1
                           );
                           console.log(userInfo[0]?.id);
                           // if (
