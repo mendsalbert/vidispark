@@ -75,9 +75,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async () => {
-    if (db) {
       try {
-        console.log(address);
         const providerOptions = {};
         const web3Modal = new Web3Modal({
           cacheProvider: true,
@@ -97,7 +95,7 @@ export const AuthProvider = ({ children }) => {
         let err;
         if (isNil(identity)) {
           console.log("calling db.createTempAddress");
-          ({ tx, identity, err } = await db?.(wallet_address));
+          ({ tx, identity, err } = await db.(wallet_address));
           const linked = await db.getAddressLink(identity.address);
           console.log(linked);
           if (isNil(linked)) {
@@ -135,9 +133,7 @@ export const AuthProvider = ({ children }) => {
       } catch (error) {
         console.error(error);
       }
-    } else {
-      setupWeaveDB();
-    }
+    } 
   };
 
   const logout = async () => {
