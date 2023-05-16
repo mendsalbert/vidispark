@@ -3,7 +3,7 @@ import React from "react";
 import { useUser } from "../../services/user";
 const HomeTopCreators = () => {
   const { users, userInfo, unfollowUser, followUser } = useUser();
-
+  console.log(users[0]);
   return (
     <div className="container section-padding">
       <div className="section-title-wrapper">
