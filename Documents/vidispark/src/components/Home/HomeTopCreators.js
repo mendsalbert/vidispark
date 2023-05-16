@@ -29,11 +29,11 @@ const HomeTopCreators = () => {
                       height={100}
                     />
                   </picture>
-                  <span className="verified">
+                  {/* <span className="verified">
                     <svg className="crumina-icon">
                       <use xlinkHref="#check-icon" />
                     </svg>
-                  </span>
+                  </span> */}
                 </a>
               </Link>{" "}
             </div>
