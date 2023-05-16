@@ -123,15 +123,11 @@ const Cretors = ({ getCreator, creators }) => {
                 <div className="creator-stats">
                   <div className="stats-item">
                     <div className="label">Followers</div>
-                    <div className="number">{creator.followers}</div>
+                    <div className="number">{creator?.followers?.length}</div>
                   </div>
                   <div className="stats-item">
                     <div className="label">Following</div>
-                    <div className="number">{creator.following}</div>
-                  </div>
-                  <div className="stats-item">
-                    <div className="label">Created</div>
-                    <div className="number">{creator.created}</div>
+                    <div className="number">{creator?.following?.length}</div>
                   </div>
                 </div>
               </div>
