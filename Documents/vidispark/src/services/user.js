@@ -30,34 +30,33 @@ export const useUser = () => {
   };
 
   const addUser = async (userObj) => {
-    login();
-    // let value = await isUserNameExist(userObj.username);
-    // if (value.length > 1) {
-    //   alert("username exist");
-    //   return;
-    // }
-    // let res = await db.add(
-    //   {
-    //     username: userObj.username,
-    //     salt: userObj.salt,
-    //     password: userObj.hash,
-    //     email: "",
-    //     fullname: "",
-    //     bio: "",
-    //     avatarUrl: "",
-    //     avatarCover: "",
-    //     acceptPolicy: false,
-    //     isVerified: false,
-    //     followers: [],
-    //     following: [],
-    //     date: db.ts(),
-    //     user_address: db.signer(),
-    //   },
-    //   "user",
-    //   user
-    // );
+    let value = await isUserNameExist(userObj.username);
+    if (value.length > 1) {
+      alert("username exist");
+      return;
+    }
+    let res = await db.add(
+      {
+        username: userObj.username,
+        salt: userObj.salt,
+        password: userObj.hash,
+        email: "",
+        fullname: "",
+        bio: "",
+        avatarUrl: "",
+        avatarCover: "",
+        acceptPolicy: false,
+        isVerified: false,
+        followers: [],
+        following: [],
+        date: db.ts(),
+        user_address: db.signer(),
+      },
+      "user",
+      user
+    );
 
-    // console.log(res);
+    console.log(res);
   };
 
   const updateUser = async (userObj) => {
