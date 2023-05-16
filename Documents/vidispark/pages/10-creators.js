@@ -47,14 +47,14 @@ const Cretors = ({ getCreator, creators }) => {
         {/* FILTERABLE BAR */}
         {/* CREATORS GRID */}
         <div className="creators-box grid-4-columns">
-          {filteredData &&
-            filteredData.map((creator, i) => (
+          {users &&
+            users.map((creator, i) => (
               <div
                 key={i}
                 className={` creator-item ${dblock(active, i, sort)}`}
               >
                 <div className="creator-cover">
-                  <img src={creator.cover} alt="" />
+                  <img src={creator?.avatarUrlL || ""} alt="" />
                 </div>
                 <div className="creator-wrapper">
                   <div className="creator-info-wrapper">
