@@ -98,7 +98,9 @@ const Cretors = ({ getCreator, creators }) => {
                           }
                         }}
                         className={`btn btn-small ${
-                          creator.data?.follow ? "btn-fuchsia" : "btn-dark"
+                          creator?.data?.followers?.includes[userInfo[0]?.id]
+                            ? "btn-fuchsia"
+                            : "btn-dark"
                         }`}
                       >
                         {creator?.data?.followers?.includes[userInfo[0]?.id]
