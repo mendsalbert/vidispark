@@ -88,6 +88,7 @@ export const AuthProvider = ({ children }) => {
       const accounts = await web3Provider.listAccounts();
 
       const wallet_address = accounts[0];
+      console.log("wallet_address", wallet_address);
       let identity = JSON.parse(
         localStorage.getItem(`temp_address:${contractTxId}:${wallet_address}`)
       );
