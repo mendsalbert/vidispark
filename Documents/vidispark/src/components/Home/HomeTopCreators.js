@@ -113,10 +113,6 @@ const HomeTopCreators = () => {
               <div className="creator-meta">@noirArtks</div>
             </div>
           </div>
-          <div className="projects-score">
-            <div className="number title">94</div>
-            <div className="label">Created</div>
-          </div>
         </div>
         <div className="top-creator-item">
           <div className="creator-number">04</div>
@@ -149,10 +145,6 @@ const HomeTopCreators = () => {
               </div>
               <div className="creator-meta">@daGreenGoo</div>
             </div>
-          </div>
-          <div className="projects-score">
-            <div className="number title">83</div>
-            <div className="label">Created</div>
           </div>
         </div>
       </div>
