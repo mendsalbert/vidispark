@@ -47,10 +47,10 @@ const HomeTopCreators = () => {
               <div className="creator-meta">@{users[0].data.username}</div>
             </div>
           </div>
-          <div className="projects-score">
+          {/* <div className="projects-score">
             <div className="number title">135</div>
             <div className="label">Created</div>
-          </div>
+          </div> */}
         </div>
         <div className="top-creator-item">
           <div className="creator-number">02</div>
