@@ -30,7 +30,7 @@ const Cretors = ({ getCreator, creators }) => {
     setActive(0);
   };
 
-  const {} = useUser();
+  const { users } = useUser();
   // Paggination
   const [active, setActive] = useState(0);
   let sort = 8;
