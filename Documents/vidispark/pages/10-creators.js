@@ -30,7 +30,8 @@ const Cretors = ({ getCreator, creators }) => {
     setActive(0);
   };
 
-  const { users, userInfo } = useUser();
+  const { users, userInfo, unfollowUser, followUser } = useUser();
+  console.log(users);
   // Paggination
   const [active, setActive] = useState(0);
   let sort = 8;
@@ -84,6 +85,11 @@ const Cretors = ({ getCreator, creators }) => {
                     </div>
                     <div className="follow-me">
                       <button
+                        onClick={() => {
+                          if (creator?.followers?.includes[userInfo[0]?.id]) {
+                            unfollowUser();
+                          }
+                        }}
                         className={`btn btn-small ${
                           creator.follow ? "btn-fuchsia" : "btn-dark"
                         }`}
