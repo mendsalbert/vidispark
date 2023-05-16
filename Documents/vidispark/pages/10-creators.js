@@ -73,7 +73,7 @@ const Cretors = ({ getCreator, creators }) => {
                       </div>
                       <div className="title">
                         <Link href="/08-profile-page">
-                          <a>{creator.name}</a>
+                          <a>{creator?.fullname}</a>
                         </Link>
                       </div>
                       <div className="item-meta">
