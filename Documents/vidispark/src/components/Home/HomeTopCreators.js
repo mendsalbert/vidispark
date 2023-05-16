@@ -22,7 +22,7 @@ const HomeTopCreators = () => {
                   <picture>
                     <source type="image/avif" srcSet="avif/avatar.avif" />
                     <img
-                      src={users[0].data.avatarUrl}
+                      src={users[0]?.data?.avatarUrl}
                       alt="avatar"
                       loading="lazy"
                       width={100}
@@ -41,10 +41,10 @@ const HomeTopCreators = () => {
               <div className="title">
                 {" "}
                 <Link href="profile-page">
-                  <a>{users[0].data.fullname}</a>
+                  <a>{users[0]?.data?.fullname}</a>
                 </Link>{" "}
               </div>
-              <div className="creator-meta">@{users[0].data.username}</div>
+              <div className="creator-meta">@{users[0]?.data?.username}</div>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const HomeTopCreators = () => {
               <Link href="profile-page">
                 <a>
                   <img
-                    src={users[1].data.avatarUrl}
+                    src={users[1]?.data?.avatarUrl}
                     width={52}
                     height={52}
                     alt="avatar"
@@ -74,10 +74,10 @@ const HomeTopCreators = () => {
               <div className="title">
                 {" "}
                 <Link href="profile-page">
-                  <a>{users[1].data.fullname}</a>
+                  <a>{users[1]?.data?.fullname}</a>
                 </Link>{" "}
               </div>
-              <div className="creator-meta">@{users[1].data.username}</div>
+              <div className="creator-meta">@{users[1]?.data?.username}</div>
             </div>
           </div>
         </div>
