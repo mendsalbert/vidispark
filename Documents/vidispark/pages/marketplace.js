@@ -123,9 +123,7 @@ const Cretors = ({ getCreator, creators }) => {
                       ${creator?.data?.marketPrice}/hours
                     </a>
                   </div>
-                  <div className="-tw-mt-10">
-                    <a clas>${creator?.data?.marketPrice}/hours</a>
-                  </div>
+
                   <div className="projects-previews">
                     {/* {creator.projects &&
                       creator.projects.map((project, j) => (
