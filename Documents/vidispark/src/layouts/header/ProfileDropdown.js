@@ -90,7 +90,7 @@ const ProfileDropdown = () => {
             {/*user-avatar*/}
             <div className="profile-avatar avatar box-26">
               <img
-                src="img/avatar.png"
+                src={user?.avatarUrl}
                 alt="avatar"
                 loading="lazy"
                 height={100}
