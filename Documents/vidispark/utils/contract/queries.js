@@ -1,5 +1,5 @@
 import { BigNumber, ethers } from "ethers";
-import { contract } from "./contract";
+import { contract } from "./index";
 import { toEth } from "./ether-utils";
 
 export async function swap(amount, fromToken, toToken) {
