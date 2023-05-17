@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import useClickOutside from "../../useClickOutside";
+import { useUser } from "../../services/user";
 
 const ProfileDropdown = () => {
   const [toggle, setToggle] = useState(false);
@@ -30,6 +31,9 @@ const ProfileDropdown = () => {
     dayMood.current = !dayMood.current;
     moodChange(dayMood.current);
   };
+
+  const { userInfo } = useUser();
+  console.log(userInfo);
   return (
     <div
       className={`header-user-profile cryptoki-notif-bttn ${
