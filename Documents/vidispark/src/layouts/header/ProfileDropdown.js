@@ -33,7 +33,7 @@ const ProfileDropdown = () => {
   };
 
   const { userInfo } = useUser();
-  let user = userInfo[0];
+  let user = userInfo[0]?.data;
   console.log(user);
 
   return (
