@@ -54,7 +54,7 @@ const ProfileDropdown = () => {
         onClick={() => setToggle(!toggle)}
       >
         <picture>
-          <source type="image/avif" srcSet="avif/avatar.avif" />
+          <source type="image/avif" srcSet={user?.avatarUrl} />
           <img
             src={user?.avatarUrl}
             alt="avatar"
