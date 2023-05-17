@@ -33,9 +33,9 @@ const Cretors = ({ getCreator, creators }) => {
   const { users, userInfo, unfollowUser, followUser } = useUser();
   let user = users.filter(
     (item) =>
-      item?.data?.marketBio?.trim() !== "" ||
-      item?.data?.prevBrands?.trim() !== "" ||
-      item?.data?.marketPrice?.trim() !== ""
+      item?.data?.marketBio !== "" ||
+      item?.data?.prevBrands !== "" ||
+      item?.data?.marketPrice !== ""
   );
   // Paggination
 
