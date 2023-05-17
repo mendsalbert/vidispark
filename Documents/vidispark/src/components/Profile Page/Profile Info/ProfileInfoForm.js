@@ -50,6 +50,9 @@ const ProfileInfoForm = () => {
   const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
   const [bio, setBio] = useState("");
+  const [marketPrice, setMarketPrice] = useState("");
+  const [prevbrands, setPrevbrands] = useState("");
+  const [marketBio, setMarketBio] = useState("");
 
   const onUpdateUserDataHandler = () => {
     const updatedUserData = {
@@ -60,6 +63,11 @@ const ProfileInfoForm = () => {
       contact: contact !== "" ? contact : userInfo[0]?.data?.contact,
       url: url !== "" ? url : userInfo[0]?.data?.url,
       cover: coverUrl !== "" ? coverUrl : userInfo[0]?.data?.avatarCover,
+      marketPrice:
+        marketPrice !== "" ? marketPrice : userInfo[0]?.data?.marketPrice,
+      prevbrands:
+        prevbrands !== "" ? prevbrands : userInfo[0]?.data?.prevBrands,
+      marketBio: marketBio !== "" ? marketBio : userInfo[0]?.data?.marketBio,
     };
 
     updateUser(updatedUserData);
@@ -141,6 +149,7 @@ const ProfileInfoForm = () => {
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
+      <div className="user-db-title">Monetization(Market Place)</div>
 
       <div className="upload-photo-box">
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
