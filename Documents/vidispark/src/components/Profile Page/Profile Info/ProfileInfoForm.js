@@ -152,13 +152,13 @@ const ProfileInfoForm = () => {
       <div className="user-db-title tw-pt-3">Monetization(Market Place)</div>
       <div className="form-group">
         <div className="form-field">
-          <label htmlFor="name">Full name</label>
+          <label htmlFor="name">Market Bio</label>
           <input
             type="text"
             id="name"
-            defaultValue={userInfo[0]?.data?.fullname}
+            defaultValue={userInfo[0]?.data?.marketBio}
             onChange={(e) => {
-              setFullname(e.target.value);
+              setMarketBio(e.target.value);
             }}
           />
         </div>
