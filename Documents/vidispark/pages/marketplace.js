@@ -39,7 +39,7 @@ const Cretors = ({ getCreator, creators }) => {
       <div className="primary-content-area container content-padding">
         <div className="page-title-section">
           <h2>
-            Explore<span className="gradient-text"> Creators</span>
+            Marketplace<span className="gradient-text"> Creators</span>
           </h2>
         </div>
         {/* FILTERABLE BAR */}
