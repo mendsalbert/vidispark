@@ -42,7 +42,6 @@ const Cretors = ({ getCreator, creators }) => {
       user?.data?.marketBio !== null
   );
 
-  console.log(filteredUsers);
   const [active, setActive] = useState(0);
   let sort = 8;
   return (
