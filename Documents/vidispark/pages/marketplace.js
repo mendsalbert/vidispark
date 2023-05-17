@@ -31,7 +31,15 @@ const Cretors = ({ getCreator, creators }) => {
   };
 
   const { users, userInfo, unfollowUser, followUser } = useUser();
+  let user = users.filter(
+    (item) =>
+      item.data.marketBio.trim() !== "" ||
+      item.data.prevBrands.trim() !== "" ||
+      item.data.marketPrice.trim() !== ""
+  );
   // Paggination
+
+  console.log(user);
   const [active, setActive] = useState(0);
   let sort = 8;
   return (
