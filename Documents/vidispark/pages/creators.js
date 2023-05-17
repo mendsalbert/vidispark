@@ -163,7 +163,7 @@ const Cretors = ({ getCreator, creators }) => {
           active={active}
           setActive={setActive}
           sort={sort}
-          length={filteredData && filteredData.length}
+          length={users && users.length}
         />
         {/* PAGINATION */}
       </div>
