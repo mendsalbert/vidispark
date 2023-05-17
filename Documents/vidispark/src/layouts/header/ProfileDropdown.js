@@ -84,7 +84,6 @@ const ProfileDropdown = () => {
         id="profile-dropdown"
         className={`cryptoki-notif-target ${toggle ? "active open" : ""}`}
       >
-        <div className="profile-dropdown-header profile-cover-image" />
         <div className="profile-dropdown-body">
           <div className="profile-heading tw-flex">
             {/*user-avatar*/}
