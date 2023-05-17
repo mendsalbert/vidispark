@@ -33,7 +33,9 @@ const ProfileDropdown = () => {
   };
 
   const { userInfo } = useUser();
-  console.log(userInfo);
+  let user = userInfo[0];
+  console.log(user);
+
   return (
     <div
       className={`header-user-profile cryptoki-notif-bttn ${
