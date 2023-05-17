@@ -31,16 +31,15 @@ const Cretors = ({ getCreator, creators }) => {
   };
 
   const { users, userInfo, unfollowUser, followUser } = useUser();
-  let filteredUsers = users.filter(
-    (item) =>
-      item?.data?.marketBio !== null &&
-      item?.data?.marketBio !== "" &&
-      item?.data?.prevBrands !== null &&
-      item?.data?.prevBrands !== "" &&
-      item?.data?.marketPrice !== null &&
-      item?.data?.marketPrice !== ""
+  const filteredUsers = users.filter(
+    (user) =>
+      user?.data?.marketPrice !== undefined &&
+      user?.data?.marketPrice !== null &&
+      user?.data?.prevBrands !== undefined &&
+      user?.data?.prevBrands !== null &&
+      user?.data?.marketBio !== undefined &&
+      user?.data?.marketBio !== null
   );
-  // Paggination
 
   console.log(filteredUsers);
   const [active, setActive] = useState(0);
