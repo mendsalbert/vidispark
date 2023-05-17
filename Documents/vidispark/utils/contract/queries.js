@@ -32,3 +32,14 @@ export async function tip(amount, recipient) {
     return parseErrorMsg(e);
   }
 }
+
+function toWei(amount) {
+  const toWei = ethers.utils.parseUnits(amount.toString());
+  // return toWei;
+  return toWei;
+}
+
+function parseErrorMsg(e) {
+  const json = JSON.parse(JSON.stringify(e));
+  return json?.reason || json?.error?.message;
+}
