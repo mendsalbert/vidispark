@@ -10,18 +10,12 @@ async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
   const unlockTime = currentTimestampInSeconds + 60;
 
-  const lockedAmount = hre.ethers.utils.parseEther("0.001");
+  const VDSPToken = await ethers.getContractFactory("VDSPToken");
+  const vdspToken = await VDSPToken.deploy(1000000); // Specify the initial supply here
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  await vdspToken.deployed();
 
-  await lock.deployed();
-
-  console.log(
-    `Lock with ${ethers.utils.formatEther(
-      lockedAmount
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
+  console.log("VDSPToken deployed to:", vdspToken.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
