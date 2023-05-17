@@ -119,7 +119,7 @@ const Cretors = ({ getCreator, creators }) => {
                     <p>{creator?.data?.marketBio}...</p>
                   </div>
                   <div className="-tw-mt-10">
-                    <a className="text-lg">
+                    <a className="tw-text-lg">
                       ${creator?.data?.marketPrice}/hours
                     </a>
                   </div>
