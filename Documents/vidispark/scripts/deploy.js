@@ -9,7 +9,7 @@ const { ethers } = require("hardhat");
 
 async function main() {
   const VDSPToken = await ethers.getContractFactory("VDSPToken");
-  const vdspToken = await VDSPToken.deploy(100); // Specify the initial supply here
+  const vdspToken = await VDSPToken.deploy(10); // Specify the initial supply here
 
   await vdspToken.deployed();
 
