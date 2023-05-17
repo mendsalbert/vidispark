@@ -150,7 +150,58 @@ const ProfileInfoForm = () => {
         <span className="input_error-message" id="textareaMessage" />
       </div>
       <div className="user-db-title tw-pt-3">Monetization(Market Place)</div>
+      <div className="form-group">
+        <div className="form-field">
+          <label htmlFor="name">Full name</label>
+          <input
+            type="text"
+            id="name"
+            defaultValue={userInfo[0]?.data?.fullname}
+            onChange={(e) => {
+              setFullname(e.target.value);
+            }}
+          />
+        </div>
+      </div>
+      <div className="form-group">
+        <div className="form-field">
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            onChange={(e) => {
+              setUsername(e.target.value);
+            }}
+            defaultValue={userInfo[0]?.data?.username}
+          />
+        </div>
+        <div className="form-field">
+          <label htmlFor="phone"> contact</label>
+          <input
+            type="number"
+            id="phone"
+            defaultValue={parseInt(userInfo[0]?.data?.contact)}
+            value={contact}
+            onChange={(e) => {
+              setContact(e.target.value);
+            }}
+          />
+        </div>
+      </div>
 
+      <div className="form-group">
+        <div className="form-field">
+          <label htmlFor="username">Email</label>
+          <input
+            type="email"
+            id="username"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            defaultValue={userInfo[0]?.data?.email}
+          />
+        </div>
+      </div>
       <div className="upload-photo-box">
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
         <input
