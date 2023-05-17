@@ -22,13 +22,13 @@ const Nav = () => {
 
           <li className="menu-item">
             {" "}
-            <Link href="/10-creators">
+            <Link href="/creators">
               <a className="menu-link">Creators</a>
             </Link>{" "}
           </li>
           <li className="menu-item">
             {" "}
-            <Link href="/10-creators">
+            <Link href="/marketplace">
               <a className="menu-link">Marketpalce</a>
             </Link>{" "}
           </li>
