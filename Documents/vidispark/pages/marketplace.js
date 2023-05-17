@@ -31,6 +31,7 @@ const Cretors = ({ getCreator, creators }) => {
   };
 
   const { users, userInfo, unfollowUser, followUser } = useUser();
+
   const filteredUsers = users.filter(
     (user) =>
       user?.data?.marketPrice !== undefined &&
