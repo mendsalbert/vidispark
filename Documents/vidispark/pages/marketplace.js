@@ -98,17 +98,9 @@ const Cretors = ({ getCreator, creators }) => {
                             followUser(creator?.id);
                           }
                         }}
-                        className={`btn btn-small ${
-                          creator?.data?.followers.indexOf(userInfo[0]?.id) !==
-                          -1
-                            ? "btn-fuchsia"
-                            : "btn-dark"
-                        }`}
+                        className={`btn btn-small ${"btn-fuchsia"}`}
                       >
-                        {creator?.data?.followers.indexOf(userInfo[0]?.id) !==
-                        -1
-                          ? "Unfollow"
-                          : "Follow!"}
+                        {"Contact!"}
                       </button>
                     </div>
                   </div>
