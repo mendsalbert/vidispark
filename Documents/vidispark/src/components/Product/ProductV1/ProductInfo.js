@@ -73,8 +73,7 @@ const ProductInfo = ({ singleVid }) => {
             }}
             className="btn btn-wide btn-dark"
           >
-            {followerState == "nf" ? "Subscribed" : " Subscribe"}
-            {/* Admire */}
+            Tip
           </button>
         </div>
         <div
