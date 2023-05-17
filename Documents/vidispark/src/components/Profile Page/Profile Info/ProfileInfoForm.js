@@ -165,26 +165,25 @@ const ProfileInfoForm = () => {
       </div>
       <div className="form-group">
         <div className="form-field">
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">Market Price / hour</label>
           <input
             type="text"
             id="username"
             onChange={(e) => {
-              setUsername(e.target.value);
+              setMarketPrice(e.target.value);
             }}
-            defaultValue={userInfo[0]?.data?.username}
+            defaultValue={userInfo[0]?.data?.marketPrice}
           />
         </div>
         <div className="form-field">
-          <label htmlFor="phone"> contact</label>
+          <label htmlFor="username">Previous Brand worked with</label>
           <input
-            type="number"
-            id="phone"
-            defaultValue={parseInt(userInfo[0]?.data?.contact)}
-            value={contact}
+            type="text"
+            id="username"
             onChange={(e) => {
-              setContact(e.target.value);
+              setPrevbrands(e.target.value);
             }}
+            defaultValue={userInfo[0]?.data?.prevBrands}
           />
         </div>
       </div>
