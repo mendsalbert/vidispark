@@ -76,8 +76,7 @@ export const useUser = () => {
         marketPrice: userObj.marketPrice,
         prevBrands: userObj.prevbrands,
         marketBio: userObj.marketBio,
-        followers: [],
-        following: [],
+
         date: db.ts(),
         user_address: db.signer(),
       },
