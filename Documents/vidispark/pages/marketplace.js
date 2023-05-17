@@ -119,7 +119,12 @@ const Cretors = ({ getCreator, creators }) => {
                     <p>{creator?.data?.marketBio}...</p>
                   </div>
                   <div className="-tw-mt-10">
-                    <a>${creator?.data?.marketPrice}/hours</a>
+                    <a className="text-lg">
+                      ${creator?.data?.marketPrice}/hours
+                    </a>
+                  </div>
+                  <div className="-tw-mt-10">
+                    <a clas>${creator?.data?.marketPrice}/hours</a>
                   </div>
                   <div className="projects-previews">
                     {/* {creator.projects &&
