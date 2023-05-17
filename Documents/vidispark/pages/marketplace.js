@@ -118,8 +118,8 @@ const Cretors = ({ getCreator, creators }) => {
                   <div className="about-creator">
                     <p>{creator?.data?.marketBio}...</p>
                   </div>
-                  <div className="about-creator -tw-mt-10">
-                    Brands Worked with {creator?.data?.prevBrands}
+                  <div className="about-creator -tw-mt-10 tw-font-bold">
+                    Brands Worked with: {creator?.data?.prevBrands}
                   </div>
                   <div className="-tw-mt-10">
                     <a className="tw-text-lg">
