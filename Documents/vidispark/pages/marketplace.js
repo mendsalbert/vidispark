@@ -116,7 +116,7 @@ const Cretors = ({ getCreator, creators }) => {
                   </div>
 
                   <div className="about-creator">
-                    <p>{creator?.data?.bio}...</p>
+                    <p>{creator?.data?.marketBio}...</p>
                   </div>
                   <div className="projects-previews">
                     {/* {creator.projects &&
