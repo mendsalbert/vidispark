@@ -56,7 +56,7 @@ const ProfileDropdown = () => {
         <picture>
           <source type="image/avif" srcSet="avif/avatar.avif" />
           <img
-            src={user.avatarUrl}
+            src={user?.avatarUrl}
             alt="avatar"
             loading="lazy"
             width={100}
