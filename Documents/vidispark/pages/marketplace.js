@@ -57,8 +57,8 @@ const Cretors = ({ getCreator, creators }) => {
         {/* FILTERABLE BAR */}
         {/* CREATORS GRID */}
         <div className="creators-box grid-4-columns">
-          {users &&
-            users.map((creator, i) => (
+          {filteredUsers &&
+            filteredUsers.map((creator, i) => (
               <div
                 key={i}
                 className={` creator-item ${dblock(active, i, sort)}`}
@@ -165,7 +165,7 @@ const Cretors = ({ getCreator, creators }) => {
           active={active}
           setActive={setActive}
           sort={sort}
-          length={filteredData && filteredData.length}
+          length={filteredUsers && filteredUsers.length}
         />
         {/* PAGINATION */}
       </div>
