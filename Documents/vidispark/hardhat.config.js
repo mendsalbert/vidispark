@@ -1,6 +1,40 @@
-require("@nomicfoundation/hardhat-toolbox");
+/* hardhat.config.js */
+require("@nomiclabs/hardhat-waffle");
+require("hardhat-contract-sizer");
+const fs = require("fs");
+// const privateKey = fs.readFileSync("secret").toString();
+const privateKey = fs.readFileSync(".secret").toString().trim();
 
-/** @type import('hardhat/config').HardhatUserConfig */
+const projectId = "xxx";
+
 module.exports = {
-  solidity: "0.8.18",
+  defaultNetwork: "hardhat",
+  networks: {
+    hardhat: {
+      chainId: 1337,
+      allowUnlimitedContractSize: true,
+    },
+
+    theta: {
+      url: "https://eth-rpc-api-testnet.thetatoken.org/rpc",
+      accounts: [privateKey],
+      gas: 2100000,
+      gasPrice: 8000000000,
+      network_id: 51,
+    },
+  },
+  solidity: {
+    version: "0.8.9",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 1,
+      },
+    },
+    outputSelection: {
+      "*": {
+        "*": ["metadata", "evm.bytecode", "evm.bytecode.sourceMap"],
+      },
+    },
+  },
 };
