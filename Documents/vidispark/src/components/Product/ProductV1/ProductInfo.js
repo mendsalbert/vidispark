@@ -65,6 +65,17 @@ const ProductInfo = ({ singleVid }) => {
             {followerState == "nf" ? "Subscribed" : " Subscribe"}
             {/* Admire */}
           </button>
+          <button
+            type="button"
+            onClick={() => {
+              setFollowerState("nf");
+              followUser(singleVid?.videoData?.uploaderId);
+            }}
+            className="btn btn-wide btn-dark"
+          >
+            {followerState == "nf" ? "Subscribed" : " Subscribe"}
+            {/* Admire */}
+          </button>
         </div>
         <div
           className="product-fav-counter"
