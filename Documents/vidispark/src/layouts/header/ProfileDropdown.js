@@ -34,7 +34,6 @@ const ProfileDropdown = () => {
 
   const { userInfo } = useUser();
   let user = userInfo[0]?.data;
-  console.log(user);
 
   return (
     <div
@@ -45,7 +44,7 @@ const ProfileDropdown = () => {
     >
       {/*user-meta*/}
       <div className="user-meta" onClick={() => setToggle(!toggle)}>
-        <div className="user_name">Dexter Stark</div>
+        <div className="user_name">{user.fullname}</div>
         <div className="user_score">291.36 ETH</div>
       </div>
       {/*/user-meta*/}
