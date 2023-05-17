@@ -105,7 +105,7 @@ const ProfileDropdown = () => {
             {/*/user-avatar*/}
             <div className="profile-link">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href="profile-page">
                 <a className="btn btn-small gradient-background">My Profile</a>
               </Link>{" "}
             </div>
