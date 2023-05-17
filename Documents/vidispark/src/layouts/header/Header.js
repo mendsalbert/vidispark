@@ -67,7 +67,7 @@ const Header = () => {
           {/*/HEADER BUTTON*/}
           {/*HEADER ICONS*/}
           <div className="user-activity-buttons">
-            <div className="favourites-button-cont">
+            {/* <div className="favourites-button-cont">
               <button
                 className="favourites-button cryptoki-notif-bttn"
                 data-target=""
@@ -76,8 +76,8 @@ const Header = () => {
                   <use xlinkHref="#heart-icon" />
                 </svg>
               </button>
-            </div>
-            <NotificationsButton />
+            </div> */}
+            {/* <NotificationsButton /> */}
             {/*/notification dropdown*/}
             {/*/NOTIFICATION BUTTON*/}
           </div>
