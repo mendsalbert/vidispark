@@ -8,7 +8,6 @@ const hre = require("hardhat");
 
 async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
 
   const VDSPToken = await ethers.getContractFactory("VDSPToken");
   const vdspToken = await VDSPToken.deploy(1000000); // Specify the initial supply here
