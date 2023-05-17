@@ -123,7 +123,7 @@ const Cretors = ({ getCreator, creators }) => {
                   </div>
                   <div className="-tw-mt-10">
                     <a className="tw-text-lg">
-                      ${creator?.data?.marketPrice}/hours
+                      ${creator?.data?.marketPrice}/hours ~ 30 VDPS
                     </a>
                   </div>
 
