@@ -188,19 +188,6 @@ const ProfileInfoForm = () => {
         </div>
       </div>
 
-      <div className="form-group">
-        <div className="form-field">
-          <label htmlFor="username">Email</label>
-          <input
-            type="email"
-            id="username"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            defaultValue={userInfo[0]?.data?.email}
-          />
-        </div>
-      </div>
       <div className="upload-photo-box">
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
         <input
