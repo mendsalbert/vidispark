@@ -176,7 +176,7 @@ const ProfileInfoForm = () => {
           />
         </div>
         <div className="form-field">
-          <label htmlFor="username">Previous Brand worked with</label>
+          <label htmlFor="username">Previous Brand(s) worked with</label>
           <input
             type="text"
             id="username"
