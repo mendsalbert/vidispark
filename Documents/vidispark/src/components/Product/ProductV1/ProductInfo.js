@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useUser } from "../../../services/user";
 import { useVideo } from "../../../services/videos";
+import { tip } from "../../../../utils/contract/queries";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
   const [tempCount, setTempCount] = useState(singleVid?.videoData?.likes);
@@ -68,8 +69,8 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              setFollowerState("nf");
-              followUser(singleVid?.videoData?.uploaderId);
+              //  TOD
+              tip(1, "0x5d6124b99Fe94aF73377BB740aD9A13635185785");
             }}
             className="btn btn-wide btn-dark"
           >
