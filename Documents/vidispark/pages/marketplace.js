@@ -100,7 +100,7 @@ const Cretors = ({ getCreator, creators }) => {
                         }}
                         className={`btn btn-small ${"btn-fuchsia"}`}
                       >
-                        {"Contact!"}
+                        {"Contact"}
                       </button>
                     </div>
                   </div>
