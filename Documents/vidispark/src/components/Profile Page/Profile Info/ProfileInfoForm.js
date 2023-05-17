@@ -149,7 +149,7 @@ const ProfileInfoForm = () => {
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
-      <div className="user-db-title">Monetization(Market Place)</div>
+      <div className="user-db-title tw-pt-3">Monetization(Market Place)</div>
 
       <div className="upload-photo-box">
         <div className="user-db-title tw-mt-2">Avatar and Cover</div>
