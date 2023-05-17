@@ -1,0 +1,17 @@
+const { ethers } = require("hardhat");
+
+async function main() {
+  const VDSPToken = await ethers.getContractFactory("VDSPToken");
+  const vdspToken = await VDSPToken.deploy(1000000); // Specify the initial supply here
+
+  await vdspToken.deployed();
+
+  console.log("VDSPToken deployed to:", vdspToken.address);
+}
+
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
