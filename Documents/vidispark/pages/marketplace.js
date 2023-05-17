@@ -118,6 +118,9 @@ const Cretors = ({ getCreator, creators }) => {
                   <div className="about-creator">
                     <p>{creator?.data?.marketBio}...</p>
                   </div>
+                  <div className="title">
+                    <a>{creator?.data?.marketPrice}</a>
+                  </div>
                   <div className="projects-previews">
                     {/* {creator.projects &&
                       creator.projects.map((project, j) => (
