@@ -18,9 +18,8 @@ module.exports = {
     theta: {
       url: "https://eth-rpc-api-testnet.thetatoken.org/rpc",
       accounts: [privateKey],
-      gas: 2100000,
-      gasPrice: 8000000000,
-      network_id: 51,
+
+      network_id: 365,
     },
   },
   solidity: {
