@@ -70,7 +70,13 @@ const ProductInfo = ({ singleVid }) => {
             type="button"
             onClick={() => {
               //  TOD
-              tip(1, "0x5d6124b99Fe94aF73377BB740aD9A13635185785");
+              tip(1, "0x5d6124b99Fe94aF73377BB740aD9A13635185785")
+                .then((res) => {
+                  console.log(res);
+                })
+                .catch((e) => {
+                  console.log(e);
+                });
             }}
             className="btn btn-wide btn-dark"
           >
