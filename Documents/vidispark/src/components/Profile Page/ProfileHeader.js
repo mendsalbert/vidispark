@@ -53,12 +53,11 @@ const ProfileHeader = ({ user }) => {
               <svg className="crumina-icon tw-ml-2">
                 <use xlinkHref="#copy-icon" />
               </svg>
-
-              <div className="number">
-                {user?.followers?.length < 1 ? 0 : user?.followers?.length}
-              </div>
-              <div className="label">Followers</div>
             </div>
+            <div className="number">
+              {user?.followers?.length < 1 ? 0 : user?.followers?.length}
+            </div>
+            <div className="label">Followers</div>
           </div>
           <div className="projects-meta">
             {/* <div className="projects-number">
