@@ -33,7 +33,7 @@ const Cretors = ({ getCreator, creators }) => {
   const { users, userInfo, unfollowUser, followUser } = useUser();
   // Paggination
   const [active, setActive] = useState(0);
-  console.log(creators);
+  console.log(creator);
   let sort = 8;
   return (
     <Layouts>
