@@ -36,7 +36,7 @@ const AIpage = () => {
       prompt: `A student wants to learn about a  , generate 6 modules that a student can use to learn as . A module consists of a title and a description, separated by a colon.`,
       temperature: 1.4,
       top_p: 0.7,
-      max_tokens: isSubscribed ? 120 : 60,
+      max_tokens: 120,
     });
     console.log(completion.data.choices[0].text);
     return parseString(completion.data.choices[0]?.text);
