@@ -60,13 +60,7 @@ const Profile = () => {
             </div>
             <div className="follow-container">
               <div className="more-link-wrapper">
-                <div className="more-link">
-                  <a href="#">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#dots-icon" />
-                    </svg>
-                  </a>
-                </div>
+                <
               </div>
               <div className="follow-box">
                 <button className="btn btn-wide btn-dark">Follow!</button>
