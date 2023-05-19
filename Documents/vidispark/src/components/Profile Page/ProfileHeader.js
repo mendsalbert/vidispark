@@ -5,7 +5,7 @@ const ProfileHeader = ({ user }) => {
   return (
     <div className="profile-header-section">
       <div className="cover-image">
-        <img src={user?.avatarCover} alt="" />
+        <img src={user?.avatarCover} alt="" className="tw-w-full" />
       </div>
       <div className="about-author-section container">
         <div className="profile-header-user-profile">
