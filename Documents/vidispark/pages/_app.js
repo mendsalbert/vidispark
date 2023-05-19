@@ -35,12 +35,12 @@ import { AuthProvider } from "./authContext";
 
 const xdcApothem = {
   id: 365,
-  name: "Apothem-Network (TestNet)",
-  network: "XDC Apothem Network (TestNet)",
+  name: "Theta",
+  network: "Theta Network (TestNet)",
   nativeCurrency: {
     decimals: 18,
-    name: "XDC-Network",
-    symbol: "XDC",
+    name: "Theta-Network",
+    symbol: "TFUEL",
   },
   rpcUrls: {
     default: {
