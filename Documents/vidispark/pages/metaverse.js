@@ -11,7 +11,7 @@ const ProfilePageTabsCreated = () => {
             <div className="featured-item-content">
               <div className="featured-item-image">
                 {" "}
-                <Link href="">
+                <Link href="https://www.voxels.com/play?coords=SE@815E,534S">
                   <a>
                     <img
                       src="https://i.ibb.co/pXHXTpS/proton-towner.jpg"
