@@ -53,6 +53,7 @@ const ProfileInfoForm = () => {
       <button
         onClick={() => {
           // onUpdateUserDataHandler();
+          generateContent();
         }}
         className="btn btn-wide btn-dark tw-mt-3"
       >
