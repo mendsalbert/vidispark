@@ -34,16 +34,11 @@ export async function tip(amount, recipient) {
 }
 
 export async function getBal(address) {
-  console.log(address);
   try {
     const contractObj = await contract();
     const data = await contractObj.balanceOf(address);
-    console.log(data);
-    // const results = await data.wait();
-    console.log("res------", results);
-    return results;
+    return data;
   } catch (e) {
-    console.log(e);
     return parseErrorMsg(e);
   }
 }
