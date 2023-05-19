@@ -66,7 +66,7 @@ const AIpage = () => {
         className="btn btn-wide btn-dark tw-mt-3"
       >
         {isLoading ? (
-          <div className="tw-flex  tw-flex-row tw-items-center tw-space-x-2">
+          <div className="tw-flex  tw-flex-row tw-items-center tw-space-x-2 tw-space-x-2">
             <div
               class="tw-inline-block tw-h-6 tw-w-6 tw-animate-spin tw-rounded-full tw-border-4 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
               role="status"
