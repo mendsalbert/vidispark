@@ -11,7 +11,11 @@ import { useUser } from "../src/services/user";
 const Cretors11 = ({ getCollector, collectors }) => {
   let sort = 6;
   const { users } = useUser();
-  console.log(users);
+  let users_ = users.sort(
+    (a, b) => parseInt(b.data.tokens) - parseInt(a.data.tokens)
+  );
+  console.log(users_);
+
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
   useEffect(() => {
