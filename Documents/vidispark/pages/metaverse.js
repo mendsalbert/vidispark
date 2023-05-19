@@ -159,6 +159,7 @@ const ProfilePageTabsCreated = () => {
             <div className="featured-item-post-content"></div>
           </div>
         </div>
+        {/* "https://i.ibb.co/ccwPJHC/womp-1684475028009-f4239d61be3d059de955f208d0af2f25.jpg" */}
         <div className="featured-item">
           <div className="featured-item-wrapper">
             <div className="featured-item-content">
@@ -167,7 +168,7 @@ const ProfilePageTabsCreated = () => {
                 <Link href="">
                   <a>
                     <img
-                      src="https://i.ibb.co/pXHXTpS/proton-towner.jpg"
+                      src="https://i.ibb.co/qsH5Rq9/womp-1684474662484-b0398a29b418673f7889f28a777196e4.jpg"
                       alt=""
                     />
                   </a>
