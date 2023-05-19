@@ -49,7 +49,7 @@ const ProfileInfoSidebar = () => {
                   <svg className="crumina-icon">
                     <use xlinkHref="#settings-icon" />
                   </svg>
-                  AI Creator{" "}
+                  VidisAI{" "}
                 </a>
               </Link>{" "}
             </li>
