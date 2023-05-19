@@ -61,33 +61,7 @@ const ProfilePageTabsCreated = () => {
                 </div>
               </div>
             </div>
-            <div className="featured-item-post-content">
-              <div className="featured-item-pricebox">
-                <div className="price-caption">Current BID</div>
-                <div className="price">4.07 ETH</div>
-              </div>
-              <div className="social-share-box">
-                <div className="social-caption">Share</div>
-                <div className="share-icons">
-                  {" "}
-                  <a href="#">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#facebook-icon" />
-                    </svg>{" "}
-                  </a>{" "}
-                  <a href="#">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#twitter-icon" />
-                    </svg>{" "}
-                  </a>{" "}
-                  <a href="#">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#instagram-icon" />
-                    </svg>{" "}
-                  </a>
-                </div>
-              </div>
-            </div>
+            <div className="featured-item-post-content"></div>
           </div>
         </div>
         <div className="featured-item">
