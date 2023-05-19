@@ -8,7 +8,7 @@ const ProfilePageTabsCreated = () => {
       <div className="page-title-section tw-mx-4 tw-mt-4">
         <h2 className="tw-text-xl">
           Metaverse
-          <span className="gradient-text"> from https://www.voxels.com/ </span>
+          <span className="gradient-text"> from voxels.com/ </span>
         </h2>
       </div>
       <div className="featured-box grid-4-columns tw-mx-4 tw-mt-4">
