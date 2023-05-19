@@ -7,7 +7,7 @@ import { Configuration, OpenAIApi } from "openai";
 const AIpage = () => {
   const { updateUser, userInfo } = useUser();
   const [userPrompt, setUserPrompt] = useState("");
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
   const [res, setRes] = useState("");
   const configuration = new Configuration({
     organization: "org-iW0tOES3m75oHB2cx9IxyB8I",
