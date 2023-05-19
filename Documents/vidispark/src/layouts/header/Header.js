@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import CartButton from "./CartButton";
 import MobileHeader from "./MobileHeader";
 import MobileSearchTrigger from "./MobileSearchTrigger";
@@ -8,8 +8,15 @@ import ProfileDropdown from "./ProfileDropdown";
 import SearchBox from "./SearchBox";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { getBal } from "../../../utils/contract/queries";
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
+  const { address } = useAccount();
+
+  useEffect(() => {
+    let res = getBal(add);
+    console.log(res);
+  }, []);
 
   return (
     <header className="site-header">
