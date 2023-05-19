@@ -85,7 +85,7 @@ const Cretors = ({ getCreator, creators }) => {
                         </Link>
                       </div>
                       <div className="title">
-                        <Link href="/08-profile-page">
+                        <Link href={`/profile-page/${creator?.id}`}>
                           <a>{creator?.data?.fullname}</a>
                         </Link>
                       </div>
