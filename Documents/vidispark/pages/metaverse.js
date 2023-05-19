@@ -44,7 +44,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <button></button>
+                  <button>Enter</button>
                 </div>
               </div>
             </div>
