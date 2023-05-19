@@ -13,8 +13,8 @@ const Product05 = () => {
 
   const { videoResults } = useVideo();
   const singleVid = videoResults?.filter((item) => item.videoId == id);
-  const userVideos = videoResults?.filter(
-    (item) => item?.videoData?.uploaderId == id
+  const filteredVideos = videoResults.filter(
+    (video) => video.user.userId === id
   );
   console.log(userVideos);
 
