@@ -15,10 +15,10 @@ const Cretors11 = ({ getCollector, collectors }) => {
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
   useEffect(() => {
-    setFilterData(collectors);
-  }, [collectors]);
+    setFilterData(users);
+  }, [users]);
 
-  const [filterData, setFilterData] = useState(collectors);
+  const [filterData, setFilterData] = useState(users);
   const [iconValue, setIconValue] = useState("$");
   const filterFun = (name, value) => {
     // setFilterData(getProductByFilter(collectors, { time: value }));
