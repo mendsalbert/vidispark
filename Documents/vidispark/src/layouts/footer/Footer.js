@@ -208,14 +208,9 @@ const Footer = () => {
         </div>
         <div className="footer-copyright flex-space-between">
           <span className="copyright-text">
-            Cryptoki 2021 - All Rights Reserved
+            Vidispark 2023 - All Rights Reserved
           </span>
           <ul className="sub-footer-menu">
-            <li className="menu-item">
-              <a className="menu-link" href="#">
-                Terms of Service
-              </a>
-            </li>
             <li className="menu-item">
               <a className="menu-link" href="#">
                 Privacy
