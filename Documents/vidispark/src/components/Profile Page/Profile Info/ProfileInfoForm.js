@@ -14,7 +14,7 @@ const ProfileInfoForm = () => {
         <label htmlFor="message">
           Genereate your video captions with VidisAI
         </label>
-        <textarea
+        <input
           id="message"
           name="message"
           className="comment-form message"
