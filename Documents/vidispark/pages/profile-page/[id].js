@@ -105,11 +105,17 @@ const Profile = () => {
           <div className="author-primary-info">
             <div className="activity-meta">
               <div className="followers-number">
-                <div className="number">903</div>
+                <div className="number">
+                  {" "}
+                  {user?.followers?.length < 1 ? 0 : user?.followers?.length}
+                </div>
                 <div className="label">Followers</div>
               </div>
               <div className="following-number">
-                <div className="number">56</div>
+                <div className="number">
+                  {" "}
+                  {user?.following?.length < 1 ? 0 : user?.followers?.length}
+                </div>
                 <div className="label">Following</div>
               </div>
               <div className="projects-number">
