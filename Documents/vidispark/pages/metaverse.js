@@ -11,9 +11,12 @@ const ProfilePageTabsCreated = () => {
             <div className="featured-item-content">
               <div className="featured-item-image">
                 {" "}
-                <Link href="/05-product-page">
+                <Link href="">
                   <a>
-                    <img src="img/content/items/featured-item-1.png" alt="" />
+                    <img
+                      src="https://i.ibb.co/pXHXTpS/proton-towner.jpg"
+                      alt=""
+                    />
                   </a>
                 </Link>{" "}
               </div>
