@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
+const webpack = require("webpack");
+const { parsed: myEnv } = require("dotenv").config({
+  path: "/full/custom/path/to/env",
+});
 const nextConfig = {
   reactStrictMode: true,
-  env: {
-    customKey: "my-value",
+
+  webpack(config) {
+    config.plugins.push(new webpack.EnvironmentPlugin(myEnv));
+    return config;
   },
 };
 

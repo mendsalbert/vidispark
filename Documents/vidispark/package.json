@@ -25,6 +25,7 @@
     "bcryptjs": "^2.4.3",
     "buffer": "^6.0.3",
     "did-session": "^2.0.1",
+    "dotenv": "^16.0.3",
     "flatted": "^3.2.7",
     "framer-motion": "^10.12.7",
     "hardhat-contract-sizer": "^2.8.0",
