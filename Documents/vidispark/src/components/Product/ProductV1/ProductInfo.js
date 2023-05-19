@@ -7,7 +7,7 @@ import { tip } from "../../../../utils/contract/queries";
 const ProductInfo = ({ singleVid }) => {
   const [followerState, setFollowerState] = useState("");
   const [tempCount, setTempCount] = useState(singleVid?.videoData?.likes);
-  const { followUser, userInfo } = useUser();
+  const { followUser, userInfo, updateUserToken, upda } = useUser();
   const { updateLike } = useVideo();
   return (
     <>
@@ -68,16 +68,16 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              const tipAmount = window.prompt("Enter tip amount:");
-              if (tipAmount !== null) {
-                tip(tipAmount, singleVid?.user?.user_address)
-                  .then((res) => {
-                    console.log(res);
-                  })
-                  .catch((e) => {
-                    console.log(e);
-                  });
-              }
+              // const tipAmount = window.prompt("Enter tip amount:");
+              // if (tipAmount !== null) {
+              //   tip(tipAmount, singleVid?.user?.user_address)
+              //     .then((res) => {
+              //       console.log(res);
+              //     })
+              //     .catch((e) => {
+              //       console.log(e);
+              //     });
+              // }
             }}
             className="btn btn-wide tw-bg-green-500"
           >
