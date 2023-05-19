@@ -29,7 +29,7 @@ const ProfileInfoSidebar = () => {
             </div>
             <div className="title">
               {" "}
-              <Link href={`/profile-page/${userInfo[0].id}`}>
+              <Link href="/profile-page">
                 <a>{userInfo[0]?.data?.fullname}</a>
               </Link>{" "}
             </div>
@@ -44,7 +44,7 @@ const ProfileInfoSidebar = () => {
           <ul className="profile-menu">
             <li className="profile">
               {" "}
-              <Link href={`/profile-page/${userInfo[0].id}`}>
+              <Link href="/23-profile-info">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#user-icon" />
@@ -67,7 +67,7 @@ const ProfileInfoSidebar = () => {
 
             <li className="artwork">
               {" "}
-              <Link href="upload-artwork">
+              <Link href="/26-upload-artwork">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#picture-icon" />
@@ -79,7 +79,7 @@ const ProfileInfoSidebar = () => {
 
             <li className="verification">
               {" "}
-              <Link href="get-verified">
+              <Link href="/31-get-verified">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#circle-checked-icon" />
