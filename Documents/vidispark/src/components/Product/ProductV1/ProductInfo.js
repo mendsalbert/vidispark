@@ -9,7 +9,6 @@ const ProductInfo = ({ singleVid }) => {
   const [tempCount, setTempCount] = useState(singleVid?.videoData?.likes);
   const { followUser, userInfo } = useUser();
   const { updateLike } = useVideo();
-  console.log(singleVid?.user?.user_address);
   return (
     <>
       <div className="page-title-section">
@@ -71,7 +70,7 @@ const ProductInfo = ({ singleVid }) => {
             onClick={() => {
               const tipAmount = window.prompt("Enter tip amount:");
               if (tipAmount !== null) {
-                tip(tipAmount, "0x5d6124b99Fe94aF73377BB740aD9A13635185785")
+                tip(tipAmount, singleVid?.user?.user_address)
                   .then((res) => {
                     console.log(res);
                   })
