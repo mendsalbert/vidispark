@@ -51,7 +51,7 @@ const ProfileHeader = ({ user }) => {
             {/*  */}
 
             <div className="tw-flex tw-flex-row tw-space-x-2">
-              <div className="tw-text-xl">
+              <div className="tw-text-lg">
                 <div className="number ">
                   {user?.followers?.length < 1 ? 0 : user?.followers?.length}
                 </div>
