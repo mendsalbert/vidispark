@@ -12,7 +12,7 @@ const ProfileInfoForm = () => {
 
   const openai = new OpenAIApi(configuration);
   const generateContent = async () => {
-    console.log(process.env.TEXT);
+    console.log(process.env.customKey);
     // const completion = await openai.createCompletion({
     //   model: "text-davinci-003",
     //   prompt: `A student wants to learn about a , generate 6 modules that a student can use to learn as . A module consists of a title and a description, separated by a colon.`,
