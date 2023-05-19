@@ -7,7 +7,8 @@ const ProfilePageTabsCreated = () => {
     <Layouts>
       <div className="page-title-section tw-mx-4 tw-mt-4">
         <h2 className="tw-text-xl">
-          Marketplace<span className="gradient-text"> Creators</span>
+          Metaverse
+          <span className="gradient-text"> from https://www.voxels.com/ </span>
         </h2>
       </div>
       <div className="featured-box grid-4-columns tw-mx-4 tw-mt-4">
