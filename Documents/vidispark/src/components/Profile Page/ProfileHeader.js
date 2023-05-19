@@ -72,12 +72,7 @@ const ProfileHeader = ({ user }) => {
           </div>
         </div>
         <div className="author-description">
-          <p>
-            I am a self-taught digital artist who specializes in 3d art and
-            motion graphics. Most of my works are inspired by nature and
-            biomechanic themes. What does it mean? Biomechanics is the study...
-            <span className="bold">Read More</span>
-          </p>
+          <p>{user?.bio}</p>
           <ul className="social-icons-list">
             <li className="social-icon icon-border">
               {" "}
