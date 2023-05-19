@@ -51,19 +51,22 @@ const ProfileHeader = ({ user }) => {
             {/*  */}
 
             <div>
-              <div className="number">
-                {user?.followers?.length < 1 ? 0 : user?.followers?.length}
+              <div>
+                <div className="number">
+                  {user?.followers?.length < 1 ? 0 : user?.followers?.length}
+                </div>
+                <div className="label">Followers</div>
               </div>
-              <div className="label">Followers</div>
-            </div>
-            <div>
-              <div className="number">
-                {" "}
-                {user?.following?.length < 1 ? 0 : user?.followers?.length}
+              <div>
+                <div className="number">
+                  {" "}
+                  {user?.following?.length < 1 ? 0 : user?.followers?.length}
+                </div>
+                <div className="label">Following</div>
               </div>
-              <div className="label">Following</div>
             </div>
           </div>
+
           <div className="projects-meta">
             {/* <div className="projects-number">
               <div className="number">135</div>
