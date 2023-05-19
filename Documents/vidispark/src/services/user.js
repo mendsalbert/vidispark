@@ -109,14 +109,14 @@ export const useUser = () => {
 
   const updateUserToken = async (userId, tokens) => {
     console.log("userInfo", userId, tokens);
-    // let res = await db.update(
-    //   {
-    //     tokens: tokens,
-    //   },
-    //   "user",
-    //   userId,
-    //   user
-    // );
+    let res = await db.update(
+      {
+        tokens: tokens,
+      },
+      "user",
+      userId,
+      user
+    );
     // console.log(res);
   };
 
