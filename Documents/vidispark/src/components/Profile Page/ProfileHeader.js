@@ -50,25 +50,6 @@ const ProfileHeader = ({ user }) => {
               </Link>{" "}
             </h3>
             <div className="author-meta">@{user?.username}</div>
-            <div className=" tw-flex tw-w-full tw-space-x-2 tw-items-center ">
-              {user?.user_address?.slice(0, 6) +
-                "..." +
-                user?.user_address?.slice(-4)}
-
-              <svg className="crumina-icon tw-ml-2">
-                <use xlinkHref="#copy-icon" />
-              </svg>
-            </div>
-          </div>
-          <div className="projects-meta">
-            <div className="projects-number">
-              <div className="number">135</div>
-              <div className="label">Content Created</div>
-            </div>
-            <div className="onsale-number">
-              <div className="number">12</div>
-              <div className="label">Likes</div>
-            </div>
           </div>
         </div>
         <div className="author-description">
