@@ -36,27 +36,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
           </h2>
         </div>
         {/* FILTERABLE BAR */}
-        <div className="collectors-filter">
-          <form className="flex-right">
-            <NiceSelect
-              arr={[
-                { name: "All Time", value: "" },
-                { name: "Last Week", value: "week" },
-                { name: "Last Month", value: "month" },
-              ]}
-              ChangeFilterData={(name, value) => filterFun(name, value)}
-              name={"time"}
-            />
-            <NiceSelect
-              arr={[
-                { name: "Show in USD", value: "$" },
-                { name: "Show in Euro", value: "€" },
-              ]}
-              ChangeFilterData={(name, value) => iconValueChange(name, value)}
-              name={"value"}
-            />
-          </form>
-        </div>
+
         {/* FILTERABLE BAR */}
         {/* COLLECTORS LIST */}
         <div className="collectors-box">
