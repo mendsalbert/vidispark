@@ -16,7 +16,7 @@ const ProfileInfoSidebar = () => {
           <div className="user-header-user-profile">
             <div className="avatar box-64">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href={`/profile-page/${userInfo[0].id}`}>
                 <a>
                   <img src={userInfo[0]?.data?.avatarUrl} alt="avatar" />
                   {/* <span className="verified">
@@ -29,7 +29,7 @@ const ProfileInfoSidebar = () => {
             </div>
             <div className="title">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href="/profile-page">
                 <a>{userInfo[0]?.data?.fullname}</a>
               </Link>{" "}
             </div>
