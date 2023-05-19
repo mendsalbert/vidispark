@@ -6,6 +6,7 @@ import { Configuration, OpenAIApi } from "openai";
 
 const AIpage = () => {
   const { updateUser, userInfo } = useUser();
+  const [userPrompt, setUserPrompt] = useState("");
   const configuration = new Configuration({
     organization: "org-iW0tOES3m75oHB2cx9IxyB8I",
     apiKey: process.env.GREETING,
@@ -19,7 +20,7 @@ const AIpage = () => {
   const generateContent = async () => {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `A student wants to learn about a  , generate 6 modules that a student can use to learn as . A module consists of a title and a description, separated by a colon.`,
+      prompt: `${userPrompt}`,
       temperature: 1.4,
       top_p: 0.7,
       max_tokens: 120,
@@ -39,10 +40,10 @@ const AIpage = () => {
           className="comment-form message"
           cols={30}
           rows={10}
-          //   value={bio}
-          //   onChange={(e) => {
-          //     setBio(e.target.value);
-          //   }}
+          value={userPrompt}
+          onChange={(e) => {
+            setUserPrompt(e.target.value);
+          }}
           data-val="\S"
           data-val-msg="* Please, type a message."
           data-val-msg-id="textareaMessage"
