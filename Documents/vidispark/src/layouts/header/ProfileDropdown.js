@@ -158,15 +158,6 @@ const ProfileDropdown = ({ address }) => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="logout">
-              {" "}
-              <a className="tw-flex tw-items-center ">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#logout-icon" />
-                </svg>
-                Log Out
-              </a>
-            </li>
           </ul>
           {/*/user-menu*/}
         </div>
