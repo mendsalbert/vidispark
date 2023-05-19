@@ -48,7 +48,7 @@ const Product05 = () => {
             {/* / Products Info */}
             <ProductInfo singleVid={singleVid[0]} />
             {/* / Products Tabs */}
-            <ProductTabs />
+            <ProductTabs filteredVideos={filteredVideos} />
             {/*  RELATED ITEMS */}
           </div>
         </div>
