@@ -9,8 +9,12 @@ import ProfilePageTabsFollow from "./Profile Page Tabs List/ProfilePageTabsFollo
 import ProfilePageTabsFollowing from "./Profile Page Tabs List/ProfilePageTabsFollowing";
 import ProfilePageTabsLiked from "./Profile Page Tabs List/ProfilePageTabsLiked";
 import ProfilePageTabsOnSale from "./Profile Page Tabs List/ProfilePageTabsOnSale";
+import { useVideo } from "../../services/videos";
 
-const ProfilePageTabs = () => {
+const ProfilePageTabs = ({ id }) => {
+  const { videoResults } = useVideo();
+
+  const filteredVideos = videoResults?.filter((item) => item.userId == id);
   const router = useRouter();
   let currentPath = router.pathname;
   currentPath = currentPath.includes("/09-profile-page-about")
@@ -46,7 +50,7 @@ const ProfilePageTabs = () => {
           {/* TABS BUTTONS AND TABS SWIPER */}
           <Tab.Content className="tabs-content-wrapper">
             {/*  CREATED */}
-            <ProfilePageTabsCreated Tab={Tab} />
+            <ProfilePageTabsCreated Tab={Tab} filteredVideos={filteredVideos} />
           </Tab.Content>
         </Tab.Container>
       </div>
