@@ -3,7 +3,7 @@ import { useUser } from "../../../services/user";
 import { Web3Storage } from "web3.storage";
 import { v4 as uuidv4 } from "uuid";
 
-const ProfileInfoForm = () => {
+const AIpage = () => {
   const { updateUser, userInfo } = useUser();
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
   const [isCoverLoading, setIsCoverLoaidng] = useState(false);
@@ -270,4 +270,4 @@ const ProfileInfoForm = () => {
   );
 };
 
-export default ProfileInfoForm;
+export default AIpage;
