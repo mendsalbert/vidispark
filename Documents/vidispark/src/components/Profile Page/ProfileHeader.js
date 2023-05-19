@@ -42,8 +42,8 @@ const ProfileHeader = ({ user }) => {
               <div className="label">Following</div>
             </div>
             <div className="likes-number">
-              <div className="number">12K</div>
-              <div className="label">Likes Received</div>
+              <div className="number">2</div>
+              <div className="label">Videos uploaded</div>
             </div>
           </div>
           <div className="profile-author-info">
