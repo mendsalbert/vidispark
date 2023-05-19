@@ -14,7 +14,7 @@ const Header = () => {
   const { address } = useAccount();
 
   useEffect(() => {
-    let res = getBal(add);
+    let res = getBal(address);
     console.log(res);
   }, []);
 
