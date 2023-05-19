@@ -59,9 +59,7 @@ const Profile = () => {
               </div>
             </div>
             <div className="follow-container">
-              <div className="more-link-wrapper">
-                <
-              </div>
+              <div className="more-link-wrapper"></div>
               <div className="follow-box">
                 <button className="btn btn-wide btn-dark">Follow!</button>
               </div>
