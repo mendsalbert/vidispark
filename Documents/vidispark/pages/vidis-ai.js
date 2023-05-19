@@ -3,6 +3,7 @@ import ProfileInfoAvatar from "../src/components/Profile Page/Profile Info/Profi
 import ProfileInfoForm from "../src/components/Profile Page/Profile Info/ProfileInfoForm";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import Layouts from "../src/layouts/Layouts";
+import AIpage from "../src/components/Profile Page/Profile Info/AIpage";
 
 const ProfileInfo = () => {
   return (
@@ -19,7 +20,7 @@ const ProfileInfo = () => {
           </div> */}
           <div className="user-db-content-area">
             {/* / Profile Info Form */}
-            <ProfileInfoForm />
+            <AIpage />
             {/* / Profile Info Form */}
 
             {/* / Profile Info Avatar */}
