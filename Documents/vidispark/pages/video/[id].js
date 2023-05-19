@@ -12,8 +12,8 @@ const Product05 = () => {
   const { id } = router.query;
 
   const { videoResults } = useVideo();
-  const singleVid = videoResults?.filter((item) => item.videoId == id);
-  const filteredVideos = videoResults?.filter((item) => console.log(item));
+  const singleVid = videoResults?.filter((item) => item?.videoId == id);
+  const filteredVideos = videoResults?.filter((item) => item?.userId == id);
   console.log(filteredVideos);
 
   //TODO: 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
