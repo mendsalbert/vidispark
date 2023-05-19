@@ -44,20 +44,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <span className="avatar box-26">
-                    {" "}
-                    <Link href="/08-profile-page">
-                      <a>
-                        <img src="img/avatar.png" alt="" />
-                      </a>
-                    </Link>{" "}
-                    <span className="verified">
-                      <svg className="crumina-icon">
-                        <use xlinkHref="#check-icon" />
-                      </svg>{" "}
-                    </span>
-                  </span>
-                  @DexterStark
+                  <button></button>
                 </div>
               </div>
             </div>
