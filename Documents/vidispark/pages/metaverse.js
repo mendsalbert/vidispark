@@ -50,7 +50,7 @@ const ProfilePageTabsCreated = () => {
                 </div>
                 <div className="item-meta">
                   <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
-                    <Link href="https://www.voxels.com/play?coords=NE@634E,328S,20.5U>
+                    <Link href="https://www.voxels.com/play?coords=NE@634E,328S,20.5U">
                       View
                     </Link>
                   </button>
