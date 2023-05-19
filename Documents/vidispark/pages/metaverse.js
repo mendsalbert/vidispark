@@ -98,7 +98,7 @@ const ProfilePageTabsCreated = () => {
                 <div className="title">
                   {" "}
                   <Link href="/05-product-page">
-                    <a>The Molten Heart</a>
+                    <a>7 Turkenstrasse</a>
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
