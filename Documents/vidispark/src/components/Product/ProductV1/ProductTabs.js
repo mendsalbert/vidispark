@@ -1,8 +1,12 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { EyeIcon } from "@heroicons/react/24/outline";
+
+import { useVideo } from "../../../services/videos";
 const ProductTabs = ({ filteredVideos }) => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [description, setDescription] = useState("");
+  const { updateCount } = useVideo();
 
   const activeTabNav = (value) => (value === activeTab ? "active" : ""),
     activeContent = (value) => (value === activeTab ? "active" : "");
