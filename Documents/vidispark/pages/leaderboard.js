@@ -18,15 +18,14 @@ const Cretors11 = ({ getCollector, collectors }) => {
     if (isNaN(tokensB)) tokensB = 0;
     return tokensB - tokensA;
   });
-  console.log(users_);
 
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
   useEffect(() => {
-    setFilterData(users);
-  }, [users]);
+    setFilterData(users_);
+  }, [users_]);
 
-  const [filterData, setFilterData] = useState(users);
+  const [filterData, setFilterData] = useState(users_);
   const [iconValue, setIconValue] = useState("$");
   const filterFun = (name, value) => {
     // setFilterData(getProductByFilter(collectors, { time: value }));
