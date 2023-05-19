@@ -12,11 +12,12 @@ import { getBal } from "../../../utils/contract/queries";
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
   const { address } = useAccount();
-
+  const [balance, setBalance] = useState(null);
   useEffect(() => {
     const fetchBal = async () => {
       let res = await getBal(address);
-      console.log(res);
+      setBalance(res);
+      // console.log(res);
     };
     fetchBal();
   }, []);
