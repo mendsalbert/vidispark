@@ -11,7 +11,7 @@ const Profile = () => {
   const router = useRouter();
   const { id } = router.query;
   const { users } = useUser();
-  const user = users?.filter((item) => item?.data?.id == id);
+  const user = users?.filter((item) => item?.id == id);
   console.log(users);
   useEffect(() => {
     countdown();
