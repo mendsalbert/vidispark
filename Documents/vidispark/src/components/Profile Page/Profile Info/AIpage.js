@@ -13,7 +13,7 @@ const AIpage = () => {
 
   const openai = new OpenAIApi(configuration);
   //   console.log(process.env.OPEN_AI_KEY);
-  console.log(process.env.GREETING);
+  //   console.log(process.env.GREETING);
   //   console.log(process.env.GREETING);
 
   const generateContent = async () => {
