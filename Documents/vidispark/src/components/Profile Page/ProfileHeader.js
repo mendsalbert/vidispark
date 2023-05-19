@@ -50,7 +50,7 @@ const ProfileHeader = ({ user }) => {
             <h3 className="author-name gradient-text">
               {" "}
               <Link href="/08-profile-page">
-                <a>Dexter Stark</a>
+                <a>{user.fullname}</a>
               </Link>{" "}
             </h3>
             <div className="author-meta">@DexterStark</div>
