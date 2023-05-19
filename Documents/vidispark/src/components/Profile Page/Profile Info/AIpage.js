@@ -2,77 +2,43 @@ import React, { useState, useEffect, useContext } from "react";
 import { useUser } from "../../../services/user";
 import { Web3Storage } from "web3.storage";
 import { v4 as uuidv4 } from "uuid";
+import { Configuration, OpenAIApi } from "openai";
 
 const AIpage = () => {
   const { updateUser, userInfo } = useUser();
-  const [isLoadingUrl, setIsloadingUrl] = useState(false);
-  const [isCoverLoading, setIsCoverLoaidng] = useState(false);
-  const [urlReady, setUrlReady] = useState(false);
-  const [url, setUrl] = useState("");
-  const [coverUrl, setCoverUrl] = useState("");
-  const [coverReady, setCoverReady] = useState(false);
+  const configuration = new Configuration({
+    organization: "org-iW0tOES3m75oHB2cx9IxyB8I",
+    apiKey: "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",
+  });
 
-  const handleFileChange = (e, type) => {
-    const file = e.target.files[0];
-    console.log(e);
-    handleUpload(file, type);
+  const openai = new OpenAIApi(configuration);
+
+  const generateContent = async () => {
+    const completion = await openai.createCompletion({
+      model: "text-davinci-003",
+
+      // prompt: `
+
+      //     As an online educational tutor, your job is to help students learn and master topics in an organized and efficient manner. Your first task is to accept a search topic from a user, and break it down into smaller modules that are easier to study and understand. For example, if a student searched for "Introduction to Computer Science", you would need to break down the topic into modules such as "History of Computers", "Software Development", "Programming Languages", "Data Structures and Algorithms" and so on.
+
+      // Your prompt is to provide the user with a well-organized and concise set of modules, that cover all the important topics related to their search query. Make sure to explain why each module is important and how it fits into the overall topic. Additionally, you may include resources such as textbooks, online courses, videos, and interactive exercises that will help the student learn and practice the concepts in each module.
+
+      //     Break down the concept of ${query} into smaller modules for ${preference.difficultyLevel} learners. Please use the following format for each module:
+
+      //   1. [Module name]: [short description].
+
+      // For example:
+      // 1. some module name here: and its description here.
+
+      // Please provide a maximum of 7 modules and a brief description for each.
+      // Note: Keep the module names and descriptions consistent and avoid changing them for each request.
+      // `,
+      prompt: `A student wants to learn about a  , generate 6 modules that a student can use to learn as . A module consists of a title and a description, separated by a colon.`,
+      temperature: 1.4,
+      top_p: 0.7,
+      max_tokens: isSubscribed ? 120 : 60,
+    });
   };
-
-  const handleUpload = async (file, type) => {
-    console.log(type);
-    if (file) {
-      type == "avatar" ? setIsloadingUrl(true) : setIsCoverLoaidng(true);
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweENjNEYzZTkxZUVBNmFFRGRBMTA1RmE3QjZDZjA0NzJFQjUxMDdjMGMiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODM1NjI0MDYyNzksIm5hbWUiOiJ2aWRpc3BhcmsifQ.4FBhhTMnQ3hY-P-ccuX_jKf-6ml4q6gLG9xIr0a-8Xk"; // Replace with your actual Web3.Storage API token
-      const fileName = file.name;
-      const client = new Web3Storage({ token });
-      const cid = await client.put([file], { name: fileName });
-      console.log(
-        "Clickable link",
-        `https://${cid}.ipfs.dweb.link/${fileName}`
-      );
-      if (type === "avatar") {
-        setUrlReady(true);
-        setUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
-        setIsloadingUrl(false);
-      } else if (type === "cover") {
-        setCoverReady(true);
-        setCoverUrl(`https://${cid}.ipfs.dweb.link/${fileName}`);
-        setIsCoverLoaidng(false);
-      }
-    } else {
-      console.log("No file selected");
-    }
-  };
-
-  const [fullname, setFullname] = useState("");
-  const [username, setUsername] = useState("");
-  const [contact, setContact] = useState("");
-  const [email, setEmail] = useState("");
-  const [bio, setBio] = useState("");
-  const [marketPrice, setMarketPrice] = useState("");
-  const [prevbrands, setPrevbrands] = useState("");
-  const [marketBio, setMarketBio] = useState("");
-
-  const onUpdateUserDataHandler = () => {
-    const updatedUserData = {
-      username: username !== "" ? username : userInfo[0]?.data?.username,
-      email: email !== "" ? email : userInfo[0]?.data?.email,
-      fullname: fullname !== "" ? fullname : userInfo[0]?.data?.fullname,
-      bio: bio !== "" ? bio : userInfo[0]?.data?.bio,
-      contact: contact !== "" ? contact : userInfo[0]?.data?.contact,
-      url: url !== "" ? url : userInfo[0]?.data?.url,
-      cover: coverUrl !== "" ? coverUrl : userInfo[0]?.data?.avatarCover,
-      marketPrice:
-        marketPrice !== "" ? marketPrice : userInfo[0]?.data?.marketPrice,
-      prevbrands:
-        prevbrands !== "" ? prevbrands : userInfo[0]?.data?.prevBrands,
-      marketBio: marketBio !== "" ? marketBio : userInfo[0]?.data?.marketBio,
-    };
-
-    updateUser(updatedUserData);
-  };
-
   return (
     <div className="cryptoki-form" id="personal-info-form">
       <div className="user-db-title">Vidispark AI</div>
@@ -85,15 +51,15 @@ const AIpage = () => {
           className="comment-form message"
           cols={30}
           rows={10}
-          value={bio}
-          onChange={(e) => {
-            setBio(e.target.value);
-          }}
+          //   value={bio}
+          //   onChange={(e) => {
+          //     setBio(e.target.value);
+          //   }}
           data-val="\S"
           data-val-msg="* Please, type a message."
           data-val-msg-id="textareaMessage"
           required=""
-          defaultValue={userInfo[0]?.data?.bio}
+          //   defaultValue={userInfo[0]?.data?.bio}
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
