@@ -70,7 +70,7 @@ const Cretors = ({ getCreator, creators }) => {
                   <div className="creator-info-wrapper">
                     <div className="creator-info">
                       <div className="avatar box-64">
-                        <Link href="/08-profile-page">
+                        <Link href={`/profile-page/${creator?.id}`}>
                           <a>
                             <img
                               src={creator?.data?.avatarUrl || ""}
