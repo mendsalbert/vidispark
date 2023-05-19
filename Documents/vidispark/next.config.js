@@ -5,7 +5,7 @@ const nextConfig = {
   reactStrictMode: true,
   env: {
     OPEN_AI_KEY: "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",
-    GREETING: "Hello World",
+    GREETING: "fsadfsdff",
     TEST: "test",
   },
 };
