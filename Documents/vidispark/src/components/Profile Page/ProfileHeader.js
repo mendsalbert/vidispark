@@ -29,17 +29,17 @@ const ProfileHeader = ({ user }) => {
         <div className="author-primary-info">
           <div className="activity-meta">
             <div className="followers-number">
-              <div className="number">
+              {/* <div className="number">
                 {user?.followers?.length < 1 ? 0 : user?.followers?.length}
               </div>
-              <div className="label">Followers</div>
+              <div className="label">Followers</div> */}
             </div>
             <div className="following-number">
-              <div className="number">
+              {/* <div className="number">
                 {" "}
                 {user?.following?.length < 1 ? 0 : user?.followers?.length}
               </div>
-              <div className="label">Following</div>
+              <div className="label">Following</div> */}
             </div>
           </div>
           <div className="profile-author-info">
