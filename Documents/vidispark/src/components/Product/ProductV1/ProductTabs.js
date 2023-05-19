@@ -14,12 +14,12 @@ const ProductTabs = ({ filteredVideos }) => {
     <div className="tabs-block">
       {/*TAB TITLE*/}
       <ul className="tabs-list">
-        <li
+        {/* <li
           className={activeTabNav("tab1")}
           onClick={() => setActiveTab("tab1")}
         >
           <a>Comments</a>
-        </li>
+        </li> */}
         <li
           className={activeTabNav("tab2")}
           onClick={() => setActiveTab("tab2")}
