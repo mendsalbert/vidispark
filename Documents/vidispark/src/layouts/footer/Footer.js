@@ -67,7 +67,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <div className="subscribe-widget">
+              {/* <div className="subscribe-widget">
                 <form
                   className="cryptoki-subscribe-form subscribe-form"
                   action="forms/submit.php"
@@ -87,7 +87,7 @@ const Footer = () => {
                     </button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="footer-column">
