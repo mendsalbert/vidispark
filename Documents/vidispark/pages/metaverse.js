@@ -6,7 +6,7 @@ const ProfilePageTabsCreated = () => {
   return (
     <Layouts>
       <div className="page-title-section tw-mx-4 tw-mt-4">
-        <h2>
+        <h2 className="tw-text-xl">
           Marketplace<span className="gradient-text"> Creators</span>
         </h2>
       </div>
