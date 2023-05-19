@@ -42,6 +42,17 @@ const ProfileInfoSidebar = () => {
         </div>
         <div className="user-db-body">
           <ul className="profile-menu">
+            <li className="account">
+              {" "}
+              <Link href="/29-account-settings">
+                <a className="tw-flex tw-flex-row tw-items-center">
+                  <svg className="crumina-icon">
+                    <use xlinkHref="#settings-icon" />
+                  </svg>
+                  AI Creator{" "}
+                </a>
+              </Link>{" "}
+            </li>
             <li className="profile">
               {" "}
               <Link href="/23-profile-info">
