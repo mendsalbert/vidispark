@@ -1,10 +1,11 @@
 import Link from "next/link";
 import React from "react";
 const ProfileHeader = ({ user }) => {
+  console.log(user);
   return (
     <div className="profile-header-section">
       <div className="cover-image">
-        <img src="img/content/profile/profile-cover-1.png" alt="" />
+        <img src="" alt="" />
       </div>
       <div className="about-author-section container">
         <div className="profile-header-user-profile">
