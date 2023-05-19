@@ -65,7 +65,7 @@ const AIpage = () => {
         }}
         className="btn btn-wide btn-dark tw-mt-3"
       >
-        {isCoverLoading ? (
+        {isLoading ? (
           <div>
             <div
               class="tw-inline-block tw-h-8 tw-w-8 tw-animate-spin tw-rounded-full tw-border-4 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
