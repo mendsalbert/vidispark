@@ -12,10 +12,11 @@ const Profile = () => {
   const { id } = router.query;
   const { users } = useUser();
   const user = users?.filter((item) => item?.data?.id == id);
-  console.log(id);
+  console.log(user);
   useEffect(() => {
     countdown();
   }, []);
+
   return (
     <Layouts>
       <div className="primary-content-area profile-page">
