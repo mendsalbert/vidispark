@@ -68,6 +68,7 @@ const AIpage = () => {
 
       <button
         onClick={() => {
+          generateContent();
           //   onUpdateUserDataHandler();
         }}
         className="btn btn-wide btn-dark tw-mt-3"
