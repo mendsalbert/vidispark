@@ -44,7 +44,7 @@ const Profile = () => {
               <div className="profile-author-info">
                 <h5 className="author-name gradient-text">
                   <Link href="/08-profile-page">
-                    <a>Dexter Stark</a>
+                    <a>{user[0]?.data?.fullname}</a>
                   </Link>
                 </h5>
                 <div className="author-meta">@DexterStark</div>
