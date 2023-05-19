@@ -175,7 +175,7 @@ const Footer = () => {
               <ul className="footer-menu">
                 <li className="menu-item">
                   {" "}
-                  <Link href="/13-blog-classic">
+                  <Link href="/white-paper">
                     <a className="menu-link">White Paper</a>
                   </Link>{" "}
                 </li>
