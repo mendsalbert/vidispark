@@ -206,6 +206,11 @@ export const useUser = () => {
     }
   };
 
+  const getUserVideos = async () => {
+    //get all vidoes stores in array
+    //filter the vidoes based on the user id
+  };
+
   return {
     addUser,
     loginUser,
