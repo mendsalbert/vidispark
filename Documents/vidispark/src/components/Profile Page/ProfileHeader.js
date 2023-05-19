@@ -41,10 +41,6 @@ const ProfileHeader = ({ user }) => {
               </div>
               <div className="label">Following</div>
             </div>
-            <div className="likes-number">
-              <div className="number">12K</div>
-              <div className="label">Likes Received</div>
-            </div>
           </div>
           <div className="profile-author-info">
             <h3 className="author-name gradient-text">
