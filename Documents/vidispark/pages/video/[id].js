@@ -13,8 +13,10 @@ const Product05 = () => {
 
   const { videoResults } = useVideo();
   const singleVid = videoResults?.filter((item) => item.videoId == id);
-  const userVideos = videoResults?.filter((item) => item.uploaderId == id);
-  console.log(videoResults);
+  const userVideos = videoResults?.filter(
+    (item) => item.videoData.uploaderId == id
+  );
+  console.log(userVideos);
 
   //TODO: 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
   return (
