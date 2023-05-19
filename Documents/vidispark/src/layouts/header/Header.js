@@ -9,6 +9,8 @@ import SearchBox from "./SearchBox";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { getBal } from "../../../utils/contract/queries";
+import { ethers } from "ethers";
+
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
   const { address } = useAccount();
@@ -22,7 +24,10 @@ const Header = () => {
     fetchBal();
   }, []);
 
-  console.log(balance?.toString());
+  const bigNumber = ethers.BigNumber.from("10000000000000000000");
+  const etherValue = ethers.utils.formatUnits(bigNumber, 18);
+
+  console.log(etherValue);
   return (
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">
