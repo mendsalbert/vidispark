@@ -45,7 +45,7 @@ const ProfileInfoSidebar = () => {
             <li className="account">
               {" "}
               <Link href="/29-account-settings">
-                <a className="tw-flex tw-bg-blue-500 tw-rounded-full tw-ml-3 tw-flex-row tw-items-center">
+                <a className="tw-flex tw-bg-blue-500 tw-rounded-full tw-ml-5 tw-flex-row tw-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
