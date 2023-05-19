@@ -80,7 +80,7 @@ const ProfileHeader = ({ user }) => {
         </div>
         <div className="author-description">
           <p>{user?.bio}</p>
-          {/* <ul className="social-icons-list">
+          <ul className="social-icons-list">
             <li className="social-icon icon-border">
               {" "}
               <a href="#">
@@ -121,7 +121,7 @@ const ProfileHeader = ({ user }) => {
                 </svg>
               </a>
             </li>
-          </ul> */}
+          </ul>
         </div>
       </div>
     </div>
