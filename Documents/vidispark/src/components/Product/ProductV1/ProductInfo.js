@@ -68,11 +68,12 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              updateUserToken(singleVid?.userId, 4);
               const tipAmount = window.prompt("Enter tip amount:");
               if (tipAmount !== null) {
                 tip(tipAmount, singleVid?.user?.user_address)
                   .then((res) => {
+                    updateUserToken(singleVid?.userId, tipAmount);
+
                     console.log(res);
                   })
                   .catch((e) => {
