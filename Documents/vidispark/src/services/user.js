@@ -201,6 +201,6 @@ export const useUser = () => {
     logout,
     users,
     unfollowUser,
-    // etherValue,
+    etherValue,
   };
 };
