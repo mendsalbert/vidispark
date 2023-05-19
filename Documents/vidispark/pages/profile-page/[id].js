@@ -25,14 +25,14 @@ const Profile = () => {
         {/*  MOBILE PROFILE HEADER SECTION */}
         <div className="profile-header-mobile">
           <div className="cover-image">
-            <img src="img/content/profile/profile-cover-1.png" alt="" />
+            <img src={user[0]?.data?.avatarCover} alt="" />
           </div>
           <div className="about-author-section container">
             <div className="profile-header-user-profile">
               <div className="avatar box-64 bordered">
                 <Link href="/08-profile-page">
                   <a>
-                    <img src="img/avatar.png" alt="" />
+                    <img src={user[0]?.data?.avatarUrl} alt="" />
                   </a>
                 </Link>
                 <span className="verified">
@@ -47,9 +47,11 @@ const Profile = () => {
                     <a>{user[0]?.data?.fullname}</a>
                   </Link>
                 </h5>
-                <div className="author-meta">@DexterStark</div>
+                <div className="author-meta">@{user[0]?.data?.fullname}</div>
                 <div className="download-file">
-                  Ox465d53...d9c6
+                  {user[0]?.data?.user_address?.slice(0, 6) +
+                    "..." +
+                    user[0]?.data?.user_address?.slice(-4)}
                   <svg className="crumina-icon">
                     <use xlinkHref="#copy-icon" />
                   </svg>
