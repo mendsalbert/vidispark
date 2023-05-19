@@ -60,7 +60,7 @@ const ProfileInfoSidebar = () => {
                   <svg className="crumina-icon">
                     <use xlinkHref="#settings-icon" />
                   </svg>
-                  Sponserhip Stream{" "}
+                  Account Settings{" "}
                 </a>
               </Link>{" "}
             </li>
