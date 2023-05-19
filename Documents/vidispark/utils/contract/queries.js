@@ -34,6 +34,7 @@ export async function tip(amount, recipient) {
 }
 
 export async function getBal(address) {
+  console.log(address);
   try {
     const contractObj = await contract();
     const data = await contractObj.balanceOf(address);
