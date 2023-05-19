@@ -10,6 +10,8 @@ import { useUser } from "../src/services/user";
 
 const Cretors11 = ({ getCollector, collectors }) => {
   let sort = 6;
+  const { users } = useUser();
+
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
   useEffect(() => {
@@ -26,8 +28,6 @@ const Cretors11 = ({ getCollector, collectors }) => {
     setIconValue(value);
     setActive(0);
   };
-
-  const { users } = useUser();
 
   return (
     <Layouts>
