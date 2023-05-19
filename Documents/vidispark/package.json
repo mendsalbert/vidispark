@@ -33,6 +33,7 @@
     "moment": "^2.29.2",
     "next": "12.1.0",
     "node-waves": "^0.7.6",
+    "openai": "^3.2.1",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "ramda": "^0.29.0",
