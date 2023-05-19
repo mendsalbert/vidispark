@@ -7,6 +7,8 @@ import { Configuration, OpenAIApi } from "openai";
 const AIpage = () => {
   const { updateUser, userInfo } = useUser();
   const [userPrompt, setUserPrompt] = useState("");
+  const [isLoading, setisLoading] = useState(false);
+  const [res, setRes] = useState("");
   const configuration = new Configuration({
     organization: "org-iW0tOES3m75oHB2cx9IxyB8I",
     apiKey: process.env.GREETING,
@@ -18,6 +20,7 @@ const AIpage = () => {
   //   console.log(process.env.GREETING);
 
   const generateContent = async () => {
+    setisLoading(true);
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${userPrompt}`,
@@ -25,7 +28,8 @@ const AIpage = () => {
       top_p: 0.7,
       max_tokens: 120,
     });
-    console.log(completion.data.choices[0].text);
+    setRes(completion.data.choices[0].text);
+    setisLoading(false);
     return completion.data.choices[0]?.text;
   };
   return (
@@ -61,7 +65,16 @@ const AIpage = () => {
         }}
         className="btn btn-wide btn-dark tw-mt-3"
       >
-        Generate{" "}
+        {isCoverLoading ? (
+          <div
+            class="tw-inline-block tw-h-8 tw-w-8 tw-animate-spin tw-rounded-full tw-border-4 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
+            role="status"
+          >
+            <span class="tw-!absolute tw!-m-px tw!h-px tw!w-px tw!overflow-hidden tw!whitespace-nowrap tw!border-0 tw!p-0 tw![clip:rect(0,0,0,0)]"></span>
+          </div>
+        ) : (
+          "Generate"
+        )}
       </button>
     </div>
   );
