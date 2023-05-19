@@ -60,7 +60,7 @@ const AIpage = () => {
       </div>
       <p
         htmlFor="name"
-        className="tw-mb-8 tw-ring-2 tw-rounded-2xl tw-bg-gray-400 tw-p-3"
+        className="tw-mb-8 tw-ring-2 tw-rounded-2xl tw-ring-gray-400 tw-p-3"
       >
         {res && res}{" "}
       </p>
