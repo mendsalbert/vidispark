@@ -3,7 +3,7 @@
  * leaderboard xx
  * spotlight xx
  * metaverse xx
- * AI for generating caption for video
+ * AI for generating caption for video xx
  * work on footer and links
  * check for mobile view
  * demo video
