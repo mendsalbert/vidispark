@@ -103,51 +103,28 @@ const Footer = () => {
                   </li>
                   <li className="menu-item">
                     {" "}
-                    <Link href="/02-explore">
+                    <Link href="/explore">
                       <a className="menu-link">Explore</a>
                     </Link>{" "}
                   </li>
                   <li className="menu-item">
                     {" "}
-                    <Link href="/10-creators">
+                    <Link href="/creators">
                       <a className="menu-link">Creators</a>
-                    </Link>{" "}
-                  </li>
-                  <li className="menu-item">
-                    {" "}
-                    <Link href="/11-collectors">
-                      <a className="menu-link">Collectors</a>
-                    </Link>{" "}
-                  </li>
-                  <li className="menu-item">
-                    {" "}
-                    <Link href="/16-spotlight">
-                      <a className="menu-link">Spotlight</a>
                     </Link>{" "}
                   </li>
                 </ul>
                 <ul className="footer-menu">
                   <li className="menu-item">
                     {" "}
-                    <Link href="/08-profile-page">
+                    <Link href="/profile-page">
                       <a className="menu-link">Profile Page</a>
                     </Link>{" "}
                   </li>
+
                   <li className="menu-item">
                     {" "}
-                    <Link href="/03-explore-v2">
-                      <a className="menu-link">Artwork Page</a>
-                    </Link>{" "}
-                  </li>
-                  <li className="menu-item">
-                    {" "}
-                    <Link href="/17-activity">
-                      <a className="menu-link">Activity</a>
-                    </Link>{" "}
-                  </li>
-                  <li className="menu-item">
-                    {" "}
-                    <Link href="/26-upload-artwork">
+                    <Link href="/upload-artwork">
                       <a className="menu-link">Upload Art</a>
                     </Link>{" "}
                   </li>
