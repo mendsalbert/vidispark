@@ -72,7 +72,7 @@ const AIpage = () => {
       <button
         onClick={() => {
           console.log(process.env.OPEN_AI_KEY);
-          generateContent();
+          //   generateContent();
           //   onUpdateUserDataHandler();
         }}
         className="btn btn-wide btn-dark tw-mt-3"
