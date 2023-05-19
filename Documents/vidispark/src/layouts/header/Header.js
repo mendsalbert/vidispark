@@ -8,26 +8,11 @@ import ProfileDropdown from "./ProfileDropdown";
 import SearchBox from "./SearchBox";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { getBal } from "../../../utils/contract/queries";
-import { ethers } from "ethers";
+import { useUser } from "../../services/user";
 
 const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
-  const { address } = useAccount();
-  const [balance, setBalance] = useState(null);
-  useEffect(() => {
-    const fetchBal = async () => {
-      let res = await getBal(address);
-      setBalance(res);
-      // console.log(res);
-    };
-    fetchBal();
-  }, []);
-
-  const bigNumber = ethers.BigNumber.from(balance?.toString());
-  const etherValue = ethers.utils.formatUnits(bigNumber, 18);
-
-  console.log(etherValue);
+  const { etherValue } = useUser();
 
   return (
     <header className="site-header">
@@ -100,7 +85,7 @@ const Header = () => {
             {/*/NOTIFICATION BUTTON*/}
           </div>
           {/*/HEADER ICONS*/}
-          <ProfileDropdown />
+          <ProfileDropdown address={etherValue} />
         </div>
       </div>
       {/*MOBILE SEARCH FORM*/}
