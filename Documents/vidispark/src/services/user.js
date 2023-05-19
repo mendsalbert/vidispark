@@ -25,8 +25,8 @@ export const useUser = () => {
     fetchBal();
   }, []);
 
-  const bigNumber = ethers.BigNumber.from(balance?.toString());
-  const etherValue = ethers.utils.formatUnits(bigNumber, 18);
+  // const bigNumber = ethers.BigNumber.from(balance?.toString());
+  // const etherValue = ethers.utils.formatUnits(bigNumber, 18);
 
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -201,6 +201,6 @@ export const useUser = () => {
     logout,
     users,
     unfollowUser,
-    etherValue,
+    // etherValue,
   };
 };
