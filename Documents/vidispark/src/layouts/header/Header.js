@@ -22,7 +22,7 @@ const Header = () => {
     fetchBal();
   }, []);
 
-  console.log(balance.toString());
+  console.log(balance?.toString());
   return (
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">
