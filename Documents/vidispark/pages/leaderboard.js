@@ -11,9 +11,13 @@ import { useUser } from "../src/services/user";
 const Cretors11 = ({ getCollector, collectors }) => {
   let sort = 6;
   const { users } = useUser();
-  let users_ = users.sort(
-    (a, b) => parseInt(b.data.tokens) - parseInt(a.data.tokens)
-  );
+  let users_ = users.sort((a, b) => {
+    let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
+    if (isNaN(tokensA)) tokensA = 0;
+    let tokensB = b.data.tokens ? Number(b.data.tokens) : 0;
+    if (isNaN(tokensB)) tokensB = 0;
+    return tokensB - tokensA;
+  });
   console.log(users_);
 
   const [active, setActive] = useState(0);
