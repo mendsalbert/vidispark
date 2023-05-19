@@ -29,13 +29,7 @@ const ProfileHeader = ({ user }) => {
         <div className="author-primary-info">
           <div className="activity-meta">
             <div className="followers-number"></div>
-            <div className="following-number">
-              {/* <div className="number">
-                {" "}
-                {user?.following?.length < 1 ? 0 : user?.followers?.length}
-              </div>
-              <div className="label">Following</div> */}
-            </div>
+            <div className="following-number"></div>
           </div>
           <div className="profile-author-info">
             <h3 className="author-name gradient-text">
@@ -54,10 +48,16 @@ const ProfileHeader = ({ user }) => {
                 <use xlinkHref="#copy-icon" />
               </svg>
             </div>
+            {/*  */}
             <div className="number">
               {user?.followers?.length < 1 ? 0 : user?.followers?.length}
             </div>
             <div className="label">Followers</div>
+            <div className="number">
+              {" "}
+              {user?.following?.length < 1 ? 0 : user?.followers?.length}
+            </div>
+            <div className="label">Following</div>
           </div>
           <div className="projects-meta">
             {/* <div className="projects-number">
