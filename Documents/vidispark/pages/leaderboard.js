@@ -90,7 +90,9 @@ const Cretors11 = ({ getCollector, collectors }) => {
                       </div>
                     </td>
                     <td data-label="Items Collected" className="stats-item">
-                      {collector?.data?.tokens}
+                      {collector?.data?.tokens.length < 1
+                        ? 0
+                        : collector?.data?.tokens.length}
                     </td>
                   </tr>
                 ))}
