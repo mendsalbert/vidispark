@@ -75,7 +75,7 @@ const AIpage = () => {
 
   return (
     <div className="cryptoki-form" id="personal-info-form">
-      <div className="user-db-title">Personal Info</div>
+      <div className="user-db-title">Vidispark AI</div>
       <div className="form-group">
         <div className="form-field">
           <label htmlFor="name">Full name</label>
