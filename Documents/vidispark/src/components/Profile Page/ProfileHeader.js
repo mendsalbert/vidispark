@@ -59,7 +59,7 @@ const ProfileHeader = ({ user }) => {
                 "..." +
                 user?.user_address?.slice(-4)}
 
-              <svg className="crumina-icon">
+              <svg className="crumina-icon tw-ml-2">
                 <use xlinkHref="#copy-icon" />
               </svg>
             </div>
