@@ -13,8 +13,8 @@ const Header = () => {
   const [searchToggle, setSearchToggle] = useState(false);
   const { address } = useAccount();
 
-  useEffect(() => {
-    let res = getBal(address);
+  useEffect(async () => {
+    let res = await getBal(address);
     console.log(res);
   }, []);
 
