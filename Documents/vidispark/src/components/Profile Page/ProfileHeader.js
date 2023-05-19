@@ -50,12 +50,12 @@ const ProfileHeader = ({ user }) => {
             <h3 className="author-name gradient-text">
               {" "}
               <Link href="/08-profile-page">
-                <a>{user.fullname}</a>
+                <a>{user?.fullname}</a>
               </Link>{" "}
             </h3>
-            <div className="author-meta">@{user.username}</div>
+            <div className="author-meta">@{user?.username}</div>
             <div className="download-file">
-              Ox465d53...d9c6
+              {user.user_address}
               <svg className="crumina-icon">
                 <use xlinkHref="#copy-icon" />
               </svg>
