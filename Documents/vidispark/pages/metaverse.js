@@ -9,12 +9,6 @@ const ProfilePageTabsCreated = () => {
         <div className="featured-item">
           <div className="featured-item-wrapper">
             <div className="featured-item-content">
-              <div className="fav-counter">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#heart-icon" />
-                </svg>{" "}
-                <span className="count">22</span>
-              </div>
               <div className="featured-item-image">
                 {" "}
                 <Link href="/05-product-page">
