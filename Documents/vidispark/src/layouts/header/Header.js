@@ -85,7 +85,7 @@ const Header = () => {
             {/*/NOTIFICATION BUTTON*/}
           </div>
           {/*/HEADER ICONS*/}
-          <ProfileDropdown address={etherValue} />
+          <ProfileDropdown />
         </div>
       </div>
       {/*MOBILE SEARCH FORM*/}
