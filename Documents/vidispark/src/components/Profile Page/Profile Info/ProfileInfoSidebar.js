@@ -79,7 +79,7 @@ const ProfileInfoSidebar = () => {
 
             <li className="verification">
               {" "}
-              <Link href="/et-verified">
+              <Link href="/get-verified">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#circle-checked-icon" />
