@@ -108,7 +108,7 @@ export const useUser = () => {
   };
 
   const updateUserToken = async (userId, tokens) => {
-    console.log("userInfo", userId);
+    console.log("userInfo", userId, tokens);
     let res = await db.update(
       {
         tokens: tokens,
