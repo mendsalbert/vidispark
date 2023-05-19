@@ -73,12 +73,6 @@ const ProfileHeader = ({ user }) => {
               <div className="number">12</div>
               <div className="label">On Sale</div>
             </div>
-            <div className="country">
-              <div className="flag">
-                <img src="img/content/profile/us-flag.png" alt="" />
-              </div>
-              <div className="label">United States</div>
-            </div>
           </div>
         </div>
         <div className="author-description">
