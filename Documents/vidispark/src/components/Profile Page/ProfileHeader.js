@@ -67,7 +67,7 @@ const ProfileHeader = ({ user }) => {
             </div>
             <div className="onsale-number">
               <div className="number">12</div>
-              <div className="label">On Sale</div>
+              <div className="label">Likes</div>
             </div>
           </div>
         </div>
