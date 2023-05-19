@@ -54,7 +54,7 @@ const ProfileHeader = ({ user }) => {
               </Link>{" "}
             </h3>
             <div className="author-meta">@{user?.username}</div>
-            <div className="download-file">
+            <div className="download-file tw-flex">
               {user.user_address}
               <svg className="crumina-icon">
                 <use xlinkHref="#copy-icon" />
