@@ -6,6 +6,7 @@ import Paggination from "../src/components/Paggination";
 import Layouts from "../src/layouts/Layouts";
 import { getCollector } from "../src/redux/action/collectors";
 import { dblock } from "../src/utils";
+import { useUser } from "../src/services/user";
 
 const Cretors11 = ({ getCollector, collectors }) => {
   let sort = 6;
@@ -25,6 +26,8 @@ const Cretors11 = ({ getCollector, collectors }) => {
     setIconValue(value);
     setActive(0);
   };
+
+  const { users } = useUser();
 
   return (
     <Layouts>
