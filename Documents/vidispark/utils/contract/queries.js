@@ -38,7 +38,8 @@ export async function getBal(address) {
   try {
     const contractObj = await contract();
     const data = await contractObj.balanceOf(address);
-    const results = await data.wait();
+    console.log(data);
+    // const results = await data.wait();
     console.log("res------", results);
     return results;
   } catch (e) {
