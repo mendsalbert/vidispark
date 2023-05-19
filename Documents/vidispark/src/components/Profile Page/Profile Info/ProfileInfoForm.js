@@ -11,7 +11,9 @@ const ProfileInfoForm = () => {
       <div className="user-db-title">Vidispark AI</div>
 
       <div className="form-field ">
-        <label htmlFor="message">Bio</label>
+        <label htmlFor="message">
+          Genereate your video captions with VidisAI
+        </label>
         <textarea
           id="message"
           name="message"
