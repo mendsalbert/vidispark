@@ -152,7 +152,7 @@ const ProfileUploadAndPreview = () => {
           </label>
         </div>
 
-        {/* <div className="artwork-upload">
+        <div className="artwork-upload">
           <div className="label">Go Live</div>
           <div className="upload-box">
             <div className="upload-notice"> Start a live stream</div>
@@ -164,7 +164,7 @@ const ProfileUploadAndPreview = () => {
               </span>
             </button>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div id="tab-1" className="tab active">
