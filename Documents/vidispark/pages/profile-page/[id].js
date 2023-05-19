@@ -20,7 +20,7 @@ const Profile = () => {
     <Layouts>
       <div className="primary-content-area profile-page">
         {/*  PROFILE HEADER SECTION */}
-        <ProfileHeader user={user} />
+        <ProfileHeader user={user[0]} />
         {/*  PROFILE HEADER SECTION */}
         {/*  MOBILE PROFILE HEADER SECTION */}
         <div className="profile-header-mobile">
