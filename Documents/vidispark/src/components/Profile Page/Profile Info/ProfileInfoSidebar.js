@@ -67,7 +67,7 @@ const ProfileInfoSidebar = () => {
 
             <li className="artwork">
               {" "}
-              <Link href="/26-upload-artwork">
+              <Link href="/upload-artwork">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#picture-icon" />
