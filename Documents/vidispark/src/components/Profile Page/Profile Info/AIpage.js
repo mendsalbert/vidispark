@@ -12,7 +12,7 @@ const AIpage = () => {
   });
 
   const openai = new OpenAIApi(configuration);
-  console.log(process.env.GREETING);
+  console.log(process.env.OPEN_AI_KEY);
 
   const generateContent = async () => {
     const completion = await openai.createCompletion({
