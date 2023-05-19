@@ -46,9 +46,17 @@ const ProfileInfoSidebar = () => {
               {" "}
               <Link href="/29-account-settings">
                 <a className="tw-flex tw-flex-row tw-items-center">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#settings-icon" />
-                  </svg>
+                  <li className="account">
+                    {" "}
+                    <Link href="/29-account-settings">
+                      <a className="tw-flex tw-flex-row tw-items-center">
+                        <svg className="crumina-icon">
+                          <use xlinkHref="#settings-icon" />
+                        </svg>
+                        Account Settings{" "}
+                      </a>
+                    </Link>{" "}
+                  </li>
                   VidisAI{" "}
                 </a>
               </Link>{" "}
