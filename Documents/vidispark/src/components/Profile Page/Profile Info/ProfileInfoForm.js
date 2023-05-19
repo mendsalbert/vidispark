@@ -18,15 +18,15 @@ const ProfileInfoForm = () => {
           className="comment-form message"
           cols={30}
           rows={10}
-          value={bio}
-          onChange={(e) => {
-            setBio(e.target.value);
-          }}
+          // value={bio}
+          // onChange={(e) => {
+          //   setBio(e.target.value);
+          // }}
           data-val="\S"
           data-val-msg="* Please, type a message."
           data-val-msg-id="textareaMessage"
           required=""
-          defaultValue={userInfo[0]?.data?.bio}
+          // defaultValue={userInfo[0]?.data?.bio}
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
