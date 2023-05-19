@@ -63,14 +63,17 @@ const Cretors11 = ({ getCollector, collectors }) => {
                         <div className="avatar box-42">
                           <Link href="/08-profile-page">
                             <a>
-                              <img src={collector.creator.img} alt="avatar" />
-                              {collector.creator.varified && (
+                              <img
+                                src={collector?.data?.avatarUrl}
+                                alt="avatar"
+                              />
+                              {/* {collector.creator.varified && (
                                 <span className="verified">
                                   <svg className="crumina-icon">
                                     <use xlinkHref="#check-icon" />
                                   </svg>
                                 </span>
-                              )}
+                              )} */}
                             </a>
                           </Link>
                         </div>
