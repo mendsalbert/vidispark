@@ -58,7 +58,9 @@ const AIpage = () => {
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
-      <label htmlFor="name">Full name</label>
+      <label htmlFor="name" className="tw-mb-4">
+        Full name
+      </label>
 
       <button
         onClick={() => {
