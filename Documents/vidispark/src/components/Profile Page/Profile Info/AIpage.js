@@ -68,7 +68,7 @@ const AIpage = () => {
 
       <button
         onClick={() => {
-          console.log(process.env.API_URL);
+          console.log(process.env.OPEN_AI_KEY);
           generateContent();
           //   onUpdateUserDataHandler();
         }}
