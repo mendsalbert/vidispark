@@ -34,7 +34,7 @@ import { publicProvider } from "wagmi/providers/public";
 import { AuthProvider } from "./authContext";
 
 const xdcApothem = {
-  id: 51,
+  id: 365,
   name: "Apothem-Network (TestNet)",
   network: "XDC Apothem Network (TestNet)",
   nativeCurrency: {
@@ -44,13 +44,13 @@ const xdcApothem = {
   },
   rpcUrls: {
     default: {
-      http: ["https://erpc.apothem.network"],
+      http: ["https://eth-rpc-api-testnet.thetatoken.org/rpc"],
     },
   },
   blockExplorers: {
     default: {
       name: "Apothem Explorer",
-      url: "https://explorer.apothem.network/",
+      url: "https://testnet-explorer.thetatoken.org/",
     },
   },
   testnet: true,
