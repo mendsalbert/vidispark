@@ -47,28 +47,6 @@ const ProfilePageTabs = () => {
           <Tab.Content className="tabs-content-wrapper">
             {/*  CREATED */}
             <ProfilePageTabsCreated Tab={Tab} />
-            {/*  CREATED */}
-            {/*  COLLECTED*/}
-            <ProfilePageTabsCollected Tab={Tab} />
-            {/*  COLLECTED*/}
-            {/*  ON SALE*/}
-            <ProfilePageTabsOnSale Tab={Tab} />
-            {/*  ON SALE*/}
-            {/*  LIKED*/}
-            <ProfilePageTabsLiked Tab={Tab} />
-            {/*  LIKED*/}
-            {/*  FOLLOWING*/}
-            <ProfilePageTabsFollow Tab={Tab} />
-            {/*  FOLLOWING*/}
-            {/*  FOLLOWERS*/}
-            <ProfilePageTabsFollowing Tab={Tab} />
-            {/*  FOLLOWERS*/}
-            {/*  TAB ACTIVITY */}
-            <ProfilePageTabsActivity Tab={Tab} />
-            {/*  TAB ACTIVITY */}
-            {/*  TAB ABOUT */}
-            <ProfilePageTabsAbout Tab={Tab} />
-            {/*  TAB ABOUT */}
           </Tab.Content>
         </Tab.Container>
       </div>
