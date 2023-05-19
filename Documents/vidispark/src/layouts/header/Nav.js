@@ -34,7 +34,7 @@ const Nav = () => {
           </li>
           <li className="menu-item">
             {" "}
-            <Link href="/11-collectors">
+            <Link href="/leaderboard">
               <a className="menu-link">Leaderboard</a>
             </Link>{" "}
           </li>
