@@ -38,6 +38,8 @@ const AIpage = () => {
       top_p: 0.7,
       max_tokens: isSubscribed ? 120 : 60,
     });
+    console.log(completion.data.choices[0].text);
+    return parseString(completion.data.choices[0]?.text);
   };
   return (
     <div className="cryptoki-form" id="personal-info-form">
