@@ -1,7 +1,7 @@
 /**
  * TODO
- * leaderboard
- * spotlight
+ * leaderboard xx
+ * spotlight xx
  * AI for generating caption for video
  * metaverse
  * work on footer and links
