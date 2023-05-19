@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    TEXT: "FSADFF",
+    customKey: "my-value",
   },
 };
 
