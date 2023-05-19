@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Nav, Tab } from "react-bootstrap";
 
 const ProfilePageTabsCreated = ({ Tab }) => {
   return (
