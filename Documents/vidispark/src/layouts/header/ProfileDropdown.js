@@ -114,7 +114,7 @@ const ProfileDropdown = ({ address }) => {
           <ul className="profile-menu">
             <li className="profile">
               {" "}
-              <Link href="/23-profile-info">
+              <Link href="profile-info">
                 <a className="tw-flex tw-items-center ">
                   <svg className="crumina-icon">
                     <use xlinkHref="#user-icon" />
@@ -134,17 +134,7 @@ const ProfileDropdown = ({ address }) => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="notification">
-              {" "}
-              <Link href="/30-notification-settings">
-                <a className="tw-flex tw-items-center ">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#slide-filter-icon" />
-                  </svg>
-                  Notification Settings
-                </a>
-              </Link>{" "}
-            </li>
+
             <li className="artwork">
               {" "}
               <Link href="/upload-artwork">
@@ -156,17 +146,7 @@ const ProfileDropdown = ({ address }) => {
                 </a>
               </Link>{" "}
             </li>
-            <li className="wallet">
-              {" "}
-              <Link href="/18-connect-a-wallet">
-                <a className="tw-flex tw-items-center ">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#wallet-icon" />
-                  </svg>
-                  Wallet info
-                </a>
-              </Link>{" "}
-            </li>
+
             <li className="verification">
               {" "}
               <Link href="/31-get-verified">
