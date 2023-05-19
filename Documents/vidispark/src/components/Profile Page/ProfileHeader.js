@@ -54,7 +54,7 @@ const ProfileHeader = ({ user }) => {
               </Link>{" "}
             </h3>
             <div className="author-meta">@{user?.username}</div>
-            <div className=" tw-flex tw-w-full tw-space-x-2 tw-items-center tw-space-x-2">
+            <div className=" tw-flex tw-w-full tw-space-x-2 tw-items-center ">
               {user?.user_address?.slice(0, 6) +
                 "..." +
                 user?.user_address?.slice(-4)}
