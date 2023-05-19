@@ -42,37 +42,6 @@ const ProfilePageTabs = () => {
                 Created <span className="count">135</span>
               </a>
             </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab8"} className="swiper-slide">
-              <a href="#tab2">
-                Collected <span className="count">48</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab2"} className="swiper-slide">
-              <a href="#tab3">
-                On Sale <span className="count">12</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab3"} className="swiper-slide">
-              <a href="#tab4">
-                Liked <span className="count">7.2K</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab4"} className="swiper-slide">
-              <a href="#tab5">
-                Following <span className="count">56</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab5"} className="swiper-slide">
-              <a href="#tab6">
-                Followers <span className="count">903</span>
-              </a>
-            </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab6"} className="swiper-slide">
-              <a href="#tab7">Activity</a>
-            </Nav.Link>
-            <Nav.Link as={"li"} eventKey={"tab7"} className="swiper-slide">
-              <a href="#tab8">About</a>
-            </Nav.Link>
           </Nav>
           {/* TABS BUTTONS AND TABS SWIPER */}
           <Tab.Content className="tabs-content-wrapper">
