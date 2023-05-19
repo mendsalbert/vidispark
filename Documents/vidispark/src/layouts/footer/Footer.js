@@ -187,7 +187,7 @@ const Footer = () => {
                 </li>
                 <li className="menu-item">
                   {" "}
-                  <Link href="/19-faq">
+                  <Link href="/faq">
                     <a className="menu-link">FAQs</a>
                   </Link>{" "}
                 </li>
