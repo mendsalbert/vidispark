@@ -107,6 +107,19 @@ export const useUser = () => {
     // console.log(res);
   };
 
+  const updateUserToken = async (userId, tokens) => {
+    console.log("userInfo", userId);
+    let res = await db.update(
+      {
+        tokens: tokens,
+      },
+      "user",
+      userId,
+      user
+    );
+    // console.log(res);
+  };
+
   const loginUser = async (userObj) => {
     login();
     let user_ = await isUserNameExist(userObj.username);
