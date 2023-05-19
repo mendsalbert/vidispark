@@ -117,7 +117,7 @@ const Footer = () => {
                 <ul className="footer-menu">
                   <li className="menu-item">
                     {" "}
-                    <Link href="/profile-page">
+                    <Link href="/upload-artwor">
                       <a className="menu-link">Profile Page</a>
                     </Link>{" "}
                   </li>
