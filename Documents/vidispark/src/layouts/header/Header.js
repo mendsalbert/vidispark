@@ -69,21 +69,7 @@ const Header = () => {
           />
           {/*/HEADER BUTTON*/}
           {/*HEADER ICONS*/}
-          <div className="user-activity-buttons">
-            {/* <div className="favourites-button-cont">
-              <button
-                className="favourites-button cryptoki-notif-bttn"
-                data-target=""
-              >
-                <svg className="crumina-icon">
-                  <use xlinkHref="#heart-icon" />
-                </svg>
-              </button>
-            </div> */}
-            {/* <NotificationsButton /> */}
-            {/*/notification dropdown*/}
-            {/*/NOTIFICATION BUTTON*/}
-          </div>
+
           {/*/HEADER ICONS*/}
           <ProfileDropdown address={etherValue} />
         </div>
