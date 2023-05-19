@@ -86,35 +86,6 @@ const Cretors11 = ({ getCollector, collectors }) => {
                     <td data-label="Items Collected" className="stats-item">
                       {collector.collection}
                     </td>
-                    <td data-label="Items Owned" className="stats-item">
-                      {collector.owned}
-                    </td>
-                    <td data-label="AVG PURCHASE PRICE" className="stats-item">
-                      {iconValue}
-                      {collector.avgPurchasePrice}
-                    </td>
-                    <td data-label="Total purchased" className="stats-item">
-                      {iconValue}
-                      {collector.totalPurchased}
-                    </td>
-                    <td data-label="Top purchase" className="stats-item">
-                      {collector.topPurchased
-                        ? `${iconValue}${collector.topPurchased}`
-                        : "-"}
-                    </td>
-                    <td data-label="Item resold" className="stats-item">
-                      {collector.itemResold ? `${collector.itemResold}` : "-"}
-                    </td>
-                    <td data-label="Avg.resell price" className="stats-item">
-                      {collector.resellPrice
-                        ? `${iconValue}${collector.resellPrice}`
-                        : "-"}
-                    </td>
-                    <td data-label="Total resold" className="stats-item">
-                      {collector.resold
-                        ? `${iconValue}${collector.resold}`
-                        : "-"}
-                    </td>
                   </tr>
                 ))}
             </tbody>
