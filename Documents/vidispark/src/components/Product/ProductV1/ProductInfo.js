@@ -77,7 +77,7 @@ const ProductInfo = ({ singleVid }) => {
                   console.log(e);
                 });
             }}
-            className="btn btn-wide btn-dark"
+            className="btn btn-wide tw-bg-green-500"
           >
             Tip
           </button>
