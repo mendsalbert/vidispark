@@ -116,7 +116,7 @@ const ProfilePageTabsCreated = () => {
                 <Link href="">
                   <a>
                     <img
-                      src="https://i.ibb.co/pXHXTpS/proton-towner.jpg"
+                      src="https://i.ibb.co/xLDDxv3/womp-1684476203215-282962ae50c45a66274246039f068236.jpg"
                       alt=""
                     />
                   </a>
