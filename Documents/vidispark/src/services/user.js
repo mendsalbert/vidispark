@@ -3,11 +3,30 @@
 import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../pages/authContext";
 import { useRouter } from "next/router";
+import { ethers } from "ethers";
+import { getBal } from "../../utils/contract/queries";
+import { useAccount } from "wagmi";
+
 const bcrypt = require("bcryptjs");
 
 export const useUser = () => {
   const { db, user, userInfo, logout, login, initDB } = useContext(AuthContext);
   const router = useRouter();
+  const { address } = useAccount();
+
+  const [balance, setBalance] = useState(null);
+  useEffect(() => {
+    const fetchBal = async () => {
+      let res = await getBal(address);
+      setBalance(res);
+      // console.log(res);
+    };
+    fetchBal();
+  }, []);
+
+  const bigNumber = ethers.BigNumber.from(balance?.toString());
+  const etherValue = ethers.utils.formatUnits(bigNumber, 18);
+
   const [users, setUsers] = useState([]);
   useEffect(() => {
     getAllUsers();
@@ -181,5 +200,6 @@ export const useUser = () => {
     logout,
     users,
     unfollowUser,
+    etherValue,
   };
 };
