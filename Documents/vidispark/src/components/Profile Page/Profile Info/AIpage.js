@@ -8,7 +8,7 @@ const AIpage = () => {
   const { updateUser, userInfo } = useUser();
   const configuration = new Configuration({
     organization: "org-iW0tOES3m75oHB2cx9IxyB8I",
-    apiKey: "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",
+    apiKey: "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",
   });
 
   const openai = new OpenAIApi(configuration);
