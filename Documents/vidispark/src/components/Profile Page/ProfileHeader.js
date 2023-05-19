@@ -23,14 +23,6 @@ const ProfileHeader = ({ user }) => {
             </span>
           </div>
           <div className="follow-box">
-            <div className="more-link">
-              {" "}
-              <a href="#">
-                <svg className="crumina-icon">
-                  <use xlinkHref="#dots-icon" />
-                </svg>
-              </a>
-            </div>
             <button className="btn btn-normal btn-dark">Follow!</button>
           </div>
         </div>
