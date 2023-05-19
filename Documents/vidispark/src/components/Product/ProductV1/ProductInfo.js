@@ -24,7 +24,7 @@ const ProductInfo = ({ singleVid }) => {
       <div className="avatar-block">
         <div className="avatar box-42">
           {" "}
-          <Link href="/08-profile-page">
+          <Link href={`/profile-page/${singleVid?.videoData.uploaderId}`}>
             <a>
               <img src={singleVid?.user?.avatarUrl} alt="avatar" />
             </a>
