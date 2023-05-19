@@ -14,8 +14,8 @@ export const useUser = () => {
   const router = useRouter();
   const { address } = useAccount();
 
-  console.log(address);
   const [balance, setBalance] = useState(null);
+
   useEffect(() => {
     const fetchBal = async () => {
       let res = await getBal(address);
@@ -25,6 +25,7 @@ export const useUser = () => {
     fetchBal();
   }, []);
 
+  console.log(balance);
   // const bigNumber = ethers.BigNumber.from(balance?.toString());
   // const etherValue = ethers.utils.formatUnits(bigNumber, 18);
 
