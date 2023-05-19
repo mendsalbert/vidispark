@@ -54,7 +54,7 @@ const Header = () => {
           <div className="collection-box">
             <a
               className="btn btn-normal btn-dark create-collection"
-              href="26-upload-artwork"
+              href="upload-artwork"
             >
               Create
             </a>
