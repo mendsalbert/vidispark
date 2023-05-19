@@ -5,6 +5,7 @@ import Layouts from "../src/layouts/Layouts";
 const ProfilePageTabsCreated = () => {
   return (
     <Layouts>
+      <p>hjgkg</p>
       <div className="featured-box grid-4-columns tw-mx-4 tw-mt-4">
         <div className="featured-item">
           <div className="featured-item-wrapper">
