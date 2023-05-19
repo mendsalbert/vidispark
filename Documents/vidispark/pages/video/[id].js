@@ -16,7 +16,6 @@ const Product05 = () => {
   const filteredVideos = videoResults?.filter(
     (item) => item.userId == singleVid[0]?.userId
   );
-  console.log(filteredVideos);
 
   //TODO: 2. work on the follow button 3. work on the like button 4. comments 5. others videos from creator
   return (
