@@ -45,7 +45,7 @@ const ProfilePageTabsCreated = () => {
                 <div className="title">
                   {" "}
                   <Link href="https://www.voxels.com/play?coords=SE@815E,534S">
-                    <a>13 Turkenstrasse</a>
+                    <a>415 Proton Tower</a>
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
@@ -113,11 +113,11 @@ const ProfilePageTabsCreated = () => {
             <div className="featured-item-post-content"></div>
           </div>
         </div>
+
         <div className="featured-item">
           <div className="featured-item-wrapper">
             <div className="featured-item-content">
               <div className="featured-item-image">
-                {" "}
                 <Link href="">
                   <a>
                     <img
@@ -151,7 +151,7 @@ const ProfilePageTabsCreated = () => {
                 <div className="title">
                   {" "}
                   <Link href="/05-product-page">
-                    <a>The Molten Heart</a>
+                    <a>13 Turkenstrasse</a>
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
@@ -215,7 +215,6 @@ const ProfilePageTabsCreated = () => {
             <div className="featured-item-post-content"></div>
           </div>
         </div>
-
         <div className="featured-item">
           <div className="featured-item-wrapper">
             <div className="featured-item-content">
