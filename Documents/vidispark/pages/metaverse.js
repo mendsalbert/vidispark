@@ -45,7 +45,7 @@ const ProfilePageTabsCreated = () => {
                 <div className="title">
                   {" "}
                   <Link href="https://www.voxels.com/play?coords=SE@815E,534S">
-                    <a>The Molten Heart</a>
+                    <a>13 Turkenstrasse</a>
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
