@@ -61,14 +61,14 @@ const ProfileHeader = ({ user }) => {
             </div>
           </div>
           <div className="projects-meta">
-            <div className="projects-number">
+            {/* <div className="projects-number">
               <div className="number">135</div>
               <div className="label">Content Created</div>
             </div>
             <div className="onsale-number">
               <div className="number">12</div>
               <div className="label"></div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="author-description">
