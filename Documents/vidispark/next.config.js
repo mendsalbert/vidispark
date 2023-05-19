@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    TEXT: process.env.TEXT,
+    TEXT: "FSADFF",
   },
 };
 
