@@ -15,6 +15,7 @@ const ProfilePageTabs = ({ id }) => {
   const { videoResults } = useVideo();
 
   const filteredVideos = videoResults?.filter((item) => item.userId == id);
+  console.log(filteredVideos);
   const router = useRouter();
   let currentPath = router.pathname;
   currentPath = currentPath.includes("/09-profile-page-about")
@@ -50,7 +51,7 @@ const ProfilePageTabs = ({ id }) => {
           {/* TABS BUTTONS AND TABS SWIPER */}
           <Tab.Content className="tabs-content-wrapper">
             {/*  CREATED */}
-            <ProfilePageTabsCreated Tab={Tab} filteredVideos={filteredVideos} />
+            {/* <ProfilePageTabsCreated Tab={Tab} filteredVideos={filteredVideos} /> */}
           </Tab.Content>
         </Tab.Container>
       </div>
