@@ -90,7 +90,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
                       </div>
                     </td>
                     <td data-label="Items Collected" className="stats-item">
-                      {collector?.data?.token}
+                      {collector?.data?.tokens}
                     </td>
                   </tr>
                 ))}
