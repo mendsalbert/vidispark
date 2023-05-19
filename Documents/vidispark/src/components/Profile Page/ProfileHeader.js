@@ -30,14 +30,14 @@ const ProfileHeader = ({ user }) => {
           <div className="activity-meta">
             <div className="followers-number">
               <div className="number">
-                {user?.followers.length < 1 ? 0 : user?.followers.length}
+                {user?.followers.length < 1 ? 0 : user?.followers?.length}
               </div>
               <div className="label">Followers</div>
             </div>
             <div className="following-number">
               <div className="number">
                 {" "}
-                {user?.following.length < 1 ? 0 : user?.followers.length}
+                {user?.following?.length < 1 ? 0 : user?.followers?.length}
               </div>
               <div className="label">Following</div>
             </div>
@@ -55,7 +55,7 @@ const ProfileHeader = ({ user }) => {
             </h3>
             <div className="author-meta">@{user?.username}</div>
             <div className="download-file tw-flex tw-space-x-2">
-              {user.user_address}
+              {user?.user_address}
               <svg className="crumina-icon">
                 <use xlinkHref="#copy-icon" />
               </svg>
