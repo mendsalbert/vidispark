@@ -53,7 +53,7 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
-            {/* <li className="account">
+            <li className="account">
               {" "}
               <Link href="/29-account-settings">
                 <a className="tw-flex tw-flex-row tw-items-center">
@@ -63,7 +63,7 @@ const ProfileInfoSidebar = () => {
                   Sponserhip Stream{" "}
                 </a>
               </Link>{" "}
-            </li> */}
+            </li>
 
             <li className="artwork">
               {" "}
