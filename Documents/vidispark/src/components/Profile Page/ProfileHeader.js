@@ -27,7 +27,7 @@ const ProfileHeader = ({ user }) => {
           </div>
         </div>
         <div className="author-primary-info">
-          <div className="activity-meta">
+          <div className="">
             <div className="followers-number">
               <div className="number">
                 {user?.followers.length < 1 ? 0 : user?.followers.length}
