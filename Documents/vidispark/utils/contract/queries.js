@@ -38,6 +38,7 @@ export async function getBal(address) {
     const contractObj = await contract();
     const data = await contractObj.balanceOf(address);
     const results = await data.wait();
+    console.log("res------", results);
     return results;
   } catch (e) {
     return parseErrorMsg(e);
