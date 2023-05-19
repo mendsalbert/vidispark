@@ -69,16 +69,16 @@ const ProductInfo = ({ singleVid }) => {
             type="button"
             onClick={() => {
               updateUserToken(singleVid?.userId, 4);
-              // const tipAmount = window.prompt("Enter tip amount:");
-              // if (tipAmount !== null) {
-              //   tip(tipAmount, singleVid?.user?.user_address)
-              //     .then((res) => {
-              //       console.log(res);
-              //     })
-              //     .catch((e) => {
-              //       console.log(e);
-              //     });
-              // }
+              const tipAmount = window.prompt("Enter tip amount:");
+              if (tipAmount !== null) {
+                tip(tipAmount, singleVid?.user?.user_address)
+                  .then((res) => {
+                    console.log(res);
+                  })
+                  .catch((e) => {
+                    console.log(e);
+                  });
+              }
             }}
             className="btn btn-wide tw-bg-green-500"
           >
