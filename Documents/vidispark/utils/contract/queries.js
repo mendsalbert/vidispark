@@ -33,6 +33,17 @@ export async function tip(amount, recipient) {
   }
 }
 
+export async function getBal(address) {
+  try {
+    const contractObj = await contract();
+    const data = await contractObj.balanceOf(address);
+    const results = await data.wait();
+    return results;
+  } catch (e) {
+    return parseErrorMsg(e);
+  }
+}
+
 function toWei(amount) {
   const toWei = ethers.utils.parseUnits(amount.toString());
   // return toWei;
