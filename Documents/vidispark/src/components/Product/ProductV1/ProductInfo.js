@@ -9,7 +9,7 @@ const ProductInfo = ({ singleVid }) => {
   const [tempCount, setTempCount] = useState(singleVid?.videoData?.likes);
   const { followUser, userInfo } = useUser();
   const { updateLike } = useVideo();
-  // console.log(singleVid?.user.following);
+  console.log(singleVid?.user);
   return (
     <>
       <div className="page-title-section">
@@ -69,13 +69,16 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              tip("1", "0x5d6124b99Fe94aF73377BB740aD9A13635185785")
-                .then((res) => {
-                  console.log(res);
-                })
-                .catch((e) => {
-                  console.log(e);
-                });
+              const tipAmount = window.prompt("Enter tip amount:");
+              if (tipAmount !== null) {
+                tip(tipAmount, "0x5d6124b99Fe94aF73377BB740aD9A13635185785")
+                  .then((res) => {
+                    console.log(res);
+                  })
+                  .catch((e) => {
+                    console.log(e);
+                  });
+              }
             }}
             className="btn btn-wide tw-bg-green-500"
           >
