@@ -52,7 +52,7 @@ const ProfilePageTabsCreated = () => {
                 </div>
                 <div className="item-meta">
                   <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
-                    Enter
+                    View
                   </button>
                 </div>
               </div>
