@@ -14,7 +14,7 @@ const Product05 = () => {
   const { videoResults } = useVideo();
   const singleVid = videoResults?.filter((item) => item.videoId == id);
   const userVideos = videoResults?.filter(
-    (item) => item.videoData.uploaderId == id
+    (item) => item?.videoData?.uploaderId == id
   );
   console.log(userVideos);
 
