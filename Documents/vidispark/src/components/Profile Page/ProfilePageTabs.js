@@ -39,7 +39,7 @@ const ProfilePageTabs = () => {
           <Nav className="tabs-list swiper-wrapper">
             <Nav.Link as={"li"} eventKey={"tab1"} className="swiper-slide">
               <a href="#tab1">
-                Content Created <span className="count">2</span>
+                Content Created <span className="count"></span>
               </a>
             </Nav.Link>
           </Nav>
