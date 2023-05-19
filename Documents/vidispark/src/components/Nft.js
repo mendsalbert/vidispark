@@ -5,6 +5,7 @@ import ReactPlayer from "react-player";
 import { useVideo } from "../services/videos";
 
 const Nft = ({ data }) => {
+  console.log(data);
   const { updateCount } = useVideo();
   return (
     <div className="featured-item">
