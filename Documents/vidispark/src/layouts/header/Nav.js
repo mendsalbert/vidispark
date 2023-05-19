@@ -41,7 +41,7 @@ const Nav = () => {
           <li className="menu-item">
             {" "}
             <Link href="/16-spotlight">
-              <a className="menu-link">Spotlight</a>
+              <a className="menu-link">Metaverse</a>
             </Link>{" "}
           </li>
 
