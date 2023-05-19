@@ -106,8 +106,8 @@ const ProductTabs = ({ filteredVideos }) => {
       {/*TAB DETAILS*/}
       <div id="tab2" className={`tab ${activeContent("tab2")}`}>
         {filteredVideos.map((data) => (
-          <div className="featured-item tw-my-4 tw-flex tw-flex-row">
-            <div className="featured-item-wrapper">
+          <div className="featured-item tw-my-4 ">
+            <div className="featured-item-wrapper tw-grid tw-grid-cols-3">
               <div className="featured-item-content">
                 <div className="featured-item-image">
                   <Link href={`/video/${data?.videoId}`}>
