@@ -14,4 +14,5 @@
  * handle authentication very well
  * work on the follow button on all the pages
  * work on the verify badge
+ * account settings
  */
