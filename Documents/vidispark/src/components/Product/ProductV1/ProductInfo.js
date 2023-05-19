@@ -53,7 +53,7 @@ const ProductInfo = ({ singleVid }) => {
         <div className="small-title">Description</div>
         <p>{singleVid?.videoData?.description}</p>
       </div>
-      <div className="bidding-section">
+      <div className="bidding-section tw-space-x-2">
         <div className="place-bid">
           <button
             type="button"
