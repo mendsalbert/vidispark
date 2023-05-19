@@ -138,32 +138,32 @@ const Footer = () => {
               <ul className="footer-menu">
                 <li className="menu-item">
                   {" "}
-                  <Link href="/02-explore">
-                    <a className="menu-link">3D Artworks</a>
+                  <Link href="explore">
+                    <a className="menu-link">🎭 Entertainmen</a>
                   </Link>{" "}
                 </li>
                 <li className="menu-item">
                   {" "}
-                  <Link href="/03-explore-v2">
-                    <a className="menu-link">Motion Graphics</a>
+                  <Link href="/explore">
+                    <a className="menu-link">🎵 Music</a>
                   </Link>{" "}
                 </li>
                 <li className="menu-item">
                   {" "}
-                  <Link href="/04-item-versions">
-                    <a className="menu-link">Illustrations</a>
+                  <Link href="/explore">
+                    <a className="menu-link">⚽ Sports</a>
                   </Link>{" "}
                 </li>
                 <li className="menu-item">
                   {" "}
-                  <Link href="/02-explore">
-                    <a className="menu-link">Photography</a>
+                  <Link href="/explore">
+                    <a className="menu-link">🎮 Gaming</a>
                   </Link>{" "}
                 </li>
                 <li className="menu-item">
                   {" "}
-                  <Link href="/03-explore-v2">
-                    <a className="menu-link">Pop Culture</a>
+                  <Link href="/explore">
+                    <a className="menu-link">📚 Education</a>
                   </Link>{" "}
                 </li>
               </ul>
