@@ -53,7 +53,7 @@ const ProfileHeader = ({ user }) => {
                 <a>{user.fullname}</a>
               </Link>{" "}
             </h3>
-            <div className="author-meta">@DexterStark</div>
+            <div className="author-meta">@{user.username}</div>
             <div className="download-file">
               Ox465d53...d9c6
               <svg className="crumina-icon">
