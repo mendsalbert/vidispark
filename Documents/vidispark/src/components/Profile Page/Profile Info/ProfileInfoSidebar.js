@@ -44,7 +44,7 @@ const ProfileInfoSidebar = () => {
           <ul className="profile-menu">
             <li className="account">
               {" "}
-              <Link href="/29-account-settings">
+              <Link href="/vidis-ai">
                 <a className="tw-flex tw-bg-blue-500 tw-rounded-full tw-ml-5 tw-mb-2 tw-flex-row tw-items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
