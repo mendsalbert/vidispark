@@ -118,10 +118,6 @@ const Profile = () => {
                 </div>
                 <div className="label">Following</div>
               </div>
-              <div className="projects-number">
-                <div className="number">135</div>
-                <div className="label">Created</div>
-              </div>
             </div>
           </div>
         </div>
