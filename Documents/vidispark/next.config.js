@@ -6,6 +6,7 @@ const nextConfig = {
   env: {
     GREETING: "Hello World",
     OPEN_AI_KEY: "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",
+    TEST: "test",
   },
 };
 
