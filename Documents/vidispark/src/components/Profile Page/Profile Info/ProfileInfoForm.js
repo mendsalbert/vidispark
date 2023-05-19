@@ -17,7 +17,7 @@ const ProfileInfoForm = () => {
         <input
           id="message"
           name="message"
-          className="tw-w-full tw-rounded-full tw-ring-1 tw-py-4"
+          className="tw-w-full tw-rounded-full tw-ring-1 tw-py-4 tw-px-3"
           cols={20}
           rows={10}
           // value={bio}
