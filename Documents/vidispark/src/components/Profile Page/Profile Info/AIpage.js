@@ -19,30 +19,13 @@ const AIpage = () => {
   const generateContent = async () => {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-
-      // prompt: `
-
-      //     As an online educational tutor, your job is to help students learn and master topics in an organized and efficient manner. Your first task is to accept a search topic from a user, and break it down into smaller modules that are easier to study and understand. For example, if a student searched for "Introduction to Computer Science", you would need to break down the topic into modules such as "History of Computers", "Software Development", "Programming Languages", "Data Structures and Algorithms" and so on.
-
-      // Your prompt is to provide the user with a well-organized and concise set of modules, that cover all the important topics related to their search query. Make sure to explain why each module is important and how it fits into the overall topic. Additionally, you may include resources such as textbooks, online courses, videos, and interactive exercises that will help the student learn and practice the concepts in each module.
-
-      //     Break down the concept of ${query} into smaller modules for ${preference.difficultyLevel} learners. Please use the following format for each module:
-
-      //   1. [Module name]: [short description].
-
-      // For example:
-      // 1. some module name here: and its description here.
-
-      // Please provide a maximum of 7 modules and a brief description for each.
-      // Note: Keep the module names and descriptions consistent and avoid changing them for each request.
-      // `,
       prompt: `A student wants to learn about a  , generate 6 modules that a student can use to learn as . A module consists of a title and a description, separated by a colon.`,
       temperature: 1.4,
       top_p: 0.7,
       max_tokens: 120,
     });
     console.log(completion.data.choices[0].text);
-    return parseString(completion.data.choices[0]?.text);
+    return completion.data.choices[0]?.text;
   };
   return (
     <div className="cryptoki-form" id="personal-info-form">
