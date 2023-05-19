@@ -79,7 +79,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
                         </div>
                         <div className="avatar-meta">
                           <div className="avatar-title">
-                            <Link href="/08-profile-page">
+                            <Link href={`/profile-info/${collector?.data?.id}`}>
                               <a>{collector?.data?.fullname}</a>
                             </Link>
                           </div>
