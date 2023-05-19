@@ -44,31 +44,10 @@ const Cretors11 = ({ getCollector, collectors }) => {
             <thead>
               <tr>
                 <th scope="col" className="heading-label">
-                  Collector
+                  Creator
                 </th>
                 <th scope="col" className="heading-label">
-                  Items Collected
-                </th>
-                <th scope="col" className="heading-label">
-                  Items Owned
-                </th>
-                <th scope="col" className="heading-label">
-                  AVG PURCHASE PRICE
-                </th>
-                <th scope="col" className="heading-label">
-                  Total purchased
-                </th>
-                <th scope="col" className="heading-label">
-                  Top purchase
-                </th>
-                <th scope="col" className="heading-label">
-                  Item resold
-                </th>
-                <th scope="col" className="heading-label">
-                  Avg.resell price
-                </th>
-                <th scope="col" className="heading-label">
-                  Total resold
+                  Tokens
                 </th>
               </tr>
             </thead>
