@@ -13,7 +13,7 @@ const ProfileHeader = ({ user }) => {
             {" "}
             <Link href="/08-profile-page">
               <a>
-                <img src="img/avatar.png" alt="" />
+                <img src={user?.avatarCover} alt="" />
               </a>
             </Link>{" "}
             <span className="verified">
