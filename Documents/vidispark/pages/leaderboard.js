@@ -80,11 +80,11 @@ const Cretors11 = ({ getCollector, collectors }) => {
                         <div className="avatar-meta">
                           <div className="avatar-title">
                             <Link href="/08-profile-page">
-                              <a>{collector?.data?.creator.fullname}</a>
+                              <a>{collector?.data?.fullname}</a>
                             </Link>
                           </div>
                           <div className="avatar-meta">
-                            @{collector?.data?.creator.username}
+                            @{collector?.data?.username}
                           </div>
                         </div>
                       </div>
