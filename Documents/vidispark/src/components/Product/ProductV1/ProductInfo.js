@@ -61,7 +61,7 @@ const ProductInfo = ({ singleVid }) => {
               setFollowerState("nf");
               followUser(singleVid?.videoData?.uploaderId);
             }}
-            className="btn btn-wide btn-dark"
+            className="btn  btn-dark"
           >
             {followerState == "nf" ? "Subscribed" : " Subscribe"}
             {/* Admire */}
@@ -69,7 +69,6 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              //  TOD
               tip("1", "0x5d6124b99Fe94aF73377BB740aD9A13635185785")
                 .then((res) => {
                   console.log(res);
