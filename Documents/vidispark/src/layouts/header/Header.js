@@ -57,7 +57,7 @@ const Header = () => {
             </a>
           </div>
           <ConnectButton
-            className="mx-8"
+            className="tw-mx-8"
             accountStatus={"full"}
             showBalance={{
               smallScreen: true,
