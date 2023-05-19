@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import useClickOutside from "../../useClickOutside";
 import { useUser } from "../../services/user";
 
-const ProfileDropdown = ({}) => {
+const ProfileDropdown = () => {
   const [toggle, setToggle] = useState(false);
   const dayMood = useRef(true);
   let domNode = useClickOutside(() => {
