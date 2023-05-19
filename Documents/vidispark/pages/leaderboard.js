@@ -61,7 +61,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
                     <td data-label="Collector">
                       <div className="collector-info avatar-block">
                         <div className="avatar box-42">
-                          <Link href="/08-profile-page">
+                          <Link href={`/profile-info/${collector?.id}`}>
                             <a>
                               <img
                                 src={collector?.data?.avatarUrl}
