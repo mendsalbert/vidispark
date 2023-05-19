@@ -67,7 +67,7 @@ const ProfileInfoSidebar = () => {
 
             <li className="artwork">
               {" "}
-              <Link href="/upload-artwork">
+              <Link href="/26-upload-artwork">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#picture-icon" />
@@ -79,7 +79,7 @@ const ProfileInfoSidebar = () => {
 
             <li className="verification">
               {" "}
-              <Link href="/get-verified">
+              <Link href="/31-get-verified">
                 <a className="tw-flex tw-flex-row tw-items-center">
                   <svg className="crumina-icon">
                     <use xlinkHref="#circle-checked-icon" />
