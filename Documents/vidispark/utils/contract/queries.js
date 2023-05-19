@@ -42,6 +42,7 @@ export async function getBal(address) {
     console.log("res------", results);
     return results;
   } catch (e) {
+    console.log(e);
     return parseErrorMsg(e);
   }
 }
