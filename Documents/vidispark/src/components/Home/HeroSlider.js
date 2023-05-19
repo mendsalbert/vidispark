@@ -41,7 +41,7 @@ const HeroSlider = () => {
               </div>
               <div className="gradient-border-purple-bg slide-button">
                 {" "}
-                <Link href="/02-explore">
+                <Link href="/explore">
                   <a className="btn btn-normal">Explore Now!</a>
                 </Link>{" "}
               </div>
@@ -78,7 +78,7 @@ const HeroSlider = () => {
               <div className="slide-title">Enter a new reality.</div>
               <div className="gradient-border-purple-bg slide-button">
                 {" "}
-                <Link href="/02-explore">
+                <Link href="/metaverse">
                   <a className="btn btn-normal">Explore Now!</a>
                 </Link>{" "}
               </div>
