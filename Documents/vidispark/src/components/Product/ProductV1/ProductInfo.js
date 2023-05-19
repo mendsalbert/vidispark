@@ -39,7 +39,7 @@ const ProductInfo = ({ singleVid }) => {
           <div className="avatar-title">
             <span className="gradient-text">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href={`/profile-page/${singleVid?.videoData.uploaderId}`}>
                 <a>{singleVid?.user?.fullname}</a>
               </Link>{" "}
             </span>
