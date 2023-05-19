@@ -37,7 +37,9 @@ const AIpage = () => {
       <div className="user-db-title">Vidispark AI</div>
 
       <div className="form-field ">
-        <label htmlFor="message">Bio</label>
+        <label htmlFor="message">
+          Generate your video caption with vidispark AI
+        </label>
         <textarea
           id="message"
           name="message"
