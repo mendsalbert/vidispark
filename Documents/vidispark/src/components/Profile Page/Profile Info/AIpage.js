@@ -68,7 +68,8 @@ const AIpage = () => {
 
       <button
         onClick={() => {
-          generateContent();
+          console.log(process.env.API_URL);
+          //   generateContent();
           //   onUpdateUserDataHandler();
         }}
         className="btn btn-wide btn-dark tw-mt-3"
