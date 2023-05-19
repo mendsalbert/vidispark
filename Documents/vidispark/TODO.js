@@ -12,4 +12,5 @@
  * likes gotten by a user  xx
  * validation and aleart etc
  * handle authentication very well
+ * work on the follow button on all the pages
  */
