@@ -48,12 +48,13 @@ export const useVideo = () => {
       for (const video of videos) {
         console.log(video.data.uploaderId);
         const userId = video.data.uploaderId;
-        const user = await db.get("user", userId);
+        const user = await db.cget("user", userId);
 
         results.push({
           videoId: video.id,
           videoData: video.data,
-          user: user,
+          user: user.data,
+          userId: user.id,
         });
       }
 
