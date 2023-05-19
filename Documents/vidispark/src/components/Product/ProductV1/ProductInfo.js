@@ -68,7 +68,7 @@ const ProductInfo = ({ singleVid }) => {
           <button
             type="button"
             onClick={() => {
-              console.log(user?.user_address);
+              console.log(singleVid?.user?.user_address);
               const tipAmount = window.prompt("Enter tip amount:");
               if (tipAmount !== null) {
                 tip(tipAmount, singleVid?.user?.user_address)
