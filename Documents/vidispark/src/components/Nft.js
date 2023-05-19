@@ -11,28 +11,6 @@ const Nft = ({ data }) => {
       <div className="featured-item-wrapper">
         <div className="featured-item-content">
           <div className="featured-item-image">
-            {/* <Link href="/05-product-page">
-              <a>
-                <picture>
-                  <source type="image/avif" srcSet={data.image} />
-                  <img
-                    src={data.image}
-                    width={304}
-                    height={340}
-                    alt="Featured"
-                  />
-                </picture>
-              </a>
-            </Link> */}
-            {/* <ReactPlayer
-              url="https://media.thetavideoapi.com/video_s8g3s885wr5q2z8ifk4apj2xke/master.m3u8"
-              // url="https://media.thetavideoapi.com/video_s8g3s885wr5q2z8ifk4apj2xke/master.m3u8"
-              // url={`${data?.videoData?.videoUrl}/master.m3u8`}
-              controls
-              width="100%"
-              height="auto"
-              className="rounded-md shadow-lg"
-            /> */}
             <Link href={`/video/${data?.videoId}`}>
               <iframe
                 src={data?.videoData?.videoUrl}
