@@ -9,7 +9,7 @@ const ProductInfo = ({ singleVid }) => {
   const [tempCount, setTempCount] = useState(singleVid?.videoData?.likes);
   const { followUser, userInfo } = useUser();
   const { updateLike } = useVideo();
-  console.log(singleVid?.user);
+  console.log(singleVid?.user?.user_address);
   return (
     <>
       <div className="page-title-section">
