@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import useClickOutside from "../../useClickOutside";
 import { useUser } from "../../services/user";
 
-const ProfileDropdown = ({ address }) => {
+const ProfileDropdown = ({}) => {
   const [toggle, setToggle] = useState(false);
   const dayMood = useRef(true);
   let domNode = useClickOutside(() => {
@@ -45,7 +45,7 @@ const ProfileDropdown = ({ address }) => {
       {/*user-meta*/}
       <div className="user-meta" onClick={() => setToggle(!toggle)}>
         <div className="user_name">{user?.fullname}</div>
-        <div className="user_score">{etherValue} VDPS</div>
+        <div className="user_score">{} VDPS</div>
       </div>
       {/*/user-meta*/}
       {/*user-avatar*/}
