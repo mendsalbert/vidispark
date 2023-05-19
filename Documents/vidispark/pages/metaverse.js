@@ -5,7 +5,7 @@ import Layouts from "../src/layouts/Layouts";
 const ProfilePageTabsCreated = () => {
   return (
     <Layouts>
-      <div className="page-title-section">
+      <div className="page-title-section tw-mx-4 tw-mt-4">
         <h2>
           Marketplace<span className="gradient-text"> Creators</span>
         </h2>
