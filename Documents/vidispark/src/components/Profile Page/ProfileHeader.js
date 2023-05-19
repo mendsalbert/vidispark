@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-const ProfileHeader = () => {
+const ProfileHeader = ({ user }) => {
   return (
     <div className="profile-header-section">
       <div className="cover-image">
