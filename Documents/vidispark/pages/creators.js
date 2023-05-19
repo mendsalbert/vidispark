@@ -129,7 +129,7 @@ const Cretors = ({ getCreator, creators }) => {
                       ))} */}
                     {creator.projects && creator.projects.length >= 3 && (
                       <div className="preview-box more-projects">
-                        <Link href="/08-profile-page">
+                        <Link href={`/profile-page/${creator?.id}`}>
                           <a>
                             <svg className="crumina-icon">
                               <use xlinkHref="#dots-icon" />
