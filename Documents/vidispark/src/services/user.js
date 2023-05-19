@@ -14,6 +14,7 @@ export const useUser = () => {
   const router = useRouter();
   const { address } = useAccount();
 
+  console.log(address);
   const [balance, setBalance] = useState(null);
   useEffect(() => {
     const fetchBal = async () => {
