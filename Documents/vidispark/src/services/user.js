@@ -216,5 +216,6 @@ export const useUser = () => {
     users,
     unfollowUser,
     etherValue,
+    updateUserToken,
   };
 };
