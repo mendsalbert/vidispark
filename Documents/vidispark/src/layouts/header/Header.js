@@ -24,10 +24,11 @@ const Header = () => {
     fetchBal();
   }, []);
 
-  const bigNumber = ethers.BigNumber.from("10000000000000000000");
+  const bigNumber = ethers.BigNumber.from(balance?.toString());
   const etherValue = ethers.utils.formatUnits(bigNumber, 18);
 
   console.log(etherValue);
+
   return (
     <header className="site-header">
       <div className="topbar padding-top-bottom border-bottom">
