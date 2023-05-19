@@ -57,7 +57,7 @@ const ProfileHeader = ({ user }) => {
             <div className="download-file tw-flex tw-w-full tw-space-x-2">
               {user?.user_address?.slice(0, 6) +
                 "..." +
-                user?.user_address.slice(-4)}
+                user?.user_address?.slice(-4)}
 
               <svg className="crumina-icon">
                 <use xlinkHref="#copy-icon" />
