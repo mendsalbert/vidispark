@@ -57,7 +57,7 @@ const ProfileHeader = ({ user }) => {
                 </div>
                 <div className="label">Followers</div>
               </div>
-              <div>
+              <div className="tw-text-lg">
                 <div className="number">
                   {" "}
                   {user?.following?.length < 1 ? 0 : user?.followers?.length}
