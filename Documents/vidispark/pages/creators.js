@@ -33,6 +33,7 @@ const Cretors = ({ getCreator, creators }) => {
   const { users, userInfo, unfollowUser, followUser } = useUser();
   // Paggination
   const [active, setActive] = useState(0);
+  console.log(creators);
   let sort = 8;
   return (
     <Layouts>
@@ -75,7 +76,7 @@ const Cretors = ({ getCreator, creators }) => {
                         </Link>
                       </div>
                       <div className="title">
-                        <Link href="/08-profile-page">
+                        <Link href={`/profile-page/${1}`}>
                           <a>{creator?.data?.fullname}</a>
                         </Link>
                       </div>
