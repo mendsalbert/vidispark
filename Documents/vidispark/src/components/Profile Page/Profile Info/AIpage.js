@@ -58,12 +58,14 @@ const AIpage = () => {
         />
         <span className="input_error-message" id="textareaMessage" />
       </div>
-      <p
-        htmlFor="name"
-        className="tw-mb-8 tw-ring-2 tw-rounded-2xl tw-ring-gray-400 tw-p-3"
-      >
-        {res && res}{" "}
-      </p>
+      {res && (
+        <p
+          htmlFor="name"
+          className="tw-mb-8 tw-ring-2 tw-rounded-2xl tw-ring-gray-400 tw-p-3"
+        >
+          {res && res}{" "}
+        </p>
+      )}
 
       <button
         onClick={() => {
