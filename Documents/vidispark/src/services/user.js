@@ -25,7 +25,7 @@ export const useUser = () => {
     fetchBal();
   }, []);
 
-  const bigNumber = ethers.BigNumber.from(balance?.toString());
+  const bigNumber = ethers.BigNumber.from(balance?.toString() || "0");
   const etherValue = ethers.utils.formatUnits(bigNumber, 18);
 
   const [users, setUsers] = useState([]);
