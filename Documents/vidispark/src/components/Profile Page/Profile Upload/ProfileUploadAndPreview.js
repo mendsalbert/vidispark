@@ -156,7 +156,12 @@ const ProfileUploadAndPreview = () => {
           <div className="label">Go Live</div>
           <div className="upload-box">
             <div className="upload-notice"> Start a live stream</div>
-            <button className="tw-bg-red-600 tw-rounded-full tw-px-3 tw-py-2 tw-flex tw-flex-row tw-items-center tw-space-x-2">
+            <button
+              onClick={() => {
+                goLiveHandler();
+              }}
+              className="tw-bg-red-600 tw-rounded-full tw-px-3 tw-py-2 tw-flex tw-flex-row tw-items-center tw-space-x-2"
+            >
               <span className="tw-text-white">Go Live</span>
               <span class="tw-relative tw-flex tw-h-3 tw-w-3">
                 <span class="tw-animate-ping tw-absolute tw-inline-flex tw-h-full tw-w-full tw-rounded-full tw-bg-gray-200 tw-opacity-75"></span>
