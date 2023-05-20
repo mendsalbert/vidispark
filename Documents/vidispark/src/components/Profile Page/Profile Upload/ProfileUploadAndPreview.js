@@ -120,9 +120,9 @@ const ProfileUploadAndPreview = () => {
 
     const config = {
       headers: {
-        "x-tva-sa-id": "your-service-account-id",
-        "x-tva-sa-secret": "your-service-account-secret",
         "Content-Type": "application/json",
+        "x-tva-sa-id": "srvacc_fk130i83e047t4kg5w4edswj7",
+        "x-tva-sa-secret": "6hvuhqk3499qu9gbb8w34gft6q6q8re5",
       },
     };
 
