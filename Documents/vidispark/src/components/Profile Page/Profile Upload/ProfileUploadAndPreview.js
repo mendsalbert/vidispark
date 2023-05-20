@@ -24,7 +24,7 @@ const ProfileUploadAndPreview = () => {
       body: JSON.stringify({}),
     });
     const uploadResponseJson = await uploadResponse.json();
-    const { presigned_url } = uploadResponseJson.body.uploads[0];
+    const { presigned_url } = uploadResponseJson?.body?.uploads[0];
     setUploadUrl(presigned_url);
     setUploadStep("Analyzing Video");
     await fetch(presigned_url, {
