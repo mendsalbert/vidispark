@@ -10,12 +10,14 @@
  *
  *
  * work on footer and links
- * check for mobile view
- * demo video
  * a very rich documentation (white paper) add link to footer
+ * demo video
+ *
+ * work on go live
+ * check for mobile view
  * validation and aleart etc
  * handle authentication very well
  * work on the follow button on all the pages
  * work on the verify badge
- * account settings
+ * account settings - social
  */
