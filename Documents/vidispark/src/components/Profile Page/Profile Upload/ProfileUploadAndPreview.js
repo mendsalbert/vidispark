@@ -109,6 +109,35 @@ const ProfileUploadAndPreview = () => {
     console.log(".......");
     addVideo({ category, title, thumbnail, description, videoUrl });
   };
+
+  const goLive = async () => {
+    const data = {
+      name: "demo",
+      resolutions: ["160p", "240p", "360p", "720p", "source"],
+      source_resolution: "720p",
+      fps: 60,
+    };
+
+    const config = {
+      headers: {
+        "x-tva-sa-id": "your-service-account-id",
+        "x-tva-sa-secret": "your-service-account-secret",
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const response = await axios.post(
+        "https://api.thetavideoapi.com/stream",
+        data,
+        config
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
