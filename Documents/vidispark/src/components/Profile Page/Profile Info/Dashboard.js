@@ -7,6 +7,7 @@ import { getCollector } from "../../../redux/action/collectors";
 import { dblock } from "../../../utils";
 import { useUser } from "../../../services/user";
 import { useVideo } from "../../../services/videos";
+import { PencilIcon } from "@heroicons/react/24/outline";
 
 const Dashboard = ({ getCollector, collectors }) => {
   let sort = 6;
@@ -110,6 +111,10 @@ const Dashboard = ({ getCollector, collectors }) => {
                     </td>
                     <td data-label="Items Collected" className="stats-item">
                       {data?.videoData?.likes}
+                    </td>
+                    <td data-label="Items Collected" className="stats-item">
+                      {/* {data?.videoData?.likes} */}
+                      <PencilIcon />
                     </td>
                   </tr>
                 ))}
