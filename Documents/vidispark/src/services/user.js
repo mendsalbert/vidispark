@@ -55,7 +55,7 @@ export const useUser = () => {
     login();
     let value = await isUserNameExist(userObj.username);
     console.log("value===", value.length > 0);
-    console.log("value===", db.signer);
+    console.log("value===", db.signer());
     if (value.length > 0) {
       alert("username exist");
       return;
