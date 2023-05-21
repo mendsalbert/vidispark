@@ -29,6 +29,7 @@ const Faq = () => {
                     artists, content creators, and brands with their passionate
                     audience while embracing the innovative capabilities of Web3
                     technologies.
+                    <br />
                     <p class="tw-text-gray-700 tw-text-lg tw-font-light">
                       Vision: Our vision is to create a dynamic metaverse where
                       creative expression knows no bounds. We envision a future
@@ -41,6 +42,7 @@ const Faq = () => {
                       and cultivate a thriving ecosystem where artists and
                       viewers alike can thrive.
                     </p>
+                    <br />
                     <p class="tw-text-gray-700 tw-text-lg tw-font-light">
                       Through our platform, we aim to empower creators by
                       providing them with new avenues for monetization,
@@ -50,6 +52,7 @@ const Faq = () => {
                       encourages innovation, and supports the growth and success
                       of creators from all backgrounds.
                     </p>
+                    <br />
                     <p class="tw-text-gray-700 tw-text-lg tw-font-light">
                       At Vidispark, we are committed to pushing the boundaries
                       of what's possible in the world of video streaming,
