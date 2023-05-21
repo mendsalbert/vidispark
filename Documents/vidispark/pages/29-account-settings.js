@@ -31,7 +31,7 @@ const AccountSettings = () => {
       <div className="primary-content-area container content-padding grid-left-sidebar">
         <ProfileInfoSidebar />
         <div className="main-content-area">
-          <form className="cryptoki-form" id="account-settings-form">
+          <div className="cryptoki-form" id="account-settings-form">
             <div className="form-section">
               <div className="user-db-title">Social Accounts</div>
               <div className="form-group">
@@ -165,7 +165,7 @@ const AccountSettings = () => {
             >
               Save Changes
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </Layouts>
