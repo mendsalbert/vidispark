@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NiceSelect from "../../NiceSelect";
 import { useVideo } from "../../../services/videos";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 const ProfileUploadAndPreview = () => {
+  const notify = () => toast.success("Video Uploaded Successfully");
+
   const [uploadUrl, setUploadUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
   const [videoUploading, setVideoUploading] = useState(false);
@@ -108,6 +112,7 @@ const ProfileUploadAndPreview = () => {
   const onSubmitVideoHandler = () => {
     console.log(".......");
     addVideo({ category, title, thumbnail, description, videoUrl });
+    notify();
   };
 
   const goLive = async () => {
@@ -255,9 +260,9 @@ const ProfileUploadAndPreview = () => {
                 }}
               />
             </div>
-            <p>Linces and linces type</p>
+            {/* <p>Linces and linces type</p>
             <p>Audience</p>
-            <p>Public or private</p>
+            <p>Public or private</p> */}
             <button
               type="button"
               onClick={() => {
@@ -270,6 +275,7 @@ const ProfileUploadAndPreview = () => {
           </form>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
