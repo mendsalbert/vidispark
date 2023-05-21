@@ -169,7 +169,8 @@ const AccountSettings = () => {
             </div>
             <button
               onClick={() => {
-                onUpdateUserDataHandler();
+                // onUpdateUserDataHandler();
+                notify();
               }}
               className="btn btn-wide btn-dark tw-mt-3"
             >
