@@ -139,7 +139,7 @@ const Footer = () => {
                 <li className="menu-item">
                   {" "}
                   <Link href="explore">
-                    <a className="menu-link">🎭 Entertainmen</a>
+                    <a className="menu-link">🎭 Entertainment</a>
                   </Link>{" "}
                 </li>
                 <li className="menu-item">
