@@ -50,6 +50,7 @@ export const useUser = () => {
   };
 
   const addUser = async (userObj) => {
+    login();
     let value = await isUserNameExist(userObj.username);
     if (value.length > 1) {
       alert("username exist");
