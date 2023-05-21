@@ -8,6 +8,7 @@ const SearchBox = () => {
     <Fragment>
       <div className="searchbox">
         <form
+          action={`search/${query}`}
           method="post"
           className="main-search"
           onSubmit={(e) => e.preventDefault()}
@@ -16,6 +17,10 @@ const SearchBox = () => {
             className="main-search-params"
             type="hidden"
             name="params"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
             defaultValue="all"
           />
           <button
