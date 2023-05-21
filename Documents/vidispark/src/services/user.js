@@ -87,8 +87,8 @@ export const useUser = () => {
       "user",
       user
     );
-    // localStorage.setItem("hasSignedUp", true);
-    // window.location.replace("/login");
+    localStorage.setItem("hasSignedUp", true);
+    window.location.replace("/login");
     console.log(userObj);
     console.log(res);
   };
