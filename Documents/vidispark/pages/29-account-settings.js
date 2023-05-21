@@ -166,7 +166,7 @@ const AccountSettings = () => {
               }}
               className="btn btn-wide btn-dark tw-mt-3"
             >
-              Save Changes
+              {loading ? "saving-------" : " Save Changes"}
             </button>
           </div>
         </div>
