@@ -9,6 +9,8 @@ const GetVerfied = () => {
 
   return (
     <Layouts>
+      <ToastContainer />
+
       <div className="primary-content-area container content-padding grid-left-sidebar">
         {/* / Profile Info Sidebar */}
         <ProfileInfoSidebar />
@@ -111,7 +113,6 @@ const GetVerfied = () => {
             </button>
           </div>
         </div>
-        <ToastContainer />
       </div>
     </Layouts>
   );
