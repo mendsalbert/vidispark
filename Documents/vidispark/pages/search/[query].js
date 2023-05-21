@@ -9,9 +9,9 @@ import Layouts from "../../src/layouts/Layouts";
 import {
   catagoryfilter,
   singleCatagoryfilter,
-} from "../src/redux/action/filter";
-import { categoriesBar } from "../src/sliderProps";
-import { dblock } from "../src/utils";
+} from "../../src/redux/action/filter";
+import { categoriesBar } from "../../src/sliderProps";
+import { dblock } from "../../src/utils";
 
 const Explore = ({ catagoryfilter, data, filter, singleCatagoryfilter }) => {
   const [filterData, setFilterData] = useState(data && data);
