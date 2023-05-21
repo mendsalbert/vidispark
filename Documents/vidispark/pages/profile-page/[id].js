@@ -68,7 +68,7 @@ const Profile = () => {
                     setFollowerState("nf");
                     followUser(singleVid?.videoData?.uploaderId);
                   }}
-                  className="btn btn-wide btn-dark tw-bg-blue-400"
+                  className="btn btn-wide btn-dark tw-bg-blue-500"
                 >
                   {followerState == "nf" ? "Following" : " Follow"}
                 </button>
