@@ -50,8 +50,6 @@ const Explorev2 = ({
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(filter);
-    console.log(videoResults);
 
     const filteredVideos = [];
     for (let category of filter?.category) {
