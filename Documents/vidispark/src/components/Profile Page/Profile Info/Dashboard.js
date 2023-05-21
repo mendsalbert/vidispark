@@ -86,8 +86,8 @@ const Dashboard = ({ getCollector, collectors }) => {
                             <iframe
                               src={data?.videoData?.videoUrl}
                               border="0"
-                              width="100%"
-                              height="100%"
+                              width="50%"
+                              height="50%"
                               allowfullscreen
                               allow="autoplay; fullscreen"
                               autoplay="false"
