@@ -25,7 +25,7 @@ const SearchBox = () => {
           />
           <button
             className={`search-params ${activeToggle ? "active" : ""}`}
-            onClick={() => setActiveToggle(!activeToggle)}
+            // onClick={() => setActiveToggle(!activeToggle)}
           >
             {/* <span className="search-param-title">{active}</span>{" "}
             <svg className="crumina-icon">
