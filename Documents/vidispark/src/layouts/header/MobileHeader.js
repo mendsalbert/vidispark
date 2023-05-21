@@ -30,7 +30,7 @@ const MobileHeader = () => {
           <div className="mobile-menu-logo logo">
             {" "}
             <Link href="/">
-              <img src="svg/cryptoki-logo.svg" alt="" />
+              <img src="/svg/logo.svg" alt="" />
             </Link>{" "}
           </div>
           {/*/MOBILE LOGO*/}
