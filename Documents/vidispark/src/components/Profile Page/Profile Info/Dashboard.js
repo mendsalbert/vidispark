@@ -104,6 +104,9 @@ const Dashboard = ({ getCollector, collectors }) => {
                     <td data-label="Items Collected" className="stats-item">
                       {data?.videoData?.views}
                     </td>
+                    <td data-label="Items Collected" className="stats-item">
+                      {data?.videoData?.likes}
+                    </td>
                   </tr>
                 ))}
             </tbody>
