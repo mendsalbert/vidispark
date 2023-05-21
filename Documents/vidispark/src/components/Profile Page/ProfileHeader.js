@@ -23,18 +23,7 @@ const ProfileHeader = ({ user }) => {
             </span>
           </div>
           <div className="follow-box">
-            <div className="follow-box">
-              <button
-                type="button"
-                onClick={() => {
-                  setFollowerState("nf");
-                  followUser(singleVid?.videoData?.uploaderId);
-                }}
-                className="btn btn-wide btn-dark "
-              >
-                {followerState == "nf" ? "Following" : " Follow"}
-              </button>
-            </div>
+            <button className="btn btn-normal btn-dark">Follow!</button>
           </div>
         </div>
         <div className="author-primary-info">
