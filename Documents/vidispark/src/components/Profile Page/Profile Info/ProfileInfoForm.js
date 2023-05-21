@@ -1,11 +1,16 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import Paggination from "../../src/components/Paggination";
-import Layouts from "../../src/layouts/Layouts";
-import { getCollector } from "../../src/redux/action/collectors";
-import { dblock } from "../../src/utils";
-import { useUser } from "../src/services/user";
+import Paggination from "../../Paggination";
+import Layouts from "../../../layouts/Layouts";
+import { getCollector } from "../../../redux/action/collectors";
+import { dblock } from "../../../utils";
+import { useUser } from "../../../services/user";
+// import Paggination from "../../src/components/Paggination";
+// import Layouts from "../../src/layouts/Layouts";
+// import { getCollector } from "../../src/redux/action/collectors";
+// import { dblock } from "../../src/utils";
+// import { useUser } from "../src/services/user";
 
 const Cretors11 = ({ getCollector, collectors }) => {
   let sort = 6;
