@@ -23,7 +23,18 @@ const ProfileHeader = ({ user }) => {
             </span>
           </div>
           <div className="follow-box">
-            <button className="btn btn-normal btn-dark">Follow!</button>
+            <div className="follow-box">
+              <button
+                type="button"
+                onClick={() => {
+                  setFollowerState("nf");
+                  followUser(singleVid?.videoData?.uploaderId);
+                }}
+                className="btn btn-wide btn-dark "
+              >
+                {followerState == "nf" ? "Following" : " Follow"}
+              </button>
+            </div>
           </div>
         </div>
         <div className="author-primary-info">
@@ -34,7 +45,7 @@ const ProfileHeader = ({ user }) => {
           <div className="profile-author-info">
             <h3 className="author-name gradient-text">
               {" "}
-              <Link href="/08-profile-page">
+              <Link href="/">
                 <a>{user?.fullname}</a>
               </Link>{" "}
             </h3>
