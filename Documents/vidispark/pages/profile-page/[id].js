@@ -61,8 +61,8 @@ const Profile = () => {
             </div>
             <div className="follow-container">
               <div className="more-link-wrapper"></div>
-              {/* <div className="follow-box"> */}
-              {/* <button
+              <div className="follow-box">
+                <button
                   type="button"
                   onClick={() => {
                     setFollowerState("nf");
@@ -71,8 +71,8 @@ const Profile = () => {
                   className="btn btn-wide btn-dark "
                 >
                   {followerState == "nf" ? "Following" : " Follow"}
-                </button> */}
-              {/* </div> */}
+                </button>
+              </div>
             </div>
           </div>
           <ul className="social-icons-list">
