@@ -14,6 +14,8 @@
  * * work on the follow button on all the pages xx
  * * anywhere there is a social media replace with what is comming from the database xx
  * * check for mobile view xx
+ * * handle authentication very well xx
+
 
 
 
@@ -30,7 +32,6 @@
  * 
  * 
  * 
- * handle authentication very well
  * dashboard for user video -- edit and delete
  */
 
