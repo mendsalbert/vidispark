@@ -88,7 +88,7 @@ const Dashboard = ({ getCollector, collectors }) => {
                               border="0"
                               width="40%"
                               height="40%"
-                              className=""
+                              className="tw-rounded-2xl"
                               allowfullscreen
                               allow="autoplay; fullscreen"
                               autoplay="false"
