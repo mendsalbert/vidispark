@@ -86,6 +86,7 @@ export const useUser = () => {
       user
     );
 
+    window.location.replace("/login");
     console.log(res);
   };
 
