@@ -40,11 +40,11 @@ const Faq = () => {
 
                     <div class="tw-text-center tw-mt-6">
                       <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
-                        Tranter Jaskulski
+                        Mends Albert{" "}
                       </h1>
 
                       <div class="tw-text-gray-700 tw-font-light tw-mb-2">
-                        Founder & Specialist
+                        Founder & Chief Technology Officer{" "}
                       </div>
 
                       <div
@@ -87,7 +87,7 @@ const Faq = () => {
 
                     <div class="tw-text-center tw-mt-6">
                       <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
-                        Denice Jagna
+                        Eva Mariwa{" "}
                       </h1>
 
                       <div class="tw-text-gray-700 tw-font-light tw-mb-2">
