@@ -79,7 +79,7 @@ export const useUser = () => {
         discord: "",
         tokens: 0,
         acceptPolicy: true,
-        isVerified: false,
+        // isVerified: false,
         followers: [],
         following: [],
         date: db.ts(),
