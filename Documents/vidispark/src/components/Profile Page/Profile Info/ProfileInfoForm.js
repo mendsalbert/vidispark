@@ -41,7 +41,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
   };
 
   return (
-    <Layouts>
+    <>
       <div className="primary-content-area container content-padding">
         <div className="page-title-section">
           <h2>
@@ -118,7 +118,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
         />
         {/* PAGINATION */}
       </div>
-    </Layouts>
+    </>
   );
 };
 const mapStateToProps = (state) => ({
