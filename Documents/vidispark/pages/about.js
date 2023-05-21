@@ -13,18 +13,6 @@ const Faq = () => {
 
       <div class="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-bg-white tw-py-48">
         <div class="tw-flex tw-flex-col">
-          <span class="tw-text-center tw-font-bold tw-my-10 tw-opacity-30">
-            MDI (npm i @mdi/font) required for all icons
-            <hr class="tw-my-4" />
-            <a
-              href="https://egoistdeveloper.github.io/twcss-to-sass-playground/"
-              target="_blank"
-              class="tw-text-blue-600"
-            >
-              Convert to SASS
-            </a>
-          </span>
-
           <div class="tw-flex tw-flex-col tw-mt-8">
             <div class="tw-container tw-max-w-7xl tw-px-4">
               <div class="tw-flex tw-flex-wrap tw-justify-center tw-text-center tw-mb-24">
