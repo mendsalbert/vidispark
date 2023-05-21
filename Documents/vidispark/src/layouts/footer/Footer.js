@@ -92,7 +92,7 @@ const Footer = () => {
           </div>
           <div className="footer-column">
             <div className="footer-widget">
-              <div className="widget-title">Vidispark Market</div>
+              <div className="widget-title">Vidispark </div>
               <div className="is-two-col-element">
                 <ul className="footer-menu">
                   <li className="menu-item">
