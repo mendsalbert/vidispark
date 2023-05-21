@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { SparklesIcon } from "@heroicons/react/24/outline";
 const Nav = () => {
   return (
     <nav className="border-bottom sticky-header">
@@ -49,7 +50,9 @@ const Nav = () => {
             <Link href="/metaverse">
               <a className="menu-link">VidisAI</a>
             </Link>{" "}
-            <span className="highlighted-item gradient-background">NEW</span>
+            <span className="highlighted-item gradient-background">
+              <SparklesIcon />
+            </span>
           </li>
 
           {/* <li className="menu-item menu-item-has-children">
