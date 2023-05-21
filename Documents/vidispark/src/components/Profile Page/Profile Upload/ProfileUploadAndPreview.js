@@ -7,6 +7,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const ProfileUploadAndPreview = () => {
   const notify = () => toast.success("Video Uploaded Successfully");
+  const notify2 = () =>
+    toast.success("Video uploaded, please fill in the remaining details.");
 
   const [uploadUrl, setUploadUrl] = useState("");
   const [videoUrl, setVideoUrl] = useState("");
@@ -72,6 +74,7 @@ const ProfileUploadAndPreview = () => {
         finished = true;
         setVideoUrl(data.body.videos[0].player_uri);
         setUploadStep("Completed ");
+        notify2();
         setIsComplete(true);
         setVideoUploading(false);
       } else {
