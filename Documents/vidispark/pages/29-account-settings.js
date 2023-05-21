@@ -178,6 +178,7 @@ const AccountSettings = () => {
             </button>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </Layouts>
   );
