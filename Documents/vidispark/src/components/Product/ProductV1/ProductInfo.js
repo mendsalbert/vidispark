@@ -82,7 +82,7 @@ const ProductInfo = ({ singleVid }) => {
                   });
               }
             }}
-            className="btn btn-wide tw-bg-green-500"
+            className="btn btn-wide tw-bg-green-500 tw-text-white"
           >
             Tip
           </button>
