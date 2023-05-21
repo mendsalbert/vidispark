@@ -141,7 +141,7 @@ const Faq = () => {
                       <div class="tw-text-gray-700 tw-font-light tw-mb-2">
                         Co-Founder & Technical Writer{" "}
                       </div>
-                      <div class="tw-text-gray-700 tw-font-bold tw-font-light tw-mb-2">
+                      <div class="tw-text-gray-700 tw-font-bold  tw-mb-2">
                         Co-Founder & Technical Writer{" "}
                       </div>
 
