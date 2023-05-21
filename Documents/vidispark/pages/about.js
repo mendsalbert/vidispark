@@ -28,7 +28,7 @@ const Faq = () => {
                 </div>
               </div>
 
-              <div class="tw-flex tw-flex-wrap">
+              <div class="tw-flex tw-flex-row">
                 <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
                   <div class="tw-flex tw-flex-col">
                     <a href="#" class="tw-mx-auto">
