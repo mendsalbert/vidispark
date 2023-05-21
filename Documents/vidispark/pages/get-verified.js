@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 const GetVerfied = () => {
-  const notify = () => toast.success("Video Uploaded Successfully");
+  const notify = () => toast.success("Request Submitted");
 
   return (
     <Layouts>
