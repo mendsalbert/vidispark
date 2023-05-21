@@ -54,7 +54,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
+                  <button className="tw-bg-green-600 tw-text-white tw-px-5 tw-py-2 tw-rounded-full ">
                     <Link href="https://www.voxels.com/play?coords=NE@634E,328S,20.5U">
                       View
                     </Link>
@@ -107,7 +107,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
+                  <button className="tw-bg-green-600 tw-text-white tw-px-5 tw-py-2 tw-rounded-full ">
                     <Link href="https://www.voxels.com/play?coords=N@813E,528S">
                       View
                     </Link>
@@ -160,7 +160,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
+                  <button className="tw-bg-green-600 tw-text-white tw-px-5 tw-py-2 tw-rounded-full ">
                     <Link href="https://www.voxels.com/play?coords=SE@815E,534S">
                       View
                     </Link>
@@ -213,7 +213,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
+                  <button className="tw-bg-green-600 tw-text-white tw-px-5 tw-py-2 tw-rounded-full ">
                     <Link href="https://www.voxels.com/play?coords=SW@634E,319S,20.5U">
                       View
                     </Link>
@@ -266,7 +266,7 @@ const ProfilePageTabsCreated = () => {
                   </Link>{" "}
                 </div>
                 <div className="item-meta">
-                  <button className="tw-bg-green-600 tw-px-5 tw-py-2 tw-rounded-full ">
+                  <button className="tw-bg-green-600 tw-text-white tw-px-5 tw-py-2 tw-rounded-full ">
                     <Link href="https://www.voxels.com/play?coords=NE@584E,313S">
                       View
                     </Link>
