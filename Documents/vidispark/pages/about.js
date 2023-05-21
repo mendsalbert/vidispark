@@ -222,6 +222,8 @@ const Faq = () => {
         </p>
       </blockquote>
     </div>
+  </div>
+  
 </div>
 
   </Layouts>;
