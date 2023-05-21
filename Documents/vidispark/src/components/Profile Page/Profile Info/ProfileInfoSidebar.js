@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useUser } from "../../../services/user";
+import { Squares2X2Icon } from "@heroicons/react/24/outline";
 const ProfileInfoSidebar = () => {
   const { userInfo, logout } = useUser();
 
@@ -102,9 +103,7 @@ const ProfileInfoSidebar = () => {
               {" "}
               <Link href="/dashboard">
                 <a className="tw-flex tw-flex-row tw-items-center">
-                  <svg className="crumina-icon">
-                    <use xlinkHref="#picture-icon" />
-                  </svg>
+                  <Squares2X2Icon>
                   Dashbaord
                 </a>
               </Link>{" "}
