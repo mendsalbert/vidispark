@@ -77,7 +77,7 @@ export const useUser = () => {
         twitch: "",
         youtube: "",
         discord: "",
-        // tokens: 0,
+        tokens: "0",
         acceptPolicy: true,
         followers: [],
         following: [],
