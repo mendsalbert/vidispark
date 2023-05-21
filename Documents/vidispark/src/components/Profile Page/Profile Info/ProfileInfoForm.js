@@ -2,8 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { useUser } from "../../../services/user";
 import { Web3Storage } from "web3.storage";
 import { v4 as uuidv4 } from "uuid";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 const ProfileInfoForm = () => {
+  const notify = () => toast.success("Users Information updated succesfully");
   const { updateUser, userInfo } = useUser();
   const [isLoadingUrl, setIsloadingUrl] = useState(false);
   const [isCoverLoading, setIsCoverLoaidng] = useState(false);
@@ -71,6 +74,7 @@ const ProfileInfoForm = () => {
     };
 
     updateUser(updatedUserData);
+    notify();
   };
 
   return (
@@ -266,6 +270,7 @@ const ProfileInfoForm = () => {
       >
         Save Changes
       </button>
+      <ToastContainer />
     </div>
   );
 };
