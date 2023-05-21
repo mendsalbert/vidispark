@@ -1,0 +1,109 @@
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import Paggination from "../../Paggination";
+import Layouts from "../../../layouts/Layouts";
+import { getCollector } from "../../../redux/action/collectors";
+import { dblock } from "../../../utils";
+import { useUser } from "../../../services/user";
+
+const Dashboard = ({ getCollector, collectors }) => {
+  let sort = 6;
+  const { users } = useUser();
+  let users_ = users.sort((a, b) => {
+    let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
+    if (isNaN(tokensA)) tokensA = 0;
+    let tokensB = b.data.tokens ? Number(b.data.tokens) : 0;
+    if (isNaN(tokensB)) tokensB = 0;
+    return tokensB - tokensA;
+  });
+
+  const [active, setActive] = useState(0);
+  const [state, setstate] = useState([]);
+  useEffect(() => {
+    setFilterData(users_);
+  }, [users_]);
+
+  const [filterData, setFilterData] = useState(users_);
+  const [iconValue, setIconValue] = useState("$");
+  const filterFun = (name, value) => {
+    // setFilterData(getProductByFilter(collectors, { time: value }));
+    setActive(0);
+  };
+  const iconValueChange = (name, value) => {
+    setIconValue(value);
+    setActive(0);
+  };
+
+  return (
+    <>
+      <div>
+        {/* FILTERABLE BAR */}
+
+        {/* FILTERABLE BAR */}
+        {/* COLLECTORS LIST */}
+        <div className="collectors-box">
+          <table className="content-table">
+            <thead>
+              <tr>
+                <th scope="col" className="heading-label">
+                  Creator
+                </th>
+                <th scope="col" className="heading-label">
+                  Tokens
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filterData &&
+                filterData.map((collector, i) => (
+                  <tr key={i} className={`${dblock(active, i, sort, "__")}`}>
+                    <td data-label="Collector">
+                      <div className="collector-info avatar-block">
+                        <div className="avatar box-42">
+                          <Link href={`/profile-info/${collector?.id}`}>
+                            <a>
+                              <img
+                                src={collector?.data?.avatarUrl}
+                                alt="avatar"
+                              />
+                            </a>
+                          </Link>
+                        </div>
+                        <div className="avatar-meta">
+                          <div className="avatar-title">
+                            <Link href={`/profile-info/${collector?.id}`}>
+                              <a>{collector?.data?.fullname}</a>
+                            </Link>
+                          </div>
+                          <div className="avatar-meta">
+                            @{collector?.data?.username}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td data-label="Items Collected" className="stats-item">
+                      {collector?.data?.tokens}
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
+
+        <Paggination
+          active={active}
+          setActive={setActive}
+          sort={sort}
+          length={filterData && filterData.length}
+          className="flex-center"
+        />
+        {/* PAGINATION */}
+      </div>
+    </>
+  );
+};
+const mapStateToProps = (state) => ({
+  collectors: state.collectors.data,
+});
+export default connect(mapStateToProps, { getCollector })(Dashboard);
