@@ -162,7 +162,7 @@ const Faq = () => {
                 className="card-button"
               >
                 <div className="card-title">
-                  How does the earnings system work?
+                  How can I collaborate with brands on Vidispark?{" "}
                 </div>
                 <div className="icon-box">
                   {" "}
@@ -181,15 +181,11 @@ const Faq = () => {
             </div>
             <Accordion.Collapse eventKey={"5th"} className="card-body">
               <div className="card-info">
-                A non-fungible token (NFT) is a unit of data stored on a digital
-                ledger, called a blockchain, that certifies a digital asset to
-                be unique and therefore not interchangeable. NFTs can be used to
-                represent items such as photos, videos, audio, and other types
-                of digital files. Access to any copy of the original file,
-                however, is not restricted to the buyer of the NFT. While copies
-                of these digital items are available for anyone to obtain, NFTs
-                are tracked on blockchains to provide the owner with a proof of
-                ownership that is separate from copyright.
+                Vidispark offers a sponsorship marketplace where brands can
+                connect with creators for collaboration opportunities. As a
+                creator, you can showcase your work and attract brands
+                interested in partnering with you. You can negotiate terms,
+                create sponsored content, and monetize your influence.
               </div>
             </Accordion.Collapse>
           </div>
@@ -202,7 +198,8 @@ const Faq = () => {
                 className="card-button"
               >
                 <div className="card-title">
-                  Collectors have different account from creators?
+                  How is Vidispark different from other video streaming
+                  platforms?{" "}
                 </div>
                 <div className="icon-box">
                   {" "}
@@ -221,15 +218,11 @@ const Faq = () => {
             </div>
             <Accordion.Collapse eventKey={"6th"} className="card-body">
               <div className="card-info">
-                A non-fungible token (NFT) is a unit of data stored on a digital
-                ledger, called a blockchain, that certifies a digital asset to
-                be unique and therefore not interchangeable. NFTs can be used to
-                represent items such as photos, videos, audio, and other types
-                of digital files. Access to any copy of the original file,
-                however, is not restricted to the buyer of the NFT. While copies
-                of these digital items are available for anyone to obtain, NFTs
-                are tracked on blockchains to provide the owner with a proof of
-                ownership that is separate from copyright.
+                Vidispark differentiates itself by combining Web3 technologies
+                such as decentralized video streaming, social tokens, and
+                gamification elements. We aim to provide a decentralized and
+                rewarding experience for creators and viewers, fostering
+                engagement and a sense of community.
               </div>
             </Accordion.Collapse>
           </div>
