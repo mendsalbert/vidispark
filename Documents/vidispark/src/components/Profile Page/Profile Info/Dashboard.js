@@ -12,13 +12,13 @@ const Dashboard = ({ getCollector, collectors }) => {
   let sort = 6;
   const { users } = useUser();
   const { videoResults } = useVideo();
-  //   let users_ = users.sort((a, b) => {
-  //     let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
-  //     if (isNaN(tokensA)) tokensA = 0;
-  //     let tokensB = b.data.tokens ? Number(b.data.tokens) : 0;
-  //     if (isNaN(tokensB)) tokensB = 0;
-  //     return tokensB - tokensA;
-  //   });
+  let users_ = users.sort((a, b) => {
+    let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
+    if (isNaN(tokensA)) tokensA = 0;
+    let tokensB = b.data.tokens ? Number(b.data.tokens) : 0;
+    if (isNaN(tokensB)) tokensB = 0;
+    return tokensB - tokensA;
+  });
 
   console.log(videoResults);
   // let filteredVid = videoResults.map
