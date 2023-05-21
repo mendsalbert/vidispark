@@ -83,7 +83,13 @@ const SearchBox = () => {
             }}
             placeholder="Enter your search here..."
           />
-          <button type="submit" className="search-button">
+          <button
+            type="submit"
+            className="search-button"
+            onClick={() => {
+              alert("");
+            }}
+          >
             <svg className="crumina-icon">
               <use xlinkHref="#search-icon" />
             </svg>
