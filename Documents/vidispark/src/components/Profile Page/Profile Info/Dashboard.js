@@ -68,6 +68,10 @@ const Dashboard = ({ getCollector, collectors }) => {
                 <th scope="col" className="heading-label">
                   Views
                 </th>
+
+                <th scope="col" className="heading-label">
+                  likes
+                </th>
                 <th scope="col" className="heading-label">
                   Actions
                 </th>
