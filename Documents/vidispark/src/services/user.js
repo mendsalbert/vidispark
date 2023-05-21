@@ -160,7 +160,9 @@ export const useUser = () => {
   TODO: 1. redirect user to homepage 
   TODO: 2. After some few minute show a sweet alert to tell user complete his profile
       */
-      router.push("/23-profile-info");
+      localStorage.setItem("isLoggedIn", true);
+
+      router.push("/profile-info");
     } else {
       // Passwords don't match, authentication failed
       console.log("Incorrect username or password.");
