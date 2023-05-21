@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import ProfilePurchase from "../src/components/Profile Page/Profile Upload/ProfilePurchase";
 import ProfileUploadAndPreview from "../src/components/Profile Page/Profile Upload/ProfileUploadAndPreview";
 import Layouts from "../src/layouts/Layouts";
 import { useAccount, useSigner } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
+import { useAuth } from "../src/lib/auth";
 const UploadArtWork = () => {
+  useAuth();
+
   return (
     <Layouts>
       <div className="primary-content-area container content-padding grid-left-sidebar">
