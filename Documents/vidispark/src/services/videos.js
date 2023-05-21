@@ -14,7 +14,7 @@ export const useVideo = () => {
   console.log(initDB);
 
   useEffect(() => {
-    getAllVideos();
+    // getAllVideos();
   }, [initDB]);
 
   const addVideo = async (videoObj) => {
