@@ -68,7 +68,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
                     <td data-label="Collector">
                       <div className="collector-info avatar-block">
                         <div className="avatar box-42">
-                          <Link href={`/profile-info/${collector?.id}`}>
+                          <Link href={`/profile-page/${collector?.id}`}>
                             <a>
                               <img
                                 src={collector?.data?.avatarUrl}
@@ -86,7 +86,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
                         </div>
                         <div className="avatar-meta">
                           <div className="avatar-title">
-                            <Link href={`/profile-info/${collector?.id}`}>
+                            <Link href={`/profile-page/${collector?.id}`}>
                               <a>{collector?.data?.fullname}</a>
                             </Link>
                           </div>
