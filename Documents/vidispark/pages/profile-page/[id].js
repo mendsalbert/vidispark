@@ -79,13 +79,6 @@ const Profile = () => {
             <li className="social-icon icon-border">
               <a href="#">
                 <svg className="crumina-icon">
-                  <use xlinkHref="#link-icon" />
-                </svg>
-              </a>
-            </li>
-            <li className="social-icon icon-border">
-              <a href="#">
-                <svg className="crumina-icon">
                   <use xlinkHref="#facebook-icon" />
                 </svg>
               </a>
