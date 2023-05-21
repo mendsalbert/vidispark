@@ -47,7 +47,7 @@ const Nav = () => {
           </li>
           <li className="menu-item">
             {" "}
-            <Link href="/metaverse">
+            <Link href="/vidisAI">
               <a className="menu-link">VidisAI</a>
             </Link>{" "}
             <span className="highlighted-item gradient-background">
