@@ -95,21 +95,11 @@ const Dashboard = ({ getCollector, collectors }) => {
                             />
                           </Link>
                         </div>
-                        {/* <div className="avatar-meta">
-                          <div className="avatar-title">
-                            <Link href={`/profile-page/${collector?.id}`}>
-                              <a>{collector?.data?.fullname}</a>
-                            </Link>
-                          </div>
-                          <div className="avatar-meta">
-                            @{collector?.data?.username}
-                          </div>
-                        </div> */}
                       </div>
                     </td>
-                    {/* <td data-label="Items Collected" className="stats-item">
-                      {collector?.data?.tokens}
-                    </td> */}
+                    <td data-label="Items Collected" className="stats-item">
+                      {data?.videoData?.title}
+                    </td>
                   </tr>
                 ))}
             </tbody>
