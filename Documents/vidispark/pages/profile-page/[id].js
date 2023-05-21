@@ -51,7 +51,7 @@ const Profile = () => {
                 <div className="author-meta">@{user[0]?.data?.fullname}</div>
                 <div className="download-file">
                   {user[0]?.data?.user_address?.slice(0, 6) +
-                    "...." +
+                    "..." +
                     user[0]?.data?.user_address?.slice(-4)}
                   <svg className="crumina-icon">
                     <use xlinkHref="#copy-icon" />
