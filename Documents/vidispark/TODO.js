@@ -28,6 +28,7 @@
 
  *
  * work on footer and links
+ * 
  * a very rich documentation (white paper) add link to footer
  * demo video
  * work on go live
