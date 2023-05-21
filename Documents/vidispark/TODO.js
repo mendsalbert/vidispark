@@ -16,6 +16,8 @@
  * * check for mobile view xx
  * * handle authentication very well xx
  * * dashboard for user video -- edit and delete xx
+ * * vidiisAI page xx
+
 
 
 
@@ -29,7 +31,6 @@
  * a very rich documentation (white paper) add link to footer
  * demo video
  * work on go live
- * vidiisAI page
  * 
  * 
  * 
