@@ -127,12 +127,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/img/favicon01.png"
-        />
+        <link rel="icon" type="image/png" sizes="32x32" href="/svg/logo.svg" />
 
         <title>Vidispark</title>
       </Head>
