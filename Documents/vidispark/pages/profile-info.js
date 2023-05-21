@@ -3,8 +3,10 @@ import ProfileInfoAvatar from "../src/components/Profile Page/Profile Info/Profi
 import ProfileInfoForm from "../src/components/Profile Page/Profile Info/ProfileInfoForm";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import Layouts from "../src/layouts/Layouts";
+import { useAuth } from "../src/lib/auth";
 
 const ProfileInfo = () => {
+  useAuth();
   return (
     <Layouts>
       <div className="primary-content-area container content-padding grid-left-sidebar">
