@@ -24,16 +24,15 @@ const Dashboard = ({ getCollector, collectors }) => {
     (items) => items?.videoData?.uploaderId === userInfo[0]?.id
   );
 
-  console.log(userInfo[0]?.id);
   console.log(filteredVid);
   //   console.log(filteredVid);
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
   useEffect(() => {
-    setFilterData(users_);
-  }, [users_]);
+    setFilterData(filteredVid);
+  }, [filteredVid]);
 
-  const [filterData, setFilterData] = useState(users_);
+  const [filterData, setFilterData] = useState(filteredVid);
   const [iconValue, setIconValue] = useState("$");
   const filterFun = (name, value) => {
     // setFilterData(getProductByFilter(collectors, { time: value }));
@@ -78,18 +77,21 @@ const Dashboard = ({ getCollector, collectors }) => {
             </thead>
             <tbody>
               {filterData &&
-                filterData.map((collector, i) => (
+                filterData.map((data, i) => (
                   <tr key={i} className={`${dblock(active, i, sort, "__")}`}>
                     <td data-label="Collector">
                       <div className="collector-info avatar-block">
                         <div className="tw-rounded-2xl">
-                          <Link href={`/profile-page/${collector?.id}`}>
-                            <a>
-                              <img
-                                src={collector?.data?.avatarUrl}
-                                alt="avatar"
-                              />
-                            </a>
+                          <Link href={`/video/${data?.videoId}`}>
+                            <iframe
+                              src={data?.videoData?.videoUrl}
+                              border="0"
+                              width="100%"
+                              height="100%"
+                              allowfullscreen
+                              allow="autoplay; fullscreen"
+                              autoplay="false"
+                            />
                           </Link>
                         </div>
                         {/* <div className="avatar-meta">
