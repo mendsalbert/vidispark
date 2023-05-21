@@ -20,6 +20,7 @@ const Dashboard = ({ getCollector, collectors }) => {
   //     return tokensB - tokensA;
   //   });
 
+  console.log(videoResults);
   // let filteredVid = videoResults.map
 
   const [active, setActive] = useState(0);
