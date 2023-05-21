@@ -3,6 +3,7 @@ import ProfileInfoAvatar from "../src/components/Profile Page/Profile Info/Profi
 import ProfileInfoForm from "../src/components/Profile Page/Profile Info/ProfileInfoForm";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import Layouts from "../src/layouts/Layouts";
+import Dashboard from "../src/components/Profile Page/Profile Info/Dashboard";
 
 const ProfileInfo = () => {
   return (
@@ -19,7 +20,7 @@ const ProfileInfo = () => {
           </div> */}
           <div className="user-db-content-area">
             {/* / Profile Info Form */}
-            <ProfileInfoForm />
+            <Dashboard />
             {/* / Profile Info Form */}
           </div>
           {/* <button className="btn btn-wide btn-dark">Save Changes</button> */}
