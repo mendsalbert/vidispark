@@ -82,18 +82,18 @@ const Dashboard = ({ getCollector, collectors }) => {
                     <td data-label="Collector">
                       <div className="collector-info avatar-block">
                         <div className="tw-rounded-2xl">
-                          <Link href={`/video/${data?.videoId}`}>
-                            <iframe
-                              src={data?.videoData?.videoUrl}
-                              border="0"
-                              width="20"
-                              height="5"
-                              className=""
-                              allowfullscreen
-                              allow="autoplay; fullscreen"
-                              autoplay="false"
-                            />
-                          </Link>
+                          {/* <Link href={`/video/${data?.videoId}`}> */}
+                          <iframe
+                            src={data?.videoData?.videoUrl}
+                            border="0"
+                            width="20"
+                            height="5"
+                            className=""
+                            allowfullscreen
+                            allow="autoplay; fullscreen"
+                            autoplay="false"
+                          />
+                          {/* </Link> */}
                         </div>
                         {/* <div className="avatar-meta">
                           <div className="avatar-title">
