@@ -140,6 +140,8 @@ export const AuthProvider = ({ children }) => {
       await lf.removeItem("temp_address:current");
       setUser(null, "temp_current");
       localStorage.removeItem("user", "temp_current");
+      localStorage.removeItem("isLoggedIn");
+      localStorage.removeItem("hasSignedUp");
     }
   };
 
