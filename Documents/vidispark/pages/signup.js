@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUser } from "../src/services/user";
 import { AuthContext } from "./authContext";
+import Link from "next/link";
 
 const bcrypt = require("bcryptjs");
 const Registration = () => {
@@ -152,7 +153,7 @@ const Registration = () => {
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
               data-id="sign-in"
             >
-              I have an account!
+              <Link href={"/login"}>I have an account!</Link>
             </button>
           </div>
         </div>
