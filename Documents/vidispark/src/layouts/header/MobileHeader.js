@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 import useClickOutside from "../../useClickOutside";
-import { SparklesIcon } from "@heroicons/react/24/outline";
 
 const MobileHeader = () => {
   const [toggle, setToggle] = useState(false);
@@ -88,9 +87,6 @@ const MobileHeader = () => {
               <Link href="/vidisAI">
                 <a className="menu-link">VidisAI</a>
               </Link>{" "}
-              <span className="highlighted-item gradient-background">
-                <SparklesIcon />
-              </span>
             </li>
           </ul>
         </div>
