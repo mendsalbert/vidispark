@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Nft from "../src/components/Nft";
-import NiceSelect from "../src/components/NiceSelect";
-import Paggination from "../src/components/Paggination";
-import { getProductByFilter, simpleProductFilter } from "../src/filter";
-import Layouts from "../src/layouts/Layouts";
+import Nft from "../../src/components/Nft";
+import NiceSelect from "../../src/components/NiceSelect";
+import Paggination from "../../src/components/Paggination";
+import { getProductByFilter, simpleProductFilter } from "../../src/filter";
+import Layouts from "../../src/layouts/Layouts";
 import {
   catagoryfilter,
   singleCatagoryfilter,
