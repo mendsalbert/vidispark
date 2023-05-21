@@ -5,7 +5,8 @@ const ProfileHeader = ({ user, id }) => {
   const [followerState, setFollowerState] = useState("");
   const { users, followUser, userInfo } = useUser();
 
-  // console.log(userInfo);
+  console.log(userInfo[0]?.id);
+  console.log(user?.followers);
   console.log(user?.followers?.includes(userInfo[0]?.id));
   return (
     <div className="profile-header-section">
