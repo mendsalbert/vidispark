@@ -87,7 +87,7 @@ const Dashboard = ({ getCollector, collectors }) => {
                               src={data?.videoData?.videoUrl}
                               border="0"
                               width="20"
-                              height="20"
+                              height="5"
                               className=""
                               allowfullscreen
                               allow="autoplay; fullscreen"
