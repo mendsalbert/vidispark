@@ -142,6 +142,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.removeItem("user", "temp_current");
       localStorage.removeItem("isLoggedIn");
       localStorage.removeItem("hasSignedUp");
+      window.location.replace("/");
     }
   };
 
