@@ -91,7 +91,7 @@ const Faq = () => {
                       </h1>
 
                       <div class="tw-text-gray-700 tw-font-light tw-mb-2">
-                        Tired & M. Specialist
+                        Co-Founder & Technical Officer{" "}
                       </div>
 
                       <div
