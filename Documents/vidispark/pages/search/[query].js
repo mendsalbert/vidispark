@@ -13,7 +13,7 @@ import {
   orderFilter,
   priceFilter,
   typeFilter,
-} from "../src/redux/action/filter";
+} from "../../src/redux/action/filter";
 import { dblock } from "../src/utils";
 import { useVideo } from "../src/services/videos";
 
