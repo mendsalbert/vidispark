@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ProfileHeader from "../../src/components/Profile Page/ProfileHeader";
 import ProfilePageTabs from "../../src/components/Profile Page/ProfilePageTabs";
 import Layouts from "../../src/layouts/Layouts";
@@ -8,9 +8,11 @@ import { useRouter } from "next/router";
 import { useUser } from "../../src/services/user";
 
 const Profile = () => {
+  const [followerState, setFollowerState] = useState("");
+
   const router = useRouter();
   const { id } = router.query;
-  const { users } = useUser();
+  const { users, followUser } = useUser();
   const user = users?.filter((item) => item?.id == id);
   useEffect(() => {
     countdown();
@@ -61,7 +63,18 @@ const Profile = () => {
             <div className="follow-container">
               <div className="more-link-wrapper"></div>
               <div className="follow-box">
-                <button className="btn btn-wide btn-dark">Follow!</button>
+                {/* <button className="btn btn-wide btn-dark">Follow!</button> */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFollowerState("nf");
+                    followUser(singleVid?.videoData?.uploaderId);
+                  }}
+                  className="btn btn-wide btn-dark "
+                >
+                  {followerState == "nf" ? "Following" : " Follow"}
+                  {/* Admire */}
+                </button>
               </div>
             </div>
           </div>
