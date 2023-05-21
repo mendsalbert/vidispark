@@ -62,7 +62,7 @@ const Profile = () => {
             <div className="follow-container">
               <div className="more-link-wrapper"></div>
               <div className="follow-box">
-                <button
+                {/* <button
                   type="button"
                   onClick={() => {
                     setFollowerState("nf");
@@ -71,7 +71,7 @@ const Profile = () => {
                   className="btn btn-wide btn-dark "
                 >
                   {followerState == "nf" ? "Following" : " Follow"}
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
