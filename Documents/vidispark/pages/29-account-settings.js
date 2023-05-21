@@ -26,6 +26,7 @@ const AccountSettings = () => {
     };
 
     updateUserSocial(updatedUserData);
+    alert("update successfully");
     setloading(false);
   };
 
