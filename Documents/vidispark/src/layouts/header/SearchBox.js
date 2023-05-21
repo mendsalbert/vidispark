@@ -22,10 +22,10 @@ const SearchBox = () => {
             className={`search-params ${activeToggle ? "active" : ""}`}
             onClick={() => setActiveToggle(!activeToggle)}
           >
-            {/* <span className="search-param-title">{active}</span>{" "}
+            <span className="search-param-title">{active}</span>{" "}
             <svg className="crumina-icon">
               <use xlinkHref="#arrow-down-icon" />
-            </svg> */}
+            </svg>
           </button>
           <ul className="search-dropdown">
             <li
