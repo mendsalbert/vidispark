@@ -81,13 +81,13 @@ const Dashboard = ({ getCollector, collectors }) => {
                   <tr key={i} className={`${dblock(active, i, sort, "__")}`}>
                     <td data-label="Collector">
                       <div className="collector-info avatar-block">
-                        <div className="tw-rounded-2xl">
+                        <div className="">
                           <Link href={`/video/${data?.videoId}`}>
                             <iframe
                               src={data?.videoData?.videoUrl}
                               border="0"
-                              width="50%"
-                              height="50%"
+                              width="10%"
+                              height="10%"
                               allowfullscreen
                               allow="autoplay; fullscreen"
                               autoplay="false"
