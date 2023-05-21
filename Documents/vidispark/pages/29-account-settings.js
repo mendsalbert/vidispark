@@ -7,7 +7,7 @@ const AccountSettings = () => {
   const [facebook, setFacebook] = useState("");
   const [twitter, setTwitter] = useState("");
   const [instagram, setInstagram] = useState("");
-  const [twitch, setTwittwitch] = useState("");
+  const [twitch, setTwitch] = useState("");
   const [youtube, setYoutube] = useState("");
   const [discord, setDiscord] = useState("");
 
@@ -21,7 +21,7 @@ const AccountSettings = () => {
       discord: discord !== "" ? discord : userInfo[0]?.data?.discord,
     };
 
-    updateUser(updatedUserData);
+    updateUserSocial(updatedUserData);
   };
 
   return (
@@ -45,7 +45,11 @@ const AccountSettings = () => {
                       type="text"
                       name="social-network-login"
                       id="facebook-login"
-                      defaultValue="dexterstark"
+                      onChange={(e) => {
+                        setFacebook(e.target.value);
+                      }}
+                      defaultValue={userInfo[0]?.data?.facebook}
+                      // defaultValue="dexterstark"
                     />
                   </div>
                 </div>
@@ -61,7 +65,11 @@ const AccountSettings = () => {
                       type="text"
                       name="social-network-login"
                       id="twitter-login"
-                      defaultValue="@dexterstark"
+                      // defaultValue="@dexterstark"
+                      onChange={(e) => {
+                        setTwitter(e.target.value);
+                      }}
+                      defaultValue={userInfo[0]?.data?.twitter}
                     />
                   </div>
                 </div>
@@ -79,7 +87,10 @@ const AccountSettings = () => {
                       type="text"
                       name="social-network-login"
                       id="instagram-login"
-                      defaultValue="@dexterstark"
+                      onChange={(e) => {
+                        setInstagram(e.target.value);
+                      }}
+                      defaultValue={userInfo[0]?.data?.instagram}
                     />
                   </div>
                 </div>
@@ -95,6 +106,10 @@ const AccountSettings = () => {
                       type="text"
                       name="social-network-login"
                       id="twitch-login"
+                      onChange={(e) => {
+                        setTwitch(e.target.value);
+                      }}
+                      defaultValue={userInfo[0]?.data?.twitch}
                     />
                   </div>
                 </div>
@@ -112,6 +127,10 @@ const AccountSettings = () => {
                       type="text"
                       name="social-network-login"
                       id="youtube-login"
+                      onChange={(e) => {
+                        setYoutube(e.target.value);
+                      }}
+                      defaultValue={userInfo[0]?.data?.youtube}
                     />
                   </div>
                 </div>
@@ -127,6 +146,10 @@ const AccountSettings = () => {
                       type="text"
                       name="social-network-login"
                       id="discord-login"
+                      onChange={(e) => {
+                        setDiscord(e.target.value);
+                      }}
+                      defaultValue={userInfo[0]?.data?.discord}
                     />
                   </div>
                 </div>
