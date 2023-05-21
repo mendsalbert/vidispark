@@ -34,7 +34,7 @@ const Faq = () => {
                     <a href="#" class="tw-mx-auto">
                       <img
                         class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
-                        src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?fit=clamp&w=400&h=400&q=80"
+                        src="/img/mends.png"
                       />
                     </a>
 
@@ -81,7 +81,7 @@ const Faq = () => {
                     <a href="#" class="tw-mx-auto">
                       <img
                         class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
-                        src="https://images.unsplash.com/photo-1634896941598-b6b500a502a7?fit=clamp&w=400&h=400&q=80"
+                        src="/img/eva.jpg"
                       />
                     </a>
 
