@@ -4,7 +4,9 @@ import Layouts from "../src/layouts/Layouts";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../src/lib/auth";
 const GetVerfied = () => {
+  useAuth();
   const notify = () => toast.success("Request Submitted");
 
   return (
