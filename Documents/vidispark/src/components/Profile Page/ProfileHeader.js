@@ -5,7 +5,8 @@ const ProfileHeader = ({ user, id }) => {
   const [followerState, setFollowerState] = useState("");
   const { users, followUser, userInfo } = useUser();
 
-  console.log(userInfo);
+  // console.log(userInfo);
+  console.log(user?.followers?.includes(userInfo[0]?.id));
   return (
     <div className="profile-header-section">
       <div className="cover-image">
@@ -28,7 +29,6 @@ const ProfileHeader = ({ user, id }) => {
           </div>
           <div className="follow-box">
             <div className="follow-box">
-              {user?.followers?.includes("userI")}
               <button
                 type="button"
                 onClick={() => {
