@@ -83,7 +83,7 @@ const Dashboard = ({ getCollector, collectors }) => {
                             </a>
                           </Link>
                         </div>
-                        <div className="avatar-meta">
+                        {/* <div className="avatar-meta">
                           <div className="avatar-title">
                             <Link href={`/profile-page/${collector?.id}`}>
                               <a>{collector?.data?.fullname}</a>
@@ -92,7 +92,7 @@ const Dashboard = ({ getCollector, collectors }) => {
                           <div className="avatar-meta">
                             @{collector?.data?.username}
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </td>
                     <td data-label="Items Collected" className="stats-item">
