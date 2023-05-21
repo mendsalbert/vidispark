@@ -157,6 +157,14 @@ const AccountSettings = () => {
                 </div>
               </div>
             </div>
+            <button
+              onClick={() => {
+                onUpdateUserDataHandler();
+              }}
+              className="btn btn-wide btn-dark tw-mt-3"
+            >
+              Save Changes
+            </button>
           </form>
         </div>
       </div>
