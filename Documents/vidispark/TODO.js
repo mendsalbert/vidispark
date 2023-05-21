@@ -11,6 +11,9 @@
  * * work on the verify badge
  * * upload form - video upload
  * * search page xx
+ * * work on the follow button on all the pages xx
+ * * anywhere there is a social media replace with what is comming from the database xx
+
 
 
 
@@ -24,8 +27,6 @@
  * 
  * 
  * check for mobile view
- * work on the follow button on all the pages
- * anywhere there is a social media replace with what is comming from the database
  * 
  * handle authentication very well
  * dashboard for user video -- edit and delete
