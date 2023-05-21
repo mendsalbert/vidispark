@@ -44,6 +44,13 @@ const Nav = () => {
               <a className="menu-link">Metaverse</a>
             </Link>{" "}
           </li>
+          <li className="menu-item">
+            {" "}
+            <Link href="/metaverse">
+              <a className="menu-link">VidisAI</a>
+              <span className="highlighted-item gradient-background">NEW</span>
+            </Link>{" "}
+          </li>
 
           {/* <li className="menu-item menu-item-has-children">
             <a className="menu-link" href="#">
