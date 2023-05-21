@@ -1,8 +1,12 @@
 import React from "react";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import Layouts from "../src/layouts/Layouts";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 const GetVerfied = () => {
+  const notify = () => toast.success("Video Uploaded Successfully");
+
   return (
     <Layouts>
       <div className="primary-content-area container content-padding grid-left-sidebar">
@@ -19,7 +23,7 @@ const GetVerfied = () => {
               your inbox within 2-5 bussiness days.
             </div>
           </div>
-          <form
+          <div
             className="cryptoki-form validation"
             id="get-verified-form"
             method="POST"
@@ -101,11 +105,13 @@ const GetVerfied = () => {
             <button
               className="btn btn-normal btn-dark waves-effect waves-button waves-float waves-light"
               type="submit"
+              onClick={notify}
             >
               Submit Request
             </button>
-          </form>
+          </div>
         </div>
+        <ToastContainer />
       </div>
     </Layouts>
   );
