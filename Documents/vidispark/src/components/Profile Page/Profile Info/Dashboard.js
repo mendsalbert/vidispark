@@ -10,7 +10,7 @@ import { useVideo } from "../../../services/videos";
 
 const Dashboard = ({ getCollector, collectors }) => {
   let sort = 6;
-  const { users } = useUser();
+  const { users, userInfo } = useUser();
   const { videoResults } = useVideo();
   let users_ = users.sort((a, b) => {
     let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
@@ -20,8 +20,9 @@ const Dashboard = ({ getCollector, collectors }) => {
     return tokensB - tokensA;
   });
 
-  console.log(videoResults);
-  // let filteredVid = videoResults.map
+  let filteredVid = videoResults.filter(
+    (items) => items?.videoData?.uploaderId === userInfo[0]?.id
+  );
 
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
