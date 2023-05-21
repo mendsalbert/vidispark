@@ -44,7 +44,12 @@ const Explorev2 = ({
     setFilteredData(videoResults);
     const filteredVideos = [];
     for (let video of videoResults) {
-      if (video?.videoData?.title === query) {
+      const videoTitle = video?.videoData?.title;
+
+      if (
+        videoTitle &&
+        videoTitle.toLowerCase().includes(query.toLowerCase())
+      ) {
         filteredVideos.push(video);
       }
     }
