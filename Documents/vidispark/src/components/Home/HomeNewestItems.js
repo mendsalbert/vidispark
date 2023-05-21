@@ -14,7 +14,7 @@ const HomeNewestItems = () => {
         </div>
         <div className="all-items-link">
           {" "}
-          <Link href="/02-explore">
+          <Link href="/explore">
             <a>Explore all Collections</a>
           </Link>{" "}
         </div>
