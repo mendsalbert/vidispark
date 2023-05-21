@@ -53,7 +53,7 @@ export const useUser = () => {
     login();
     let value = await isUserNameExist(userObj.username);
     console.log("value===", value.length > 1);
-    if (value.length > 1) {
+    if (value.length > 0) {
       alert("username exist");
       return;
     }
