@@ -32,7 +32,7 @@ const ProfileHeader = ({ user }) => {
                 type="button"
                 onClick={() => {
                   setFollowerState("nf");
-                  followUser(singleVid?.videoData?.uploaderId);
+                  followUser(user?.id);
                 }}
                 className="btn btn-wide btn-dark "
               >
