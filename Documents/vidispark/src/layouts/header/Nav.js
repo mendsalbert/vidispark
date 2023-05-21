@@ -3,7 +3,9 @@ import React from "react";
 import { useAccount } from "wagmi";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { SparklesIcon } from "@heroicons/react/24/outline";
+import { useAuth } from "../../lib/auth";
 const Nav = () => {
+  useAuth();
   return (
     <nav className="border-bottom sticky-header">
       <div className="navigation-wrapper container flex-space-between align-items-center">
