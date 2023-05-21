@@ -87,7 +87,7 @@ const SearchBox = () => {
             type="submit"
             className="search-button"
             onClick={() => {
-              alert("");
+              alert("fsd");
             }}
           >
             <svg className="crumina-icon">
