@@ -110,9 +110,24 @@ export const useUser = () => {
       userInfo[0]?.id,
       user
     );
-    // console.log(res);
   };
 
+  const updateUserSocial = async (userObj) => {
+    console.log("userInfo", userObj);
+    let res = await db.update(
+      {
+        facebook: userObj.facebook,
+        twitter: userObj.twitter,
+        instagram: userObj.instagram,
+        twitch: userObj.twitch,
+        youtube: userObj.youtube,
+        discord: userObj.discord,
+      },
+      "user",
+      userInfo[0]?.id,
+      user
+    );
+  };
   const updateUserToken = async (userId, tokens) => {
     console.log("userInfo", userId, tokens);
     let res = await db.update(
@@ -228,5 +243,6 @@ export const useUser = () => {
     unfollowUser,
     etherValue,
     updateUserToken,
+    updateUserSocial,
   };
 };
