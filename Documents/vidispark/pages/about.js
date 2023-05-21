@@ -22,8 +22,7 @@ const Faq = () => {
                   </h1>
 
                   <p class="tw-text-gray-700 tw-text-lg tw-font-light">
-                    With over 100 years of combined experience, we've got a
-                    well-seasoned team at the helm.
+                    The brains behind vidispark
                   </p>
                 </div>
               </div>
