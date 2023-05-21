@@ -42,6 +42,16 @@ const Explorev2 = ({
   };
   useEffect(() => {
     setFilteredData(videoResults);
+    const filteredVideos = [];
+    for (let category of filter?.category) {
+      for (let video of videoResults) {
+        if (video?.videoData?.title === "query") {
+          filteredVideos.push(video);
+        }
+      }
+    }
+
+    setFilteredData(filteredVideos);
   }, [videoResults]);
 
   useEffect(() => {
