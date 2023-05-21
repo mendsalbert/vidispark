@@ -98,6 +98,17 @@ const ProfileInfoSidebar = () => {
                 </a>
               </Link>{" "}
             </li>
+            <li className="artwork">
+              {" "}
+              <Link href="/dashboard">
+                <a className="tw-flex tw-flex-row tw-items-center">
+                  <svg className="crumina-icon">
+                    <use xlinkHref="#picture-icon" />
+                  </svg>
+                  Create Artwork
+                </a>
+              </Link>{" "}
+            </li>
 
             <li className="verification">
               {" "}
