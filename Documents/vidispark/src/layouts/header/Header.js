@@ -26,7 +26,7 @@ const Header = () => {
             <Link href="/">
               <a className="logo-link">
                 <div className="logo-img">
-                  <img src="svg/logo.svg" alt="logo" />
+                  <img src="/svg/logo.svg" alt="logo" />
                 </div>
                 <div className="logo-text">Vidispark</div>
               </a>
