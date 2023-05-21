@@ -73,7 +73,7 @@ const Dashboard = ({ getCollector, collectors }) => {
                   <tr key={i} className={`${dblock(active, i, sort, "__")}`}>
                     <td data-label="Collector">
                       <div className="collector-info avatar-block">
-                        <div className="avatar box-42">
+                        <div className="tw-rounded-2xl">
                           <Link href={`/profile-page/${collector?.id}`}>
                             <a>
                               <img
