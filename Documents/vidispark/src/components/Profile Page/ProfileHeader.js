@@ -72,14 +72,14 @@ const ProfileHeader = ({ user, id }) => {
                 <div className="number ">
                   {user?.followers?.length < 1 ? 0 : user?.followers?.length}
                 </div>
-                <div className="label">Followers</div>
+                <div className="label">Followering</div>
               </div>
               <div>
                 <div className="number">
                   {" "}
                   {user?.following?.length < 1 ? 0 : user?.following?.length}
                 </div>
-                <div className="label">Following</div>
+                <div className="label">Followers</div>
               </div>
             </div>
           </div>
