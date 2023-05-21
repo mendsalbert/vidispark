@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUser } from "../src/services/user";
 import { AuthContext } from "./authContext";
+import Link from "next/link";
 const Login = () => {
   const { login } = useContext(AuthContext);
 
@@ -92,23 +93,8 @@ const Login = () => {
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
               data-id="sign-up"
             >
-              Create an Account
+              <Link href={"/signup"}>Create an Account</Link>
             </button>
-          </div>
-          <div className="social-login">
-            <div className="social-login-text tw-mt-3">
-              Or connect with your wallet
-            </div>
-            <div className="social-login-buttons">
-              <button
-                onClick={() => {
-                  login();
-                }}
-                className="btn btn-normal facebook"
-              >
-                connect
-              </button>
-            </div>
           </div>
         </div>
       </div>
