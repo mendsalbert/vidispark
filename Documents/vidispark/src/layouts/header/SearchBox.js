@@ -26,7 +26,9 @@ const SearchBox = () => {
           <button
             type="submit"
             className={`search-params ${activeToggle ? "active" : ""}`}
-            // onClick={() => setActiveToggle(!activeToggle)}
+            onClick={() => {
+              window.location.href = `search/${query}`;
+            }}
           >
             {/* <span className="search-param-title">{active}</span>{" "}
             <svg className="crumina-icon">
