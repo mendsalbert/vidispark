@@ -10,8 +10,9 @@ const AccountSettings = () => {
   const [twitch, setTwitch] = useState("");
   const [youtube, setYoutube] = useState("");
   const [discord, setDiscord] = useState("");
-
+  const [loading, setloading] = useState(false);
   const onUpdateUserDataHandler = () => {
+    setloading(true);
     const updatedUserData = {
       facebook: facebook !== "" ? facebook : userInfo[0]?.data?.facebook,
       twitter: twitter !== "" ? twitter : userInfo[0]?.data?.twitter,
@@ -22,6 +23,7 @@ const AccountSettings = () => {
     };
 
     updateUserSocial(updatedUserData);
+    setloading(false);
   };
 
   return (
