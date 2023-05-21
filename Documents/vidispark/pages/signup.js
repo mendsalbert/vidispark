@@ -21,7 +21,7 @@ const Registration = () => {
       alert("passowrd must match");
       return;
     } else if (aggred == false) {
-      alert("you have to aggre to our privacy policy first");
+      alert("You have to aggre to our privacy policy first");
       return;
     }
     const hash = bcrypt.hashSync(password, salt);
