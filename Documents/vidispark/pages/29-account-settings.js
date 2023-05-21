@@ -6,8 +6,10 @@ import { useUser } from "../src/services/user";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { useAuth } from "../src/lib/auth";
 
 const AccountSettings = () => {
+  useAuth();
   const notify = () =>
     toast.success("Social Media Accounts updated succesfully");
 
