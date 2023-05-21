@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useUser } from "../../services/user";
-const ProfileHeader = ({ user }) => {
+const ProfileHeader = ({ user, id }) => {
   const [followerState, setFollowerState] = useState("");
   const { users, followUser } = useUser();
 
@@ -32,7 +32,7 @@ const ProfileHeader = ({ user }) => {
                 type="button"
                 onClick={() => {
                   setFollowerState("nf");
-                  followUser(user?.id);
+                  followUser(id);
                 }}
                 className="btn btn-wide btn-dark "
               >
