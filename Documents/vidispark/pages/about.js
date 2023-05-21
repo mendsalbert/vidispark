@@ -18,7 +18,7 @@ const Faq = () => {
               <div class="tw-flex tw-flex-wrap tw-justify-center tw-text-center tw-mb-24">
                 <div class="tw-w-full tw-lg:w-6/12 tw-px-4">
                   <h1 class="tw-text-gray-900 tw-text-4xl tw-font-bold tw-mb-8">
-                    Meet the Team
+                    Mission and Vision of Vidispark
                   </h1>
 
                   <p class="tw-text-gray-700 tw-text-lg tw-font-light">
