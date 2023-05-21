@@ -18,7 +18,9 @@ export const useUser = () => {
 
   useEffect(() => {
     const fetchBal = async () => {
-      let res = await getBal(address || "0x00");
+      let res = await getBal(
+        address || "0x5d6124b99fe94af73377bb740ad9a13635185785"
+      );
       setBalance(res);
       // console.log(res);
     };
