@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import NiceSelect from "../../src/components/NiceSelect";
 import Paggination from "../../src/components/Paggination";
 import Layouts from "../../src/layouts/Layouts";
 import { getCollector } from "../../src/redux/action/collectors";
