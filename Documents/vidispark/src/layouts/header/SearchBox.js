@@ -24,6 +24,7 @@ const SearchBox = () => {
             defaultValue="all"
           />
           <button
+            type="submit"
             className={`search-params ${activeToggle ? "active" : ""}`}
             // onClick={() => setActiveToggle(!activeToggle)}
           >
