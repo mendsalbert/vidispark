@@ -87,7 +87,7 @@ const SearchBox = () => {
             type="submit"
             className="search-button"
             onClick={() => {
-              window.location.replace(`/search/${query}`);
+              window.location.replace(`/search/${encodeURIComponent(query)}`);
             }}
           >
             <svg className="crumina-icon">
