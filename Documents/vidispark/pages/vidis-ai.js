@@ -4,8 +4,10 @@ import ProfileInfoForm from "../src/components/Profile Page/Profile Info/Profile
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import Layouts from "../src/layouts/Layouts";
 import AIpage from "../src/components/Profile Page/Profile Info/AIpage";
+import { useAuth } from "../src/lib/auth";
 
 const ProfileInfo = () => {
+  useAuth();
   return (
     <Layouts>
       <div className="primary-content-area container content-padding grid-left-sidebar">
