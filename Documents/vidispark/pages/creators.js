@@ -85,32 +85,6 @@ const Cretors = ({ getCreator, creators }) => {
                         </span>
                       </div>
                     </div>
-                    <div className="follow-me">
-                      <button
-                        onClick={() => {
-                          if (
-                            creator?.data?.followers.indexOf(
-                              userInfo[0]?.id
-                            ) !== -1
-                          ) {
-                            unfollowUser(creator?.id);
-                          } else {
-                            followUser(creator?.id);
-                          }
-                        }}
-                        className={`btn btn-small ${
-                          creator?.data?.followers.indexOf(userInfo[0]?.id) !==
-                          -1
-                            ? "btn-fuchsia"
-                            : "btn-dark"
-                        }`}
-                      >
-                        {creator?.data?.followers.indexOf(userInfo[0]?.id) !==
-                        -1
-                          ? "Unfollow"
-                          : "Follow!"}
-                      </button>
-                    </div>
                   </div>
 
                   <div className="about-creator">
