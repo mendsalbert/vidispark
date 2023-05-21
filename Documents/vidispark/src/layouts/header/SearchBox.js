@@ -87,7 +87,7 @@ const SearchBox = () => {
             type="submit"
             className="search-button"
             onClick={() => {
-              alert("fsd");
+              window.location.href = `search/${query}`;
             }}
           >
             <svg className="crumina-icon">
