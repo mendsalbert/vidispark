@@ -69,12 +69,7 @@ export const useUser = () => {
         marketPrice: "",
         prevBrands: "",
         marketBio: "",
-        facebook: "",
-        twitter: "",
-        instagram: "",
-        twitch: "",
-        youtube: "",
-        discord: "",
+
         tokens: 0,
         acceptPolicy: false,
         isVerified: false,
