@@ -78,7 +78,7 @@ const Profile = () => {
           <ul className="social-icons-list">
             <li className="social-icon icon-border">
               <a
-                href={`https://www.facebook.com/${user?.facebook}`}
+                href={`https://www.facebook.com/${user[0]?.data?.facebook}`}
                 target="_blank"
               >
                 <svg className="crumina-icon">
@@ -88,7 +88,7 @@ const Profile = () => {
             </li>
             <li className="social-icon icon-border">
               <a
-                href={`https://www.twitter.com/${user?.twitter}`}
+                href={`https://www.twitter.com/${user[0]?.data?.twitter}`}
                 target="_blank"
               >
                 <svg className="crumina-icon">
@@ -98,7 +98,7 @@ const Profile = () => {
             </li>
             <li className="social-icon icon-border">
               <a
-                href={`https://www.instagram.com/${user?.facebook}`}
+                href={`https://www.instagram.com/${user[0]?.data?.facebook}`}
                 target="_blank"
               >
                 <svg className="crumina-icon">
@@ -108,7 +108,7 @@ const Profile = () => {
             </li>
             <li className="social-icon icon-border">
               <a
-                href={`https://www.twitch.com/${user?.twitch}`}
+                href={`https://www.twitch.com/${user[0]?.data?.twitch}`}
                 target="_blank"
               >
                 <svg className="crumina-icon">
@@ -121,14 +121,18 @@ const Profile = () => {
             <div className="activity-meta">
               <div>
                 <div className="number ">
-                  {user?.followers?.length < 1 ? 0 : user?.followers?.length}
+                  {user[0]?.data?.followers?.length < 1
+                    ? 0
+                    : user[0]?.data?.followers?.length}
                 </div>
                 <div className="label">Following</div>
               </div>
               <div>
                 <div className="number">
                   {" "}
-                  {user?.following?.length < 1 ? 0 : user?.following?.length}
+                  {user[0]?.data?.following?.length < 1
+                    ? 0
+                    : user[0]?.data?.following?.length}
                 </div>
                 <div className="label">Followers</div>
               </div>
