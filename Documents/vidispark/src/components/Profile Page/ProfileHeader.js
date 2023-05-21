@@ -7,7 +7,7 @@ const ProfileHeader = ({ user, id }) => {
 
   console.log(userInfo[0]?.id);
   console.log(user?.followers);
-  console.log(user?.followers?.includes(userInfo[0]?.id));
+  console.log(user?.following?.includes(userInfo[0]?.id));
   return (
     <div className="profile-header-section">
       <div className="cover-image">
