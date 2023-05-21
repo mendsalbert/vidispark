@@ -9,7 +9,6 @@ import { useUser } from "../../src/services/user";
 
 const Profile = () => {
   const [followerState, setFollowerState] = useState("");
-
   const router = useRouter();
   const { id } = router.query;
   const { users, followUser } = useUser();
