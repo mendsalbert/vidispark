@@ -95,7 +95,7 @@ const Faq = () => {
                         Founder & Chief Technology Officer{" "}
                       </div>
                       <div class="tw-text-gray-700 tw-font-bold  tw-mb-2">
-                        evamariwa@gmail.com
+                        mendsalbert@gmail.com
                       </div>
 
                       <div
