@@ -18,9 +18,10 @@
  * * dashboard for user video -- edit and delete xx
  * * vidiisAI page xx
  * * work on footer and links xx
+ * * a very rich documentation (white paper) add link to footer xx
+
  *
  *
- * a very rich documentation (white paper) add link to footer
  *
  * demo video
  * work on go live
