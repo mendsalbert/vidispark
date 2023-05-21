@@ -45,7 +45,7 @@ const Nav = () => {
             </Link>{" "}
           </li>
 
-          {/* <li className="menu-item menu-item-has-children">
+          <li className="menu-item menu-item-has-children">
             <a className="menu-link" href="#">
               Product
               <span className="indicator">
@@ -350,7 +350,7 @@ const Nav = () => {
                 </Link>{" "}
               </li>
             </ul>
-          </li> */}
+          </li>
         </ul>
         <ul className="social-icons-list">
           <li className="social-icon">
