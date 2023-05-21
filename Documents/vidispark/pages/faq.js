@@ -56,9 +56,7 @@ const Faq = () => {
                 eventKey="2nd"
                 className="card-button"
               >
-                <div className="card-title">
-                  What are NFTs (Non-Fungible Tokens)?
-                </div>
+                <div className="card-title">Can anyone join Vidispark? </div>
                 <div className="icon-box">
                   {" "}
                   <svg
@@ -76,15 +74,11 @@ const Faq = () => {
             </div>
             <Accordion.Collapse eventKey={"2nd"} className="card-body">
               <div className="card-info">
-                A non-fungible token (NFT) is a unit of data stored on a digital
-                ledger, called a blockchain, that certifies a digital asset to
-                be unique and therefore not interchangeable. NFTs can be used to
-                represent items such as photos, videos, audio, and other types
-                of digital files. Access to any copy of the original file,
-                however, is not restricted to the buyer of the NFT. While copies
-                of these digital items are available for anyone to obtain, NFTs
-                are tracked on blockchains to provide the owner with a proof of
-                ownership that is separate from copyright.
+                es, Vidispark is open to anyone who is interested in video
+                streaming, creating content, or engaging with creators and their
+                communities. Whether you're a viewer, a creator, or a brand
+                looking to collaborate, you can join Vidispark and be part of
+                our community.
               </div>
             </Accordion.Collapse>
           </div>
@@ -97,7 +91,7 @@ const Faq = () => {
                 className="card-button"
               >
                 <div className="card-title">
-                  How do I create/submit a new artwork?
+                  How do I become a creator on Vidispark?
                 </div>
                 <div className="icon-box">
                   {" "}
@@ -116,15 +110,10 @@ const Faq = () => {
             </div>
             <Accordion.Collapse eventKey={"3rd"} className="card-body">
               <div className="card-info">
-                A non-fungible token (NFT) is a unit of data stored on a digital
-                ledger, called a blockchain, that certifies a digital asset to
-                be unique and therefore not interchangeable. NFTs can be used to
-                represent items such as photos, videos, audio, and other types
-                of digital files. Access to any copy of the original file,
-                however, is not restricted to the buyer of the NFT. While copies
-                of these digital items are available for anyone to obtain, NFTs
-                are tracked on blockchains to provide the owner with a proof of
-                ownership that is separate from copyright.
+                If you're interested in becoming a creator on Vidispark, you can
+                sign up as a creator when registering for an account. Once your
+                account is created, you can start uploading your videos,
+                engaging with your audience, and building your fanbase.
               </div>
             </Accordion.Collapse>
           </div>
@@ -137,7 +126,7 @@ const Faq = () => {
                 className="card-button"
               >
                 <div className="card-title">
-                  Can I gift or send a collectible to someone?
+                  What are the benefits of being a creator on Vidispark?{" "}
                 </div>
                 <div className="icon-box">
                   {" "}
@@ -156,15 +145,11 @@ const Faq = () => {
             </div>
             <Accordion.Collapse eventKey={"4th"} className="card-body">
               <div className="card-info">
-                A non-fungible token (NFT) is a unit of data stored on a digital
-                ledger, called a blockchain, that certifies a digital asset to
-                be unique and therefore not interchangeable. NFTs can be used to
-                represent items such as photos, videos, audio, and other types
-                of digital files. Access to any copy of the original file,
-                however, is not restricted to the buyer of the NFT. While copies
-                of these digital items are available for anyone to obtain, NFTs
-                are tracked on blockchains to provide the owner with a proof of
-                ownership that is separate from copyright.
+                As a creator on Vidispark, you'll have access to a wide audience
+                of viewers who are passionate about content creation. You can
+                monetize your videos, connect with your fans, collaborate with
+                brands, and potentially earn revenue through various channels
+                such sponsorships.
               </div>
             </Accordion.Collapse>
           </div>
