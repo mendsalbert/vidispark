@@ -119,7 +119,7 @@ const Profile = () => {
                   {" "}
                   {user[0]?.data?.followers < 1 ? 0 : user[0]?.data?.followers}
                 </div>
-                <div className="label">Followers</div>
+                <div className="label">Followersss</div>
               </div>
               <div className="following-number">
                 <div className="number">
