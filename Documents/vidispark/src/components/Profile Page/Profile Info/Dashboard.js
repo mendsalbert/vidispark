@@ -51,7 +51,19 @@ const Dashboard = ({ getCollector, collectors }) => {
                   Video
                 </th>
                 <th scope="col" className="heading-label">
-                  Tokens
+                  Title
+                </th>
+                <th scope="col" className="heading-label">
+                  Descriptoin
+                </th>
+                <th scope="col" className="heading-label">
+                  Date added
+                </th>
+                <th scope="col" className="heading-label">
+                  Views
+                </th>
+                <th scope="col" className="heading-label">
+                  Actions
                 </th>
               </tr>
             </thead>
