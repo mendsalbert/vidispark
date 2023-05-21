@@ -181,7 +181,7 @@ const Footer = () => {
                 </li>
                 <li className="menu-item">
                   {" "}
-                  <Link href="/upload-artwork">
+                  <Link href="/become-a-creator">
                     <a className="menu-link">Become a Creator</a>
                   </Link>{" "}
                 </li>
