@@ -63,7 +63,7 @@ export const useUser = () => {
         username: userObj.username,
         salt: userObj.salt,
         password: userObj.hash,
-        email: "",
+        // email: "",
         fullname: "",
         bio: "",
         avatarUrl: "",
