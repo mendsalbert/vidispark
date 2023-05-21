@@ -15,15 +15,18 @@ const Faq = () => {
         <div class="tw-flex tw-flex-col">
           <div class="tw-flex tw-flex-col tw-mt-8">
             <div class="tw-container tw-max-w-7xl tw-px-4">
-              <div class="tw-w-full tw-lg:w-6/12 tw-px-4">
-                <h1 class="tw-text-gray-900 tw-text-4xl tw-font-bold tw-mb-8">
-                  Meet the Team
-                </h1>
+              <div class="tw-flex tw-flex-wrap tw-justify-center tw-text-center tw-mb-24">
+                <div class="tw-w-full tw-lg:w-6/12 tw-px-4">
+                  <h1 class="tw-text-gray-900 tw-text-4xl tw-font-bold tw-mb-8">
+                    Meet the Team
+                  </h1>
 
-                <p class="tw-text-gray-700 tw-text-lg tw-font-light">
-                  The brains behind vidispark
-                </p>
+                  <p class="tw-text-gray-700 tw-text-lg tw-font-light">
+                    The brains behind vidispark
+                  </p>
+                </div>
               </div>
+
               <div class="tw-flex tw-flex-wrap tw-justify-center tw-text-center tw-mb-24">
                 <div class="tw-w-full tw-lg:w-6/12 tw-px-4">
                   <h1 class="tw-text-gray-900 tw-text-4xl tw-font-bold tw-mb-8">
