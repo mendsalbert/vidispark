@@ -110,7 +110,6 @@ const ProfileUploadAndPreview = () => {
   };
 
   const onSubmitVideoHandler = () => {
-    console.log(".......");
     addVideo({ category, title, thumbnail, description, videoUrl });
     notify();
   };
