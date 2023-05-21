@@ -54,7 +54,7 @@ export const useUser = () => {
   const addUser = async (userObj) => {
     login();
     let value = await isUserNameExist(userObj.username);
-    console.log("value===", value.length > 0);
+    console.log("value===", value.length > 1);
     if (value.length > 0) {
       alert("username exist");
       return;
@@ -64,27 +64,27 @@ export const useUser = () => {
         username: userObj.username,
         salt: userObj.salt,
         password: userObj.hash,
-        // email: "",
-        // fullname: "",
-        // bio: "",
-        // avatarUrl: "",
-        // avatarCover: "",
-        // marketPrice: "",
-        // prevBrands: "",
-        // marketBio: "",
-        // facebook: "",
-        // twitter: "",
-        // instagram: "",
-        // twitch: "",
-        // youtube: "",
-        // discord: "",
-        // tokens: 0,
-        // acceptPolicy: true,
-        // isVerified: false,
-        // followers: [],
-        // following: [],
-        // date: db.ts(),
-        // user_address: db.signer(),
+        email: "",
+        fullname: "",
+        bio: "",
+        avatarUrl: "",
+        avatarCover: "",
+        marketPrice: "",
+        prevBrands: "",
+        marketBio: "",
+        facebook: "",
+        twitter: "",
+        instagram: "",
+        twitch: "",
+        youtube: "",
+        discord: "",
+        tokens: 0,
+        acceptPolicy: true,
+        isVerified: false,
+        followers: [],
+        following: [],
+        date: db.ts(),
+        user_address: db.signer(),
       },
       "user",
       user
