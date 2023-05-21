@@ -1,23 +1,34 @@
 /**
  * TODO
- * leaderboard xx
- * spotlight xx
- * metaverse xx
- * AI for generating caption for video xx
- * videos created by a user xx
- * likes gotten by a user  xx
- *
- *
+ * * leaderboard xx
+ * * spotlight xx
+ * * metaverse xx
+ * * AI for generating caption for video xx
+ * * videos created by a user xx
+ * * likes gotten by a user  xx
+ * * validation and aleart and loaders etc xx
+ * * account settings - social xx
+ * * work on the verify badge
+ * * upload form - video upload
+ * * search page xx
+
+
+
+
  *
  * work on footer and links
  * a very rich documentation (white paper) add link to footer
  * demo video
- *
  * work on go live
+ * 
+ * 
+ * 
  * check for mobile view
- * validation and aleart etc
- * handle authentication very well
  * work on the follow button on all the pages
- * work on the verify badge
- * account settings - social
+ * anywhere there is a social media replace with what is comming from the database
+ * 
+ * handle authentication very well
+ * dashboard for user video -- edit and delete
  */
+
+// how creators make money - the app reward creators when the surpase 1000 views
