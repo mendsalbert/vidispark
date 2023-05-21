@@ -42,13 +42,7 @@ const Cretors11 = ({ getCollector, collectors }) => {
 
   return (
     <>
-      <div className="primary-content-area container content-padding">
-        <div className="page-title-section">
-          <h2>
-            Explore
-            <span className="gradient-text"> Users with more tokens</span>
-          </h2>
-        </div>
+      <div>
         {/* FILTERABLE BAR */}
 
         {/* FILTERABLE BAR */}
