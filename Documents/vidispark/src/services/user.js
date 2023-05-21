@@ -244,6 +244,7 @@ export const useUser = () => {
     logout,
     users,
     unfollowUser,
+    login,
     etherValue,
     updateUserToken,
     updateUserSocial,
