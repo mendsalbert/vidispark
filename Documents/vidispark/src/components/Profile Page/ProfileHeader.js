@@ -117,7 +117,10 @@ const ProfileHeader = ({ user, id }) => {
             </li>
             <li className="social-icon icon-border">
               {" "}
-              <a href={`https://www.twitter.com/${user?.twitter}`}>
+              <a
+                href={`https://www.twitter.com/${user?.twitter}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#twitter-icon" />
                 </svg>
@@ -125,7 +128,10 @@ const ProfileHeader = ({ user, id }) => {
             </li>
             <li className="social-icon icon-border">
               {" "}
-              <a href={`https://www.instagram.com/${user?.facebook}`}>
+              <a
+                href={`https://www.instagram.com/${user?.facebook}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#instagram-icon" />
                 </svg>
@@ -133,7 +139,10 @@ const ProfileHeader = ({ user, id }) => {
             </li>
             <li className="social-icon icon-border">
               {" "}
-              <a href={`https://www.twitch.com/${user?.twitch}`}>
+              <a
+                href={`https://www.twitch.com/${user?.twitch}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#twitch-icon" />
                 </svg>
