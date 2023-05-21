@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AccountSettings = () => {
   const notify = () =>
-    toast.success("Socail Media Accounts updated succesfully");
+    toast.success("Social Media Accounts updated succesfully");
 
   const { userInfo, updateUserSocial } = useUser();
   const [facebook, setFacebook] = useState("");
