@@ -106,7 +106,7 @@ const ProfileHeader = ({ user, id }) => {
           <ul className="social-icons-list">
             <li className="social-icon icon-border">
               {" "}
-              <a href="#">
+              <a href={`facebook.com/${user?.facebook}`} target="_blank">
                 <svg className="crumina-icon">
                   <use xlinkHref="#facebook-icon" />
                 </svg>
