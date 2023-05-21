@@ -28,28 +28,36 @@ const Faq = () => {
                     fosters a vibrant community. We strive to connect talented
                     artists, content creators, and brands with their passionate
                     audience while embracing the innovative capabilities of Web3
-                    technologies. Vision: Our vision is to create a dynamic
-                    metaverse where creative expression knows no bounds. We
-                    envision a future where Vidispark becomes the go-to platform
-                    for artists of all mediums to showcase their talents, share
-                    their stories, and connect with their fans on a deeper
-                    level. By leveraging decentralized video streaming,
-                    NFT-based creations, social tokens, and gamification, we aim
-                    to redefine the streaming experience, promote authenticity,
-                    and cultivate a thriving ecosystem where artists and viewers
-                    alike can thrive. Through our platform, we aim to empower
-                    creators by providing them with new avenues for
-                    monetization, collaboration opportunities with brands, and
-                    direct engagement with their fanbase. We envision a
-                    community-driven platform that celebrates diversity,
-                    encourages innovation, and supports the growth and success
-                    of creators from all backgrounds. At Vidispark, we are
-                    committed to pushing the boundaries of what's possible in
-                    the world of video streaming, embracing emerging
-                    technologies, and creating a seamless and immersive
-                    experience for our users. Together, we are building a
-                    metaverse where creativity thrives, connections are forged,
-                    and artistry knows no limits.
+                    technologies.
+                    <p class="tw-text-gray-700 tw-text-lg tw-font-light">
+                      Vision: Our vision is to create a dynamic metaverse where
+                      creative expression knows no bounds. We envision a future
+                      where Vidispark becomes the go-to platform for artists of
+                      all mediums to showcase their talents, share their
+                      stories, and connect with their fans on a deeper level. By
+                      leveraging decentralized video streaming, NFT-based
+                      creations, social tokens, and gamification, we aim to
+                      redefine the streaming experience, promote authenticity,
+                      and cultivate a thriving ecosystem where artists and
+                      viewers alike can thrive.
+                    </p>
+                    <p class="tw-text-gray-700 tw-text-lg tw-font-light">
+                      Through our platform, we aim to empower creators by
+                      providing them with new avenues for monetization,
+                      collaboration opportunities with brands, and direct
+                      engagement with their fanbase. We envision a
+                      community-driven platform that celebrates diversity,
+                      encourages innovation, and supports the growth and success
+                      of creators from all backgrounds.
+                    </p>
+                    <p class="tw-text-gray-700 tw-text-lg tw-font-light">
+                      At Vidispark, we are committed to pushing the boundaries
+                      of what's possible in the world of video streaming,
+                      embracing emerging technologies, and creating a seamless
+                      and immersive experience for our users. Together, we are
+                      building a metaverse where creativity thrives, connections
+                      are forged, and artistry knows no limits.
+                    </p>
                   </p>
                 </div>
               </div>
