@@ -114,8 +114,10 @@ const Dashboard = ({ getCollector, collectors }) => {
                     </td>
                     <td data-label="Items Collected" className="stats-item">
                       {/* {data?.videoData?.likes} */}
-                      <PencilIcon />
-                      <TrashIcon />
+                      <div className="tw-flex tw-flex-row">
+                        <PencilIcon />
+                        <TrashIcon />
+                      </div>
                     </td>
                   </tr>
                 ))}
