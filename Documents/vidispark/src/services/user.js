@@ -64,7 +64,7 @@ export const useUser = () => {
         salt: userObj.salt,
         password: userObj.hash,
         // email: "",
-        fullname: "",
+        // fullname: "",
         bio: "",
         avatarUrl: "",
         avatarCover: "",
