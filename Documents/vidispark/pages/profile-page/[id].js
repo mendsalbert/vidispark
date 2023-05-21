@@ -133,7 +133,7 @@ const Profile = () => {
         </div>
         {/*  MOBILE PROFILE HEADER SECTION */}
         {/*  TABS BLOCK */}
-        <ProfilePageTabs id={id} />
+        {/* <ProfilePageTabs id={id} /> */}
         {/*  TABS BLOCK */}
       </div>
     </Layouts>
