@@ -3,8 +3,15 @@ import React, { useState, useEffect } from "react";
 import Layouts from "../src/layouts/Layouts";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
 import { useUser } from "../src/services/user";
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const AccountSettings = () => {
+  const notify = () =>
+    toast.success("Socail Media Accounts updated succesfully");
+
   const { userInfo, updateUserSocial } = useUser();
   const [facebook, setFacebook] = useState("");
   const [twitter, setTwitter] = useState("");
@@ -26,7 +33,7 @@ const AccountSettings = () => {
     };
 
     updateUserSocial(updatedUserData);
-    alert("update successfully");
+    notify();
     setloading(false);
   };
 
