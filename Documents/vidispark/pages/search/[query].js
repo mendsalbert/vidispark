@@ -12,8 +12,11 @@ import {
 } from "../../src/redux/action/filter";
 import { categoriesBar } from "../../src/sliderProps";
 import { dblock } from "../../src/utils";
+import { useRouter } from "next/router";
 
 const Explore = ({ catagoryfilter, data, filter, singleCatagoryfilter }) => {
+  const router = useRouter();
+
   const [filterData, setFilterData] = useState(data && data);
   const [catagoryFilter, setCatagoryFilter] = useState("");
   const [filter_, setFilter_] = useState({});
