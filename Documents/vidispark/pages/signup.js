@@ -123,15 +123,15 @@ const Registration = () => {
               Register Now
             </button>
 
-            <button
+            {/* <button
               type="button"
               className=" tk-lp-w-full tk-lp-tabs-form-item"
               data-id="sign-in"
             >
               or
-            </button>
+            </button> */}
 
-            <div className="wallet-item orange-gradient tw-mt-10 tw-mb-10">
+            {/* <div className="wallet-item orange-gradient tw-mt-10 tw-mb-10">
               <div className="wallet-icon">
                 <img src="img/content/wallet/icon-1.png" alt="" />
               </div>
@@ -146,7 +146,7 @@ const Registration = () => {
                   Sign Up with Metamask
                 </button>
               </div>
-            </div>
+            </div> */}
             <button
               type="button"
               className="tk-lp-button tk-lp-button--grey tk-lp-w-full tk-lp-tabs-form-item"
