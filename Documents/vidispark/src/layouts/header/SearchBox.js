@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 const SearchBox = () => {
   const [activeToggle, setActiveToggle] = useState(false);
   const [active, setActive] = useState("All items");
-
+  const [query, setQuery] = useState("");
   return (
     <Fragment>
       <div className="searchbox">
