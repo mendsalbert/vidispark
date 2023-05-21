@@ -20,9 +20,9 @@ const Footer = () => {
               </div>
               <div className="footer-text">
                 <p>
-                  We are a huge marketplace dedicated to connecting great
-                  artists of all mediums with their fans and unique token
-                  collectors!
+                  We provide a vibrant platform where artists can showcase and
+                  sell their creations, whether it be visual art, music, videos,
+                  or other mediums, directly to their passionate supporters
                 </p>
               </div>
               <ul className="social-icons-list">
