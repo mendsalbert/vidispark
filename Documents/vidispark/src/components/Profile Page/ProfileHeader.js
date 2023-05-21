@@ -30,16 +30,22 @@ const ProfileHeader = ({ user, id }) => {
           </div>
           <div className="follow-box">
             <div className="follow-box">
-              <button
-                type="button"
-                onClick={() => {
-                  setFollowerState("nf");
-                  followUser(id);
-                }}
-                className="btn btn-wide btn-dark "
-              >
-                {followerState == "nf" ? "Following" : " Follow"}
-              </button>
+              {user?.following?.includes(userInfo[0]?.id) ? (
+                <button type="button" className="btn btn-wide btn-dark ">
+                  Following
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setFollowerState("nf");
+                    followUser(id);
+                  }}
+                  className="btn btn-wide btn-dark "
+                >
+                  {followerState == "nf" ? "Following" : " Follow"}
+                </button>
+              )}
             </div>
           </div>
         </div>
