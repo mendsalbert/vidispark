@@ -11,7 +11,7 @@ const Faq = () => {
     <Layouts>
       {/* <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"> */}
 
-      <div class="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-bg-dark dark:tw-bg-green-400 tw-py-48">
+      <div class="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-bg-white dark:tw-bg-green-400 tw-py-48">
         <div class="tw-flex tw-flex-col">
           <div class="tw-flex tw-flex-col tw-mt-8">
             <div class="tw-container tw-max-w-7xl tw-px-4">
