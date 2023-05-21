@@ -77,28 +77,40 @@ const Profile = () => {
           </div>
           <ul className="social-icons-list">
             <li className="social-icon icon-border">
-              <a href="#">
+              <a
+                href={`https://www.facebook.com/${user?.facebook}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#facebook-icon" />
                 </svg>
               </a>
             </li>
             <li className="social-icon icon-border">
-              <a href="#">
+              <a
+                href={`https://www.twitter.com/${user?.twitter}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#twitter-icon" />
                 </svg>
               </a>
             </li>
             <li className="social-icon icon-border">
-              <a href="#">
+              <a
+                href={`https://www.instagram.com/${user?.facebook}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#instagram-icon" />
                 </svg>
               </a>
             </li>
             <li className="social-icon icon-border">
-              <a href="#">
+              <a
+                href={`https://www.twitch.com/${user?.twitch}`}
+                target="_blank"
+              >
                 <svg className="crumina-icon">
                   <use xlinkHref="#twitch-icon" />
                 </svg>
