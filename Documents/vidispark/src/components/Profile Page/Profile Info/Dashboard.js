@@ -64,9 +64,7 @@ const Dashboard = ({ getCollector, collectors }) => {
                 <th scope="col" className="heading-label">
                   Descriptoin
                 </th>
-                <th scope="col" className="heading-label">
-                  Date added
-                </th>
+
                 <th scope="col" className="heading-label">
                   Views
                 </th>
