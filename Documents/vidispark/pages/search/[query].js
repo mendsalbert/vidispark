@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Nft from "../../src/components/Nft";
 import Paggination from "../../src/components/Paggination";
-import Layouts from "../../src/layouts/Layouts";
 import { getData } from "../../src/redux/action/data";
 import { useRouter } from "next/router";
 
@@ -16,6 +15,7 @@ import {
 } from "../../src/redux/action/filter";
 import { dblock } from "../../src/utils";
 import { useVideo } from "../../src/services/videos";
+import Layouts from "../../src/layouts/Layouts";
 
 const Explorev2 = ({
   catagoryfilter,
