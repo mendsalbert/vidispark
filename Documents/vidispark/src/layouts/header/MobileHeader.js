@@ -84,7 +84,7 @@ const MobileHeader = () => {
             </li>
             <li className="menu-item">
               {" "}
-              <Link href="/vidisAI">
+              <Link href="/vidis-ai">
                 <a className="menu-link">VidisAI</a>
               </Link>{" "}
             </li>
