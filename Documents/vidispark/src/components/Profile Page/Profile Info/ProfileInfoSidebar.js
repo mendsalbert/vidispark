@@ -105,7 +105,7 @@ const ProfileInfoSidebar = () => {
                   <svg className="crumina-icon">
                     <use xlinkHref="#picture-icon" />
                   </svg>
-                  Create Artwork
+                  Dashbaord
                 </a>
               </Link>{" "}
             </li>
