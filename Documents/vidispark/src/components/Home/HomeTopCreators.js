@@ -19,7 +19,10 @@ const HomeTopCreators = () => {
               <Link href={`profile-page/${users[0]?.id}`}>
                 <a>
                   <picture>
-                    <source type="image/avif" srcSet="avif/avatar.avif" />
+                    <source
+                      type="image/avif"
+                      srcSet={users[0]?.data?.avatarUrl}
+                    />
                     <img
                       src={users[0]?.data?.avatarUrl}
                       alt="avatar"
