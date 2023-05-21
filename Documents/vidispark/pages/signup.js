@@ -12,7 +12,7 @@ const Registration = () => {
   const [aggred, setAggred] = useState(false);
   const salt = bcrypt.genSaltSync(10);
 
-  const { addUser, login } = useUser();
+  const { addUser } = useUser();
 
   const onHandleSubmit = () => {
     login();
