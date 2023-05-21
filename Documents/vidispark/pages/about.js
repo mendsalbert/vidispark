@@ -225,7 +225,6 @@ const Faq = () => {
   </div>
   
 </div>
-
   </Layouts>;
 };
 export default Faq;
