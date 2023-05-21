@@ -31,7 +31,7 @@ const Profile = () => {
           <div className="about-author-section container">
             <div className="profile-header-user-profile">
               <div className="avatar box-64 bordered">
-                <Link href="/08-profile-page">
+                <Link href="">
                   <a>
                     <img src={user[0]?.data?.avatarUrl} alt="" />
                   </a>
