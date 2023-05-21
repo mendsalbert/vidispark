@@ -15,6 +15,8 @@
  * * anywhere there is a social media replace with what is comming from the database xx
  * * check for mobile view xx
  * * handle authentication very well xx
+ * * dashboard for user video -- edit and delete xx
+
 
 
 
@@ -32,7 +34,6 @@
  * 
  * 
  * 
- * dashboard for user video -- edit and delete
  */
 
 // how creators make money - the app reward creators when the surpase 1000 views
