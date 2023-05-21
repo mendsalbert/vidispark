@@ -48,7 +48,7 @@ const Dashboard = ({ getCollector, collectors }) => {
             <thead>
               <tr>
                 <th scope="col" className="heading-label">
-                  Creator
+                  Video
                 </th>
                 <th scope="col" className="heading-label">
                   Tokens
