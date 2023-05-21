@@ -17,25 +17,16 @@
  * * handle authentication very well xx
  * * dashboard for user video -- edit and delete xx
  * * vidiisAI page xx
-
-
-
-
-
-
-
-
-
  *
  * work on footer and links
- * 
  * a very rich documentation (white paper) add link to footer
+ *
  * demo video
  * work on go live
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
  */
 
 // how creators make money - the app reward creators when the surpase 1000 views
