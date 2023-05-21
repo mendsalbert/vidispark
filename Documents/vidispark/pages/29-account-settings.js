@@ -2,8 +2,10 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Layouts from "../src/layouts/Layouts";
 import ProfileInfoSidebar from "../src/components/Profile Page/Profile Info/ProfileInfoSidebar";
+import { useUser } from "../src/services/user";
 
 const AccountSettings = () => {
+  const { userInfo, updateUserSocial } = useUser();
   const [facebook, setFacebook] = useState("");
   const [twitter, setTwitter] = useState("");
   const [instagram, setInstagram] = useState("");
@@ -11,6 +13,7 @@ const AccountSettings = () => {
   const [youtube, setYoutube] = useState("");
   const [discord, setDiscord] = useState("");
   const [loading, setloading] = useState(false);
+
   const onUpdateUserDataHandler = () => {
     setloading(true);
     const updatedUserData = {
