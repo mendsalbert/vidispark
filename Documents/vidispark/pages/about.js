@@ -145,7 +145,7 @@ const Faq = () => {
                         Co-Founder & Technical Writer{" "}
                       </div>
                       <div class="tw-text-gray-700 tw-font-bold  tw-mb-2">
-                        evamariwa@gmail.com
+                        evaakosuamariwa@gmail.com
                       </div>
 
                       <div
