@@ -71,7 +71,6 @@ const Profile = () => {
                   className="btn btn-wide btn-dark "
                 >
                   {followerState == "nf" ? "Following" : " Follow"}
-                  {/* Admire */}
                 </button>
               </div>
             </div>
