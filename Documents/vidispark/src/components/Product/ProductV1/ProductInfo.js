@@ -60,7 +60,7 @@ const ProductInfo = ({ singleVid }) => {
               setFollowerState("nf");
               followUser(singleVid?.videoData?.uploaderId);
             }}
-            className="btn btn-wide btn-dark "
+            className="btn btn-wide btn-dark tw-bg-blue-600 "
           >
             {followerState == "nf" ? "Subscribed" : " Subscribe"}
             {/* Admire */}
