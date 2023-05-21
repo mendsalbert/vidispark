@@ -39,7 +39,7 @@ const Dashboard = ({ getCollector, collectors }) => {
     <>
       <div>
         {/* FILTERABLE BAR */}
-        <div className="user-db-title">Personal Info</div>
+        <div className="user-db-title">Dashboard</div>
 
         {/* FILTERABLE BAR */}
         {/* COLLECTORS LIST */}
