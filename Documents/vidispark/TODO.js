@@ -13,6 +13,8 @@
  * * search page xx
  * * work on the follow button on all the pages xx
  * * anywhere there is a social media replace with what is comming from the database xx
+ * * check for mobile view xx
+
 
 
 
@@ -23,10 +25,10 @@
  * a very rich documentation (white paper) add link to footer
  * demo video
  * work on go live
+ * vidiisAI page
  * 
  * 
  * 
- * check for mobile view
  * 
  * handle authentication very well
  * dashboard for user video -- edit and delete
