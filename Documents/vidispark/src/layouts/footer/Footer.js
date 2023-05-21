@@ -192,7 +192,7 @@ const Footer = () => {
                   </Link>{" "}
                 </li>
                 <li className="menu-item">
-                  <a className="menu-link" href="#">
+                  <a className="menu-link" href="/about">
                     About Us
                   </a>
                 </li>
