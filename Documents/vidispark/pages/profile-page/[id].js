@@ -119,19 +119,18 @@ const Profile = () => {
           </ul>
           <div className="author-primary-info">
             <div className="activity-meta">
-              <div className="followers-number">
-                <div className="number">
-                  {" "}
-                  {user[0]?.data?.followers < 1 ? 0 : user[0]?.data?.followers}
-                </div>
-                <div className="label">Followers</div>
-              </div>
-              <div className="following-number">
-                <div className="number">
-                  {" "}
-                  {user[0]?.data?.following < 1 ? 0 : user[0]?.data?.following}
+              <div>
+                <div className="number ">
+                  {user?.followers?.length < 1 ? 0 : user?.followers?.length}
                 </div>
                 <div className="label">Following</div>
+              </div>
+              <div>
+                <div className="number">
+                  {" "}
+                  {user?.following?.length < 1 ? 0 : user?.following?.length}
+                </div>
+                <div className="label">Followers</div>
               </div>
             </div>
           </div>
