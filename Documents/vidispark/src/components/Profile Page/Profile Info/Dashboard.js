@@ -6,17 +6,21 @@ import Layouts from "../../../layouts/Layouts";
 import { getCollector } from "../../../redux/action/collectors";
 import { dblock } from "../../../utils";
 import { useUser } from "../../../services/user";
+import { useVideo } from "../../../services/videos";
 
 const Dashboard = ({ getCollector, collectors }) => {
   let sort = 6;
   const { users } = useUser();
-  let users_ = users.sort((a, b) => {
-    let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
-    if (isNaN(tokensA)) tokensA = 0;
-    let tokensB = b.data.tokens ? Number(b.data.tokens) : 0;
-    if (isNaN(tokensB)) tokensB = 0;
-    return tokensB - tokensA;
-  });
+  const { videoResults } = useVideo();
+  //   let users_ = users.sort((a, b) => {
+  //     let tokensA = a.data.tokens ? Number(a.data.tokens) : 0;
+  //     if (isNaN(tokensA)) tokensA = 0;
+  //     let tokensB = b.data.tokens ? Number(b.data.tokens) : 0;
+  //     if (isNaN(tokensB)) tokensB = 0;
+  //     return tokensB - tokensA;
+  //   });
+
+  // let filteredVid = videoResults.map
 
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
@@ -95,9 +99,9 @@ const Dashboard = ({ getCollector, collectors }) => {
                         </div> */}
                       </div>
                     </td>
-                    <td data-label="Items Collected" className="stats-item">
+                    {/* <td data-label="Items Collected" className="stats-item">
                       {collector?.data?.tokens}
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
             </tbody>
