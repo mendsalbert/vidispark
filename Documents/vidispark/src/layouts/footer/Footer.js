@@ -198,12 +198,12 @@ const Footer = () => {
                     </a>
                   </Link>
                 </li>
-                <li className="menu-item">
+                {/* <li className="menu-item">
                   {" "}
                   <Link href="/20-contact">
                     <a className="menu-link">Contact</a>
                   </Link>{" "}
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
