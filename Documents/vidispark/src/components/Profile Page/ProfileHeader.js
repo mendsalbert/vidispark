@@ -1,6 +1,10 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useUser } from "../../services/user";
 const ProfileHeader = ({ user }) => {
+  const [followerState, setFollowerState] = useState("");
+  const { users, followUser } = useUser();
+
   console.log(user);
   return (
     <div className="profile-header-section">
