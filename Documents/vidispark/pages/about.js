@@ -7,223 +7,233 @@ const Faq = () => {
   const onClick = (value) =>
       activeFaq === value ? setActiveFaq("") : setActiveFaq(value),
     classNameChange = (value) => (value === activeFaq ? "" : "show");
-  return <Layouts>
+  return (
+    <Layouts>
+      {/* <link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"> */}
 
-<!-- component -->
-<!-- MDI Icons -->
-<link rel="stylesheet" href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css">
-
-<!-- Page Container -->
-<div class="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-bg-white tw-py-48">
-    <div class="tw-flex tw-flex-col">
-        <!-- Notes -->
-        <span class="tw-text-center tw-font-bold tw-my-10 tw-opacity-30">
+      <div class="tw-flex tw-items-center tw-justify-center tw-min-h-screen tw-bg-white tw-py-48">
+        <div class="tw-flex tw-flex-col">
+          <span class="tw-text-center tw-font-bold tw-my-10 tw-opacity-30">
             MDI (npm i @mdi/font) required for all icons
-
-            <hr class="tw-my-4">
-
-            <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank" class="tw-text-blue-600">
-                Convert to SASS
+            <hr class="tw-my-4" />
+            <a
+              href="https://egoistdeveloper.github.io/twcss-to-sass-playground/"
+              target="_blank"
+              class="tw-text-blue-600"
+            >
+              Convert to SASS
             </a>
-        </span>
+          </span>
 
-        <div class="tw-flex tw-flex-col tw-mt-8">
-            <!-- Meet the Team -->
+          <div class="tw-flex tw-flex-col tw-mt-8">
             <div class="tw-container tw-max-w-7xl tw-px-4">
-                <!-- Section Header -->
-                <div class="tw-flex tw-flex-wrap tw-justify-center tw-text-center tw-mb-24">
-                    <div class="tw-w-full tw-lg:w-6/12 tw-px-4">
-                        <!-- Header -->
-                        <h1 class="tw-text-gray-900 tw-text-4xl tw-font-bold tw-mb-8">
-                            Meet the Team
-                        </h1>
+              <div class="tw-flex tw-flex-wrap tw-justify-center tw-text-center tw-mb-24">
+                <div class="tw-w-full tw-lg:w-6/12 tw-px-4">
+                  <h1 class="tw-text-gray-900 tw-text-4xl tw-font-bold tw-mb-8">
+                    Meet the Team
+                  </h1>
 
-                        <!-- Description -->
-                        <p class="tw-text-gray-700 tw-text-lg tw-font-light">
-                            With over 100 years of combined experience, we've got a well-seasoned team at the helm.
-                        </p>
+                  <p class="tw-text-gray-700 tw-text-lg tw-font-light">
+                    With over 100 years of combined experience, we've got a
+                    well-seasoned team at the helm.
+                  </p>
+                </div>
+              </div>
+
+              <div class="tw-flex tw-flex-wrap">
+                <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
+                  <div class="tw-flex tw-flex-col">
+                    <a href="#" class="tw-mx-auto">
+                      <img
+                        class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
+                        src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?fit=clamp&w=400&h=400&q=80"
+                      />
+                    </a>
+
+                    <div class="tw-text-center tw-mt-6">
+                      <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
+                        Tranter Jaskulski
+                      </h1>
+
+                      <div class="tw-text-gray-700 tw-font-light tw-mb-2">
+                        Founder & Specialist
+                      </div>
+
+                      <div
+                        class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
+                                tw-transition-opacity tw-duration-300"
+                      >
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-linkedin tw-text-indigo-500 tw-mx-auto tw-mt-2"></i>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-twitter tw-text-blue-300 tw-mx-auto tw-mt-2"></i>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
+                      </div>
                     </div>
+                  </div>
                 </div>
 
-                <!-- Team Members -->
-                <div class="tw-flex tw-flex-wrap">
-                    <!-- Member #1 -->
-                    <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
-                        <div class="tw-flex tw-flex-col">
-                            <!-- Avatar -->
-                            <a href="#" class="tw-mx-auto">
-                                <img class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
-                                    src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?fit=clamp&w=400&h=400&q=80">
-                            </a>
+                <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
+                  <div class="tw-flex tw-flex-col">
+                    <a href="#" class="tw-mx-auto">
+                      <img
+                        class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
+                        src="https://images.unsplash.com/photo-1634896941598-b6b500a502a7?fit=clamp&w=400&h=400&q=80"
+                      />
+                    </a>
 
-                            <!-- Details -->
-                            <div class="tw-text-center tw-mt-6">
-                                <!-- Name -->
-                                <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
-                                    Tranter Jaskulski
-                                </h1>
+                    <div class="tw-text-center tw-mt-6">
+                      <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
+                        Denice Jagna
+                      </h1>
 
-                                <!-- Title -->
-                                <div class="tw-text-gray-700 tw-font-light tw-mb-2">
-                                    Founder & Specialist
-                                </div>
+                      <div class="tw-text-gray-700 tw-font-light tw-mb-2">
+                        Tired & M. Specialist
+                      </div>
 
-                                <!-- Social Icons -->
-                                <div class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
-                                tw-transition-opacity tw-duration-300">
-                                    <!-- Linkedin -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-linkedin tw-text-indigo-500 tw-mx-auto tw-mt-2"></i>
-                                    </a>
+                      <div
+                        class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
+                                tw-transition-opacity tw-duration-300"
+                      >
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-linkedin tw-text-indigo-700 tw-mx-auto tw-mt-2"></i>
+                        </a>
 
-                                    <!-- Twitter -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-twitter tw-text-blue-300 tw-mx-auto tw-mt-2"></i>
-                                    </a>
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-twitter tw-text-blue-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
 
-                                    <!-- Instagram -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
+                      </div>
                     </div>
-
-                    <!-- Member #2 -->
-                    <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
-                        <div class="tw-flex tw-flex-col">
-                            <!-- Avatar -->
-                            <a href="#" class="tw-mx-auto">
-                                <img class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
-                                    src="https://images.unsplash.com/photo-1634896941598-b6b500a502a7?fit=clamp&w=400&h=400&q=80">
-                            </a>
-
-                            <!-- Details -->
-                            <div class="tw-text-center tw-mt-6">
-                                <!-- Name -->
-                                <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
-                                    Denice Jagna
-                                </h1>
-
-                                <!-- Title -->
-                                <div class="tw-text-gray-700 tw-font-light tw-mb-2">
-                                    Tired & M. Specialist
-                                </div>
-
-                                <!-- Social Icons -->
-                                <div class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
-                                tw-transition-opacity tw-duration-300">
-                                    <!-- Linkedin -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-linkedin tw-text-indigo-700 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-
-                                    <!-- Twitter -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-twitter tw-text-blue-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-
-                                    <!-- Instagram -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Member #3 -->
-                    <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
-                        <div class="tw-flex tw-flex-col">
-                            <!-- Avatar -->
-                            <a href="#" class="tw-mx-auto">
-                                <img class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
-                                    src="https://images.unsplash.com/photo-1634193295627-1cdddf751ebf?fit=clamp&w=400&h=400&q=80">
-                            </a>
-
-                            <!-- Details -->
-                            <div class="tw-text-center tw-mt-6">
-                                <!-- Name -->
-                                <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
-                                    Kenji Milton
-                                </h1>
-
-                                <!-- Title -->
-                                <div class="tw-text-gray-700 tw-font-light tw-mb-2">
-                                    Team Member
-                                </div>
-
-                                <!-- Social Icons -->
-                                <div class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
-                                tw-transition-opacity tw-duration-300">
-                                    <!-- Linkedin -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-linkedin tw-text-indigo-700 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-
-                                    <!-- Twitter -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-twitter tw-text-blue-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-
-                                    <!-- Instagram -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Member #4 -->
-                    <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
-                        <div class="tw-flex tw-flex-col">
-                            <!-- Avatar -->
-                            <a href="#" class="tw-mx-auto">
-                                <img class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
-                                    src="https://images.unsplash.com/photo-1635003913011-95971abba560?fit=clamp&w=400&h=400&q=80">
-                            </a>
-
-                            <!-- Details -->
-                            <div class="tw-text-center tw-mt-6">
-                                <!-- Name -->
-                                <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
-                                    Doesn't matter
-                                </h1>
-
-                                <!-- Title -->
-                                <div class="tw-text-gray-700 tw-font-light tw-mb-2">
-                                    Will be fired
-                                </div>
-
-                                <!-- Social Icons -->
-                                <div class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
-                                tw-transition-opacity tw-duration-300">
-                                    <!-- Linkedin -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-linkedin tw-text-indigo-700 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-
-                                    <!-- Twitter -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-twitter tw-text-blue-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-
-                                    <!-- Instagram -->
-                                    <a href="#" class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10">
-                                        <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
+
+                <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
+                  <div class="tw-flex tw-flex-col">
+                    <a href="#" class="tw-mx-auto">
+                      <img
+                        class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
+                        src="https://images.unsplash.com/photo-1634193295627-1cdddf751ebf?fit=clamp&w=400&h=400&q=80"
+                      />
+                    </a>
+
+                    <div class="tw-text-center tw-mt-6">
+                      <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
+                        Kenji Milton
+                      </h1>
+
+                      <div class="tw-text-gray-700 tw-font-light tw-mb-2">
+                        Team Member
+                      </div>
+
+                      <div
+                        class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
+                                tw-transition-opacity tw-duration-300"
+                      >
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-linkedin tw-text-indigo-700 tw-mx-auto tw-mt-2"></i>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-twitter tw-text-blue-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tw-w-full tw-md:w-6/12 tw-lg:w-3/12 tw-mb-6 tw-px-6 tw-sm:px-6 tw-lg:px-4">
+                  <div class="tw-flex tw-flex-col">
+                    <a href="#" class="tw-mx-auto">
+                      <img
+                        class="tw-rounded-2xl tw-drop-shadow-md tw-hover:drop-shadow-xl tw-transition-all tw-duration-200 tw-delay-100"
+                        src="https://images.unsplash.com/photo-1635003913011-95971abba560?fit=clamp&w=400&h=400&q=80"
+                      />
+                    </a>
+
+                    <div class="tw-text-center tw-mt-6">
+                      <h1 class="tw-text-gray-900 tw-text-xl tw-font-bold tw-mb-1">
+                        Doesn't matter
+                      </h1>
+
+                      <div class="tw-text-gray-700 tw-font-light tw-mb-2">
+                        Will be fired
+                      </div>
+
+                      <div
+                        class="tw-flex tw-items-center tw-justify-center tw-opacity-50 tw-hover:opacity-100
+                                tw-transition-opacity tw-duration-300"
+                      >
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-indigo-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-linkedin tw-text-indigo-700 tw-mx-auto tw-mt-2"></i>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-blue-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-twitter tw-text-blue-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
+
+                        <a
+                          href="#"
+                          class="tw-flex tw-rounded-full tw-hover:bg-orange-50 tw-h-10 tw-w-10"
+                        >
+                          <i class="mdi mdi-instagram tw-text-orange-400 tw-mx-auto tw-mt-2"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-
-  </Layouts>;
+      </div>
+    </Layouts>
+  );
 };
 export default Faq;
