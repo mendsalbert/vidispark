@@ -24,7 +24,9 @@ const Dashboard = ({ getCollector, collectors }) => {
     (items) => items?.videoData?.uploaderId === userInfo[0]?.id
   );
 
+  console.log(userInfo[0]?.id);
   console.log(filteredVid);
+  //   console.log(filteredVid);
   const [active, setActive] = useState(0);
   const [state, setstate] = useState([]);
   useEffect(() => {
