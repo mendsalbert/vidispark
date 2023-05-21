@@ -103,7 +103,7 @@ const ProfileInfoSidebar = () => {
               {" "}
               <Link href="/dashboard">
                 <a className="tw-flex tw-flex-row tw-items-center">
-                  <Squares2X2Icon>
+                  <Squares2X2Icon />
                   Dashbaord
                 </a>
               </Link>{" "}
