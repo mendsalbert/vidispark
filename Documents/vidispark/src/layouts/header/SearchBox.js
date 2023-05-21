@@ -24,7 +24,6 @@ const SearchBox = () => {
             defaultValue="all"
           />
           <button
-            type="submit"
             className={`search-params ${activeToggle ? "active" : ""}`}
             onClick={() => {
               window.location.href = `search/${query}`;
@@ -78,9 +77,13 @@ const SearchBox = () => {
             className="search-input"
             name="head-search"
             id="head-search"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
             placeholder="Enter your search here..."
           />
-          <button className="search-button">
+          <button type="submit" className="search-button">
             <svg className="crumina-icon">
               <use xlinkHref="#search-icon" />
             </svg>
