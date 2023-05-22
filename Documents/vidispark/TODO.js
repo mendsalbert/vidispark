@@ -32,3 +32,10 @@
  */
 
 // how creators make money - the app reward creators when the surpase 1000 views
+
+// SCRIPT FOR VIDISPARK
+/*
+Int
+
+
+*/
