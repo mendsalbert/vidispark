@@ -229,7 +229,7 @@ const ProfileUploadAndPreview = () => {
               <>
                 <div className="upload-notice tw-text-center">
                   {showKey && (
-                    <>
+                    <div className="tw-flex tw-flex-row tw-space-x-2">
                       Stream Key -{" "}
                       {streamKey && streamKey.substring(0, 5) + "..."}{" "}
                       <svg
@@ -253,7 +253,7 @@ const ProfileUploadAndPreview = () => {
                         <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
                         <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
                       </svg>
-                    </>
+                    </div>
                   )}
                   <br></br>
                   <button onClick={() => setShowKey(!showKey)}>
