@@ -217,7 +217,7 @@ const ProfileUploadAndPreview = () => {
               {" "}
               {isStreamReady ? "Stream Details Ready" : ""}
             </div>
-            <div className="upload-notice tw-text-center tw-p-3">
+            <div className="upload-notice tw-text-center">
               {showKey && (
                 <>
                   Stream Key - {streamKey && streamKey.substring(0, 5) + "..."}{" "}
