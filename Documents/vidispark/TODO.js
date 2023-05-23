@@ -102,9 +102,9 @@ const calInput = [];
 const runningMedian = () => {
   for (let index = 0; index <= stream.length; index++) {
     calInput.push(stream[index]);
+
     // const element = array[index];
   }
 };
 console.log(stream);
-console.log(calInput);
 runningMedian();
