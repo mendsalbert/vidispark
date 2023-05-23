@@ -218,7 +218,11 @@ const ProfileUploadAndPreview = () => {
               {isStreamReady ? "Stream Details Ready" : ""}
             </div>
             <div className="upload-notice tw-text-center">
-              {showKey && <>Stream Key - {streamKey && streamKey} </>}
+              {showKey && (
+                <>
+                  Stream Key - {streamKey && streamKey.substring(0, 5) + "..."}{" "}
+                </>
+              )}
               <br></br>
               <button onClick={() => setShowKey(!showKey)}>
                 {showKey ? " Hide API Key" : " Show API Key"}
