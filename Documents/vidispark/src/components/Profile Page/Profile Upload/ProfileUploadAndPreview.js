@@ -213,10 +213,7 @@ const ProfileUploadAndPreview = () => {
                 <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-3 tw-w-3 tw-bg-gray-300"></span>
               </span>
             </button>
-            <div className="upload-notice">
-              {" "}
-              {isStreamReady ? "Stream Details Ready" : ""}
-            </div>
+
             <div className="upload-notice tw-text-center">
               {showKey && (
                 <>
