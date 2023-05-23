@@ -225,7 +225,7 @@ const ProfileUploadAndPreview = () => {
                 {showKey ? " Hide API Key" : " Show API Key"}
               </button>
             </div>
-            <div className="upload-notice tw-px-3">
+            <div className="upload-notice tw-px-3 tw-text-center">
               Stream Server - {streamServer && streamServer}
             </div>
           </div>
