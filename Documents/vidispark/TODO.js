@@ -100,7 +100,7 @@ shoutouts
 const stream = [2, 1, 5, 7, 2, 0, 5];
 const calInput = [];
 const runningMedian = () => {
-  for (let index = 0; index < strem.length; index++) {
+  for (let index = 0; index < stream.length; index++) {
     calInput.push(stream[index]) / calInput[index] / stream.length;
     // const element = array[index];
   }
