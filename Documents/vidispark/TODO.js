@@ -25,7 +25,9 @@
  *
  * demo video
  * work on go live
- *
+ * community chat using moralis and personal chat
+ * fake notification
+ * NFT coming soon
  *
  *
  *
@@ -94,3 +96,12 @@ outro
 team introduction
 shoutouts
 */
+
+const stream = [2, 1, 5, 7, 2, 0, 5];
+const calInput = [];
+const runningMedian = () => {
+  for (let index = 0; index < strem.length; index++) {
+    calInput.push(stream[index]) / stream.length;
+    // const element = array[index];
+  }
+};
