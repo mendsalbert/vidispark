@@ -8,7 +8,7 @@ import SDK from "weavedb-sdk";
 import { Buffer } from "buffer";
 import * as flatted from "flatted";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
-const contractTxId = "CdyjIAskh7bwpzWLVtfYroqZcNPvHB57bwk1hVVSgwk";
+const contractTxId = "ocK3uzmm47XffsVJ2YnbMKpAR9CzBHf6g9gh4M51xhQ";
 import {} from "ethers";
 export const AuthContext = createContext();
 
