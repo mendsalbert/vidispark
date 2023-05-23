@@ -105,3 +105,6 @@ const runningMedian = () => {
     // const element = array[index];
   }
 };
+console.log(stream);
+console.log(calInput);
+runningMedian();
