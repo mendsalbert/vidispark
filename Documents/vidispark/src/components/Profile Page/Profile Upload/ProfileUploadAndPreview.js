@@ -199,7 +199,7 @@ const ProfileUploadAndPreview = () => {
           <div className="upload-box">
             <div className="upload-notice">
               {" "}
-              {!isStreamReady ? "Start a live stream" : ""}
+              {isStreamReady ? "Start a live stream" : ""}
             </div>
             <button
               onClick={goLive}
