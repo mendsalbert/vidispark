@@ -5,6 +5,7 @@ import { useVideo } from "../../../services/videos";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import { IconCopy } from "@tabler/icons";
 const ProfileUploadAndPreview = () => {
   const notify = () => toast.success("Video Uploaded Successfully");
   const notify2 = () =>
@@ -222,6 +223,7 @@ const ProfileUploadAndPreview = () => {
               {showKey && (
                 <>
                   Stream Key - {streamKey && streamKey.substring(0, 5) + "..."}{" "}
+                  <IconCopy />
                   <button onClick={copyToClipboard}>Copy API Key</button>
                 </>
               )}
