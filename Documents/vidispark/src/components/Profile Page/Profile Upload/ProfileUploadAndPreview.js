@@ -216,10 +216,10 @@ const ProfileUploadAndPreview = () => {
               {isStreamReady ? "Stream Details Ready" : ""}
             </div>
             <div className="upload-notice">
-              Stream Key {streamKey && streamKey}
+              Stream Key - {streamKey && streamKey}
             </div>
             <div className="upload-notice">
-              Stream Server {streamServer && streamServer}
+              Stream Server - {streamServer && streamServer}
             </div>
           </div>
         </div>
