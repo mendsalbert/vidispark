@@ -7,6 +7,8 @@ import "../styles/globals.css";
 import "@rainbow-me/rainbowkit/styles.css";
 import merge from "lodash.merge";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { MoralisProvider } from "react-moralis";
+
 import {
   ApolloClient,
   ApolloLink,
@@ -131,14 +133,18 @@ function MyApp({ Component, pageProps }) {
 
         <title>Vidispark</title>
       </Head>
-
-      <AuthProvider>
-        <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider chains={chains} theme={myTheme}>
-            <Component {...pageProps} />
-          </RainbowKitProvider>
-        </WagmiConfig>
-      </AuthProvider>
+      <MoralisProvider
+        appId="o2DpocS7Kd4jPFVCEmYUdxyQAyx51SflwTnyCGln"
+        serverUrl="https://jtog9qjv1t2r.usemoralis.com:2053/server"
+      >
+        <AuthProvider>
+          <WagmiConfig client={wagmiClient}>
+            <RainbowKitProvider chains={chains} theme={myTheme}>
+              <Component {...pageProps} />
+            </RainbowKitProvider>
+          </WagmiConfig>
+        </AuthProvider>
+      </MoralisProvider>
     </Provider>
   );
 }
