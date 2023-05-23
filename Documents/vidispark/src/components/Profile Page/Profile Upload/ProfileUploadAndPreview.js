@@ -217,7 +217,7 @@ const ProfileUploadAndPreview = () => {
               {" "}
               {isStreamReady ? "Stream Details Ready" : ""}
             </div>
-            <div className="upload-notice">
+            <div className="upload-notice tw-text-center">
               {showKey && <>Stream Key - {streamKey && streamKey} </>}
               <br></br>
               <button onClick={() => setShowKey(!showKey)}>
