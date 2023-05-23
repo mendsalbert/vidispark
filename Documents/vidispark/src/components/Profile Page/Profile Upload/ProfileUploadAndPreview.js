@@ -255,10 +255,10 @@ const ProfileUploadAndPreview = () => {
                       </svg>
                     </div>
                   )}
-                  <br></br>
+                  {/* <br></br>
                   <button onClick={() => setShowKey(!showKey)}>
                     {showKey ? " Hide API Key" : " Show API Key"}
-                  </button>
+                  </button> */}
                 </div>
                 <div className="upload-notice tw-px-3 tw-text-center">
                   Stream Server - {streamServer && streamServer}
