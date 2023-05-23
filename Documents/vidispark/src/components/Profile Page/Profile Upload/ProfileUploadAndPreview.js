@@ -225,38 +225,46 @@ const ProfileUploadAndPreview = () => {
                 <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-3 tw-w-3 tw-bg-gray-300"></span>
               </span>
             </button>
-
-            <div className="upload-notice tw-text-center">
-              {showKey && (
-                <>
-                  Stream Key - {streamKey && streamKey.substring(0, 5) + "..."}{" "}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="icon icon-tabler icon-tabler-copy"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
-                    <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
-                  </svg>
-                  <button onClick={copyToClipboard}>Copy API Key</button>
-                </>
-              )}
-              <br></br>
-              <button onClick={() => setShowKey(!showKey)}>
-                {showKey ? " Hide API Key" : " Show API Key"}
-              </button>
-            </div>
-            <div className="upload-notice tw-px-3 tw-text-center">
-              Stream Server - {streamServer && streamServer}
-            </div>
+            {isStreamReady && (
+              <>
+                <div className="upload-notice tw-text-center">
+                  {showKey && (
+                    <>
+                      Stream Key -{" "}
+                      {streamKey && streamKey.substring(0, 5) + "..."}{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="icon icon-tabler icon-tabler-copy"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          stroke="none"
+                          d="M0 0h24v24H0z"
+                          fill="none"
+                        ></path>
+                        <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
+                        <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
+                      </svg>
+                      <button onClick={copyToClipboard}>Copy API Key</button>
+                    </>
+                  )}
+                  <br></br>
+                  <button onClick={() => setShowKey(!showKey)}>
+                    {showKey ? " Hide API Key" : " Show API Key"}
+                  </button>
+                </div>
+                <div className="upload-notice tw-px-3 tw-text-center">
+                  Stream Server - {streamServer && streamServer}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
