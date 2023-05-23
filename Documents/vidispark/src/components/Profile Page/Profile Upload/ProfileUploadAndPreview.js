@@ -154,7 +154,7 @@ const ProfileUploadAndPreview = () => {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(apiKey);
+    navigator.clipboard.writeText(streamKey);
     alert("API Key copied to clipboard!");
   };
   return (
