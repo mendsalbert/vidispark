@@ -97,21 +97,21 @@ team introduction
 shoutouts
 */
 
-const stream = [2, 1, 5, 7, 2, 0, 5];
-const calInput = [];
-const runningMedian = () => {
-  for (let index = 0; index <= stream.length; index++) {
-    calInput.push(stream[index]);
-    //insertions sorting
-    calInput.sort((a, b) => a - b);
+// const stream = [2, 1, 5, 7, 2, 0, 5];
+// const calInput = [];
+// const runningMedian = () => {
+//   for (let index = 0; index <= stream.length; index++) {
+//     calInput.push(stream[index]);
+//     //insertions sorting
+//     calInput.sort((a, b) => a - b);
 
-    //calculate median print
+//     //calculate median print
 
-    // const element = array[index];
-  }
-};
+//     // const element = array[index];
+//   }
+// };
 
-const calculateMedian = (calInput) => {};
+// const calculateMedian = (calInput) => {};
 
-console.log(stream);
-runningMedian();
+// console.log(stream);
+// runningMedian();
