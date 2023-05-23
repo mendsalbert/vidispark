@@ -154,8 +154,16 @@ const ProfileUploadAndPreview = () => {
   };
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(streamKey);
-    alert("API Key copied to clipboard!");
+    if (typeof navigator !== "undefined") {
+      navigator.clipboard.writeText(streamKey).then(
+        function () {
+          alert("API Key copied to clipboard!");
+        },
+        function (err) {
+          console.error("Could not copy text: ", err);
+        }
+      );
+    }
   };
   return (
     <div className="artwork-upload-box">
