@@ -197,7 +197,10 @@ const ProfileUploadAndPreview = () => {
         <div className="artwork-upload">
           <div className="label">Go Live</div>
           <div className="upload-box">
-            <div className="upload-notice"> Start a live stream</div>
+            <div className="upload-notice">
+              {" "}
+              {!isStreamReady ? "Start a live stream" : ""}
+            </div>
             <button
               onClick={goLive}
               className="tw-bg-red-600 tw-rounded-full tw-px-3 tw-py-2 tw-flex tw-flex-row tw-items-center tw-space-x-2"
