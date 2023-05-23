@@ -153,6 +153,10 @@ const ProfileUploadAndPreview = () => {
     }
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(apiKey);
+    alert("API Key copied to clipboard!");
+  };
   return (
     <div className="artwork-upload-box">
       <div className="user-db-title">Upload</div>
@@ -218,6 +222,7 @@ const ProfileUploadAndPreview = () => {
               {showKey && (
                 <>
                   Stream Key - {streamKey && streamKey.substring(0, 5) + "..."}{" "}
+                  <button onClick={copyToClipboard}>Copy API Key</button>
                 </>
               )}
               <br></br>
