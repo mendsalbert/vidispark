@@ -133,18 +133,18 @@ function MyApp({ Component, pageProps }) {
 
         <title>Vidispark</title>
       </Head>
-      <MoralisProvider
-        appId="o2DpocS7Kd4jPFVCEmYUdxyQAyx51SflwTnyCGln"
+      {/* <MoralisProvider
+        appId="bce381b4-7402-46e9-818d-f050e9e590dd"
         serverUrl="https://jtog9qjv1t2r.usemoralis.com:2053/server"
-      >
-        <AuthProvider>
-          <WagmiConfig client={wagmiClient}>
-            <RainbowKitProvider chains={chains} theme={myTheme}>
-              <Component {...pageProps} />
-            </RainbowKitProvider>
-          </WagmiConfig>
-        </AuthProvider>
-      </MoralisProvider>
+      > */}
+      <AuthProvider>
+        <WagmiConfig client={wagmiClient}>
+          <RainbowKitProvider chains={chains} theme={myTheme}>
+            <Component {...pageProps} />
+          </RainbowKitProvider>
+        </WagmiConfig>
+      </AuthProvider>
+      {/* </MoralisProvider> */}
     </Provider>
   );
 }
