@@ -14,6 +14,9 @@ const ProfileUploadAndPreview = () => {
   const [videoUrl, setVideoUrl] = useState("");
   const [videoUploading, setVideoUploading] = useState(false);
   const [uploadStep, setUploadStep] = useState("");
+  const [isStreamReady, setIsStreamReady] = useState(false);
+  const [streamKey, setstreamKey] = useState("");
+  const [streamServer, setstreamServer] = useState("");
   const [isComplete, setIsComplete] = useState(false);
   const { addVideo } = useVideo();
   const handleFileChange = async (event) => {
@@ -139,6 +142,9 @@ const ProfileUploadAndPreview = () => {
         data,
         config
       );
+      setIsStreamReady(true);
+      setstreamKey(response?.data?.body?.backup_stream_key);
+      setstreamServer(response?.data?.body?.backup_stream_server);
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -202,6 +208,12 @@ const ProfileUploadAndPreview = () => {
                 <span class="tw-relative tw-inline-flex tw-rounded-full tw-h-3 tw-w-3 tw-bg-gray-300"></span>
               </span>
             </button>
+            <div className="upload-notice">
+              {" "}
+              {isStreamReady ? "Stream Details Ready" : ""}
+            </div>
+            <div className="upload-notice"> {streamKey && streamKey}</div>
+            <div className="upload-notice"> {streamServer && streamServer}</div>
           </div>
         </div>
       </div>
