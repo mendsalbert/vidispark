@@ -219,6 +219,7 @@ const ProfileUploadAndPreview = () => {
             </div>
             <div className="upload-notice">
               {showKey && <>Stream Key - {streamKey && streamKey} </>}
+              <br></br>
               <button onClick={() => setShowKey(!showKey)}>
                 {showKey ? " Hide API Key" : " Show API Key"}
               </button>
