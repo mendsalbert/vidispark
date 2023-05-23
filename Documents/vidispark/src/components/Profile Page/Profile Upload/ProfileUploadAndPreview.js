@@ -15,8 +15,8 @@ const ProfileUploadAndPreview = () => {
   const [videoUploading, setVideoUploading] = useState(false);
   const [uploadStep, setUploadStep] = useState("");
   const [isStreamReady, setIsStreamReady] = useState(false);
-  const [streamKey, setstreamKey] = useState("key");
-  const [streamServer, setstreamServer] = useState("server");
+  const [streamKey, setstreamKey] = useState("");
+  const [streamServer, setstreamServer] = useState("");
   const [isComplete, setIsComplete] = useState(false);
   const [showKey, setShowKey] = useState(false);
 
