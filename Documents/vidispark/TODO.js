@@ -100,7 +100,7 @@ shoutouts
 const giantArray = [];
 const generateSubarray = (arr) => {
   for (let index = 0; index < arr.length; index++) {
-    giantArray.push(new Array(arr[index]));
+    giantArray.push(new Array(arr[index], arr.length));
   }
 };
 
