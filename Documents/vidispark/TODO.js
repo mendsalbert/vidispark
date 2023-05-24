@@ -123,4 +123,5 @@ const generateSubarray = (arr) => {
 };
 
 generateSubarray([34, -50, 42, 13, -5, 86]);
+console.log(giantArray);
 // runningMedian();
