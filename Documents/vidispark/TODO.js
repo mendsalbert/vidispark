@@ -97,8 +97,8 @@ team introduction
 shoutouts
 */
 
-const giantArray = [];
 const generateSubarray = (arr) => {
+  const giantArray = [];
   for (let index = 0; index < arr.length; index++) {
     for (let j = 0; j < arr.length; index++) {
       giantArray.push(new Array(arr[index], arr[j + 1]));
