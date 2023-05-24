@@ -97,24 +97,6 @@ team introduction
 shoutouts
 */
 
-const stream = [2, 1, 5, 7, 2, 0, 5];
-const calInput = [];
-const runningMedian = () => {
-  for (let index = 0; index <= stream.length; index++) {
-    calInput.push(stream[index]);
-    //insertions sorting
-    calInput.sort((a, b) => a - b);
-
-    //calculate median print
-
-    // const element = array[index];
-  }
-};
-
-const calculateMedian = (calInput) => {};
-
-console.log(stream);
-
 const giantArray = [];
 const generateSubarray = (arr) => {
   for (let index = 0; index < arr.length; index++) {
