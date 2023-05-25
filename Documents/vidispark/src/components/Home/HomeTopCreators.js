@@ -83,7 +83,7 @@ const HomeTopCreators = () => {
             </div>
           </div>
         </div>
-        <div className="top-creator-item">
+        {/* <div className="top-creator-item">
           <div className="creator-number">03</div>
           <div className="creator-box">
             <div className="avatar box-64">
@@ -148,7 +148,7 @@ const HomeTopCreators = () => {
               <div className="creator-meta">@{users[3]?.data?.username}</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
