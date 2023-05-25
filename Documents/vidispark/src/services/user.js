@@ -114,6 +114,7 @@ export const useUser = () => {
       userInfo[0]?.id,
       user
     );
+    console.log(res);
   };
 
   const updateUserSocial = async (userObj) => {
