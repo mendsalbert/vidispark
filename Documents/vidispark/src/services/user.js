@@ -100,7 +100,7 @@ export const useUser = () => {
         username: userObj.username,
         email: userObj.email,
         fullname: userObj.fullname,
-        contact: userObj.contact,
+        contact: userObj.contact || "",
         bio: userObj.bio,
         avatarUrl: userObj.url,
         avatarCover: userObj.cover,
