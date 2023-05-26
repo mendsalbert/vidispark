@@ -1,7 +1,7 @@
 // services/todo.js
 
 import { useState, useContext } from "react";
-import { AuthContext } from "../../pages/authContext";
+import { AuthContext } from "../../authContext";
 
 export const useTodo = () => {
   const { db, user } = useContext(AuthContext);

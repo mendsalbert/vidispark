@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUser } from "../src/services/user";
-import { AuthContext } from "./authContext";
 import Link from "next/link";
+import { AuthContext } from "../authContext";
 const Login = () => {
   const { login } = useContext(AuthContext);
 

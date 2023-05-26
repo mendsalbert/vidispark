@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Layouts from "../src/layouts/Layouts";
 import { useUser } from "../src/services/user";
-import { AuthContext } from "./authContext";
+import { AuthContext } from "../authContext";
 import Link from "next/link";
 
 const bcrypt = require("bcryptjs");

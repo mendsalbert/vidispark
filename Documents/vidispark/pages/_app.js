@@ -32,9 +32,10 @@ import definition from "../blog.runtime.json";
 import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
 // import { infuraProvider } from "wagmi/providers/infura";
 import { publicProvider } from "wagmi/providers/public";
+import { AuthProvider } from "../authContext";
 
-import { AuthProvider } from "./authContext";
-
+// import { AuthProvider } from "./authContext";
+// AuthProvider/
 const xdcApothem = {
   id: 365,
   name: "Theta",

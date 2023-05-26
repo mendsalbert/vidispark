@@ -1,11 +1,11 @@
 // services/todo.js
 
 import { useState, useContext, useEffect } from "react";
-import { AuthContext } from "../../pages/authContext";
 import { useRouter } from "next/router";
 import { ethers } from "ethers";
 import { getBal } from "../../utils/contract/queries";
 import { useAccount } from "wagmi";
+import { AuthContext } from "../../authContext";
 
 const bcrypt = require("bcryptjs");
 

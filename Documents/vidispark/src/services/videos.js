@@ -1,9 +1,9 @@
 // services/todo.js
 
 import { useState, useContext, useEffect } from "react";
-import { AuthContext } from "../../pages/authContext";
 import { useRouter } from "next/router";
 import { v4 as uuidv4 } from "uuid";
+import { AuthContext } from "../../authContext";
 
 const bcrypt = require("bcryptjs");
 
