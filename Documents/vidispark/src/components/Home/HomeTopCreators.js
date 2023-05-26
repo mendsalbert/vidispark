@@ -84,71 +84,71 @@ const HomeTopCreators = () => {
           </div>
         </div>
         {/* <div className="top-creator-item">
-          <div className="creator-number">03</div>
-          <div className="creator-box">
-            <div className="avatar box-64">
-              {" "}
-              <Link href={`profile-page/${users[2]?.id}`}>
-                <a>
-                  <img
-                    src={users[2]?.data?.avatarUrl}
-                    height={52}
-                    width={52}
-                    alt="avatar"
-                    loading="lazy"
-                  />
-                  <span className="verified">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#check-icon" />
-                    </svg>
-                  </span>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="creator-meta">
-              <div className="title">
-                {" "}
-                <Link href={`profile-page/${users[2]?.id}`}>
-                  <a>{users[2]?.data?.fullname}</a>
-                </Link>{" "}
+              <div className="creator-number">03</div>
+              <div className="creator-box">
+                <div className="avatar box-64">
+                  {" "}
+                  <Link href={`profile-page/${users[2]?.id}`}>
+                    <a>
+                      <img
+                        src={users[2]?.data?.avatarUrl}
+                        height={52}
+                        width={52}
+                        alt="avatar"
+                        loading="lazy"
+                      />
+                      <span className="verified">
+                        <svg className="crumina-icon">
+                          <use xlinkHref="#check-icon" />
+                        </svg>
+                      </span>
+                    </a>
+                  </Link>{" "}
+                </div>
+                <div className="creator-meta">
+                  <div className="title">
+                    {" "}
+                    <Link href={`profile-page/${users[2]?.id}`}>
+                      <a>{users[2]?.data?.fullname}</a>
+                    </Link>{" "}
+                  </div>
+                  <div className="creator-meta">@{users[2]?.data?.username}</div>
+                </div>
               </div>
-              <div className="creator-meta">@{users[2]?.data?.username}</div>
             </div>
-          </div>
-        </div>
-        <div className="top-creator-item">
-          <div className="creator-number">04</div>
-          <div className="creator-box">
-            <div className="avatar box-64">
-              {" "}
-              <Link href={`profile-page/${users[3]?.id}`}>
-                <a>
-                  <img
-                    src={users[3]?.data?.avatarUrl}
-                    height={52}
-                    width={52}
-                    alt="avatar"
-                    loading="lazy"
-                  />
-                  <span className="verified">
-                    <svg className="crumina-icon">
-                      <use xlinkHref="#check-icon" />
-                    </svg>
-                  </span>
-                </a>
-              </Link>{" "}
-            </div>
-            <div className="creator-meta">
-              <div className="title">
-                {" "}
-                <Link href={`profile-page/${users[3]?.id}`}>
-                  <a>{users[3]?.data?.fullname}</a>
-                </Link>{" "}
+            <div className="top-creator-item">
+              <div className="creator-number">04</div>
+              <div className="creator-box">
+                <div className="avatar box-64">
+                  {" "}
+                  <Link href={`profile-page/${users[3]?.id}`}>
+                    <a>
+                      <img
+                        src={users[3]?.data?.avatarUrl}
+                        height={52}
+                        width={52}
+                        alt="avatar"
+                        loading="lazy"
+                      />
+                      <span className="verified">
+                        <svg className="crumina-icon">
+                          <use xlinkHref="#check-icon" />
+                        </svg>
+                      </span>
+                    </a>
+                  </Link>{" "}
+                </div>
+                <div className="creator-meta">
+                  <div className="title">
+                    {" "}
+                    <Link href={`profile-page/${users[3]?.id}`}>
+                      <a>{users[3]?.data?.fullname}</a>
+                    </Link>{" "}
+                  </div>
+                  <div className="creator-meta">@{users[3]?.data?.username}</div>
+                </div>
               </div>
-              <div className="creator-meta">@{users[3]?.data?.username}</div>
-            </div>
-          </div>
-        </div> */}
+            </div> */}
       </div>
     </div>
   );
