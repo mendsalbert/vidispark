@@ -6,7 +6,7 @@ const Faq = () => {
   return (
     <Layouts>
       <embed
-        src="/whitepaper.pdf"
+        src="/whitepaper_.pdf"
         width="100%"
         height="800px"
         type="application/pdf"
